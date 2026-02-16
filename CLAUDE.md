@@ -1,68 +1,54 @@
-Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+# CLAUDE.md — Instructions projet
 
-**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+## Contexte du projet
 
-## 1. Think Before Coding
+Ce dépôt contient l'ensemble des livrables d'une **étude d'opportunité pour le retrait de Microsoft Host Integration Server (HIS)**, passerelle de connectivité entre les environnements Windows/.NET et le Mainframe IBM (z/OS).
 
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
+### Documents du dépôt
 
-Before implementing:
+| Document | Rôle |
+|----------|------|
+| [`PRD.md`](PRD.md) | Gabarit structuré de l'étude d'opportunité (sections 0-10 + annexes) |
+| [`PRDPlan.md`](PRDPlan.md) | Plan d'exécution en 8 phases pour rédiger l'étude finale |
+| [`Scenarios.md`](Scenarios.md) | Matrice de 15 scénarios sur 5 patterns HIS (P1-P5), scoring, roadmap 3 vagues |
+| [`Etude Perplexcity.md`](Etude%20Perplexcity.md) | Étude source #1 — benchmark 6 alternatives, plan migration, coûts EUR (22 réf.) |
+| [`Etude Gemini.md`](Etude%20Gemini.md) | Étude source #2 — analyse TI/SNA, TCO/ROI, subventions Québec (106 réf.) |
 
-- State your assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them - don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name what's confusing. Ask.
+### Livrable final attendu
 
-## 2. Simplicity First
+`ÉtudeFinalRetrait.md` — l'étude d'opportunité complète, produite en suivant le `PRDPlan.md` et structurée selon le `PRD.md`.
 
-**Minimum code that solves the problem. Nothing speculative.**
+## Règles de rédaction
 
-- No features beyond what was asked.
-- No abstractions for single-use code.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
+- **Langue** : Français. Termes techniques IBM/Microsoft en anglais (CICS, TI, LU6.2, DRDA, etc.).
+- **Ton** : Analytique et factuel, orienté décision exécutive.
+- **Sources** : Toute affirmation doit être traçable aux études sources (Perplexity, Gemini) ou à `Scenarios.md`. Citer explicitement.
+- **Convergences/Divergences** : Identifier les points d'accord entre les études (recommandations fortes) et les divergences (à arbitrer).
+- **Données quantitatives** : Privilégier les chiffres de `Scenarios.md` (scores, effort Fibonacci, volumétries, critères de succès).
 
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+## Règles de comportement LLM
 
-## 3. Surgical Changes
+**Tradeoff :** Ces consignes privilégient la prudence. Pour les tâches triviales, faire preuve de jugement.
 
-**Touch only what you must. Clean up only your own mess.**
+### 1. Réfléchir avant d'agir
 
-When editing existing code:
+- Énoncer ses hypothèses explicitement. En cas de doute, demander.
+- Si plusieurs interprétations existent, les présenter — ne pas choisir en silence.
+- Si une approche plus simple existe, le dire. Pousser en retour quand c'est justifié.
 
-- Don't "improve" adjacent code, comments, or formatting.
-- Don't refactor things that aren't broken.
-- Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
+### 2. Simplicité d'abord
 
-When your changes create orphans:
+- Minimum de contenu pour répondre au besoin. Rien de spéculatif.
+- Pas d'ajouts non demandés, pas d'abstractions pour usage unique.
+- Si 200 lignes peuvent être 50, réécrire.
 
-- Remove imports/variables/functions that YOUR changes made unused.
-- Don't remove pre-existing dead code unless asked.
+### 3. Modifications chirurgicales
 
-The test: Every changed line should trace directly to the user's request.
+- Ne toucher que ce qui est nécessaire. Ne pas « améliorer » le code/texte adjacent.
+- Respecter le style existant des documents.
+- Chaque ligne modifiée doit être traçable à la demande de l'utilisateur.
 
-## 4. Goal-Driven Execution
+### 4. Exécution orientée objectif
 
-**Define success criteria. Loop until verified.**
-
-Transform tasks into verifiable goals:
-
-- "Add validation" → "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" → "Write a test that reproduces it, then make it pass"
-- "Refactor X" → "Ensure tests pass before and after"
-
-For multi-step tasks, state a brief plan:
-
-```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
-```
-
-Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
-
----
-
-**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+- Transformer chaque tâche en objectif vérifiable.
+- Pour les tâches multi-étapes, énoncer un plan bref avec critères de validation.
