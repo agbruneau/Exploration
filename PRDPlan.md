@@ -1,12 +1,11 @@
 # Livre Blanc — Plan de rédaction
 
-> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
-
 **Goal:** Rédiger l'intégralité du livre blanc « Enterprise Architects Emerge as Strategic AI Advisors » — 13 chapitres, sections liminaires, conclusion et 8 annexes — en respectant les standards définis dans le PRD et le TDM.
 
 **Architecture:** Chaque chapitre est un fichier Markdown autonome dans une arborescence `content/`. La rédaction suit l'ordre argumentatif du PRD (Partie I → V), puis les sections encadrantes (avant-propos, résumé, conclusion), et enfin les annexes. Chaque livrable est vérifié contre les critères de qualité avant commit.
 
 **Références autoritaires:**
+
 - `PRD.md` — Thèse centrale, fil argumentatif, personas, critères de succès
 - `TDM_Livre_Blanc_EA_Strategic_AI_Advisors.md` — Structure détaillée des chapitres, instructions de rédaction, sources de recherche consolidées
 - `CLAUDE.md` — Standards de rédaction (langue, ton, volume, références, conventions typographiques)
@@ -55,33 +54,71 @@ content/
 
 Chaque chapitre DOIT satisfaire ces critères avant commit :
 
-| Critère | Cible | Commande de vérification |
-|---------|-------|--------------------------|
-| Nombre de mots | ≥ 5 000 (hors figures/tableaux/références) | `wc -w content/partie-X/chapitre-XX.md` |
-| Références | 15-25, numérotées, fin de chapitre | Comptage manuel des entrées `[N]` |
-| Figures/tableaux | ≥ 2-3 par chapitre | Recherche `[Figure` et `[Tableau` |
-| Introduction contextuelle | 200-400 mots | Comptage de la section d'introduction |
-| Encadré « Points clés » | Présent | Recherche `Points clés à retenir` |
-| Transition | Vers le chapitre suivant | Vérification de la dernière section |
-| Encadré « En pratique » | Parties III et IV seulement | Recherche `En pratique` |
-| Fil argumentatif | Lié à la thèse (PRD §3) | Relecture croisée avec le PRD |
-| Données récentes | ≥ 70 % sources 2024-2026 | Audit des dates dans les références |
-| Langue | Français canadien, ton scientifique | Relecture |
-| Conventions typo | Termes anglais en *italique*, acronymes définis | Relecture |
+
+| Critère                   | Cible                                           | Commande de vérification                |
+| ------------------------- | ----------------------------------------------- | --------------------------------------- |
+| Nombre de mots            | ≥ 5 000 (hors figures/tableaux/références)      | `wc -w content/partie-X/chapitre-XX.md` |
+| Références                | 15-25, numérotées, fin de chapitre              | Comptage manuel des entrées `[N]`       |
+| Figures/tableaux          | ≥ 2-3 par chapitre                              | Recherche `[Figure` et `[Tableau`       |
+| Introduction contextuelle | 200-400 mots                                    | Comptage de la section d'introduction   |
+| Encadré « Points clés »   | Présent                                         | Recherche `Points clés à retenir`       |
+| Transition                | Vers le chapitre suivant                        | Vérification de la dernière section     |
+| Encadré « En pratique »   | Parties III et IV seulement                     | Recherche `En pratique`                 |
+| Fil argumentatif          | Lié à la thèse (PRD §3)                         | Relecture croisée avec le PRD           |
+| Données récentes          | ≥ 70 % sources 2024-2026                        | Audit des dates dans les références     |
+| Langue                    | Français canadien, ton scientifique             | Relecture                               |
+| Conventions typo          | Termes anglais en *italique*, acronymes définis | Relecture                               |
+
 
 ### Critères pour sections liminaires
 
-| Section | Volume cible | Critères spécifiques |
-|---------|-------------|---------------------|
-| Avant-propos | 1 500 – 2 500 mots | Contexte personnel/professionnel, motivation du livre blanc |
-| Résumé exécutif | 1 500 – 2 500 mots | Synthèse des 5 parties, thèse centrale, appel à l'action |
-| Conclusion | 1 500 – 2 500 mots | Synthèse argumentative, vision prospective, appel à l'action |
+
+| Section         | Volume cible       | Critères spécifiques                                         |
+| --------------- | ------------------ | ------------------------------------------------------------ |
+| Avant-propos    | 1 500 – 2 500 mots | Contexte personnel/professionnel, motivation du livre blanc  |
+| Résumé exécutif | 1 500 – 2 500 mots | Synthèse des 5 parties, thèse centrale, appel à l'action     |
+| Conclusion      | 1 500 – 2 500 mots | Synthèse argumentative, vision prospective, appel à l'action |
+
+
+---
+
+## Tableau de suivi des tâches
+
+
+| Tâche   | Description                             | Statut     | Mots | Réf. | Date       |
+| ------- | --------------------------------------- | ---------- | ---- | ---- | ---------- |
+| Task 0  | Arborescence du projet                  | COMPLÉTÉ   | —    | —    | 2026-02-17 |
+| Task 1  | Ch. 1 — Écart de confiance CEO-CIO      | EN COURS   | —    | —    | —          |
+| Task 2  | Ch. 2 — IA comme force de rupture       | EN COURS   | —    | —    | —          |
+| Task 3  | Ch. 3 — Évolution du rôle EA            | EN ATTENTE | —    | —    | —          |
+| Task 4  | Ch. 4 — EA au centre de la stratégie IA | EN ATTENTE | —    | —    | —          |
+| Task 5  | Ch. 5 — Cadres d'analyse pour l'IA      | EN ATTENTE | —    | —    | —          |
+| Task 6  | Ch. 6 — Nouvelles compétences EA        | EN ATTENTE | —    | —    | —          |
+| Task 7  | Ch. 7 — Architectures IA-first          | EN ATTENTE | —    | —    | —          |
+| Task 8  | Ch. 8 — EA médiateur du risque IA       | EN ATTENTE | —    | —    | —          |
+| Task 9  | Ch. 9 — Gouvernance IA et Shadow AI     | EN ATTENTE | —    | —    | —          |
+| Task 10 | Ch. 10 — Nouveau modèle opérationnel    | EN ATTENTE | —    | —    | —          |
+| Task 11 | Ch. 11 — Études de cas et patterns      | EN ATTENTE | —    | —    | —          |
+| Task 12 | Ch. 12 — EA horizon 2028                | EN ATTENTE | —    | —    | —          |
+| Task 13 | Ch. 13 — Feuille de route               | EN ATTENTE | —    | —    | —          |
+| Task 14 | Sections liminaires                     | EN ATTENTE | —    | —    | —          |
+| Task 15 | Annexe A — Glossaire                    | EN ATTENTE | —    | —    | —          |
+| Task 16 | Annexe B — Compétences                  | EN ATTENTE | —    | —    | —          |
+| Task 17 | Annexe C — Maturité                     | EN ATTENTE | —    | —    | —          |
+| Task 18 | Annexe D — Frameworks                   | EN ATTENTE | —    | —    | —          |
+| Task 19 | Annexe E — Matrice valeur/risque        | EN ATTENTE | —    | —    | —          |
+| Task 20 | Annexe F — Canevas cas d'usage          | EN ATTENTE | —    | —    | —          |
+| Task 21 | Annexe G — Patterns architecturaux      | EN ATTENTE | —    | —    | —          |
+| Task 22 | Annexe H — Bibliographie                | EN ATTENTE | —    | —    | —          |
+| Task 23 | Revue de qualité finale                 | EN ATTENTE | —    | —    | —          |
+
 
 ---
 
 ## Task 0 : Créer l'arborescence du projet
 
 **Files:**
+
 - Create: `content/avant-propos.md` (fichier vide avec en-tête)
 - Create: `content/resume-executif.md`
 - Create: `content/partie-1/` à `content/partie-5/` (répertoires)
@@ -140,11 +177,13 @@ git commit -m "chore: créer l'arborescence et les squelettes du livre blanc"
 ## Task 1 : Rédiger le Chapitre 1 — L'écart de confiance CEO-CIO sur l'IA
 
 **Files:**
+
 - Modify: `content/partie-1/chapitre-01.md`
 
 **Rôle argumentatif (PRD §3) :** Le fossé de confiance CEO-CIO sur l'IA est réel et mesurable.
 
 **Sections à couvrir (TDM) :**
+
 - 1.1 Les chiffres : 80 % CEO vs 3 % CIO (Gartner 2024-2025)
 - 1.2 Le verdict des CEO : 77 % reconnaissent l'ère IA, 44 % font confiance au CIO
 - 1.3 71 % des tech leaders face aux attentes irréalistes (Forbes 2026)
@@ -154,13 +193,14 @@ git commit -m "chore: créer l'arborescence et les squelettes du livre blanc"
 - 1.7 Conséquences de l'inaction : paralysie, Shadow AI, perte de compétitivité
 
 **Sources de recherche (TDM) :**
+
 - Gartner: CEOs Believe Executive Teams Lack AI Savviness
 - Gartner: 3 Trends Driving EA Strategy in 2025
 - National CIO Review: CEOs See AI as the Future but Doubt C-Suite Leadership
 - Forbes: 71% of Tech Chiefs Say Leadership Has Unrealistic AI Expectations
 - CIO.com: Most CEOs Think Their CIOs Lack AI Savviness
 - McKinsey Global Tech Agenda 2026
-- + sources complémentaires à identifier (cible : 15-25 total)
+- - sources complémentaires à identifier (cible : 15-25 total)
 
 **Step 1 : Recherche approfondie**
 
@@ -171,6 +211,7 @@ Consulter chaque source listée ci-dessus. Extraire les données quantitatives, 
 Rédiger les 7 sections + introduction (200-400 mots) + encadré « Points clés à retenir » + transition vers le chapitre 2. Minimum 5 000 mots. Respecter les conventions de rédaction (CLAUDE.md).
 
 Éléments obligatoires :
+
 - ≥ 2 figures/tableaux (ex. : [Figure 1.1] Écart de perception CEO-CIO, [Tableau 1.1] Données comparatives par rôle C-suite)
 - Références numérotées `[1]` à `[N]` en fin de chapitre
 - Termes anglais en *italique* à la première occurrence
@@ -185,14 +226,15 @@ wc -w content/partie-1/chapitre-01.md
 Expected : ≥ 5 000 mots.
 
 Vérifier manuellement :
-- [ ] 15-25 références numérotées
-- [ ] ≥ 2 figures/tableaux
-- [ ] Introduction 200-400 mots
-- [ ] Encadré « Points clés à retenir »
-- [ ] Transition vers le chapitre 2
-- [ ] Fil argumentatif cohérent avec PRD §3 (fossé réel et mesurable)
-- [ ] Ton scientifique, pas de langage marketing
-- [ ] ≥ 70 % sources datées 2024-2026
+
+- 15-25 références numérotées
+- ≥ 2 figures/tableaux
+- Introduction 200-400 mots
+- Encadré « Points clés à retenir »
+- Transition vers le chapitre 2
+- Fil argumentatif cohérent avec PRD §3 (fossé réel et mesurable)
+- Ton scientifique, pas de langage marketing
+- ≥ 70 % sources datées 2024-2026
 
 **Step 4 : Commit**
 
@@ -206,11 +248,13 @@ git commit -m "feat: rédiger chapitre 1 — écart de confiance CEO-CIO sur l'I
 ## Task 2 : Rédiger le Chapitre 2 — L'IA comme force de rupture architecturale
 
 **Files:**
+
 - Modify: `content/partie-1/chapitre-02.md`
 
 **Rôle argumentatif (PRD §3) :** L'IA amplifie le fossé en bouleversant les fondations architecturales existantes.
 
 **Sections à couvrir (TDM) :**
+
 - 2.1 De l'IA pilote à l'IA en production
 - 2.2 Le fossé PoC-Production : 95 % d'échec (MIT/McKinsey)
 - 2.3 L'IA générative et les LLM : exigences données, intégration, sécurité
@@ -220,13 +264,14 @@ git commit -m "feat: rédiger chapitre 1 — écart de confiance CEO-CIO sur l'I
 - 2.7 L'architecture comme différenciateur PoC → production
 
 **Sources de recherche (TDM) :**
+
 - CDO Magazine: From AI Workshop to AI Factory
 - CIO.com: Agentic AI — It's About the Platform
 - Databricks: AI Architecture with Governance
 - InfoQ: Agentic AI Architecture Framework
 - arXiv: EA as a Dynamic Capability for Scalable GenAI Adoption
 - Revolution in AI: AI Performance Gap — 96% Failure Rate
-- + sources MIT/McKinsey sur le fossé PoC-Production
+- - sources MIT/McKinsey sur le fossé PoC-Production
 
 **Step 1 : Recherche approfondie**
 
@@ -237,6 +282,7 @@ Consulter les sources. Accent sur les données quantitatives du fossé PoC-Produ
 ≥ 5 000 mots. Introduction + 7 sections + « Points clés » + transition vers chapitre 3.
 
 Éléments obligatoires :
+
 - ≥ 2 figures/tableaux (ex. : [Figure 2.1] Évolution des exigences architecturales IA, [Tableau 2.1] Comparaison IA pilote vs IA en production)
 - 15-25 références
 - Connexion explicite au chapitre 1 (le fossé CEO-CIO amplifié par les défis architecturaux)
@@ -257,11 +303,13 @@ git commit -m "feat: rédiger chapitre 2 — l'IA comme force de rupture archite
 ## Task 3 : Rédiger le Chapitre 3 — L'évolution du rôle EA
 
 **Files:**
+
 - Modify: `content/partie-2/chapitre-03.md`
 
 **Rôle argumentatif (PRD §3) :** Le rôle EA évolue déjà vers le conseil stratégique (preuves Forrester, Gartner).
 
 **Sections à couvrir (TDM) :**
+
 - 3.1 Perspective historique : EA comme fonction technique
 - 3.2 Le point d'inflexion : l'IA force les conversations stratégiques
 - 3.3 De « architect-as-creator » à « architect-as-curator »
@@ -271,6 +319,7 @@ git commit -m "feat: rédiger chapitre 2 — l'IA comme force de rupture archite
 - 3.7 L'EA comme traducteur d'intentions business
 
 **Sources clés :**
+
 - Forrester: How Agentic AI Elevates The EA's Role
 - Forrester: The Augmented Architect
 - ACL Digital: Top 6 EA Trends Shaping 2026
@@ -290,11 +339,13 @@ git commit -m "feat: rédiger chapitre 3 — évolution du rôle EA vers le cons
 ## Task 4 : Rédiger le Chapitre 4 — L'EA au centre de la stratégie IA
 
 **Files:**
+
 - Modify: `content/partie-2/chapitre-04.md`
 
 **Rôle argumentatif (PRD §3) :** L'EA est le traducteur naturel entre la stratégie organisationnelle et l'exécution IA.
 
 **Sections à couvrir (TDM) :**
+
 - 4.1 Traducteur stratégique : vision CEO → feuille de route tech
 - 4.2 Éclaireur du possible : faisable vs fondations vs risque
 - 4.3 Facilitateur d'alignement : langage commun business-IT-données
@@ -304,6 +355,7 @@ git commit -m "feat: rédiger chapitre 3 — évolution du rôle EA vers le cons
 - 4.7 Collaboration CIO, CDO, CISO
 
 **Sources clés :**
+
 - Faisal Hoque: Strategic EA for AI Value Creation
 - McKinsey: The New CIO Mandate
 - CIO.com: EA and Start-up Thinking Drive Strategic Success
@@ -321,11 +373,13 @@ git commit -m "feat: rédiger chapitre 4 — l'EA au centre de la stratégie IA"
 ## Task 5 : Rédiger le Chapitre 5 — Cadres d'analyse pour conseiller l'IA
 
 **Files:**
+
 - Modify: `content/partie-2/chapitre-05.md`
 
 **Rôle argumentatif (PRD §3) :** Des cadres d'analyse concrets permettent aux EA d'exercer ce rôle de conseil.
 
 **Sections à couvrir (TDM) :**
+
 - 5.1 Cartographie « ambitions IA » vs capacités actuelles
 - 5.2 Typologie des usages IA : automatisation, augmentation, agents, produits digitaux
 - 5.3 Matrice valeur / risque / délai
@@ -347,11 +401,13 @@ git commit -m "feat: rédiger chapitre 5 — cadres d'analyse pour conseiller l'
 ## Task 6 : Rédiger le Chapitre 6 — Nouvelles compétences de l'architecte stratégique IA
 
 **Files:**
+
 - Modify: `content/partie-2/chapitre-06.md`
 
 **Rôle argumentatif (PRD §3) :** Les compétences à acquérir couvrent trois dimensions : technique, business et influence.
 
 **Sections à couvrir (TDM) :**
+
 - 6.1 Modèle de compétences élargi : technique + business + influence
 - 6.2 Compétences IA essentielles : AI literacy, prompt engineering, LLMOps, model governance
 - 6.3 Compétences business critiques
@@ -374,11 +430,13 @@ git commit -m "feat: rédiger chapitre 6 — nouvelles compétences de l'archite
 ## Task 7 : Rédiger le Chapitre 7 — Architectures IA-first et fondations nécessaires
 
 **Files:**
+
 - Modify: `content/partie-3/chapitre-07.md`
 
 **Rôle argumentatif (PRD §3) :** Les architectures AI-first sont le socle nécessaire — et l'EA est responsable de leur conception.
 
 **Sections à couvrir (TDM) :**
+
 - 7.1 Données : qualité, gouvernance, data mesh/lakehouse, lignage, MDM
 - 7.2 Plateformes : MLOps, LLMOps, intégration SI
 - 7.3 Architecture de plateforme agentique
@@ -388,6 +446,7 @@ git commit -m "feat: rédiger chapitre 6 — nouvelles compétences de l'archite
 - 7.7 Gouvernance technique intégrée
 
 **Sources clés :**
+
 - CDO Magazine: From AI Workshop to AI Factory
 - CIO.com: Agentic AI — It's About the Platform
 - Databricks: AI Architecture with Governance
@@ -408,11 +467,13 @@ git commit -m "feat: rédiger chapitre 7 — architectures IA-first et fondation
 ## Task 8 : Rédiger le Chapitre 8 — L'EA comme médiateur du risque IA
 
 **Files:**
+
 - Modify: `content/partie-3/chapitre-08.md`
 
 **Rôle argumentatif (PRD §3) :** L'EA est le médiateur naturel du risque IA (technique, business, humain, réglementaire).
 
 **Sections à couvrir (TDM) :**
+
 - 8.1 Risques techniques : robustesse, model drift, vendor lock-in
 - 8.2 Risques business : cannibalisation, dette d'architecture IA, ROI
 - 8.3 Risques humains : érosion des compétences, résistance
@@ -434,11 +495,13 @@ git commit -m "feat: rédiger chapitre 8 — l'EA comme médiateur du risque IA"
 ## Task 9 : Rédiger le Chapitre 9 — Gouvernance IA et Shadow AI
 
 **Files:**
+
 - Modify: `content/partie-3/chapitre-09.md`
 
 **Rôle argumentatif (PRD §3) :** La gouvernance IA et la lutte contre le Shadow AI sont des territoires naturels de l'EA.
 
 **Sections à couvrir (TDM) :**
+
 - 9.1 État des lieux : 80 % revendiquent, < 50 % maturité mesurable
 - 9.2 Six piliers de la gouvernance IA
 - 9.3 Modèle de maturité en gouvernance IA
@@ -451,6 +514,7 @@ git commit -m "feat: rédiger chapitre 8 — l'EA comme médiateur du risque IA"
 - 9.10 Opérationnaliser la gouvernance
 
 **Sources clés :**
+
 - CIO.com: Shadow AI — Hidden Agents
 - ISACA: From Shadow IT to Shadow AI
 - Liminal: Enterprise AI Governance Guide 2025
@@ -473,11 +537,13 @@ git commit -m "feat: rédiger chapitre 9 — gouvernance IA et Shadow AI"
 ## Task 10 : Rédiger le Chapitre 10 — Nouveau modèle opérationnel pour l'EA
 
 **Files:**
+
 - Modify: `content/partie-4/chapitre-10.md`
 
 **Rôle argumentatif (PRD §3) :** Un nouveau modèle opérationnel rend cette transformation viable et pérenne.
 
 **Sections à couvrir (TDM) :**
+
 - 10.1 Trois tendances Gartner 2025 : fédéré, rationalisation, compétences élargies
 - 10.2 EA réactive → proactive et prédictive
 - 10.3 EA dans le « flow of change »
@@ -488,6 +554,7 @@ git commit -m "feat: rédiger chapitre 9 — gouvernance IA et Shadow AI"
 - 10.8 EA Center of Excellence orienté IA
 
 **Sources clés :**
+
 - Gartner: 3 Trends Driving EA Strategy in 2025
 - Workday: Digital Transformation Strategies for EAs
 - CIO.com: EA and Start-up Thinking Drive Strategic Success
@@ -508,11 +575,13 @@ git commit -m "feat: rédiger chapitre 10 — nouveau modèle opérationnel pour
 ## Task 11 : Rédiger le Chapitre 11 — Études de cas et patterns réutilisables
 
 **Files:**
+
 - Modify: `content/partie-4/chapitre-11.md`
 
 **Rôle argumentatif (PRD §3) :** Des cas réels et des patterns réplicables valident l'approche proposée.
 
 **Sections à couvrir (TDM) :**
+
 - 11.1 Cas de succès : organisations à forte maturité EA
 - 11.2 Pattern « AI Factory » en action (CDO Magazine)
 - 11.3 Cas d'échec : VW Cariad — 7,5 milliards $
@@ -521,6 +590,7 @@ git commit -m "feat: rédiger chapitre 10 — nouveau modèle opérationnel pour
 - 11.6 Leçons transversales
 
 **Sources clés :**
+
 - CDO Magazine: From AI Workshop to AI Factory
 - NineTwoThree: Biggest AI Fails of 2025
 - Revolution in AI: AI Performance Gap
@@ -542,11 +612,13 @@ git commit -m "feat: rédiger chapitre 11 — études de cas et patterns réutil
 ## Task 12 : Rédiger le Chapitre 12 — L'EA de demain : horizon 2028
 
 **Files:**
+
 - Modify: `content/partie-5/chapitre-12.md`
 
 **Rôle argumentatif (PRD §3) :** L'horizon 2028 confirme la tendance et renforce l'urgence du repositionnement.
 
 **Sections à couvrir (TDM) :**
+
 - 12.1 Prévision Gartner : 55 % EA en gouvernance autonome d'ici 2028
 - 12.2 Agents IA : 15 % des décisions quotidiennes d'ici 2028
 - 12.3 Architecture continue : boucles de rétroaction, gouvernance haute vélocité
@@ -556,6 +628,7 @@ git commit -m "feat: rédiger chapitre 11 — études de cas et patterns réutil
 - 12.7 De l'architecture comme coût à l'architecture comme levier de croissance
 
 **Sources clés :**
+
 - arXiv: EA as a Dynamic Capability for Scalable GenAI Adoption
 - BOC Group: EA Outlook Trends 2025-2026
 - ACL Digital: Top 6 EA Trends Shaping 2026
@@ -573,11 +646,13 @@ git commit -m "feat: rédiger chapitre 12 — l'EA de demain, horizon 2028"
 ## Task 13 : Rédiger le Chapitre 13 — Feuille de route pour l'élévation stratégique
 
 **Files:**
+
 - Modify: `content/partie-5/chapitre-13.md`
 
 **Rôle argumentatif (PRD §3) :** Une feuille de route concrète permet de passer de la réflexion à l'action.
 
 **Sections à couvrir (TDM) :**
+
 - 13.1 Auto-diagnostic de maturité
 - 13.2 Phase 1 — Fondations (0-6 mois)
 - 13.3 Phase 2 — Accélération (6-18 mois)
@@ -601,6 +676,7 @@ git commit -m "feat: rédiger chapitre 13 — feuille de route pour l'élévatio
 ## Task 14 : Rédiger les sections liminaires
 
 **Files:**
+
 - Modify: `content/avant-propos.md`
 - Modify: `content/resume-executif.md`
 - Modify: `content/conclusion.md`
@@ -621,10 +697,10 @@ Contenu : rappel de la thèse, synthèse des contributions de chaque partie, vis
 
 **Step 4 : Vérifier les critères**
 
-- [ ] Avant-propos : 1 500-2 500 mots
-- [ ] Résumé exécutif : 1 500-2 500 mots, couvre les 5 parties, thèse explicite
-- [ ] Conclusion : 1 500-2 500 mots, cohérence avec la thèse et le fil argumentatif
-- [ ] Ton uniforme, pas de langage marketing
+- Avant-propos : 1 500-2 500 mots
+- Résumé exécutif : 1 500-2 500 mots, couvre les 5 parties, thèse explicite
+- Conclusion : 1 500-2 500 mots, cohérence avec la thèse et le fil argumentatif
+- Ton uniforme, pas de langage marketing
 
 **Step 5 : Commit**
 
@@ -638,6 +714,7 @@ git commit -m "feat: rédiger avant-propos, résumé exécutif et conclusion"
 ## Task 15 : Rédiger l'Annexe A — Glossaire des termes clés
 
 **Files:**
+
 - Modify: `content/annexes/annexe-a-glossaire.md`
 
 **Contenu :** Tous les termes techniques, acronymes et concepts clés utilisés dans le livre blanc. Format : terme → définition. Classement alphabétique. Inclure les termes anglais avec leur équivalent français OQLF.
@@ -656,6 +733,7 @@ git commit -m "feat: rédiger annexe A — glossaire des termes clés"
 ## Task 16 : Rédiger l'Annexe B — Référentiel de compétences EA-IA
 
 **Files:**
+
 - Modify: `content/annexes/annexe-b-referentiel-competences.md`
 
 **Contenu :** Matrice détaillée des compétences EA-IA, structurée selon les 3 dimensions du chapitre 6 (technique, business, influence). Pour chaque compétence : description, niveau de maîtrise attendu, méthode d'acquisition suggérée.
@@ -674,6 +752,7 @@ git commit -m "feat: rédiger annexe B — référentiel de compétences EA-IA"
 ## Task 17 : Rédiger l'Annexe C — Template d'évaluation de maturité gouvernance IA
 
 **Files:**
+
 - Modify: `content/annexes/annexe-c-template-maturite.md`
 
 **Contenu :** Grille d'évaluation basée sur le modèle de maturité du chapitre 9 (section 9.3) et l'auto-diagnostic du chapitre 13 (section 13.1). Niveaux de maturité, critères d'évaluation, scoring.
@@ -692,6 +771,7 @@ git commit -m "feat: rédiger annexe C — template d'évaluation de maturité"
 ## Task 18 : Rédiger l'Annexe D — Cartographie des frameworks EA
 
 **Files:**
+
 - Modify: `content/annexes/annexe-d-cartographie-frameworks.md`
 
 **Contenu :** Comparaison structurée de TOGAF, Zachman, Gartner EA Framework, SAFe — avec pour chacun : description, forces/limites, adaptation spécifique à l'IA, recommandation d'usage.
@@ -710,6 +790,7 @@ git commit -m "feat: rédiger annexe D — cartographie des frameworks EA"
 ## Task 19 : Rédiger l'Annexe E — Matrice valeur / risque / délai
 
 **Files:**
+
 - Modify: `content/annexes/annexe-e-matrice-valeur-risque.md`
 
 **Contenu :** Template vierge + exemple rempli. Basé sur le cadre présenté dans le chapitre 5 (section 5.3).
@@ -728,6 +809,7 @@ git commit -m "feat: rédiger annexe E — matrice valeur / risque / délai"
 ## Task 20 : Rédiger l'Annexe F — Canevas de cas d'usage IA
 
 **Files:**
+
 - Modify: `content/annexes/annexe-f-canevas-cas-usage.md`
 
 **Contenu :** Template structuré pour documenter un cas d'usage IA : problème, solution IA, architecture cible, risques, métriques, gouvernance. Lié aux chapitres 5 et 11.
@@ -746,6 +828,7 @@ git commit -m "feat: rédiger annexe F — canevas de cas d'usage IA"
 ## Task 21 : Rédiger l'Annexe G — Patterns architecturaux IA réutilisables
 
 **Files:**
+
 - Modify: `content/annexes/annexe-g-patterns-architecturaux.md`
 
 **Contenu :** Inventaire structuré des patterns définis dans le chapitre 11 (section 11.5) : AI Capability Factory, AI-Ready Domain, Agentic Safe Sandbox, Composable AI Module. Pour chaque pattern : contexte, problème, solution, forces, exemples d'application.
@@ -764,6 +847,7 @@ git commit -m "feat: rédiger annexe G — patterns architecturaux IA réutilisa
 ## Task 22 : Rédiger l'Annexe H — Bibliographie et sources de référence
 
 **Files:**
+
 - Modify: `content/annexes/annexe-h-bibliographie.md`
 
 **Contenu :** Consolidation de toutes les références citées dans les 13 chapitres. Format IEEE ou APA adapté. Classement thématique (comme dans le TDM : fossé CEO-CIO, rôle émergent EA, architectures IA-first, gouvernance, cas d'échec, cadres stratégiques).
@@ -790,6 +874,7 @@ git commit -m "feat: rédiger annexe H — bibliographie consolidée"
 ## Task 23 : Revue de qualité finale
 
 **Files:**
+
 - Tous les fichiers `content/**/*.md`
 
 **Prérequis :** Toutes les tâches 0-22 sont complétées.
@@ -809,26 +894,27 @@ Expected : ≥ 65 000 mots total, ≥ 5 000 par chapitre.
 **Step 2 : Vérification des éléments obligatoires**
 
 Pour chaque chapitre, vérifier :
-- [ ] Références ≥ 15 par chapitre
-- [ ] Figures/tableaux ≥ 2 par chapitre
-- [ ] Encadré « Points clés à retenir »
-- [ ] Transitions entre chapitres
-- [ ] Encadrés « En pratique » (Parties III et IV)
+
+- Références ≥ 15 par chapitre
+- Figures/tableaux ≥ 2 par chapitre
+- Encadré « Points clés à retenir »
+- Transitions entre chapitres
+- Encadrés « En pratique » (Parties III et IV)
 
 **Step 3 : Vérification de cohérence**
 
-- [ ] Terminologie cohérente entre chapitres (vérifier avec Annexe A)
-- [ ] Fil argumentatif traçable (vérifier avec PRD §3)
-- [ ] Pas de redondances significatives entre chapitres
-- [ ] Références croisées entre chapitres et annexes cohérentes
-- [ ] Numérotation des figures et tableaux séquentielle par chapitre
+- Terminologie cohérente entre chapitres (vérifier avec Annexe A)
+- Fil argumentatif traçable (vérifier avec PRD §3)
+- Pas de redondances significatives entre chapitres
+- Références croisées entre chapitres et annexes cohérentes
+- Numérotation des figures et tableaux séquentielle par chapitre
 
 **Step 4 : Vérification éditoriale**
 
-- [ ] Ton scientifique uniforme, pas de langage marketing
-- [ ] Conventions typographiques respectées
-- [ ] Français canadien (termes OQLF)
-- [ ] Acronymes définis à la première occurrence par chapitre
+- Ton scientifique uniforme, pas de langage marketing
+- Conventions typographiques respectées
+- Français canadien (termes OQLF)
+- Acronymes définis à la première occurrence par chapitre
 
 **Step 5 : Commit final**
 
@@ -868,11 +954,14 @@ Task 0  (arborescence)
 
 ## Volume total estimé
 
-| Section | Nombre | Mots min/unité | Total min |
-|---------|--------|----------------|-----------|
-| Chapitres | 13 | 5 000 | 65 000 |
-| Avant-propos | 1 | 1 500 | 1 500 |
-| Résumé exécutif | 1 | 1 500 | 1 500 |
-| Conclusion | 1 | 1 500 | 1 500 |
-| Annexes | 8 | variable | ~10 000 |
-| **Total** | | | **~79 500+** |
+
+| Section         | Nombre | Mots min/unité | Total min    |
+| --------------- | ------ | -------------- | ------------ |
+| Chapitres       | 13     | 5 000          | 65 000       |
+| Avant-propos    | 1      | 1 500          | 1 500        |
+| Résumé exécutif | 1      | 1 500          | 1 500        |
+| Conclusion      | 1      | 1 500          | 1 500        |
+| Annexes         | 8      | variable       | ~10 000      |
+| **Total**       |        |                | **~79 500+** |
+
+
