@@ -85,37 +85,43 @@ Chaque chapitre DOIT satisfaire ces critères avant commit :
 ## Tableau de suivi des tâches
 
 
-| Tâche   | Description                             | Statut     | Mots | Réf. | Date       |
-| ------- | --------------------------------------- | ---------- | ---- | ---- | ---------- |
-| Task 0  | Arborescence du projet                  | COMPLÉTÉ   | —    | —    | 2026-02-17 |
-| Task 1  | Ch. 1 — Écart de confiance CEO-CIO      | EN COURS   | —    | —    | —          |
-| Task 2  | Ch. 2 — IA comme force de rupture       | EN COURS   | —    | —    | —          |
-| Task 3  | Ch. 3 — Évolution du rôle EA            | EN ATTENTE | —    | —    | —          |
-| Task 4  | Ch. 4 — EA au centre de la stratégie IA | EN ATTENTE | —    | —    | —          |
-| Task 5  | Ch. 5 — Cadres d'analyse pour l'IA      | EN ATTENTE | —    | —    | —          |
-| Task 6  | Ch. 6 — Nouvelles compétences EA        | EN ATTENTE | —    | —    | —          |
-| Task 7  | Ch. 7 — Architectures IA-first          | EN ATTENTE | —    | —    | —          |
-| Task 8  | Ch. 8 — EA médiateur du risque IA       | EN ATTENTE | —    | —    | —          |
-| Task 9  | Ch. 9 — Gouvernance IA et Shadow AI     | EN ATTENTE | —    | —    | —          |
-| Task 10 | Ch. 10 — Nouveau modèle opérationnel    | EN ATTENTE | —    | —    | —          |
-| Task 11 | Ch. 11 — Études de cas et patterns      | EN ATTENTE | —    | —    | —          |
-| Task 12 | Ch. 12 — EA horizon 2028                | EN ATTENTE | —    | —    | —          |
-| Task 13 | Ch. 13 — Feuille de route               | EN ATTENTE | —    | —    | —          |
-| Task 14 | Sections liminaires                     | EN ATTENTE | —    | —    | —          |
-| Task 15 | Annexe A — Glossaire                    | EN ATTENTE | —    | —    | —          |
-| Task 16 | Annexe B — Compétences                  | EN ATTENTE | —    | —    | —          |
-| Task 17 | Annexe C — Maturité                     | EN ATTENTE | —    | —    | —          |
-| Task 18 | Annexe D — Frameworks                   | EN ATTENTE | —    | —    | —          |
-| Task 19 | Annexe E — Matrice valeur/risque        | EN ATTENTE | —    | —    | —          |
-| Task 20 | Annexe F — Canevas cas d'usage          | EN ATTENTE | —    | —    | —          |
-| Task 21 | Annexe G — Patterns architecturaux      | EN ATTENTE | —    | —    | —          |
-| Task 22 | Annexe H — Bibliographie                | EN ATTENTE | —    | —    | —          |
-| Task 23 | Revue de qualité finale                 | EN ATTENTE | —    | —    | —          |
+| Tâche   | Description                             | Statut     | Lignes | Réf. | Date       | Notes                                  |
+| ------- | --------------------------------------- | ---------- | ------ | ---- | ---------- | -------------------------------------- |
+| Task 0  | Arborescence du projet                  | COMPLÉTÉ   | —      | —    | 2026-02-17 | 24 fichiers créés                      |
+| Task 1  | Ch. 1 — Écart de confiance CEO-CIO      | COMPLÉTÉ   | 275    | 22   | 2026-02-18 | ✓ tous critères                        |
+| Task 2  | Ch. 2 — IA comme force de rupture       | COMPLÉTÉ   | 361    | 26   | 2026-02-18 | ✓ tous critères                        |
+| Task 3  | Ch. 3 — Évolution du rôle EA            | COMPLÉTÉ   | 329    | 21   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
+| Task 4  | Ch. 4 — EA au centre de la stratégie IA | COMPLÉTÉ   | 334    | 29   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
+| Task 5  | Ch. 5 — Cadres d'analyse pour l'IA      | COMPLÉTÉ   | 414    | 23   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
+| Task 6  | Ch. 6 — Nouvelles compétences EA        | COMPLÉTÉ   | 590    | 36   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
+| Task 7  | Ch. 7 — Architectures IA-first          | EN ATTENTE | —      | —    | —          | Squelette créé, prochaine tâche        |
+| Task 8  | Ch. 8 — EA médiateur du risque IA       | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 9  | Ch. 9 — Gouvernance IA et Shadow AI     | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 10 | Ch. 10 — Nouveau modèle opérationnel    | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 11 | Ch. 11 — Études de cas et patterns      | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 12 | Ch. 12 — EA horizon 2028                | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 13 | Ch. 13 — Feuille de route               | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 14 | Sections liminaires                     | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
+| Task 15 | Annexe A — Glossaire                    | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
+| Task 16 | Annexe B — Compétences                  | EN ATTENTE | —      | —    | —          | Dépend Task 6 ✓ — débloquée           |
+| Task 17 | Annexe C — Maturité                     | EN ATTENTE | —      | —    | —          | Dépend Tasks 9, 13                     |
+| Task 18 | Annexe D — Frameworks                   | EN ATTENTE | —      | —    | —          | Dépend Task 10                         |
+| Task 19 | Annexe E — Matrice valeur/risque        | EN ATTENTE | —      | —    | —          | Dépend Task 5 ✓ — débloquée           |
+| Task 20 | Annexe F — Canevas cas d'usage          | EN ATTENTE | —      | —    | —          | Dépend Tasks 5 ✓, 11                   |
+| Task 21 | Annexe G — Patterns architecturaux      | EN ATTENTE | —      | —    | —          | Dépend Task 11                         |
+| Task 22 | Annexe H — Bibliographie                | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
+| Task 23 | Revue de qualité finale                 | EN ATTENTE | —      | —    | —          | Dépend Tasks 0-22                      |
+
+**Progression :** 7/24 tâches complétées (29 %) — Parties I et II terminées. Partie III à entamer.
+
+**Anomalie détectée :** Les chapitres 3 à 6 utilisent un format de liste à puces pour la section « Points clés à retenir » au lieu du format encadré utilisé dans les chapitres 1-2. À uniformiser lors de la revue finale (Task 23) ou par une passe de correction dédiée.
+
+**Tâches débloquées par la complétion de la Partie II :** Les annexes B (compétences, dépend Ch. 6) et E (matrice valeur/risque, dépend Ch. 5) peuvent être rédigées en parallèle avec la Partie III.
 
 
 ---
 
-## Task 0 : Créer l'arborescence du projet
+## Task 0 : Créer l'arborescence du projet ✅ COMPLÉTÉ
 
 **Files:**
 
@@ -174,7 +180,7 @@ git commit -m "chore: créer l'arborescence et les squelettes du livre blanc"
 
 ---
 
-## Task 1 : Rédiger le Chapitre 1 — L'écart de confiance CEO-CIO sur l'IA
+## Task 1 : Rédiger le Chapitre 1 — L'écart de confiance CEO-CIO sur l'IA ✅ COMPLÉTÉ
 
 **Files:**
 
@@ -245,7 +251,7 @@ git commit -m "feat: rédiger chapitre 1 — écart de confiance CEO-CIO sur l'I
 
 ---
 
-## Task 2 : Rédiger le Chapitre 2 — L'IA comme force de rupture architecturale
+## Task 2 : Rédiger le Chapitre 2 — L'IA comme force de rupture architecturale ✅ COMPLÉTÉ
 
 **Files:**
 
@@ -300,7 +306,7 @@ git commit -m "feat: rédiger chapitre 2 — l'IA comme force de rupture archite
 
 ---
 
-## Task 3 : Rédiger le Chapitre 3 — L'évolution du rôle EA
+## Task 3 : Rédiger le Chapitre 3 — L'évolution du rôle EA ✅ COMPLÉTÉ
 
 **Files:**
 
@@ -336,7 +342,7 @@ git commit -m "feat: rédiger chapitre 3 — évolution du rôle EA vers le cons
 
 ---
 
-## Task 4 : Rédiger le Chapitre 4 — L'EA au centre de la stratégie IA
+## Task 4 : Rédiger le Chapitre 4 — L'EA au centre de la stratégie IA ✅ COMPLÉTÉ
 
 **Files:**
 
@@ -370,7 +376,7 @@ git commit -m "feat: rédiger chapitre 4 — l'EA au centre de la stratégie IA"
 
 ---
 
-## Task 5 : Rédiger le Chapitre 5 — Cadres d'analyse pour conseiller l'IA
+## Task 5 : Rédiger le Chapitre 5 — Cadres d'analyse pour conseiller l'IA ✅ COMPLÉTÉ
 
 **Files:**
 
@@ -398,7 +404,7 @@ git commit -m "feat: rédiger chapitre 5 — cadres d'analyse pour conseiller l'
 
 ---
 
-## Task 6 : Rédiger le Chapitre 6 — Nouvelles compétences de l'architecte stratégique IA
+## Task 6 : Rédiger le Chapitre 6 — Nouvelles compétences de l'architecte stratégique IA ✅ COMPLÉTÉ
 
 **Files:**
 
