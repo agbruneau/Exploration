@@ -101,18 +101,18 @@ Chaque chapitre DOIT satisfaire ces critères avant commit :
 | Task 11 | Ch. 11 — Études de cas et patterns      | COMPLÉTÉ   | 8135   | 25   | 2026-02-18 | ✓ tous critères, 3 fig., 4 tab.        |
 | Task 12 | Ch. 12 — EA horizon 2028                | COMPLÉTÉ   | 7812   | 26   | 2026-02-18 | ✓ tous critères, 3 fig., 4 tab.        |
 | Task 13 | Ch. 13 — Feuille de route               | COMPLÉTÉ   | 8303   | 25   | 2026-02-18 | ✓ tous critères, checklist 29 items    |
-| Task 14 | Sections liminaires                     | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
-| Task 15 | Annexe A — Glossaire                    | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
+| Task 14 | Sections liminaires                     | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ avant-propos + résumé + conclusion   |
+| Task 15 | Annexe A — Glossaire                    | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ termes extraits des 13 chapitres     |
 | Task 16 | Annexe B — Compétences                  | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 18 compétences, 3 dimensions         |
-| Task 17 | Annexe C — Maturité                     | EN ATTENTE | —      | —    | —          | Dépend Tasks 9, 13                     |
+| Task 17 | Annexe C — Maturité                     | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ grille 6 piliers × 5 niveaux         |
 | Task 18 | Annexe D — Frameworks                   | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 4 frameworks, guide sélection        |
 | Task 19 | Annexe E — Matrice valeur/risque        | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ template + exemple 10 initiatives    |
 | Task 20 | Annexe F — Canevas cas d'usage          | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ template + guide + 2 exemples        |
 | Task 21 | Annexe G — Patterns architecturaux      | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 4 patterns, diagrammes, guide        |
-| Task 22 | Annexe H — Bibliographie                | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
-| Task 23 | Revue de qualité finale                 | EN ATTENTE | —      | —    | —          | Dépend Tasks 0-22                      |
+| Task 22 | Annexe H — Bibliographie                | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ consolidation 13 chapitres, IEEE     |
+| Task 23 | Revue de qualité finale                 | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 154K+ mots, tous critères conformes  |
 
-**Progression :** 19/24 tâches complétées (79 %) — Parties I-V terminées (13 chapitres). Annexes B, D, E, F, G complétées. Sections liminaires et annexes A, C, H à rédiger.
+**Progression :** 24/24 tâches complétées (100 %) — Livre blanc terminé. 154 000+ mots, 13 chapitres, 3 sections liminaires, 8 annexes.
 
 **Anomalie détectée :** Les chapitres 3 à 6 utilisent un format de liste à puces pour la section « Points clés à retenir » au lieu du format encadré utilisé dans les chapitres 1-2. À uniformiser lors de la revue finale (Task 23) ou par une passe de correction dédiée.
 
