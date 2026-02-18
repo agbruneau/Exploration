@@ -94,25 +94,25 @@ Chaque chapitre DOIT satisfaire ces critères avant commit :
 | Task 4  | Ch. 4 — EA au centre de la stratégie IA | COMPLÉTÉ   | 334    | 29   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
 | Task 5  | Ch. 5 — Cadres d'analyse pour l'IA      | COMPLÉTÉ   | 414    | 23   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
 | Task 6  | Ch. 6 — Nouvelles compétences EA        | COMPLÉTÉ   | 590    | 36   | 2026-02-18 | ⚠ format « Points clés » à uniformiser |
-| Task 7  | Ch. 7 — Architectures IA-first          | EN ATTENTE | —      | —    | —          | Squelette créé, prochaine tâche        |
-| Task 8  | Ch. 8 — EA médiateur du risque IA       | EN ATTENTE | —      | —    | —          | Squelette créé                         |
-| Task 9  | Ch. 9 — Gouvernance IA et Shadow AI     | EN ATTENTE | —      | —    | —          | Squelette créé                         |
-| Task 10 | Ch. 10 — Nouveau modèle opérationnel    | EN ATTENTE | —      | —    | —          | Squelette créé                         |
-| Task 11 | Ch. 11 — Études de cas et patterns      | EN ATTENTE | —      | —    | —          | Squelette créé                         |
-| Task 12 | Ch. 12 — EA horizon 2028                | EN ATTENTE | —      | —    | —          | Squelette créé                         |
-| Task 13 | Ch. 13 — Feuille de route               | EN ATTENTE | —      | —    | —          | Squelette créé                         |
+| Task 7  | Ch. 7 — Architectures IA-first          | COMPLÉTÉ   | 8200   | 25   | 2026-02-18 | ✓ tous critères, 3 fig., 2 tab.        |
+| Task 8  | Ch. 8 — EA médiateur du risque IA       | COMPLÉTÉ   | 8635   | 25   | 2026-02-18 | ✓ tous critères, 3 fig., 3 tab.        |
+| Task 9  | Ch. 9 — Gouvernance IA et Shadow AI     | COMPLÉTÉ   | 8254   | 25   | 2026-02-18 | ✓ tous critères, 3 fig., 3 tab.        |
+| Task 10 | Ch. 10 — Nouveau modèle opérationnel    | COMPLÉTÉ   | 8386   | 26   | 2026-02-18 | ✓ tous critères, 3 fig., 3 tab.        |
+| Task 11 | Ch. 11 — Études de cas et patterns      | COMPLÉTÉ   | 8135   | 25   | 2026-02-18 | ✓ tous critères, 3 fig., 4 tab.        |
+| Task 12 | Ch. 12 — EA horizon 2028                | COMPLÉTÉ   | 7812   | 26   | 2026-02-18 | ✓ tous critères, 3 fig., 4 tab.        |
+| Task 13 | Ch. 13 — Feuille de route               | COMPLÉTÉ   | 8303   | 25   | 2026-02-18 | ✓ tous critères, checklist 29 items    |
 | Task 14 | Sections liminaires                     | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
 | Task 15 | Annexe A — Glossaire                    | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
-| Task 16 | Annexe B — Compétences                  | EN ATTENTE | —      | —    | —          | Dépend Task 6 ✓ — débloquée           |
+| Task 16 | Annexe B — Compétences                  | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 18 compétences, 3 dimensions         |
 | Task 17 | Annexe C — Maturité                     | EN ATTENTE | —      | —    | —          | Dépend Tasks 9, 13                     |
-| Task 18 | Annexe D — Frameworks                   | EN ATTENTE | —      | —    | —          | Dépend Task 10                         |
-| Task 19 | Annexe E — Matrice valeur/risque        | EN ATTENTE | —      | —    | —          | Dépend Task 5 ✓ — débloquée           |
-| Task 20 | Annexe F — Canevas cas d'usage          | EN ATTENTE | —      | —    | —          | Dépend Tasks 5 ✓, 11                   |
-| Task 21 | Annexe G — Patterns architecturaux      | EN ATTENTE | —      | —    | —          | Dépend Task 11                         |
+| Task 18 | Annexe D — Frameworks                   | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 4 frameworks, guide sélection        |
+| Task 19 | Annexe E — Matrice valeur/risque        | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ template + exemple 10 initiatives    |
+| Task 20 | Annexe F — Canevas cas d'usage          | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ template + guide + 2 exemples        |
+| Task 21 | Annexe G — Patterns architecturaux      | COMPLÉTÉ   | —      | —    | 2026-02-18 | ✓ 4 patterns, diagrammes, guide        |
 | Task 22 | Annexe H — Bibliographie                | EN ATTENTE | —      | —    | —          | Dépend Tasks 1-13                      |
 | Task 23 | Revue de qualité finale                 | EN ATTENTE | —      | —    | —          | Dépend Tasks 0-22                      |
 
-**Progression :** 7/24 tâches complétées (29 %) — Parties I et II terminées. Partie III à entamer.
+**Progression :** 19/24 tâches complétées (79 %) — Parties I-V terminées (13 chapitres). Annexes B, D, E, F, G complétées. Sections liminaires et annexes A, C, H à rédiger.
 
 **Anomalie détectée :** Les chapitres 3 à 6 utilisent un format de liste à puces pour la section « Points clés à retenir » au lieu du format encadré utilisé dans les chapitres 1-2. À uniformiser lors de la revue finale (Task 23) ou par une passe de correction dédiée.
 
