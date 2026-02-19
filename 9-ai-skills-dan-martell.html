@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 Compétences IA Essentielles — Dan Martell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --bg-card-hover: #1c1c28;
+            --border: #2a2a3a;
+            --border-accent: #3a3a5a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #9898b0;
+            --text-muted: #686880;
+            --accent-blue: #4d7cff;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-pink: #ec4899;
+            --accent-red: #ef4444;
+            --accent-indigo: #6366f1;
+            --accent-teal: #14b8a6;
+            --gradient-hero: linear-gradient(135deg, #4d7cff 0%, #8b5cf6 50%, #ec4899 100%);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+            --shadow-glow: 0 0 40px rgba(77,124,255,0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,10,15,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+        }
+        .nav-inner {
+            max-width: 1280px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .nav-logo {
+            font-weight: 800; font-size: 1.1rem;
+            background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+            font-weight: 500; transition: color .2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(77,124,255,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,92,246,0.08) 0%, transparent 60%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.15;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%);
+        }
+        .hero-content { position: relative; max-width: 860px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: .5rem;
+            background: rgba(77,124,255,0.1); border: 1px solid rgba(77,124,255,0.25);
+            border-radius: 100px; padding: .4rem 1.2rem;
+            font-size: .8rem; font-weight: 600; color: var(--accent-blue);
+            margin-bottom: 2rem;
+        }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            font-weight: 900; line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 .gradient {
+            background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem; color: var(--text-secondary);
+            max-width: 640px; margin: 0 auto 2.5rem;
+        }
+        .hero-meta {
+            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+            font-size: .85rem; color: var(--text-muted);
+        }
+        .hero-meta span { display: flex; align-items: center; gap: .4rem; }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: .6rem;
+            margin-top: 2.5rem; padding: .9rem 2rem;
+            background: var(--gradient-hero); color: #fff;
+            font-weight: 700; font-size: .95rem;
+            border: none; border-radius: 12px; cursor: pointer;
+            text-decoration: none;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(77,124,255,0.3); }
+
+        /* ─── SECTION COMMON ─── */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: .75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--accent-blue); margin-bottom: .6rem;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800; margin-bottom: 1rem;
+        }
+        .section-desc {
+            color: var(--text-secondary); max-width: 680px; font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+
+        /* ─── OVERVIEW GRID ─── */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.25rem;
+        }
+        .overview-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all .3s;
+            cursor: pointer;
+            text-decoration: none; color: inherit;
+            position: relative; overflow: hidden;
+        }
+        .overview-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--card-accent);
+            opacity: 0; transition: opacity .3s;
+        }
+        .overview-card:hover { border-color: var(--border-accent); background: var(--bg-card-hover); transform: translateY(-3px); box-shadow: var(--shadow-card); }
+        .overview-card:hover::before { opacity: 1; }
+        .card-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 10px;
+            font-weight: 800; font-size: .85rem;
+            margin-bottom: 1rem;
+        }
+        .overview-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+        .overview-card p { color: var(--text-secondary); font-size: .9rem; line-height: 1.6; }
+        .card-income {
+            display: inline-block; margin-top: .8rem;
+            font-size: .78rem; font-weight: 600; padding: .25rem .7rem;
+            border-radius: 6px;
+        }
+
+        /* ─── SKILL DEEP-DIVE ─── */
+        .skill-section {
+            padding: 5rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .skill-section:nth-child(even) { background: var(--bg-secondary); }
+        .skill-header {
+            display: flex; align-items: flex-start; gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .skill-icon {
+            flex-shrink: 0; width: 56px; height: 56px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 900;
+        }
+        .skill-header h2 { font-size: 1.8rem; font-weight: 800; }
+        .skill-header .subtitle { color: var(--text-secondary); font-size: 1rem; margin-top: .3rem; }
+
+        .skill-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .skill-description { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; }
+        .skill-description p { margin-bottom: 1rem; }
+        .skill-description strong { color: var(--text-primary); font-weight: 600; }
+
+        .skill-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.4rem;
+        }
+        .info-box h4 {
+            font-size: .78rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: .8rem;
+        }
+        .info-box ul { list-style: none; }
+        .info-box li {
+            display: flex; align-items: center; gap: .5rem;
+            color: var(--text-secondary); font-size: .9rem;
+            padding: .35rem 0;
+        }
+        .info-box li::before { content: '→'; color: var(--accent-blue); font-weight: 700; }
+
+        .tool-tag {
+            display: inline-flex; align-items: center;
+            background: rgba(77,124,255,0.08); border: 1px solid rgba(77,124,255,0.2);
+            border-radius: 8px; padding: .3rem .7rem;
+            font-size: .8rem; font-weight: 500; color: var(--accent-blue);
+            margin: .2rem;
+        }
+
+        .income-highlight {
+            background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);
+            border-radius: 12px; padding: 1.2rem 1.5rem;
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .income-highlight .amount {
+            font-size: 1.6rem; font-weight: 800; color: var(--accent-green);
+        }
+        .income-highlight .label { color: var(--text-secondary); font-size: .85rem; }
+
+        /* ─── FRAMEWORK BOX ─── */
+        .framework-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 0 14px 14px 0;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0;
+        }
+        .framework-box h4 { color: var(--accent-purple); font-size: .85rem; font-weight: 700; margin-bottom: .8rem; letter-spacing: 1px; text-transform: uppercase; }
+        .framework-steps { counter-reset: step; list-style: none; }
+        .framework-steps li {
+            counter-increment: step;
+            display: flex; align-items: flex-start; gap: .8rem;
+            color: var(--text-secondary); font-size: .92rem;
+            padding: .5rem 0; line-height: 1.6;
+        }
+        .framework-steps li::before {
+            content: counter(step);
+            flex-shrink: 0;
+            width: 26px; height: 26px; border-radius: 8px;
+            background: rgba(139,92,246,0.15); color: var(--accent-purple);
+            display: flex; align-items: center; justify-content: center;
+            font-size: .75rem; font-weight: 700;
+        }
+
+        /* ─── CASE STUDY ─── */
+        .case-study {
+            background: rgba(245,158,11,0.05);
+            border: 1px solid rgba(245,158,11,0.15);
+            border-radius: 14px; padding: 1.4rem;
+        }
+        .case-study h4 { color: var(--accent-orange); font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: .6rem; }
+        .case-study p { color: var(--text-secondary); font-size: .9rem; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted); font-size: .85rem;
+        }
+        footer a { color: var(--accent-blue); text-decoration: none; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .skill-body { grid-template-columns: 1fr; }
+            .overview-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero-meta { flex-direction: column; align-items: center; gap: .8rem; }
+        }
+
+        /* ─── SCROLL ANIMATIONS ─── */
+        .fade-up {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">9 AI Skills</div>
+        <ul class="nav-links">
+            <li><a href="#overview">Vue d'ensemble</a></li>
+            <li><a href="#skill-1">Compétences</a></li>
+            <li><a href="#source">Source</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span> Guide de référence 2025</div>
+        <h1>Les <span class="gradient">9 Compétences IA</span> pour Devancer 99 % des Gens</h1>
+        <p>Un guide exhaustif des 9 compétences d'intelligence artificielle identifiées par Dan Martell pour générer des revenus élevés et transformer votre carrière en 2025.</p>
+        <div class="hero-meta">
+            <span>📺 Source : Dan Martell — The Martell Method</span>
+            <span>⏱ ~21 min de contenu</span>
+            <span>🎯 9 compétences détaillées</span>
+        </div>
+        <a href="#overview" class="hero-cta">Explorer les 9 compétences ↓</a>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-label">Vue d'ensemble</div>
+        <div class="section-title">Les 9 compétences en un coup d'œil</div>
+        <div class="section-desc">Chaque compétence est une discipline à haut potentiel de revenus que vous pouvez acquérir, même sans expérience technique préalable. Cliquez pour accéder au détail.</div>
+
+        <div class="overview-grid">
+            <a href="#skill-1" class="overview-card" style="--card-accent: var(--accent-blue);">
+                <div class="card-num" style="background: rgba(77,124,255,0.12); color: var(--accent-blue);">01</div>
+                <h3>Prompt Engineering</h3>
+                <p>L'art de structurer des instructions précises pour obtenir des résultats optimaux de l'IA — aussi précieux que le code traditionnel.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Haute valeur marchande</span>
+            </a>
+            <a href="#skill-2" class="overview-card" style="--card-accent: var(--accent-purple);">
+                <div class="card-num" style="background: rgba(139,92,246,0.12); color: var(--accent-purple);">02</div>
+                <h3>Développement Logiciel Assisté par IA</h3>
+                <p>Créer des applications et prototypes sans être programmeur, grâce aux outils de développement IA.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">100 $–200 $/h</span>
+            </a>
+            <a href="#skill-3" class="overview-card" style="--card-accent: var(--accent-cyan);">
+                <div class="card-num" style="background: rgba(6,182,212,0.12); color: var(--accent-cyan);">03</div>
+                <h3>Génération d'Images par IA</h3>
+                <p>Produire des visuels photoréalistes et des designs personnalisés avec les modèles génératifs d'images.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Design à la demande</span>
+            </a>
+            <a href="#skill-4" class="overview-card" style="--card-accent: var(--accent-green);">
+                <div class="card-num" style="background: rgba(16,185,129,0.12); color: var(--accent-green);">04</div>
+                <h3>Retouche Photo par IA</h3>
+                <p>Améliorer, restaurer et transformer des images avec une qualité professionnelle en quelques secondes.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Service à haute marge</span>
+            </a>
+            <a href="#skill-5" class="overview-card" style="--card-accent: var(--accent-orange);">
+                <div class="card-num" style="background: rgba(245,158,11,0.12); color: var(--accent-orange);">05</div>
+                <h3>Marketing de Contenu IA</h3>
+                <p>Générer du contenu viral, extraire des insights clés et maintenir une voix de marque cohérente à grande échelle.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Scalable à l'infini</span>
+            </a>
+            <a href="#skill-6" class="overview-card" style="--card-accent: var(--accent-pink);">
+                <div class="card-num" style="background: rgba(236,72,153,0.12); color: var(--accent-pink);">06</div>
+                <h3>Automatisation No-Code avec IA</h3>
+                <p>Éliminer les goulots d'étranglement opérationnels en construisant des workflows automatisés sans écrire de code.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">ROI immédiat</span>
+            </a>
+            <a href="#skill-7" class="overview-card" style="--card-accent: var(--accent-indigo);">
+                <div class="card-num" style="background: rgba(99,102,241,0.12); color: var(--accent-indigo);">07</div>
+                <h3>Analyse de Données par IA</h3>
+                <p>Organiser, enrichir et exploiter les données pour des décisions stratégiques éclairées.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Avantage compétitif</span>
+            </a>
+            <a href="#skill-8" class="overview-card" style="--card-accent: var(--accent-red);">
+                <div class="card-num" style="background: rgba(239,68,68,0.12); color: var(--accent-red);">08</div>
+                <h3>Création Vidéo par IA</h3>
+                <p>Automatiser le montage, la génération de B-roll, les avatars et le découpage de vidéos.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Production 10× plus rapide</span>
+            </a>
+            <a href="#skill-9" class="overview-card" style="--card-accent: var(--accent-teal);">
+                <div class="card-num" style="background: rgba(20,184,166,0.12); color: var(--accent-teal);">09</div>
+                <h3>Agents IA de Vente</h3>
+                <p>Développer des agents intelligents qui qualifient les prospects et guident les équipes commerciales.</p>
+                <span class="card-income" style="background: rgba(16,185,129,0.1); color: var(--accent-green);">Levier de croissance</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 1 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-1" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(77,124,255,0.12); color: var(--accent-blue);">01</div>
+            <div>
+                <h2>Prompt Engineering</h2>
+                <div class="subtitle">L'art de communiquer efficacement avec l'IA</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>Le <strong>Prompt Engineering</strong> est devenu aussi précieux que la programmation traditionnelle sur le marché du travail. Il s'agit de l'art et de la science de formuler des instructions structurées pour obtenir des résultats optimaux, précis et exploitables à partir de modèles d'IA générative.</p>
+                <p>Dan Martell souligne que la différence entre un utilisateur moyen et un expert en prompts se mesure en <strong>qualité de sortie</strong> — et donc en valeur monétaire directe. Un prompt bien structuré peut remplacer des heures de travail humain en quelques secondes.</p>
+                <p>La maîtrise de cette compétence vous positionne comme un <strong>« AI Power User »</strong> capable de démultiplier la productivité de n'importe quelle équipe ou organisation. C'est la compétence fondation sur laquelle toutes les autres s'appuient.</p>
+
+                <div class="framework-box">
+                    <h4>🧩 Framework de Prompt Structuré (Dan Martell)</h4>
+                    <ol class="framework-steps">
+                        <li><strong>Définir le rôle de l'IA</strong> — Assignez une persona précise : marketeur, avocat, designer, analyste financier. Cela cadre le contexte et la qualité des réponses.</li>
+                        <li><strong>Fournir les données et exemples</strong> — Incluez des données concrètes, des exemples de sortie attendue, et du contexte spécifique à votre domaine.</li>
+                        <li><strong>Formuler une requête précise</strong> — Soyez explicite sur ce que vous attendez. Évitez l'ambiguïté. Découpez les tâches complexes en étapes.</li>
+                        <li><strong>Spécifier le format de sortie</strong> — Indiquez si vous voulez une liste à puces, un PDF, un tableau, un e-mail, du code, un script, etc.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-blue);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">ChatGPT (OpenAI)</span>
+                        <span class="tool-tag">Claude (Anthropic)</span>
+                        <span class="tool-tag">Gemini (Google)</span>
+                        <span class="tool-tag">Perplexity AI</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-green);">💰 Potentiel de revenu</h4>
+                    <ul>
+                        <li>Valeur comparable au codage traditionnel</li>
+                        <li>Consultants en prompts : 75 $–150 $/h</li>
+                        <li>Entreprises recherchent activement cette compétence</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-purple);">🎯 Cas d'usage</h4>
+                    <ul>
+                        <li>Rédaction de contenu marketing</li>
+                        <li>Analyse de documents juridiques</li>
+                        <li>Génération de code et debugging</li>
+                        <li>Création de stratégies business</li>
+                        <li>Extraction et synthèse de données</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 2 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-2" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(139,92,246,0.12); color: var(--accent-purple);">02</div>
+            <div>
+                <h2>Développement Logiciel Assisté par IA</h2>
+                <div class="subtitle">Construire des applications sans être développeur</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>L'<strong>AI-Assisted Software Development</strong> démocratise la création logicielle. Martell explique que vous pouvez désormais facturer entre <strong>100 $ et 200 $ de l'heure</strong> pour construire des prototypes et applications fonctionnelles — même sans formation en programmation.</p>
+                <p>L'idée clé est de <strong>co-créer des solutions avec vos clients</strong> en utilisant l'IA comme partenaire de développement. Vous identifiez le problème, l'IA vous aide à le résoudre techniquement. Vous pouvez ensuite revendre ces prototypes à plusieurs clients ayant des besoins similaires, créant ainsi un effet de levier considérable.</p>
+                <p>Les outils modernes d'assistance au code permettent de générer des applications complètes à partir de descriptions en langage naturel : interfaces utilisateur, logique métier, intégrations API, bases de données. Le rôle de l'humain devient celui de <strong>l'architecte et du stratège</strong>, pas du codeur ligne par ligne.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="income-highlight">
+                    <div>
+                        <div class="amount">100–200 $/h</div>
+                        <div class="label">Taux horaire, même sans expérience en programmation</div>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-purple);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">Cursor</span>
+                        <span class="tool-tag">Replit</span>
+                        <span class="tool-tag">Retool</span>
+                        <span class="tool-tag">V0 (Vercel)</span>
+                        <span class="tool-tag">Bolt.new</span>
+                        <span class="tool-tag">Claude Code</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-orange);">📐 Modèle d'affaires</h4>
+                    <ul>
+                        <li>Co-création de solutions avec les clients</li>
+                        <li>Vente de prototypes à clients multiples</li>
+                        <li>SaaS micro-niches construits par IA</li>
+                        <li>Automatisation d'outils internes d'entreprises</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 3 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-3" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(6,182,212,0.12); color: var(--accent-cyan);">03</div>
+            <div>
+                <h2>Génération d'Images par IA</h2>
+                <div class="subtitle">Créer des visuels photoréalistes à la demande</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>Les modèles de <strong>génération d'images</strong> ont atteint un niveau de qualité photoréaliste qui transforme radicalement les industries du design, de la publicité et du e-commerce. Martell souligne que cette compétence permet de produire des visuels de qualité professionnelle à une fraction du coût traditionnel.</p>
+                <p>L'avantage compétitif réside dans la capacité à <strong>itérer rapidement</strong> : là où un designer traditionnel produit 2-3 variantes, l'IA en génère des dizaines en minutes. Le résultat est un processus créatif accéléré, des coûts réduits, et une capacité d'expérimentation sans précédent.</p>
+                <p>Les applications sont vastes : visuels publicitaires, mockups produits, illustrations de blog, assets pour réseaux sociaux, concept art, branding, et design d'intérieur. La clé est de maîtriser le <strong>prompting visuel</strong> — décrire avec précision le style, la composition, l'éclairage et l'ambiance souhaitée.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-cyan);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">DALL·E 3</span>
+                        <span class="tool-tag">Midjourney</span>
+                        <span class="tool-tag">Stable Diffusion</span>
+                        <span class="tool-tag">Artbreeder</span>
+                        <span class="tool-tag">Leonardo AI</span>
+                        <span class="tool-tag">Ideogram</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-purple);">🎯 Applications clés</h4>
+                    <ul>
+                        <li>Visuels publicitaires et assets marketing</li>
+                        <li>Mockups de produits e-commerce</li>
+                        <li>Concept art et direction artistique</li>
+                        <li>Branding et identité visuelle</li>
+                        <li>Illustrations et contenus éditoriaux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 4 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-4" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(16,185,129,0.12); color: var(--accent-green);">04</div>
+            <div>
+                <h2>Retouche Photo par IA</h2>
+                <div class="subtitle">Amélioration et restauration d'images de qualité professionnelle</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>Distincte de la génération d'images, la <strong>retouche photo par IA</strong> se concentre sur l'amélioration, la restauration et la transformation d'images existantes. Martell met en avant la capacité de l'IA à rehausser des images basse résolution avec une facilité remarquable.</p>
+                <p>Cette compétence est particulièrement précieuse pour les photographes, les agences immobilières, les e-commerçants et les studios de post-production. L'IA peut <strong>supprimer des arrière-plans</strong>, améliorer la résolution (upscaling), corriger les couleurs, supprimer des objets indésirables, et même restaurer de vieilles photographies endommagées.</p>
+                <p>Le modèle économique est attractif : vous pouvez offrir un service de retouche à <strong>haute marge</strong> car le temps de traitement par image est réduit de manière drastique. Un workflow qui prenait 30 minutes en post-production manuelle se réalise en quelques secondes.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-green);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">Photoshop AI (Adobe Firefly)</span>
+                        <span class="tool-tag">Topaz Labs</span>
+                        <span class="tool-tag">Luminar Neo</span>
+                        <span class="tool-tag">Remove.bg</span>
+                        <span class="tool-tag">Magnific AI</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-orange);">⚡ Capacités clés</h4>
+                    <ul>
+                        <li>Upscaling d'images basse résolution</li>
+                        <li>Suppression d'arrière-plans et d'objets</li>
+                        <li>Correction colorimétrique intelligente</li>
+                        <li>Restauration de photos anciennes</li>
+                        <li>Retouche portrait professionnelle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 5 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-5" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(245,158,11,0.12); color: var(--accent-orange);">05</div>
+            <div>
+                <h2>Marketing de Contenu IA</h2>
+                <div class="subtitle">Contenu viral et voix de marque à grande échelle</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>Le <strong>Content Marketing assisté par IA</strong> transforme la façon dont les marques créent et distribuent du contenu. Martell décrit un processus où l'IA extrait des insights clés de contenus performants, génère des idées virales basées sur la performance passée, et maintient la voix de marque de manière cohérente.</p>
+                <p>L'approche clé consiste à <strong>créer des modèles IA personnalisés</strong> entraînés sur le contenu existant d'un client. Cela permet de produire du contenu qui sonne authentique, pas générique. L'IA analyse les patterns de contenu qui performent, identifie les sujets tendance, et génère des variantes adaptées à chaque plateforme.</p>
+                <p>Pour les podcasts et newsletters, l'IA peut gérer des <strong>plateformes de contenu quasi-autonomes</strong> : transcription, extraction de citations clés, rédaction de newsletters, planification de posts sur les réseaux sociaux — tout en maintenant le style et la tonalité du créateur.</p>
+
+                <div class="framework-box">
+                    <h4>🔄 Processus de Content Marketing IA</h4>
+                    <ol class="framework-steps">
+                        <li><strong>Analyser le contenu top-performing</strong> — Identifier les patterns de succès dans le contenu existant.</li>
+                        <li><strong>Générer des idées basées sur la performance</strong> — L'IA propose des sujets avec un potentiel viral calculé.</li>
+                        <li><strong>Créer un modèle IA personnalisé</strong> — Entraîner l'IA sur la voix et le style du client.</li>
+                        <li><strong>Produire et distribuer à grande échelle</strong> — Adapter le contenu automatiquement par plateforme.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-orange);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">ChatGPT Custom GPTs</span>
+                        <span class="tool-tag">Jasper AI</span>
+                        <span class="tool-tag">Copy.ai</span>
+                        <span class="tool-tag">Buffer AI</span>
+                        <span class="tool-tag">Opus Clip</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-purple);">🎯 Livrables types</h4>
+                    <ul>
+                        <li>Articles de blog optimisés SEO</li>
+                        <li>Posts réseaux sociaux multi-plateformes</li>
+                        <li>Newsletters automatisées</li>
+                        <li>Scripts vidéo et podcast</li>
+                        <li>Campagnes e-mail personnalisées</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 6 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-6" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(236,72,153,0.12); color: var(--accent-pink);">06</div>
+            <div>
+                <h2>Automatisation No-Code avec IA</h2>
+                <div class="subtitle">Éliminer les goulots d'étranglement opérationnels</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>L'<strong>automatisation No-Code</strong> est peut-être la compétence au ROI le plus immédiat. Martell révèle que sa propre entreprise, Martell Media, a réduit les tâches d'onboarding de <strong>15 étapes à une seule</strong> grâce à ces outils.</p>
+                <p>Le principe est de construire des <strong>« copilotes IA »</strong> pour les employés : des workflows automatisés qui gèrent les tâches répétitives, le routage d'informations, les approbations, les notifications et les mises à jour de données — tout cela sans écrire une seule ligne de code.</p>
+                <p>L'approche recommandée est d'identifier les <strong>goulots d'étranglement</strong> dans les processus existants, puis de construire des automatisations ciblées qui libèrent du temps pour les tâches à haute valeur ajoutée. Chaque automatisation est un investissement qui se rentabilise en heures économisées chaque semaine.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="case-study">
+                    <h4>📊 Étude de cas — Martell Media</h4>
+                    <p>Réduction des tâches d'onboarding de <strong>15 étapes à 1 seule</strong>, libérant des dizaines d'heures mensuelles pour l'équipe et améliorant l'expérience des nouveaux employés.</p>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-pink);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">Make.com</span>
+                        <span class="tool-tag">N8N</span>
+                        <span class="tool-tag">Zapier</span>
+                        <span class="tool-tag">Gumloop</span>
+                        <span class="tool-tag">Activepieces</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-green);">💡 Automatisations courantes</h4>
+                    <ul>
+                        <li>Onboarding employés et clients</li>
+                        <li>Routage intelligent de leads CRM</li>
+                        <li>Génération automatique de rapports</li>
+                        <li>Synchronisation de données inter-apps</li>
+                        <li>Alertes et notifications intelligentes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 7 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-7" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(99,102,241,0.12); color: var(--accent-indigo);">07</div>
+            <div>
+                <h2>Analyse de Données par IA</h2>
+                <div class="subtitle">Transformer les données brutes en avantage compétitif</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>L'<strong>analyse de données par IA</strong> va bien au-delà des simples tableurs. Martell insiste sur la création de <strong>dépôts centralisés de données</strong> — des hubs structurés où toutes les informations de l'entreprise sont nettoyées, enrichies et prêtes à être exploitées.</p>
+                <p>Le processus commence par le <strong>nettoyage et l'enrichissement</strong> : prendre des données brutes (contacts, transactions, comportements) et y ajouter des informations complémentaires comme des scores de crédit, des données démographiques, ou des signaux d'intention d'achat.</p>
+                <p>L'étape suivante est la <strong>reconnaissance de patterns</strong> : l'IA identifie des corrélations que l'œil humain ne perçoit pas — comportements d'achat saisonniers, segments de clients à fort potentiel, signaux de churn, opportunités de cross-sell. Ces insights alimentent directement les stratégies marketing et commerciales.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-indigo);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">ChatGPT Code Interpreter</span>
+                        <span class="tool-tag">Julius AI</span>
+                        <span class="tool-tag">Tableau AI</span>
+                        <span class="tool-tag">Power BI Copilot</span>
+                        <span class="tool-tag">Pandas AI</span>
+                    </div>
+                </div>
+                <div class="framework-box" style="border-left-color: var(--accent-indigo);">
+                    <h4 style="color: var(--accent-indigo);">📐 Pipeline de données IA</h4>
+                    <ol class="framework-steps">
+                        <li><strong>Centraliser</strong> — Créer un dépôt unique consolidant toutes les sources de données.</li>
+                        <li><strong>Nettoyer</strong> — Éliminer les doublons, corriger les formats, standardiser les champs.</li>
+                        <li><strong>Enrichir</strong> — Ajouter des informations complémentaires (contacts, scores, signaux).</li>
+                        <li><strong>Analyser</strong> — Identifier les patterns, corrélations et anomalies.</li>
+                        <li><strong>Actionner</strong> — Transformer les insights en stratégies marketing et commerciales.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 8 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-8" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(239,68,68,0.12); color: var(--accent-red);">08</div>
+            <div>
+                <h2>Création Vidéo par IA</h2>
+                <div class="subtitle">Production vidéo automatisée et scalable</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>La <strong>création vidéo par IA</strong> transforme un processus traditionnellement long et coûteux en un workflow rapide et scalable. Martell met en avant les capacités d'<strong>avatars IA, de sourcing automatique de B-roll, et de découpage intelligent</strong> de vidéos longues en clips courts viraux.</p>
+                <p>L'IA peut désormais prendre un webinaire ou un podcast d'une heure et en extraire automatiquement les <strong>moments les plus engageants</strong> — les phrases percutantes, les punchlines, les données marquantes — et les transformer en clips de 30-60 secondes optimisés pour TikTok, Reels et Shorts.</p>
+                <p>Pour les entreprises qui produisent du contenu vidéo régulier, cela représente une <strong>multiplication par 10 de la vitesse de production</strong> tout en maintenant une qualité professionnelle. Un créateur solo peut désormais rivaliser avec une équipe de production complète.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-red);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">Firecut</span>
+                        <span class="tool-tag">Opus Clip</span>
+                        <span class="tool-tag">Vidyard</span>
+                        <span class="tool-tag">Synthesia</span>
+                        <span class="tool-tag">HeyGen</span>
+                        <span class="tool-tag">Runway ML</span>
+                        <span class="tool-tag">Descript</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-purple);">🎬 Capacités de production</h4>
+                    <ul>
+                        <li>Avatars IA réalistes pour présentations</li>
+                        <li>Sourcing automatique de B-roll pertinent</li>
+                        <li>Découpage intelligent en clips viraux</li>
+                        <li>Sous-titrage et traduction automatiques</li>
+                        <li>Montage assisté par IA (coupes, transitions)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SKILL 9 -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="skill-9" class="skill-section">
+    <div class="container fade-up">
+        <div class="skill-header">
+            <div class="skill-icon" style="background: rgba(20,184,166,0.12); color: var(--accent-teal);">09</div>
+            <div>
+                <h2>Agents IA de Vente</h2>
+                <div class="subtitle">Qualification automatisée et guidance commerciale</div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="skill-description">
+                <p>Le développement d'<strong>agents IA de vente</strong> représente la frontière la plus avancée des compétences IA identifiées par Martell. Il s'agit de construire des agents intelligents capables de <strong>qualifier les prospects</strong>, guider les représentants commerciaux et optimiser l'ensemble du pipeline de vente.</p>
+                <p>Ces agents apprennent en continu à partir des <strong>feedbacks positifs et négatifs</strong> des interactions commerciales. Quand un deal se conclut, l'agent analyse ce qui a fonctionné. Quand un prospect décroche, il identifie les signaux d'alerte. Au fil du temps, l'agent développe un modèle sophistiqué de ce qui fonctionne.</p>
+                <p>L'intégration dans les workflows de vente existants transforme chaque représentant commercial en <strong>super-vendeur augmenté</strong> : l'agent suggère les meilleurs arguments, identifie le moment optimal pour relancer, et prédit la probabilité de conversion de chaque prospect.</p>
+            </div>
+            <div class="skill-sidebar">
+                <div class="info-box">
+                    <h4 style="color: var(--accent-teal);">🛠 Outils recommandés</h4>
+                    <div>
+                        <span class="tool-tag">Relevance AI</span>
+                        <span class="tool-tag">Clay</span>
+                        <span class="tool-tag">Apollo AI</span>
+                        <span class="tool-tag">Instantly AI</span>
+                        <span class="tool-tag">11x.ai</span>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-orange);">🔄 Boucle d'apprentissage</h4>
+                    <ul>
+                        <li>Analyse des deals gagnés et perdus</li>
+                        <li>Identification des signaux d'achat</li>
+                        <li>Optimisation des scripts de vente</li>
+                        <li>Prédiction de probabilité de conversion</li>
+                        <li>Recommandation de timing optimal</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--accent-green);">💰 Impact business</h4>
+                    <ul>
+                        <li>Qualification de leads 24/7</li>
+                        <li>Réduction du cycle de vente</li>
+                        <li>Augmentation du taux de conversion</li>
+                        <li>Scaling de l'équipe commerciale sans embauche</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SOURCE / FOOTER -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="source" style="background: var(--bg-secondary); padding: 4rem 2rem;">
+    <div class="container" style="text-align: center;">
+        <div class="section-label">Source originale</div>
+        <div class="section-title" style="margin-bottom: 1.5rem;">Vidéo YouTube de Dan Martell</div>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
+            « 9 AI Skills You MUST Have to Get Ahead of 99% of People » — The Martell Method with Dan Martell.
+            Ce guide de référence est une synthèse détaillée du contenu original.
+        </p>
+        <a href="https://www.youtube.com/watch?v=BuwPnrMmhzQ" target="_blank" rel="noopener"
+           style="display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1.8rem;
+                  background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3);
+                  border-radius: 12px; color: var(--accent-red); font-weight: 600; font-size: .95rem;
+                  text-decoration: none; transition: all .2s;">
+            ▶ Voir la vidéo originale sur YouTube
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>Guide de référence construit à partir du contenu de <a href="https://www.danmartell.com/" target="_blank">Dan Martell</a> — The Martell Method</p>
+    <p style="margin-top: .5rem;">Synthétisé en février 2026 à des fins éducatives</p>
+</footer>
+
+<!-- Scroll animation -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
