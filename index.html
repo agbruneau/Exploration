@@ -99,9 +99,85 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(10px); }
         }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26,26,26,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            overflow-x: auto;
+            gap: 0.25rem;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 0.5rem 0.75rem;
+            white-space: nowrap;
+            transition: color 0.2s;
+            border-radius: 4px;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav a.active {
+            color: var(--gold);
+            background: rgba(201,168,76,0.1);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.75rem 2rem;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
+    <nav class="nav" id="navbar">
+        <div class="nav-inner" id="nav-inner">
+            <a href="#section-1">1. Introduction</a>
+            <a href="#section-2">2. Prompt Engineering</a>
+            <a href="#section-3">3. Curation du Goût</a>
+            <a href="#section-4">4. Master Prompt</a>
+            <a href="#section-5">5. Itération</a>
+            <a href="#section-6">6. Prompts Système</a>
+            <a href="#section-7">7. Critique Stratégique</a>
+            <a href="#section-8">8. Compression</a>
+            <a href="#section-9">9. Base de Connaissances</a>
+            <a href="#section-10">10. Apprentissage</a>
+            <a href="#section-11">11. Conclusion</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </nav>
     <section class="hero">
         <h1>Maîtriser l'IA : Guide Stratégique Complet pour l'Élite Professionnelle</h1>
         <div class="gold-line"></div>
