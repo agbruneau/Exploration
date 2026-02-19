@@ -328,6 +328,52 @@
             background: rgba(201, 168, 76, 0.15);
             border-color: rgba(201, 168, 76, 0.4);
         }
+
+        /* Tablet: 2 columns */
+        @media (max-width: 1024px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+                padding: 0 1.25rem;
+            }
+
+            .cards-section {
+                padding: 3rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .cta-section {
+                padding: 3rem 0;
+            }
+
+            .cta-container {
+                padding: 0 1.25rem;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>
