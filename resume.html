@@ -250,6 +250,84 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+            background: var(--bg-secondary);
+            border-top: 1px solid rgba(201, 168, 76, 0.08);
+        }
+
+        .cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-btn-large {
+            font-size: 1.05rem;
+            padding: 1rem 3rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            background: var(--bg-tertiary);
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            color: var(--gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s, background 0.2s, border-color 0.2s;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: rgba(201, 168, 76, 0.15);
+            border-color: rgba(201, 168, 76, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -326,6 +404,26 @@
         </div>
     </section>
     </main>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="gold-line"></div>
+            <h2>Prêt à rejoindre l'élite ?</h2>
+            <p>Découvrez le guide stratégique complet avec les 9 compétences détaillées pour maîtriser l'intelligence artificielle.</p>
+            <a href="index.html" class="cta-btn cta-btn-large">Accéder au Guide Complet</a>
+        </div>
+    </section>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="gold-line"></div>
+            <p>&copy; 2026 — Maîtriser l'IA : Guide Stratégique pour l'Élite Professionnelle</p>
+        </div>
+    </footer>
 
 <script>
 </script>
