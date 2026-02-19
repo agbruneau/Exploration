@@ -426,6 +426,36 @@
     </footer>
 
 <script>
+    // Fade-in cards on scroll
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
+
+    // Reading progress bar
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    }, { passive: true });
+
+    // Back to top button
+    const hero = document.querySelector('.hero');
+    const backToTop = document.getElementById('back-to-top');
+    const backToTopObserver = new IntersectionObserver(([entry]) => {
+        backToTop.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+    backToTopObserver.observe(hero);
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 </script>
 </body>
 </html>
