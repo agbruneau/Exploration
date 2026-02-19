@@ -9,7 +9,7 @@
     <meta property="og:description" content="Les 9 compétences stratégiques pour rejoindre le top 1% des utilisateurs d'IA. Du prompt engineering à l'apprentissage personnalisé.">
     <meta property="og:type" content="article">
     <meta name="theme-color" content="#0a0a0a">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -19,12 +19,12 @@
 
         :root {
             --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
+            --bg-secondary: #111118;
             --bg-tertiary: #1a1a1a;
             --gold: #c9a84c;
             --gold-light: #e8d48b;
             --text-primary: #f0ece2;
-            --text-secondary: #a09a8c;
+            --text-secondary: #b8b0a0;
         }
 
         html {
@@ -34,8 +34,37 @@
         body {
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             line-height: 1.7;
+            position: relative;
+        }
+
+        /* Subtle noise grain texture for depth */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
         }
 
         .container {
@@ -71,6 +100,20 @@
             padding: 2rem;
             position: relative;
             background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        /* Radial gold glow behind hero title */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .hero h1 {
@@ -79,6 +122,8 @@
             max-width: 900px;
             margin-bottom: 1rem;
             line-height: 1.3;
+            text-shadow: 0 0 60px rgba(201, 168, 76, 0.15);
+            position: relative;
         }
 
         .hero .subtitle {
@@ -91,18 +136,35 @@
 
         .scroll-arrow {
             position: absolute;
-            bottom: 2rem;
-            color: var(--gold);
-            font-size: 2rem;
-            opacity: 0.6;
-            animation: bounce 2s infinite ease-in-out;
-            cursor: pointer;
+            bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
             text-decoration: none;
+            animation: bounce 2.5s infinite ease-in-out;
+        }
+
+        .scroll-arrow span {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .scroll-arrow svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+            opacity: 0.7;
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
+            50% { transform: translateY(8px); }
         }
 
         .nav {
@@ -130,6 +192,11 @@
             padding: 0.75rem 2rem;
             overflow-x: auto;
             gap: 0.25rem;
+            scrollbar-width: none;
+        }
+
+        .nav-inner::-webkit-scrollbar {
+            display: none;
         }
 
         .nav a {
@@ -167,6 +234,11 @@
 
         .section:nth-child(even) {
             background: var(--bg-secondary);
+        }
+
+        /* Subtle gold top-border on each section for visual rhythm */
+        .section + .section {
+            border-top: 1px solid rgba(201, 168, 76, 0.08);
         }
 
         .section-header {
@@ -245,6 +317,12 @@
             border-radius: 0 4px 4px 0;
             font-style: italic;
             color: var(--text-secondary);
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        blockquote:hover {
+            border-color: var(--gold-light);
+            background: rgba(201, 168, 76, 0.04);
         }
 
         .table-wrap {
@@ -288,6 +366,44 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            color: var(--gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s, background 0.2s, border-color 0.2s;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: rgba(201, 168, 76, 0.15);
+            border-color: rgba(201, 168, 76, 0.4);
+        }
+
+        /* Staggered fade-in for visual rhythm */
+        .section:nth-child(2) .fade-in { transition-delay: 0.05s; }
+        .section:nth-child(3) .fade-in { transition-delay: 0.1s; }
+
         .footer {
             padding: 3rem 0;
             text-align: center;
@@ -356,6 +472,13 @@
                 padding: 0.75rem 1rem;
                 font-size: 0.95rem;
             }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+            }
         }
 
         @media (min-width: 769px) {
@@ -366,6 +489,7 @@
     </style>
 </head>
 <body>
+    <div class="progress-bar" id="progress-bar"></div>
     <nav class="nav" id="navbar">
         <div class="nav-inner" id="nav-inner">
             <a href="#section-1">1. Introduction</a>
@@ -386,7 +510,10 @@
         <h1>Maîtriser l'IA : Guide Stratégique Complet pour l'Élite Professionnelle</h1>
         <div class="gold-line"></div>
         <p class="subtitle">Document consolidé regroupant le Cadre Stratégique Opérationnel, le Lexique Conceptuel, le Protocole de Production et les 9 Compétences Stratégiques.</p>
-        <a href="#section-1" class="scroll-arrow">&#8964;</a>
+        <a href="#section-1" class="scroll-arrow">
+            <span>Explorer</span>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
     </section>
 
     <main>
@@ -711,6 +838,10 @@
 
     </main>
 
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
     <footer class="footer">
       <div class="container">
         <div class="gold-line"></div>
@@ -764,6 +895,25 @@
         link.addEventListener('click', () => {
             navInner.classList.remove('open');
         });
+    });
+
+    // Feature E: Reading progress bar
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    }, { passive: true });
+
+    // Feature F: Back to top button
+    const backToTop = document.getElementById('back-to-top');
+    const backToTopObserver = new IntersectionObserver(([entry]) => {
+        backToTop.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+    backToTopObserver.observe(hero);
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
 
