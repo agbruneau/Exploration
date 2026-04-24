@@ -2,6 +2,39 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+---
+
+## 📊 Tableau de suivi des tâches
+
+> **Mise à jour automatique :** Ce tableau est mis à jour à chaque complétion réussie d'une tâche (après validation par les agents de revue spec + qualité code).
+
+**Légende :** ⬜ À faire · 🟡 En cours · ✅ Complétée · ❌ Bloquée
+
+| # | Phase | Tâche | Statut | Commit | Date |
+|---|-------|-------|--------|--------|------|
+| 1 | 1 — Fondations | Préparer l'arborescence et committer le PRD existant | ⬜ | — | — |
+| 2 | 1 — Fondations | Auto-héberger les bibliothèques tierces (marked + DOMPurify) et les polices | ⬜ | — | — |
+| 3 | 1 — Fondations | Créer les fichiers CSS de base (tokens, base, components) | ⬜ | — | — |
+| 4 | 2 — Page-vitrine | Landing — squelette + header sticky + hero + thèse + méthode O.I.A. | ⬜ | — | — |
+| 5 | 2 — Page-vitrine | Landing — corpus + aperçu TOC + tableau divergences | ⬜ | — | — |
+| 6 | 2 — Page-vitrine | Landing — citations + synthèse 8 loci + à propos + bibliographie + footer | ⬜ | — | — |
+| 7 | 2 — Page-vitrine | Landing — JavaScript interactif + SEO complet | ⬜ | — | — |
+| 8 | 3 — Page-lecteur | Lecteur — squelette HTML + CSS layout | ⬜ | — | — |
+| 9 | 3 — Page-lecteur | Lecteur — module render (TDD slug helper) + intégration | ⬜ | — | — |
+| 10 | 3 — Page-lecteur | Lecteur — module TOC (génération + sync scroll) | ⬜ | — | — |
+| 11 | 3 — Page-lecteur | Lecteur — module recherche (TDD normalize) + intégration | ⬜ | — | — |
+| 12 | 3 — Page-lecteur | Lecteur — modules ancres + progression + nav séquentielle + back-to-top | ⬜ | — | — |
+| 13 | 3 — Page-lecteur | Lecteur — module préférences (taille de police + mode concentré) | ⬜ | — | — |
+| 14 | 4 — Polissage | Stylesheet print + image OG + apple-touch-icon | ⬜ | — | — |
+| 15 | 4 — Polissage | SEO meta complet sur le lecteur + JSON-LD enrichi | ⬜ | — | — |
+| 16 | 4 — Polissage | Validation HTML + axe + Lighthouse + correctifs | ⬜ | — | — |
+| 17 | 5 — Déploiement | Mise à jour du README + procédure de déploiement | ⬜ | — | — |
+| 18 | 5 — Déploiement | Activation GitHub Pages + push final + vérification production | ⬜ | — | — |
+
+**Progression globale :** 0 / 18 tâches complétées (0 %)
+
+---
+
 **Goal:** Construire un site statique en 2 pages (`index.html` vitrine + `lecture.html` lecteur intégral) qui présente et permet la lecture en ligne de `AnalyseTheologique.md`, avec identité visuelle dark + orange ambré « manuscrit nocturne », déployable directement sur GitHub Pages, sans backend, sans build, sans tracker.
 
 **Architecture:** HTML5 sémantique + CSS moderne (variables, grid, container queries) + JavaScript ES2022 vanilla en modules natifs. Le markdown source est rendu côté client par `marked` (auto-hébergé) et sanitisé par `DOMPurify`, avec cache `localStorage` pour visites suivantes. Aucun bundler, aucune dépendance npm en runtime, aucun appel réseau tiers.
