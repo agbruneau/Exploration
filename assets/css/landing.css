@@ -220,7 +220,7 @@
 .divergences { padding: var(--space-16) var(--space-6); max-width: 1280px; margin: 0 auto; }
 .divergences__table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-md); border: 1px solid var(--rule); }
 .divergences__table { margin: 0; min-width: 720px; }
-.divergences__table th { background: var(--bg-elevated); position: sticky; top: 0; }
+.divergences__table th { background: var(--bg-elevated); position: sticky; top: var(--topbar-h); }
 .divergences__position { background: rgba(255, 122, 26, 0.06); font-weight: 500; color: var(--text-primary); }
 .divergences__accord { color: var(--text-muted); font-style: italic; }
 
