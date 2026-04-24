@@ -228,3 +228,56 @@
   .divergences__table-wrap { padding-bottom: var(--space-2); }
   .divergences__table-wrap::after { content: "← faites défiler →"; display: block; text-align: center; padding: var(--space-2); color: var(--text-muted); font-family: var(--font-sans); font-size: var(--fs-xs); }
 }
+
+/* === Citations marquantes === */
+.quotes { padding: var(--space-16) var(--space-6); max-width: 1280px; margin: 0 auto; }
+.quotes__grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+@media (min-width: 768px) { .quotes__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .quotes__grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* === Synthèse 8 loci === */
+.synthese { padding: var(--space-16) var(--space-6); max-width: 900px; margin: 0 auto; }
+.synthese__list { padding: 0; list-style: none; counter-reset: locus; }
+.synthese__list li { counter-increment: locus; margin-bottom: var(--space-3); }
+.synthese__list a {
+  display: flex; gap: var(--space-4); padding: var(--space-4);
+  background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: var(--radius-md);
+  text-decoration: none; color: var(--text-primary);
+  transition: border-color var(--motion-quick) var(--easing);
+}
+.synthese__list a:hover { border-color: var(--accent); }
+.synthese__list a::before {
+  content: counter(locus, upper-roman) ".";
+  font-family: var(--font-serif); font-style: italic;
+  color: var(--accent); font-size: var(--fs-md); min-width: 2.5rem;
+}
+.synthese__list strong { color: var(--accent); font-weight: 600; }
+
+/* === À propos === */
+.about { padding: var(--space-16) var(--space-6); max-width: 720px; margin: 0 auto; }
+.about__content { font-size: var(--fs-base); line-height: var(--lh-body); }
+.about__content p { margin-bottom: var(--space-4); }
+
+/* === Bibliographie === */
+.biblio { padding: var(--space-16) var(--space-6); max-width: 1280px; margin: 0 auto; background: var(--bg-elevated); border-radius: var(--radius-lg); }
+.biblio__grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+.biblio__group h3 { font-family: var(--font-sans); font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: var(--space-3); font-style: normal; }
+.biblio__group ul { padding-left: var(--space-4); list-style: disc; color: var(--text-secondary); }
+.biblio__group li { margin-bottom: var(--space-1); }
+.biblio__cta { text-align: center; margin-top: var(--space-8); }
+
+@media (min-width: 768px) { .biblio__grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* === Footer === */
+.footer { background: var(--bg-elevated); border-top: 1px solid var(--rule); padding: var(--space-12) var(--space-6) var(--space-6); margin-top: var(--space-16); }
+.footer__inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+.footer__zone p, .footer__zone ul { margin: 0; padding: 0; }
+.footer__zone ul { list-style: none; }
+.footer__zone li { margin-bottom: var(--space-2); }
+.footer__brand { font-family: var(--font-serif); font-size: var(--fs-md); margin-bottom: var(--space-2); }
+.footer__tagline { font-family: var(--font-serif); font-style: italic; color: var(--accent); font-size: var(--fs-sm); }
+.footer__zone--meta p { font-family: var(--font-sans); font-size: var(--fs-xs); color: var(--text-muted); margin-bottom: var(--space-1); }
+.footer__bottom { max-width: 1280px; margin: var(--space-8) auto 0; padding-top: var(--space-6); border-top: 1px solid var(--rule); text-align: center; font-family: var(--font-sans); font-size: var(--fs-xs); color: var(--text-muted); }
+.footer__bottom i { color: var(--accent); }
+
+@media (min-width: 768px) { .footer__inner { grid-template-columns: 2fr 1.5fr 1fr; } }
