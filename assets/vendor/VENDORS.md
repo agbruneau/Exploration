@@ -7,6 +7,9 @@ figées versionnées dans le dépôt.
 |---|---|---|---|---|
 | `marked.esm.min.js` | 12.0.2 | https://github.com/markedjs/marked | MIT | 2026-04-24 |
 | `purify.min.js` | 3.0.11 | https://github.com/cure53/DOMPurify | Apache-2.0 ou MPL-2.0 | 2026-04-24 |
+| `purify.es.mjs` | 3.0.11 | https://github.com/cure53/DOMPurify | Apache-2.0 ou MPL-2.0 | 2026-04-24 |
+
+> Note : deux builds DOMPurify sont fournis. `purify.min.js` est UMD (expose `window.DOMPurify`) ; `purify.es.mjs` est le build ESM avec `export default purify`, utilisé par les modules natifs du lecteur (cf. `prd.md` §10.6, Task 9).
 
 ## Mise à jour
 
