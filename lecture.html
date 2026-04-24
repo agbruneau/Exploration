@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="André-Guy Bruneau">
+  <meta name="description" content="Lecture intégrale en ligne de l'analyse théologique réformée Luc-Actes (~50 000 mots, 49 péricopes), méthode O.I.A.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+  <title>Lecture intégrale — Analyse théologique Luc-Actes</title>
+  <link rel="canonical" href="/lecture.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/source-serif-4-regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="fetch" href="/AnalyseTheologique.md" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=v1">
+  <link rel="stylesheet" href="/assets/css/base.css?v=v1">
+  <link rel="stylesheet" href="/assets/css/components.css?v=v1">
+  <link rel="stylesheet" href="/assets/css/lecture.css?v=v1">
+</head>
+<body class="reader">
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+  <div class="progress-bar" id="progress-bar" role="progressbar" aria-label="Progression de lecture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+  <header class="topbar" id="topbar">
+    <button class="btn-icon topbar__toggle" aria-label="Basculer la table des matières" aria-expanded="true" aria-controls="sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a href="index.html" class="topbar__title">Analyse théologique — Luc-Actes</a>
+    <div class="topbar__controls">
+      <button class="btn-icon" id="btn-search" aria-label="Rechercher dans l'analyse">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="btn-icon" id="btn-text-size" aria-label="Taille de police" aria-haspopup="true" aria-expanded="false">
+        <span aria-hidden="true" style="font-family:var(--font-serif);font-weight:700">Aa</span>
+      </button>
+      <button class="btn-icon" id="btn-focus" aria-label="Mode lecture concentrée" aria-pressed="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="reader-grid">
+    <aside class="sidebar" id="sidebar" aria-label="Table des matières">
+      <div class="sidebar__search" id="search-panel" hidden>
+        <input type="search" id="search-input" placeholder="Rechercher…" aria-label="Rechercher dans l'analyse" autocomplete="off">
+        <p class="sidebar__search-status" id="search-status" aria-live="polite"></p>
+        <div class="sidebar__search-nav">
+          <button class="btn-icon" id="search-prev" aria-label="Occurrence précédente" disabled>↑</button>
+          <button class="btn-icon" id="search-next" aria-label="Occurrence suivante" disabled>↓</button>
+          <button class="btn-icon" id="search-close" aria-label="Fermer la recherche">✕</button>
+        </div>
+      </div>
+      <nav class="sidebar__toc" id="toc" aria-label="Sections de l'analyse">
+        <p class="sidebar__loading">Chargement…</p>
+      </nav>
+    </aside>
+
+    <main class="content" id="contenu">
+      <article id="article-content" aria-busy="true">
+        <div class="skeleton" aria-hidden="true">
+          <div class="skeleton__title"></div>
+          <div class="skeleton__line skeleton__line--short"></div>
+          <div class="skeleton__line"></div>
+          <div class="skeleton__line"></div>
+          <div class="skeleton__line skeleton__line--medium"></div>
+          <div class="skeleton__line"></div>
+          <div class="skeleton__line skeleton__line--short"></div>
+          <div class="skeleton__line"></div>
+        </div>
+      </article>
+    </main>
+
+    <aside class="aside" id="aside" aria-label="Ancres de la péricope">
+      <p class="aside__title">Cette péricope</p>
+      <ol class="aside__list" id="aside-list"></ol>
+    </aside>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/assets/js/lecture.js?v=v1"></script>
+</body>
+</html>
