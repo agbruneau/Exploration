@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agbruneau.github.io/Exploration/sitemap.xml
