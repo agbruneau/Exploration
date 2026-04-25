@@ -15,6 +15,8 @@ async function boot() {
     const { buildToc, setupSidebarToggle } = await import("/assets/js/modules/toc.js");
     buildToc();
     setupSidebarToggle();
+    const { setupSearch } = await import("/assets/js/modules/search.js");
+    setupSearch();
   } catch (err) {
     console.error(err);
     showError(navigator.onLine ? "error" : "offline");
