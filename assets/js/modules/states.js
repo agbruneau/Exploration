@@ -15,9 +15,10 @@ export function showError(reason = "offline") {
       : "Le contenu n'a pas pu être chargé. Essayez de recharger la page ou de télécharger le markdown source."}</p>
     <div class="error-banner__actions">
       <a href="/AnalyseTheologique.md" download class="btn btn-primary">Télécharger le markdown</a>
-      <button class="btn btn-secondary" onclick="location.reload()">Réessayer</button>
+      <button type="button" class="btn btn-secondary" data-action="reload">Réessayer</button>
     </div>
   `;
+  banner.querySelector('[data-action="reload"]')?.addEventListener("click", () => location.reload());
   article.innerHTML = "";
   article.appendChild(banner);
   article.removeAttribute("aria-busy");
@@ -37,7 +38,8 @@ export function showUpdateAvailable() {
   banner.id = "update-banner";
   banner.className = "error-banner";
   banner.innerHTML = `
-    <p>Le contenu a été mis à jour. <button class="btn btn-secondary" onclick="location.reload()">Recharger</button></p>
+    <p>Le contenu a été mis à jour. <button type="button" class="btn btn-secondary" data-action="reload">Recharger</button></p>
   `;
+  banner.querySelector('[data-action="reload"]')?.addEventListener("click", () => location.reload());
   document.querySelector(".content")?.prepend(banner);
 }
