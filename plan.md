@@ -29,9 +29,9 @@
 | 15 | 4 — Polissage | SEO meta complet sur le lecteur + JSON-LD enrichi | ✅ | `3b650d3` + `4bb7d96` | 2026-04-24 |
 | 16 | 4 — Polissage | Validation HTML + axe + Lighthouse + correctifs | ✅ (auto) | `fab7132` | 2026-04-24 |
 | 17 | 5 — Déploiement | Mise à jour du README + procédure de déploiement | ✅ | `3078161` | 2026-04-24 |
-| 18 | 5 — Déploiement | Activation GitHub Pages + push final + vérification production | ⬜ | — | — |
+| 18 | 5 — Déploiement | Activation GitHub Pages + push final + vérification production | 🟡 (push fait, Pages/recette manuels) | `46fdcbe` poussé | 2026-04-24 |
 
-**Progression globale :** 17 / 18 tâches complétées (94 %)
+**Progression globale :** 17 / 18 tâches complétées (94 %) — Task 18 : push effectué, activation GitHub Pages + recettes manuelles à finaliser côté utilisateur.
 
 ---
 
