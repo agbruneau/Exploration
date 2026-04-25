@@ -6,13 +6,23 @@
  *  - trim
  *
  * Ne touche PAS aux diacritiques grecs polytoniques (hors-périmètre v1.0).
+ * Les caractères grecs précomposés (U+0370–U+03FF, U+1F00–U+1FFF) sont
+ * traités tels quels : pas de décomposition NFD pour préserver l'esprit
+ * doux/rude, l'iota souscrit, le périspomène, etc.
  */
 export function normalize(s) {
   if (!s) return "";
-  return String(s)
-    .toLocaleLowerCase("fr")
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "") // Combining Diacritical Marks (Latin)
-    .replace(/\s+/g, " ")
-    .trim();
+  let out = "";
+  for (const ch of String(s).toLocaleLowerCase("fr")) {
+    const code = ch.codePointAt(0);
+    const isGreek =
+      (code >= 0x0370 && code <= 0x03FF) ||
+      (code >= 0x1F00 && code <= 0x1FFF);
+    if (isGreek) {
+      out += ch;
+    } else {
+      out += ch.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    }
+  }
+  return out.replace(/\s+/g, " ").trim();
 }
