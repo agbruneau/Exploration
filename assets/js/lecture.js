@@ -25,6 +25,8 @@ async function boot() {
     setupBackToTop();
     const { injectSequentialNav } = await import("/assets/js/modules/sequential-nav.js");
     injectSequentialNav();
+    const { setupPrefs } = await import("/assets/js/modules/prefs.js");
+    setupPrefs();
   } catch (err) {
     console.error(err);
     showError(navigator.onLine ? "error" : "offline");
