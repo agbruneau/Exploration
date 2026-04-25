@@ -12,26 +12,26 @@
 
 | # | Phase | Tâche | Statut | Commit | Date |
 |---|-------|-------|--------|--------|------|
-| 1 | 1 — Fondations | Préparer l'arborescence et committer le PRD existant | ⬜ | — | — |
-| 2 | 1 — Fondations | Auto-héberger les bibliothèques tierces (marked + DOMPurify) et les polices | ⬜ | — | — |
-| 3 | 1 — Fondations | Créer les fichiers CSS de base (tokens, base, components) | ⬜ | — | — |
-| 4 | 2 — Page-vitrine | Landing — squelette + header sticky + hero + thèse + méthode O.I.A. | ⬜ | — | — |
-| 5 | 2 — Page-vitrine | Landing — corpus + aperçu TOC + tableau divergences | ⬜ | — | — |
-| 6 | 2 — Page-vitrine | Landing — citations + synthèse 8 loci + à propos + bibliographie + footer | ⬜ | — | — |
-| 7 | 2 — Page-vitrine | Landing — JavaScript interactif + SEO complet | ⬜ | — | — |
-| 8 | 3 — Page-lecteur | Lecteur — squelette HTML + CSS layout | ⬜ | — | — |
-| 9 | 3 — Page-lecteur | Lecteur — module render (TDD slug helper) + intégration | ⬜ | — | — |
-| 10 | 3 — Page-lecteur | Lecteur — module TOC (génération + sync scroll) | ⬜ | — | — |
-| 11 | 3 — Page-lecteur | Lecteur — module recherche (TDD normalize) + intégration | ⬜ | — | — |
-| 12 | 3 — Page-lecteur | Lecteur — modules ancres + progression + nav séquentielle + back-to-top | ⬜ | — | — |
-| 13 | 3 — Page-lecteur | Lecteur — module préférences (taille de police + mode concentré) | ⬜ | — | — |
-| 14 | 4 — Polissage | Stylesheet print + image OG + apple-touch-icon | ⬜ | — | — |
-| 15 | 4 — Polissage | SEO meta complet sur le lecteur + JSON-LD enrichi | ⬜ | — | — |
-| 16 | 4 — Polissage | Validation HTML + axe + Lighthouse + correctifs | ⬜ | — | — |
-| 17 | 5 — Déploiement | Mise à jour du README + procédure de déploiement | ⬜ | — | — |
+| 1 | 1 — Fondations | Préparer l'arborescence et committer le PRD existant | ✅ | `7bb349b` | 2026-04-24 |
+| 2 | 1 — Fondations | Auto-héberger les bibliothèques tierces (marked + DOMPurify) et les polices | ✅ | `867a23b` + `59637b1` | 2026-04-24 |
+| 3 | 1 — Fondations | Créer les fichiers CSS de base (tokens, base, components) | ✅ | `8e5d847` | 2026-04-24 |
+| 4 | 2 — Page-vitrine | Landing — squelette + header sticky + hero + thèse + méthode O.I.A. | ✅ | `bcc540c` | 2026-04-24 |
+| 5 | 2 — Page-vitrine | Landing — corpus + aperçu TOC + tableau divergences | ✅ | `23bbf7c` + `bb5a147` | 2026-04-24 |
+| 6 | 2 — Page-vitrine | Landing — citations + synthèse 8 loci + à propos + bibliographie + footer | ✅ | `27bd34e` | 2026-04-24 |
+| 7 | 2 — Page-vitrine | Landing — JavaScript interactif + SEO complet | ✅ | `3c1d42e` | 2026-04-24 |
+| 8 | 3 — Page-lecteur | Lecteur — squelette HTML + CSS layout | ✅ | `ef12a61` | 2026-04-24 |
+| 9 | 3 — Page-lecteur | Lecteur — module render (TDD slug helper) + intégration | ✅ | `cb51c6b` + `4a17387` | 2026-04-24 |
+| 10 | 3 — Page-lecteur | Lecteur — module TOC (génération + sync scroll) | ✅ | `d878c74` | 2026-04-24 |
+| 11 | 3 — Page-lecteur | Lecteur — module recherche (TDD normalize) + intégration | ✅ | `9db8d0d` + fix | 2026-04-24 |
+| 12 | 3 — Page-lecteur | Lecteur — modules ancres + progression + nav séquentielle + back-to-top | ✅ | `8f3e19e` | 2026-04-24 |
+| 13 | 3 — Page-lecteur | Lecteur — module préférences (taille de police + mode concentré) | ✅ | `8a75b7c` | 2026-04-24 |
+| 14 | 4 — Polissage | Stylesheet print + image OG + apple-touch-icon | ✅ | `f7996a0` | 2026-04-24 |
+| 15 | 4 — Polissage | SEO meta complet sur le lecteur + JSON-LD enrichi | ✅ | `3b650d3` + `4bb7d96` | 2026-04-24 |
+| 16 | 4 — Polissage | Validation HTML + axe + Lighthouse + correctifs | ✅ (auto) | `fab7132` | 2026-04-24 |
+| 17 | 5 — Déploiement | Mise à jour du README + procédure de déploiement | ✅ | `3078161` | 2026-04-24 |
 | 18 | 5 — Déploiement | Activation GitHub Pages + push final + vérification production | ⬜ | — | — |
 
-**Progression globale :** 0 / 18 tâches complétées (0 %)
+**Progression globale :** 17 / 18 tâches complétées (94 %)
 
 ---
 
