@@ -12,8 +12,9 @@ async function boot() {
   try {
     const { html } = await fetchAndRender();
     injectContent(html);
-    // Les autres modules (TOC, search, prefs, anchors, progress, sequential-nav)
-    // seront branchés ici dans les tâches suivantes.
+    const { buildToc, setupSidebarToggle } = await import("/assets/js/modules/toc.js");
+    buildToc();
+    setupSidebarToggle();
   } catch (err) {
     console.error(err);
     showError(navigator.onLine ? "error" : "offline");
