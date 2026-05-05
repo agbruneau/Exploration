@@ -116,10 +116,12 @@
 
 ### Chapter 14 — Build Your Custom Agentic OS (Claude Code en pratique)
 
-- Coda tactique : du cadre stratégique au harnais opérationnel
-- Source primaire : YouTube « Build Your CUSTOM Claude Code Agentic OS (3 Steps) » — *transcript / notes à fournir*
-- Trois étapes pour assembler un OS agentique personnalisé via Claude Code (skills, MCP servers, hooks, plugins)
-- Cas concret de bout en bout : du dépôt vide à l'agent personnalisé déployé
+- Coda tactique : pourquoi assembler son OS agentique plutôt qu'adopter une plateforme clé-en-main (renvoi Ch. 8, Ch. 10)
+- **Trois étapes d'assemblage avec Claude Code** : (1) composer skills + sub-agents — la spécialisation par domaine ; (2) intégrer MCP servers + hooks — l'extension contrôlée des outils ; (3) déployer + observer — l'AgentOps minimaliste viable
+- Cas concret méta : la monographie elle-même comme OS agentique de bout en bout
+- Limites, compromis, et conditions de bascule vers une plateforme propriétaire (renvois Ch. 7, Ch. 9, Ch. 10)
+- Tableau comparatif Claude Code / Codex Agent / Cursor / Cline / harnais propriétaires
+- Source d'inspiration : YouTube « Build Your CUSTOM Claude Code Agentic OS (3 Steps) » (chaîne Chase AI). Transcript non récupérable — les trois étapes sont une **reconstruction depuis la documentation officielle Claude Code** (mai 2026), explicitement signalée dans le chapitre.
 
 ---
 
