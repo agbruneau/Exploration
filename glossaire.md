@@ -22,10 +22,16 @@ La référence OSFI pertinente pour le contexte agentique en 2026 est **OSFI E-2
 ## Entrées (alphabétique)
 
 ### A2A (Agent-to-Agent Protocol)
-*À compléter au Ch. 5.*
+Protocole ouvert de coordination entre agents, sous Linux Foundation depuis juin 2025. Spec v1.0.0 (date de release officielle *à vérifier*). Quatre primitives : *Agent Card* (capability discovery), *Task* (cycle de vie SUBMITTED → WORKING → terminal/intervention HITL), *Message*, *Artifact*. Transports : JSON-RPC 2.0/HTTP, gRPC, REST. Adoption mai 2026 : 150+ organisations, déployé dans Azure AI Foundry, Copilot Studio, Bedrock AgentCore Runtime, Salesforce, SAP, ServiceNow.
+
+### AAIF (Agentic AI Foundation)
+*Directed fund* annoncé 9 décembre 2025 sous l'égide de la Linux Foundation. Membres Platinum fondateurs : AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI. MCP est projet fondateur. Distinction critique : MCP n'a pas été « donné à la Linux Foundation » au même titre que le noyau Linux — l'AAIF est l'entité de gouvernance, et Anthropic conserve l'autonomie technique des mainteneurs MCP.
 
 ### AgentOps
-*À compléter au Ch. 7.*
+Discipline opérationnelle d'agents en production — extension de MLOps couvrant : observabilité multi-étapes (traces, *tool spans*, *memory diffs*), évaluation continue (*regression*, *replay*, *shadow runs*), cycle de vie des agents (*promote*, *deprecate*, *roll back*), gestion des budgets (*retry budget*, *escalation cost*). À compléter au Ch. 7.
 
 ### MCP (Model Context Protocol)
-*À compléter au Ch. 5.*
+Protocole ouvert d'interfaçage entre LLM et outils/données, créé par Anthropic et donné à l'AAIF en décembre 2025. Quatre primitives : *Resources* (lecture), *Tools* (action), *Prompts* (templates), *Sampling* (LLM côté serveur). Architecture client-hôte-serveur. SDKs Tier 1 (TypeScript, Python, C#, Go) ; Tier 2 (Java, Rust) ; Tier 3 (Swift, Ruby, PHP) ; TBD (Kotlin). 110M+ téléchargements/mois de SDK mai 2026. Surface d'attaque documentée : *tool poisoning*, injection via *sampling* (Palo Alto Unit 42), RCE supply chain dans SDKs officiels (OX Security, avril 2026).
+
+### WebMCP
+Extension navigateur de MCP, statut W3C *Candidate Recommendation* (non ratifié, mai 2026). API : `navigator.modelContext`. Périmètre : *tools only* (pas *resources* ni *prompts*). Support : Chrome 146 stable, Edge 147 stable, Firefox 8-12 semaines (*à vérifier*), Safari sans engagement public. Co-développé Microsoft / Google via W3C WebML Working Group.
