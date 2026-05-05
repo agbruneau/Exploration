@@ -15,6 +15,41 @@
 
 ---
 
+## Tableau de suivi des tâches
+
+> **Mise à jour à chaque transition de phase.** Cocher la phase atteinte et passer le status à la nouvelle valeur. Source de vérité unique pour l'avancement du projet.
+>
+> **Légende phases** : ① Esquisse Gabarit A · ② Esquisse validée · ③ Rédaction Gabarit B en cours · ④ Rédigé · ⑤ Vérifié Phase 4 · ✅ Validé final
+> **Légende status** : ⬜ non commencé · 🟡 en cours · 🟢 terminé · 🔴 bloqué
+
+| Tâche | Fichier cible | Vague | Phase | Status | Notes |
+|---|---|---|---|---|---|
+| T0 | *(skeleton + rename CLAUDE.md)* | 0 | — | ⬜ | rename `CLAUDE.md.md` → `CLAUDE.md` requis |
+| T1 | `00-introduction.md` | 1 | — | ⬜ | |
+| T2 | `ch01-from-automation-to-agents.md` | 2 | — | ⬜ | |
+| T3 | `ch02-business-case.md` | 3 | — | ⬜ | |
+| T4 | `ch03-mapping-high-impact.md` | 4 ‖ | — | ⬜ | parallèle avec T5 |
+| T5 | `ch04-roi-risk-readiness.md` | 4 ‖ | — | ⬜ | parallèle avec T4 |
+| T6 | `ch05-protocols-interoperability.md` | 5 | — | ⬜ | + maj glossaire (Step 7) |
+| T7 | `ch06-orchestration-memory-tools.md` | 6 | — | ⬜ | |
+| T8 | `ch07-agentops.md` | 7 | — | ⬜ | + maj glossaire (Step 7) |
+| T9 | `ch08-trustworthy-systems.md` | 8 ‖ | — | ⬜ | parallèle avec T10, T11 |
+| T10 | `ch09-agentic-security.md` | 8 ‖ | — | ⬜ | parallèle avec T9, T11 |
+| T11 | `ch10-scaling-without-lockin.md` | 8 ‖ | — | ⬜ | parallèle avec T9, T10 |
+| T12 | `ch11-redesigning-work.md` | 9 | — | ⬜ | |
+| T13 | `ch12-lessons-failed.md` | 10 | — | ⬜ | |
+| T14 | `ch13-road-ahead.md` | 11 | — | ⬜ | renvois croisés OBLIGATOIRES Ch. 1, 2, 7, 11 |
+| T15 | `annexe-A-architecture-review.md` | 12 ‖ | — | ⬜ | parallèle avec T16, T17 |
+| T16 | `annexe-B-use-case-canvas.md` | 12 ‖ | — | ⬜ | parallèle avec T15, T17 |
+| T17 | `annexe-C-agentops-maturity.md` | 12 ‖ | — | ⬜ | parallèle avec T15, T16 |
+| T18 | `annexe-D-governance-raci.md` | 12 ‖ | — | ⬜ | parallèle avec T19 |
+| T19 | `annexe-E-glossaire-lectures.md` | 12 ‖ | — | ⬜ | parallèle avec T18 |
+| T20 | *(pass final : renvois, terminologie, lint, anti-fabrication, references.md)* | 13 | — | ⬜ | 9 steps |
+
+**Compteur global** : 0 / 21 tâches terminées · 0 / 19 fichiers livrables produits.
+
+---
+
 ## Conventions de nommage de fichiers
 
 | # | Fichier cible | Cible mots | Lecture (min) |
@@ -669,36 +704,6 @@ Vérifier que tous les chapitres ont `status: "rédigé"` dans le frontmatter. M
 ```bash
 git commit -am "docs: statut final validé sur tous les chapitres"
 ```
-
----
-
-## Tableau de bord d'avancement
-
-| Tâche | Fichier | Phase | Status |
-|---|---|---|---|
-| T0 | skeleton | — | ⬜ non commencé |
-| T1 | `00-introduction.md` | — | ⬜ |
-| T2 | `ch01-from-automation-to-agents.md` | — | ⬜ |
-| T3 | `ch02-business-case.md` | — | ⬜ |
-| T4 | `ch03-mapping-high-impact.md` | — | ⬜ |
-| T5 | `ch04-roi-risk-readiness.md` | — | ⬜ |
-| T6 | `ch05-protocols-interoperability.md` | — | ⬜ |
-| T7 | `ch06-orchestration-memory-tools.md` | — | ⬜ |
-| T8 | `ch07-agentops.md` | — | ⬜ |
-| T9 | `ch08-trustworthy-systems.md` | — | ⬜ |
-| T10 | `ch09-agentic-security.md` | — | ⬜ |
-| T11 | `ch10-scaling-without-lockin.md` | — | ⬜ |
-| T12 | `ch11-redesigning-work.md` | — | ⬜ |
-| T13 | `ch12-lessons-failed.md` | — | ⬜ |
-| T14 | `ch13-road-ahead.md` | — | ⬜ |
-| T15 | `annexe-A-architecture-review.md` | — | ⬜ |
-| T16 | `annexe-B-use-case-canvas.md` | — | ⬜ |
-| T17 | `annexe-C-agentops-maturity.md` | — | ⬜ |
-| T18 | `annexe-D-governance-raci.md` | — | ⬜ |
-| T19 | `annexe-E-glossaire-lectures.md` | — | ⬜ |
-| T20 | (pass final) | — | ⬜ |
-
-**Légende phases** : ① Esquisse Gabarit A | ② Esquisse validée | ③ Rédaction Gabarit B en cours | ④ Rédigé | ⑤ Vérifié Phase 4 | ✅ Validé final
 
 ---
 
