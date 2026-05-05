@@ -99,9 +99,9 @@ Le tableau suivant positionne les trois rôles sur quatre dimensions opérationn
 
 | Rôle | Compétence primaire | Compétence secondaire | Objet quotidien | Lien AgentOps |
 |---|---|---|---|---|
-| *AI ops manager* | Connaissance du processus métier + lecture de traces | Gouvernance, gestion du risque | Plan de contrôle, incidents, promotions/rollbacks | [Ch. 7 §7.5](ch07-agentops.md) : plan de contrôle |
+| *AI ops manager* | Connaissance du processus métier + lecture de traces | Gouvernance, gestion du risque | Plan de contrôle, incidents, promotions/rollbacks | [Ch. 7 §7.6](ch07-agentops.md) : plan de contrôle |
 | *Human-AI interaction designer* | UX design + psychologie comportementale | *Prompt engineering* système, design de flux | Points d'escalade, interfaces d'exception, flux hybrides | [Ch. 7 §7.2](ch07-agentops.md) : observabilité des gates HITL |
-| *Quality steward* | Métriques d'évaluation + analyse des modes d'échec | Statistiques, connaissance du domaine | Ensembles d'évaluation, analyse escalades, décisions qualité | [Ch. 7 §7.3](ch07-agentops.md) : évaluation continue |
+| *Quality steward* | Métriques d'évaluation + analyse des modes d'échec | Statistiques, connaissance du domaine | Ensembles d'évaluation, analyse escalades, décisions qualité | [Ch. 7 §7.5](ch07-agentops.md) : évaluation en production |
 
 Ces trois rôles ne remplacent pas les rôles existants — ils s'y ajoutent ou en transforment une fraction. L'*AI ops manager* émerge souvent d'un profil opérations IT ou BPO (*Business Process Outsourcing*) reconverti. Le *quality steward* peut provenir d'un rôle d'assurance qualité ou d'analyste métier. Le *human-AI interaction designer* est le plus nouveau : il n'existe pas de filière établie à mai 2026, et les organisations pionnières le construisent par hybridation interne.
 

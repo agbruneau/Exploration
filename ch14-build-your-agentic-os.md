@@ -289,7 +289,7 @@ L'installation par un membre de l'équipe se fait par `/plugin install github:or
 
 Le [Ch. 7](ch07-agentops.md) a établi les quatre catégories de spans agentiques (*LLM spans*, *tool spans*, *memory spans*, *orchestration spans*). Dans un OS agentique Claude Code, cette observabilité passe par deux mécanismes complémentaires.
 
-Le premier est natif : les hooks `PostToolUse` peuvent écrire dans un journal structuré chaque invocation d'outil, avec les paramètres, le résultat, et la latence. Ce journal est le substrat de l'évaluation continue définie au [Ch. 7 §7.3](ch07-agentops.md) — il permet de détecter les dérives de comportement, de mesurer le *tool correctness*, et de rejouer les sessions pour diagnostic.
+Le premier est natif : les hooks `PostToolUse` peuvent écrire dans un journal structuré chaque invocation d'outil, avec les paramètres, le résultat, et la latence. Ce journal est le substrat de l'évaluation en production définie au [Ch. 7 §7.5](ch07-agentops.md) — il permet de détecter les dérives de comportement, de mesurer le *tool correctness*, et de rejouer les sessions pour diagnostic.
 
 Le second est externe : Claude Code exporte ses traces via OpenTelemetry quand l'environnement est configuré (`CLAUDE_CODE_ENABLE_TELEMETRY=1` dans `settings.json > env`). L'instrumentation s'appuie sur les conventions sémantiques GenAI OTel 1.40.0 (statut *Development* à mai 2026, attributs `gen_ai.agent.*` — *confirmé*, [Ch. 7](ch07-agentops.md)) pour les plateformes qui les supportent (Datadog, Grafana, Elastic).
 

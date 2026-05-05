@@ -29,7 +29,7 @@ Ce document s'adresse aux architectes d'entreprise, aux *AI ops managers*, aux r
 | **3. Décision build/buy/borrow** (évaluation ROI, portabilité, Ch. 4 §4.4, Ch. 10) | A | R | C | I | I | R | C | I | I |
 | **4. Déploiement en production** (instrumentation OTel, gates HITL, *permission boundaries*, Ch. 7) | I | C | R | C | C | I | I | C | I |
 | **5. Observabilité et plan de contrôle** (*dashboards*, *retry budgets*, alertes dérive, Ch. 7 §7.2) | I | I | A | R | I | I | I | C | I |
-| **6. Évaluation continue en production** (*task success*, *tool correctness*, *policy compliance*, Ch. 7 §7.3) | I | I | C | A | I | C | I | I | C |
+| **6. Évaluation continue en production** (*task success*, *tool correctness*, *policy compliance*, Ch. 7 §7.5) | I | I | C | A | I | C | I | I | C |
 | **7. Activation du *kill switch*** (arrêt d'urgence d'un agent ou d'une flotte d'agents) | C | I | R | C | I | I | C | C | I |
 | **8. Audit de la gouvernance agentique** (journaux de décision, *agent policy*, Ch. 8 §8.3–8.4) | I | C | C | I | I | I | C | C | A |
 | **9. Traitement des incidents** (actions hors périmètre, violations de politique, escalades non résolues) | I | C | R | C | I | I | C | C | I |

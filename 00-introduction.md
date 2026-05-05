@@ -114,11 +114,12 @@ Chaque chapitre est signalé selon deux niveaux : **F** = fondamental pour le r�
 | [Ch. 11 — Redesign du travail](ch11-redesigning-work.md) | F | S | F | S |
 | [Ch. 12 — Leçons des 60 % qui ont échoué](ch12-lessons-failed.md) | F | S | F | F |
 | [Ch. 13 — La route devant](ch13-road-ahead.md) | F | F | F | F |
+| [Ch. 14 — Construire son OS agentique (Claude Code)](ch14-build-your-agentic-os.md) | — | F | S | — |
 | [Annexe D — Gouvernance RACI](annexe-D-governance-raci.md) | F | S | S | F |
 
-La lecture linéaire est recommandée pour l'architecte d'entreprise et le risk officer. Le CIO peut commencer par la partie I (Ch. 1–2), sauter à la partie V (Ch. 11–13), puis revenir aux parties III–IV selon les décisions à prendre. Le PO peut commencer par Ch. 2–4, puis Ch. 11.
+La lecture linéaire est recommandée pour l'architecte d'entreprise et le risk officer. Le CIO peut commencer par la partie I (Ch. 1–2), sauter à la partie V (Ch. 11–14), puis revenir aux parties III–IV selon les décisions à prendre. Le PO peut commencer par Ch. 2–4, puis Ch. 11. L'architecte qui doit assembler un harnais d'agent personnalisé trouvera au [Ch. 14](ch14-build-your-agentic-os.md) une coda tactique applicable directement.
 
-Le fil narratif est structuré pour que chaque partie réponde à une décision précise plutôt qu'à un domaine de connaissance. La partie I répond à « pourquoi agir maintenant ». La partie II répond à « quoi construire en premier ». La partie III répond à « comment le construire ». La partie IV répond à « comment le faire durer ». La partie V répond à « comment piloter la transition humaine ».
+Le fil narratif est structuré pour que chaque partie réponde à une décision précise plutôt qu'à un domaine de connaissance. La partie I répond à « pourquoi agir maintenant ». La partie II répond à « quoi construire en premier ». La partie III répond à « comment le construire ». La partie IV répond à « comment le faire durer ». La partie V répond à « comment piloter la transition humaine et, en clôture, comment assembler concrètement son propre OS agentique ».
 
 ---
 

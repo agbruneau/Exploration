@@ -59,7 +59,7 @@ Chaque item est booléen ou à seuil quantitatif. Un item non satisfait exige un
 ### 1.7 Surface protocolaire
 
 - [ ] MCP : serveurs tiers sur liste blanche vérifiée ; descriptions d'outils auditées contre le *tool poisoning* ; primitive *sampling* désactivée ou isolée ([Ch. 5 §5.8](ch05-protocols-interoperability.md)).
-- [ ] A2A : mTLS ou OAuth 2.0 actif sur tous les canaux inter-agents ; Agent Cards signées ([Ch. 5 §5.4](ch05-protocols-interoperability.md)).
+- [ ] A2A : mTLS ou OAuth 2.0 actif sur tous les canaux inter-agents ; Agent Cards signées ([Ch. 5 §5.3](ch05-protocols-interoperability.md)).
 - [ ] Inventaire exhaustif des serveurs MCP et agents A2A déployés — aucun agent hors inventaire ne peut opérer (ASI10).
 
 ---
@@ -158,7 +158,7 @@ Chaque item est booléen ou à seuil quantitatif. Un item non satisfait exige un
 
 | Sujet | Référence |
 |---|---|
-| Surface d'attaque protocolaire MCP/A2A | [Ch. 5 §5.4, §5.8](ch05-protocols-interoperability.md) |
+| Surface d'attaque protocolaire MCP/A2A | [Ch. 5 §5.3, §5.8](ch05-protocols-interoperability.md) |
 | Plan de contrôle AgentOps (kill switches, retry budget) | [Ch. 7 §7.6](ch07-agentops.md) |
 | Métriques canoniques et évaluation en production | [Ch. 7 §7.4–7.5](ch07-agentops.md) |
 | Niveaux d'autonomie N1-N4 et EU AI Act | [Ch. 8 §8.1, §8.4](ch08-trustworthy-systems.md) |

@@ -95,7 +95,7 @@ Référence : *Cost per Successful Task* (CPST) défini au [Ch. 2 §2.1](ch02-bu
 | **CPST cible** (coût par tâche réussie incluant inférence, orchestration, retry moyen, escalade attendue) | `___ $` | `[Benchmark interne / Pilot data / Estimation analogique]` |
 | **CPST humain de référence** (coût actuel de la même tâche traitée par un opérateur humain ou par RPA) | `___ $` | `[Données RH / Finance / Fournisseur RPA actuel]` |
 | **Volume mensuel attendu** (nombre de tâches par mois à maturité) | `___ tâches/mois` | `[Données historiques système source]` |
-| **Taux de succès qualitatif cible** (seuil minimal acceptable — cf. Ch. 4 §4.2 : 85 % en zone verte, *hypothèse maison*) | `___ %` | `[Aligné avec direction métier]` |
+| **Taux de succès qualitatif cible** (seuil minimal acceptable — cf. [Ch. 4 §4.2](ch04-roi-risk-readiness.md) : 85 % en zone verte, *hypothèse maison*) | `___ %` | `[Aligné avec direction métier]` |
 | **Économie nette mensuelle** (CPST humain − CPST cible) × volume × taux de succès | `___ $/mois` | `[Calcul automatique à compléter]` |
 | **Coût de build / intégration** (incluant instrumentation eval + observabilité) | `___ $` | `[Estimation équipe + licences plateforme]` |
 | **Horizon de retour** (mois pour amortir le coût de build sur l'économie nette) | `___ mois` | `[= Coût build / Économie nette mensuelle]` |
