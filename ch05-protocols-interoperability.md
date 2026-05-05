@@ -246,7 +246,7 @@ Les quatre protocoles de l'écosystème agentique 2026 occupent des couches dist
 
 | Critère | MCP | A2A | WebMCP |
 |---|---|---|---|
-| **Volume téléchargements / mois** | 110M+ (AAIF Blog, avril 2026) | Non publié | N/A (API navigateur) |
+| **Volume téléchargements / mois** | 110M+ (AAIF Blog, avril 2026 — chiffre annoncé au MCP Dev Summit NYC ; DigitalApplied citait 97M en mars 2026, croissance ~13 % en un mois) | Non publié | N/A (API navigateur) |
 | **Déploiement production enterprise** | Confirmé (Uber, banques, éditeurs SaaS) | Confirmé (Azure AI Foundry, Bedrock AgentCore, Salesforce, SAP) | Expérimental |
 | **Surface d'attaque connue** | Documentée, non corrigée par le protocole | Partielle (Agent Card sans signature dans v < 0.3) | Non documentée (trop récent) |
 | **Statut spec** | Stabilisée, processus SEP actif | v1.0.0 affichée, date officielle *à vérifier* | W3C *Candidate Recommendation*, non ratifiée |
