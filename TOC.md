@@ -114,6 +114,13 @@
 - Horizons 2027–2030 : *autonomous teams*, *multi-org agentic supply chains*, intersection avec l'edge et le mainframe modernisé
 - Position de l'architecte d'entreprise dans cinq ans
 
+### Chapter 14 — Build Your Custom Agentic OS (Claude Code en pratique)
+
+- Coda tactique : du cadre stratégique au harnais opérationnel
+- Source primaire : YouTube « Build Your CUSTOM Claude Code Agentic OS (3 Steps) » — *transcript / notes à fournir*
+- Trois étapes pour assembler un OS agentique personnalisé via Claude Code (skills, MCP servers, hooks, plugins)
+- Cas concret de bout en bout : du dépôt vide à l'agent personnalisé déployé
+
 ---
 
 ## Annexes — Checklists, Templates, and Further Resources
