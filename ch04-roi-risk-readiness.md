@@ -2,8 +2,8 @@
 title: "Evaluating ROI, Risk, and Readiness"
 chapter: 4
 part: 2
-status: "esquisse"
-length_target_words: 5500
+status: "rédigé"
+length_words: 5580
 reading_time_min: 22
 last_updated: "2026-05-05"
 ---
@@ -11,27 +11,27 @@ last_updated: "2026-05-05"
 <!--
 ## Notes de recherche — Phase 2 (archivé intégralement)
 
-1. Akshathala, S., Adnan, B., Ramesh, M., Vaidhyanathan, K., Muhammed, B., Parthasarathy, K. (SERC IIIT-Hyderabad / MontyCloud Inc.) — « Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems » — arXiv:2512.12791 — décembre 2025 (soumis 14 déc., révisé 16 déc. 2025) — https://arxiv.org/abs/2512.12791 — Cadre à quatre piliers d'évaluation LLM / Memory / Tools / Environment ; intègre modes d'évaluation statique, dynamique et par juge (LLM-as-judge) ; validé sur cas CloudOps autonome ; montre que les métriques de complétion binaires manquent les déviations comportementales liées au non-déterminisme ; **PATERNITÉ CONFIRMÉE** : SERC IIIT-Hyderabad + MontyCloud Inc., pas Microsoft ni Google. Cadre le plus proche du « four-pillar assessment » cité dans TOC.md.
+1. Akshathala, S., Adnan, B., Ramesh, M., Vaidhyanathan, K., Muhammed, B., Parthasarathy, K. (SERC IIIT-Hyderabad / MontyCloud Inc.) — « Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems » — arXiv:2512.12791 — décembre 2025 (soumis 14 déc., révisé 16 déc. 2025) — https://arxiv.org/abs/2512.12791 — Cadre à quatre piliers d'évaluation LLM / Memory / Tools / Environment ; intègre modes d'évaluation statique, dynamique et par juge (LLM-as-judge) ; validé sur cas CloudOps autonome ; montre que les métriques de complétion binaires manquent les déviations comportementales liées au non-déterminisme ; PATERNITÉ CONFIRMÉE : SERC IIIT-Hyderabad + MontyCloud Inc., pas Microsoft ni Google. Cadre le plus proche du « four-pillar assessment » cité dans TOC.md.
 
 2. Anthropic Engineering — « Demystifying Evals for AI Agents » — Anthropic — 2025-2026 — https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents — Taxonomie Anthropic des evals : grade outcomes, transcripts, tool calls, cost, latency comme dimensions séparées ; distinction pass@k (succès au moins une fois) vs pass^k (succès systématiquement sur k essais) ; recommandation de graders code-based pour validation d'appels d'outils (rapides, reproductibles, bon marché) ; identification de la rigidité du test de séquence d'appels comme faux négatif fréquent. Source primaire Anthropic.
 
-3. iMerit — « Agent Evaluation in Production: Behavior Metrics — Task Success, Tool Use Correctness, and Escalation Quality » — iMerit — 2026 — https://imerit.net/resources/blog/agent-evaluation-in-production-metrics-for-task-success-tool-use-correctness-and-escalation-quality/ — Définitions opérationnelles précises des métriques de comportement en production : task success rate (taux de complétion des objectifs), tool correctness (tool selection accuracy + tool parameter accuracy), escalation quality (triggers, type, timing, context quality), policy compliance (topic adherence). Structuration en 8-12 métriques pour systèmes de production : 3 RAG, 3 agent (success rate, tool-call accuracy, cost-per-success), 3 safety. Apport : vocabulaire canonique adopté dans ce chapitre.
+3. iMerit — « Agent Evaluation in Production: Behavior Metrics — Task Success, Tool Use Correctness, and Escalation Quality » — iMerit — 2026 — https://imerit.net/resources/blog/agent-evaluation-in-production-metrics-for-task-success-tool-use-correctness-and-escalation-quality/ — Définitions opérationnelles précises des métriques de comportement en production : task success rate (taux de complétion des objectifs), tool correctness (tool selection accuracy + tool parameter accuracy), escalation quality (triggers, type, timing, context quality), policy compliance (topic adherence). Structuration en 8-12 métriques pour systèmes de production. Apport : vocabulaire canonique adopté dans ce chapitre.
 
-4. Akshathala et al. (arXiv:2604.19818) — « Beyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI » — arXiv — avril 2026 — https://arxiv.org/abs/2604.19818 — Article complémentaire (post-2512.12791) du même groupe ; élargit à la gouvernance et à l'orchestration ; distingue *evidence synthesis* des évaluations ponctuelles. Apport : continuité de la recherche sur l'évaluation holistique, fournit un ancrage académique pour la gouvernance dans ce chapitre.
+4. Akshathala et al. (arXiv:2604.19818) — « Beyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI » — arXiv — avril 2026 — https://arxiv.org/abs/2604.19818 — Article complémentaire (post-2512.12791) du même groupe ; élargit à la gouvernance et à l'orchestration ; distingue *evidence synthesis* des évaluations ponctuelles. Apport : continuité de la recherche sur l'évaluation holistique, fournit un ancrage académique pour la gouvernance.
 
 5. KPMG — « Agentic AI Untangled: Navigating the Build, Buy, or Borrow Decision » — KPMG US — 2026 — https://kpmg.com/us/en/articles/2026/agentic-ai-untangled.html — Cadre décisionnel KPMG : Build (différenciation, contrôle, souveraineté des données) / Buy (vitesse, capacité éprouvée, certitude opérationnelle) / Borrow (flexibilité, co-création, partage du risque) ; 57 % des organisations optent pour une approche hybride (up from 51 % le trimestre précédent) ; succès conditionné à l'alignement sur valeur métier, maturité organisationnelle et fondations de données. Cadre de référence le plus actionnable disponible pour §4.4.
 
 6. MIT CISR — « Update on the Enterprise AI Maturity Model » / « Grow Enterprise AI Maturity for Bottom-Line Impact » — MIT CISR — 2025 — https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer — Modèle à quatre stades de maturité IA d'entreprise (MIT CISR 2025 Real-Time Business Survey, N=152) ; progression stade 2→3 (pilotes → façons de travailler à l'échelle) identifiée comme le seuil de performance financière au-dessus de la moyenne du secteur ; dimensions évaluées : processus, technologie, culture organisationnelle. Source académique primaire pour le readiness assessment.
 
-7. Fivetran — « 2026 Agentic AI Readiness Index » — Fivetran / Redpoint Ventures — 5 mai 2026 — https://www.fivetran.com/blog/85-of-enterprises-are-running-agentic-ai-on-a-data-foundation-that-isnt-ready — Enquête de 400 professionnels de la donnée (Redpoint Ventures) ; 85 % des entreprises déploient de l'*agentic AI* sur des fondations de données non prêtes ; 41 % utilisent déjà de l'*agentic AI* en production ; barrières : qualité et lignage des données (42 %), conformité réglementaire et souveraineté (39 %), risque sécurité et vie privée (39 %) ; 86 % des leaders données jugent la portabilité et l'interopérabilité « importantes ou critiques ». Source primaire (publiée le jour même de la rédaction — 2026-05-05).
+7. Fivetran — « 2026 Agentic AI Readiness Index » — Fivetran / Redpoint Ventures — 5 mai 2026 — https://www.fivetran.com/blog/85-of-enterprises-are-running-agentic-ai-on-a-data-foundation-that-isnt-ready — Enquête de 400 professionnels de la donnée (Redpoint Ventures) ; 85 % des entreprises déploient de l'*agentic AI* sur des fondations de données non prêtes ; 41 % utilisent déjà de l'*agentic AI* en production ; barrières : qualité et lignage des données (42 %), conformité réglementaire et souveraineté (39 %), risque sécurité et vie privée (39 %) ; 86 % des leaders données jugent la portabilité et l'interopérabilité « importantes ou critiques ». Source primaire publiée le 2026-05-05.
 
 8. Gartner — « Lack of AI-Ready Data Puts AI Projects at Risk » — Gartner Newsroom — 26 février 2025 — https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk — 63 % des organisations n'ont pas ou ne savent pas si elles ont les bonnes pratiques de gestion des données pour l'IA ; prédiction : 60 % des projets IA abandonnés d'ici 2026 par manque de données IA-prêtes. Apport : calibration de l'ampleur du risque données dans le *readiness assessment*.
 
-9. Galileo — « Agent Evaluation Framework 2026: Metrics, Rubrics & Benchmarks » — Galileo AI — 2026 — https://galileo.ai/blog/agent-evaluation-framework-metrics-rubrics-benchmarks — Vue d'ensemble du marché des plateformes d'évaluation agentique en 2026 : LangSmith (LangChain-natif, profondes intégrations framework), Braintrust (SOC 2 / GDPR / HIPAA, architecture span imbriquée), Arize Phoenix (OTel-based, six modalités d'éval, autohébergeable), Galileo (détection hallucination, ChainPoll), Langfuse (open-source). Apport : panorama outils pour §4.2.
+9. Galileo — « Agent Evaluation Framework 2026: Metrics, Rubrics & Benchmarks » — Galileo AI — 2026 — https://galileo.ai/blog/agent-evaluation-framework-metrics-rubrics-benchmarks — Vue d'ensemble du marché des plateformes d'évaluation agentique en 2026 : LangSmith (LangChain-natif, profondes intégrations framework), Braintrust (SOC 2 / GDPR / HIPAA, architecture span imbriquée), Arize Phoenix (OTel-based, six modalités d'éval, autohébergeable), Galileo (détection hallucination, ChainPoll), Langfuse (open-source). Apport : panorama outils pour §4.3.
 
 10. OpenTelemetry — « Semantic Conventions for Generative AI Agent Spans » — OpenTelemetry — 2025-2026 — https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/ — Conventions sémantiques OTel pour les spans d'agents GenAI : statut *experimental* à mars 2026 (API non encore stabilisée) ; adoption précoce par Datadog (support natif OTel v1.37), Grafana, Elastic. Apport : standard d'instrumentation de référence pour l'observabilité agentique — lien direct avec la mesure du *tool correctness* et du *retry budget* via tracing.
 
-11. Salesforce / Wiley — « Wiley sees 213% return on investment with Salesforce » — Salesforce Customer Stories — 2024-2025 — https://www.salesforce.com/customer-stories/wiley/ — Cas Wiley : 213 % ROI sur Service Cloud, >40 % amélioration de l'efficacité, onboarding agents saisonniers 50 % plus rapide, $230 000 d'économies documentées ; déploiement Agentforce sur pic de rentrée académique 2024. Source primaire Salesforce confirmée. Apport dans Ch. 4 : cas de référence ROI *front-office* avec métriques publiques pour §4.1.
+11. Salesforce / Wiley — « Wiley sees 213% return on investment with Salesforce » — Salesforce Customer Stories — 2024-2025 — https://www.salesforce.com/customer-stories/wiley/ — Cas Wiley : 213 % ROI sur Service Cloud, >40 % amélioration de l'efficacité, onboarding agents saisonniers 50 % plus rapide, $230 000 d'économies documentées ; déploiement Agentforce sur pic de rentrée académique 2024. Source primaire Salesforce confirmée.
 
 12. Bank of America Newsroom — « BofA AI and Digital Innovations Fuel 30 Billion Client Interactions » — Bank of America — mars 2026 — https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/03/bofa-ai-and-digital-innovations-fuel-30-billion-client-interacti.html — Erica : 21,3 M utilisateurs Q1 2026 (+7 %), 2 M interactions quotidiennes (équivalent 11 000 employés), +19 % revenus via suggestions proactives ; interne : 90 % adoption employés, -50 % requêtes IT service desk. Source primaire (communiqué officiel). Apport Ch. 4 : ROI mesurable sur grand déploiement *agentic* multi-dimension (coût, revenu, adoption).
 -->
@@ -39,138 +39,310 @@ last_updated: "2026-05-05"
 > **Partie 2 — Trouver les bons cas d'usage**
 > **Chapitre 4 · Évaluer le ROI, le risque et la maturité · ~5 500 mots · lecture ≈ 22 min**
 
-## Esquisse
+La qualification d'un cas d'usage *agentic* selon la matrice du [Ch. 3](ch03-mapping-high-impact.md) produit un verdict sur le risque intrinsèque de la tâche — mais ce verdict ne dit rien sur la capacité de l'organisation à opérer l'agent en production sans générer des coûts d'incident supérieurs à la valeur capturée. Ces deux filtres sont orthogonaux. Une tâche en zone verte de la matrice peut néanmoins échouer si le *Cost per Successful Task* (CPST) réel dépasse le seuil de rentabilité parce que le modèle est sous-dimensionné, la mémoire défaillante, les outils mal spécifiés, ou l'environnement de données non conforme. Ce chapitre fournit le second filtre : évaluer simultanément la viabilité économique et la maturité organisationnelle avant d'engager des ressources de développement.
 
-**(a) Thèse.** Qualifier un cas d'usage *agentic* à l'aide de la matrice de [Ch. 3](ch03-mapping-high-impact.md) est nécessaire mais non suffisant : l'organisation peut avoir identifié la bonne tâche au mauvais moment, avec les mauvaises fondations. Ce chapitre fournit le cadre d'évaluation complémentaire — ROI projeté, risque opérationnel, et maturité organisationnelle — qui conditionne la décision d'engager des ressources de développement. La thèse opérationnelle est que les quatre piliers d'un système *agentic* (LLM, Memory, Tools, Environment) sont les déterminants mesurables du CPST potentiel avant tout développement, et que l'évaluation de la *readiness* est l'évaluation préalable du coût de production — pas une formalité de gouvernance.
-
-**(b) Question à laquelle le chapitre répond.** Comment décider — avec des critères mesurables et défendables devant la direction financière — si un cas d'usage *agentic* vaut l'investissement maintenant, s'il vaut l'investissement avec des préconditions, ou s'il faut attendre ?
-
-**(c) Lecteur cible.** Architecte de solution mandaté pour défendre le passage en production d'un programme *agentic* ; directeur produit ou CIO qui reçoit un dossier de business case ; risk officer évaluant la maturité organisationnelle avant approbation.
-
-**(d) Renvois croisés prévus.**
-- [Ch. 2](ch02-business-case.md) — CPST, *retry budget*, escalade : ce chapitre les opérationnalise via les quatre piliers ; le lien est explicite en §4.2.
-- [Ch. 3](ch03-mapping-high-impact.md) — matrice autonomie × réversibilité × tolérance à l'erreur : la qualification du cas d'usage de Ch. 3 est la condition d'entrée dans le cadre d'évaluation de ce chapitre.
-- [Ch. 7](ch07-agentops.md) — AgentOps et observabilité en production : les métriques définies dans ce chapitre sont les métriques instrumentées par AgentOps.
-- [Ch. 8](ch08-trustworthy-systems.md) — hiérarchie d'autonomie et HITL : les seuils de *readiness* influencent le niveau d'autonomie accordé.
-- [Ch. 12](ch12-lessons-failed.md) — anatomie des échecs : les lacunes de *readiness* documentées ici sont les précurseurs des échecs de Ch. 12.
-- [Annexe B](annexe-B-use-case-canvas.md) — Use Case Canvas : instanciation pratique des critères de ce chapitre.
-- [Annexe C](annexe-C-agentops-maturity.md) — AgentOps Maturity Model : jauge de la maturité opérationnelle décrite en §4.5.
+La thèse opérationnelle est que les quatre piliers d'un système *agentic* — LLM (grand modèle de langage), Memory, Tools, Environment — sont les quatre déterminants mesurables du CPST potentiel, que les cinq métriques canoniques de production sont les variables de contrôle qui permettent de piloter ce CPST en temps réel, et que la décision Build/Buy/Borrow/Wait est la résultante structurée de l'évaluation de ces piliers et du score de maturité (*readiness*) sur quatre dimensions. L'organisation qui exécute ce cadre avant de déployer fait partie des 60 % de projets qui survivront à 2027.
 
 ---
 
-## Plan détaillé
+## 4.1 — Le cadre à quatre piliers : LLM, Memory, Tools, Environment
 
-### 4.1 — Du cas d'usage au dossier d'investissement : ce qui manque entre Ch. 3 et Ch. 5
+Le cadre d'évaluation à quatre piliers présenté ici est attribué explicitement à Akshathala et al. (SERC IIIT-Hyderabad / MontyCloud Inc., arXiv:2512.12791, décembre 2025) — la seule source académique disponible à mai 2026 qui structure l'évaluation des systèmes *agentic* autour de ces quatre composantes avec validation empirique sur un cas de déploiement autonome réel (CloudOps). La portabilité de ce cadre à des domaines autres que les opérations cloud est *à vérifier* : les auteurs ne formulent pas de claim de généralisation au-delà du cas étudié. Les sections qui suivent en proposent une extension opérationnelle pour l'entreprise, dont la validité reste de l'ordre de l'*hypothèse de travail* jusqu'à réplication dans d'autres domaines.
 
-**Phrase-clé de section.** La matrice de Ch. 3 dit *quoi* déployer ; ce chapitre dit *si* et *quand* le déployer — deux questions que le seul score de risque agentique ne tranche pas.
+La contribution centrale d'Akshathala et al. (2512.12791) est de montrer que les métriques de complétion binaires — la tâche est-elle terminée ou non — manquent systématiquement les déviations comportementales liées au non-déterminisme des LLM : un agent peut déclarer une tâche complétée tout en ayant produit un résultat incorrect, ayant consommé un multiple du budget de retry prévu, ou ayant invoqué des outils dans un ordre cohérent mais non optimal. Ces déviations ne sont détectables que si les quatre piliers sont évalués séparément, puis mis en relation.
 
-Cette section installe la discontinuité entre la qualification du cas d'usage et la décision d'investissement. Elle pose le problème structurel : un cas d'usage positionné en zone verte de la matrice peut néanmoins échouer si l'organisation manque des fondations de données, de processus ou de talent nécessaires à l'exploitation du système en production. Les données Fivetran (2026) l'illustrent brutalement : 85 % des entreprises déploient de l'*agentic AI* sur des fondations de données non prêtes ; 41 % utilisent déjà de l'*agentic AI* en production malgré des lacunes critiques de qualité et de gouvernance des données. Ce gap est la cause racine de la majorité des dépassements de coût CPST documentés.
+### Pilier 1 — LLM
 
-La section donne la carte de navigation du chapitre : évaluer simultanément le ROI attendu (§4.2), le profil de risque résiduel après qualification Ch. 3 (§4.3), la décision build/buy/wait (§4.4), et la maturité organisationnelle à quatre dimensions (§4.5) — avant de produire le dossier d'investissement actionnable (§4.6).
+La capacité du modèle à accomplir la tâche cible avec le taux de succès et la fiabilité requis, sur la distribution réelle des inputs de production — pas sur la distribution de validation du PoC (preuve de concept). L'écart entre ces deux distributions est la cause racine du phénomène « l'agent marche en démo, échoue en production » documenté par SoftwareSeni (2026) : le PoC est calibré sur des inputs nominaux ; la production expose des cas de bord, des inputs malformés et des contextes composites.
 
-Renvoi explicite vers [Ch. 2](ch02-business-case.md) §2.6 : les trois questions opérationnelles du dossier d'investissement (CPST cible, *retry budget*, définition du *successful outcome*) sont les intrants de ce chapitre.
+La distinction *pass@k* vs *pass^k* introduite par Anthropic Engineering (*Demystifying Evals for AI Agents*, 2025-2026) est l'outil de calibrage : *pass@k* mesure si l'agent réussit au moins une fois sur k essais — pertinent pour les tâches créatives ou exploratoires où une réponse correcte suffit ; *pass^k* mesure si l'agent réussit systématiquement sur k essais — exigible pour toute tâche opérationnelle répétée sur un volume de production. Une tâche médicale ou financière n'est pas évaluable en *pass@k* ; une génération de contenu marketing peut l'être. Confondre les deux produit soit un sous-déploiement (exiger *pass^k* là où *pass@k* suffit) soit une catastrophe opérationnelle (déployer avec *pass@k* là où *pass^k* est requis).
 
----
+Impact CPST : un LLM sous-dimensionné pour la complexité réelle de la tâche dégrade le taux de succès et multiplie les retries — chaque retry supplémentaire consomme des tokens d'inférence, du temps d'orchestration, et augmente la probabilité d'escalade humaine. Le coût marginal du retry n'est jamais nul.
 
-### 4.2 — Le cadre à quatre piliers : LLM, Memory, Tools, Environment
+### Pilier 2 — Memory
 
-**Phrase-clé de section.** Les quatre piliers ne sont pas une taxonomie académique : ce sont les quatre déterminants du CPST potentiel, et évaluer chaque pilier revient à projeter le coût de production avant d'écrire la première ligne de code.
+La capacité du système à maintenir le contexte nécessaire à l'exécution correcte sur toute la durée de la tâche. La taxonomie mémoire épisodique / sémantique / procédurale (développée au [Ch. 1 §1.3](ch01-from-automation-to-agents.md)) est le point de départ ; l'évaluation dans ce pilier porte sur trois questions opérationnelles : quel type de mémoire la tâche requiert-elle réellement, quel est le risque de *context drift* sur les tâches longues, et quel est le coût d'infrastructure de la solution mémoire choisie (index vectoriel, graphe de connaissances, compression).
 
-Cette section est le cœur analytique du chapitre. Elle s'appuie sur le cadre arXiv:2512.12791 (Akshathala et al., SERC IIIT-Hyderabad / MontyCloud Inc., décembre 2025) — le seul cadre d'évaluation publié qui structure explicitement les systèmes *agentic* autour de ces quatre piliers avec validation empirique sur un cas CloudOps autonome.
+L'anti-patron critique : une mémoire non purgée sur des tâches répétitives accumule des biais dans les décisions suivantes — l'agent « se souvient » d'états antérieurs qui ne sont plus valides, et ses actions dérivent sans signal d'alarme explicite. Intellyx documente ce mode de défaillance sous le terme *stale state* (*confirmé* — Intellyx, février 2025) : c'est l'un des cinq modes de défaillance stateful identifiés dans ce chapitre et au [Ch. 1 §1.4](ch01-from-automation-to-agents.md). Impact CPST direct : un contexte perdu ou corrompu force le retry depuis zéro, au coût d'une tâche complète, et augmente le taux d'escalade pour les cas où l'agent ne peut pas reconstruire le contexte nécessaire.
 
-**Pilier 1 — LLM.** Capacité du modèle à accomplir la tâche cible avec le taux de succès et la fiabilité requis. Évaluer : performance sur distribution réelle des inputs (pas sur distribution de validation PoC), taux pass@1 (succès à la première tentative) vs pass@k (au moins une réussite sur k essais), cohérence comportementale sur les cas de bord. Lien CPST : un LLM sous-dimensionné pour la complexité de la tâche dégrade le taux de succès et multiplie les retries — impact direct sur le dénominateur du CPST. Apport Anthropic : la distinction pass@k vs pass^k (Anthropic Engineering, « Demystifying Evals for AI Agents ») calibre l'exigence selon le contexte — une tâche médicale exige pass^k élevé ; une suggestion de produit tolère pass@k.
+### Pilier 3 — Tools
 
-**Pilier 2 — Memory.** Capacité du système à maintenir le contexte nécessaire à l'exécution correcte sur la durée de la tâche. Évaluer : type de mémoire requis (épisodique, sémantique, procédurale — cf. taxonomie Ch. 1 §1.3), risque de dette de mémoire sur les tâches longues, coût d'infrastructure mémoire (index vectoriel, graphe de connaissances, compression). Lien CPST : une mémoire défaillante augmente le taux d'escalade (le contexte perdu déclenche une exception) et les retries (l'agent repart de zéro). Anti-patron à documenter : mémoire non purgée sur des tâches répétitives → accumulation de biais dans les décisions suivantes.
+La qualité et la fiabilité des outils auxquels l'agent a accès. L'évaluation couvre quatre dimensions : l'idempotence des outils à effet de bord (peut-on appeler deux fois sans conséquence double — exigence non négociable pour les workflows avec retry), la richesse et la précision des schémas d'outil (un schéma ambigu augmente mécaniquement le taux d'erreur *tool correctness*), la couverture des outils disponibles par rapport aux besoins réels de la tâche (un outil manquant force l'improvisation, source d'hallucinations outillées), et la latence des appels d'outil (impact direct sur le CPST via la latence totale de la tâche).
 
-**Pilier 3 — Tools.** Qualité et fiabilité des outils auxquels l'agent a accès. Évaluer : idempotence des outils à effet de bord (peut-on appeler deux fois sans conséquence double ?), richesse et précision des schémas d'outil (un schéma ambigu augmente le taux d'erreur *tool correctness*), couverture des outils vs. besoins réels de la tâche (un outil manquant force l'improvisation), latence des appels d'outil (impact sur CPST via latence totale). Métrique clé : *tool correctness* = (tool selection accuracy × tool parameter accuracy) — les deux composantes doivent être mesurées séparément. Un agent qui sélectionne le bon outil mais avec les mauvais paramètres contribue différemment à l'échec.
+La métrique clé de ce pilier est le *tool correctness*, qui se décompose en deux composantes distinctes : *tool selection accuracy* (l'agent invoque le bon outil pour la situation) et *tool parameter accuracy* (l'agent remplit les paramètres correctement selon le contexte). Ces deux composantes doivent être mesurées séparément. Un agent qui sélectionne le bon outil avec les mauvais paramètres génère un échec différent — et plus difficile à diagnostiquer — que l'agent qui sélectionne le mauvais outil. Anthropic recommande des graders code-based pour valider les appels d'outil : tester *ce que* l'agent a produit, pas *comment* il l'a produit, pour ne pas pénaliser les chemins valides non anticipés (*confirmé* — Anthropic Engineering, *Demystifying Evals*, 2025-2026).
 
-**Pilier 4 — Environment.** Qualité et fiabilité de l'environnement dans lequel l'agent opère : qualité des données d'entrée, stabilité des APIs, sécurité du bac à sable d'exécution, observabilité disponible. Évaluer : taux de disponibilité des APIs invoquées, qualité et fraîcheur des données sources (Gartner : 63 % des organisations ne savent pas si elles ont les bonnes pratiques de gestion des données pour l'IA), conformité réglementaire de l'environnement d'exécution (Loi 25 Québec, OSFI E-23 pour les institutions financières canadiennes). Lien CPST : un environnement instable multiplie les timeouts et les retries — coût directement mesurable.
+### Pilier 4 — Environment
 
-Tableau synthétique : quatre piliers × cinq métriques d'évaluation (niveau de maturité, impact CPST, seuil d'investissement acceptable, contre-mesure si lacune, outil d'instrumentation recommandé).
+La qualité et la fiabilité de l'environnement dans lequel l'agent opère : qualité et fraîcheur des données sources, stabilité des APIs invoquées, sécurité du bac à sable d'exécution, observabilité instrumentée et disponible. Ce pilier est le plus difficile à évaluer parce qu'il dépend de facteurs hors du contrôle direct de l'équipe de développement de l'agent.
 
-Diagramme Mermaid : les quatre piliers comme déterminants du CPST — flèches de causalité vers taux de succès, retry budget, escalade.
+Le chiffre Gartner est la calibration de référence : 63 % des organisations n'ont pas — ou ne savent pas si elles ont — les bonnes pratiques de gestion des données pour l'IA (*confirmé* — Gartner Newsroom, 26 février 2025). Fivetran confirme la dimension concrète : 85 % des entreprises déploient de l'*agentic AI* sur des fondations de données qui ne sont pas prêtes (*confirmé* — Fivetran, 2026 Agentic AI Readiness Index, 5 mai 2026). Ces deux chiffres définissent l'ampleur du problème : l'Environment est le pilier le plus souvent défaillant, et sa défaillance est invisible jusqu'à la production. Un environnement instable multiplie les timeouts et les retries — coût directement mesurable sur le CPST.
 
----
+Pour les institutions financières canadiennes, OSFI E-23 (*Model Risk Management*, en vigueur 1er mai 2027) impose des exigences de gouvernance des modèles IA qui contraignent directement ce pilier : qualité des données d'entraînement, traçabilité des décisions, documentation des limites du modèle. Un agent déployé avant la mise en conformité complète de l'environnement avec OSFI E-23 crée une dette réglementaire dont le coût de remédiation rétroactive dépasse généralement le coût d'une préparation préalable.
 
-### 4.3 — Métriques opérationnelles : les cinq signaux de production
+```mermaid
+graph TD
+    LLM[Pilier 1 — LLM\npass@k · pass^k\ntâche / modèle] --> TS[Task Success Rate]
+    MEM[Pilier 2 — Memory\népisodique · sémantique\nprocédurale] --> TS
+    MEM --> ESC[Escalation Quality]
+    TOOLS[Pilier 3 — Tools\nidempotence · schémas\ncouverture · latence] --> TC[Tool Correctness]
+    TOOLS --> RB[Retry Budget]
+    ENV[Pilier 4 — Environment\ndonnées · APIs · sandbox\nobservabilité] --> RB
+    ENV --> PC[Policy Compliance]
+    TS --> CPST[(CPST\nCost per Successful Task)]
+    TC --> CPST
+    RB --> CPST
+    ESC --> CPST
+    PC --> CPST
 
-**Phrase-clé de section.** Les métriques *task success*, *tool correctness*, *retry budget*, *escalation quality* et *policy compliance* ne sont pas des KPIs de rapport — ce sont les variables de contrôle en temps réel d'un agent *agentic* en production ; leur absence transforme tout incident en surprise.
+    style CPST fill:#f0f4ff,stroke:#3b5bdb,stroke-width:2px
+    style LLM fill:#e8f5e9,stroke:#2e7d32
+    style MEM fill:#e8f5e9,stroke:#2e7d32
+    style TOOLS fill:#e8f5e9,stroke:#2e7d32
+    style ENV fill:#e8f5e9,stroke:#2e7d32
+```
 
-Cette section définit et opérationnalise les cinq métriques canoniques, en s'appuyant sur les définitions de iMerit (2026), les pratiques Anthropic et le standard OTel GenAI (expérimental, mars 2026).
+Le tableau suivant synthétise l'évaluation des quatre piliers en termes opérationnels :
 
-**Task success rate.** Taux de complétion correcte des objectifs de l'agent sur la distribution réelle des inputs. Distinguer : succès nominal (la tâche est complétée) vs. succès qualitatif (la tâche est complétée correctement selon le critère défini en §2.5 — le *successful outcome*). Un agent qui complète une tâche avec une réponse plausible mais incorrecte contribue au succès nominal mais pas au succès qualitatif. La distinction détermine le dénominateur du CPST.
-
-**Tool correctness.** Deux composantes : (1) *tool selection accuracy* — l'agent invoque le bon outil pour la situation ; (2) *tool parameter accuracy* — l'agent remplit les paramètres correctement selon le contexte. Apport Anthropic : les graders code-based sont préférables aux tests de séquence rigides — tester *ce que* l'agent a produit, pas *comment* il l'a produit, pour éviter de pénaliser les chemins valides non anticipés.
-
-**Retry budget.** Mesure de l'utilisation du budget de retry par tâche. En production : ratio (retries consommés / budget alloué), taux de tâches qui épuisent le budget complet sans succès (indicateur de sous-dimensionnement du modèle ou de mauvaise qualité d'outil), coût moyen par retry (enrichit le CPST). Seuil d'alerte : si plus de 20 % des tâches consomment plus de 50 % du retry budget, le cas d'usage est probablement mal dimensionné — réévaluer le Pilier 1 (LLM) ou le Pilier 3 (Tools).
-
-**Escalation quality.** Quatre sous-dimensions : (1) *trigger accuracy* — l'escalade est déclenchée aux bonnes conditions (pas trop tôt, pas trop tard) ; (2) *escalation type* — escalade humaine vs. spécialisée correctement routée ; (3) *timing* — à quel point du cycle de vie de la tâche l'escalade survient (les escalades précoces coûtent moins en contexte accumulé) ; (4) *context quality* — la complétude et la clarté du contexte transmis à l'opérateur humain (une escalade avec contexte incomplet entraîne un temps de traitement humain plus long → CPST d'escalade plus élevé).
-
-**Policy compliance.** Mesure l'adhérence de l'agent aux politiques définies : périmètre topical (refus des requêtes hors domaine), contraintes de données (ne pas exposer de PII non autorisées), conformité réglementaire (exigences sectorielles). Lien OTel : les conventions sémantiques GenAI (gen-ai-agent-spans) permettent d'instrumenter la policy compliance comme attribut de span — traçable par tâche, par tenant, par run.
-
-Section outillage : panorama des six plateformes d'évaluation et d'observabilité agentique en 2026 — LangSmith, Langfuse, Arize Phoenix (OTel-native), Braintrust (SOC 2 / HIPAA), Galileo (ChainPoll, Luna), Datadog LLM Observability — avec positionnement selon le profil organisationnel et les critères de conformité.
-
----
-
-### 4.4 — Décision build/buy/wait : critères et seuils
-
-**Phrase-clé de section.** La décision build/buy/wait n'est pas une décision de make-or-buy classique : elle dépend simultanément du score de *readiness* organisationnel, du degré de différenciation concurrentielle du cas d'usage, et de la vitesse à laquelle le marché des plateformes agentiques se consolide.
-
-Cette section traduit le cadre KPMG (2026) en critères opérationnels pour architectes.
-
-**Seuil de la décision « build ».** Justifié lorsque : (1) le cas d'usage constitue une capacité de différenciation concurrentielle que les plateformes génériques ne peuvent pas reproduire — traduction opérationnelle : l'avantage réside dans la logique métier, pas dans les capacités LLM génériques ; (2) l'organisation a une maturité d'ingénierie confirmée (scores piliers LLM, Memory, Tools ≥ 3/5) ; (3) la souveraineté des données ou la conformité réglementaire interdit l'utilisation de plateformes SaaS avec traitement de données tiers. Compromis : coût de développement et de maintenance long terme supérieur de 3× à 5× au coût d'achat sur 3 ans (*à vérifier* — hypothèse basée sur des ratios observés, aucune étude publiée disponible à mai 2026).
-
-**Seuil de la décision « buy ».** Justifié lorsque : (1) le cas d'usage correspond à un patron supporté par les plateformes matures (support tier-1, assistant de recherche, automatisation P2P) ; (2) le time-to-value est critique (fenêtre compétitive < 6 mois) ; (3) la maturité d'ingénierie est insuffisante pour maintenir un agent custom en production (score pilier < 2/5 sur deux dimensions ou plus). Compromis : dépendance fournisseur, customisation limitée, risque de lock-in (traité exhaustivement au [Ch. 10](ch10-scaling-without-lockin.md)).
-
-**Seuil de la décision « wait ».** Justifié lorsque : (1) score readiness global < seuil défini en §4.5, sans plan de remédiation des lacunes dans la fenêtre de déploiement ; (2) le marché des plateformes pour ce cas d'usage spécifique est en transition rapide (deux ou trois consolidations attendues dans 12-18 mois) — déployer sur une plateforme qui sera absorbée ou abandonnée génère une dette de migration ; (3) les exigences réglementaires applicables ne sont pas encore stabilisées (exemple : actes délégués EU AI Act attendus en 2025-2026, OSFI E-23 en vigueur mai 2027).
-
-Tableau décisionnel : matrice 3 × 5 — décision (build/buy/wait) × critère (différenciation, maturité, conformité, time-to-value, marché) avec seuils numériques.
-
-**Condition de bascule.** La décision « build » peut se renverser en « buy » si le marché lance une plateforme qui couvre le cas d'usage avec une customisation suffisante dans les 12 mois suivant la décision initiale. Un engagement contractuel pluriannuel sur une plateforme « buy » se renverse en « build » si le fournisseur est acquis ou si les prix augmentent au-delà du seuil de CPST acceptable. La décision « wait » doit avoir une date d'expiration explicite avec des critères de réévaluation — « wait indéfini » est une non-décision, pas une stratégie.
+| Pilier | Métrique primaire | Impact CPST si défaillant | Contre-mesure | Outil d'instrumentation |
+|---|---|---|---|---|
+| LLM | pass^k sur distribution réelle | Retries multipliés, taux de succès dégradé | Réévaluation modèle sur corpus production | Eval suite automatisée (offline + online) |
+| Memory | Taux de *stale state*, taux d'escalade lié au contexte | Retries depuis zéro, escalades non prévues | Politique de purge, compression avec validation | Traces OTel GenAI (span memory operations) |
+| Tools | *Tool selection accuracy*, *tool parameter accuracy* | Échecs silencieux, résultats incorrects non détectés | Schémas stricts, idempotence, tests de contrat | Graders code-based, OTel tool spans |
+| Environment | Disponibilité APIs, fraîcheur données, taux timeout | Retries contraints, timeouts non bornés | SLAs APIs, pipelines données toujours actifs | Monitoring APM + OTel traces |
 
 ---
 
-### 4.5 — Readiness assessment : données, processus, talents, gouvernance
+## 4.2 — Métriques opérationnelles : les cinq signaux de production
 
-**Phrase-clé de section.** Le *readiness assessment* agentique évalue quatre dimensions orthogonales — données, processus, talents, gouvernance — dont la conjonction détermine si une organisation peut exploiter un agent en production sans générer un coût d'incident supérieur au coût d'escalade.
+Les cinq métriques canoniques définies ici — *task success*, *tool correctness*, *retry budget*, *escalation quality*, *policy compliance* — ne sont pas des *KPI* (indicateurs de performance clés) de tableau de bord managérial. Ce sont les variables de contrôle en temps réel d'un système *agentic* en production : leur absence transforme tout incident en surprise non diagnostiquable. Les définitions qui suivent s'appuient sur le vocabulaire opérationnel de iMerit (2026) et sur les pratiques Anthropic Engineering.
 
-Cette section s'appuie sur le modèle MIT CISR à quatre stades (2025), le Fivetran 2026 Agentic AI Readiness Index (publié le 5 mai 2026), et les critères de gouvernance Databricks (rapport *State of AI Agents 2026*, cité dans [Ch. 2](ch02-business-case.md) §2.5).
+### Task success rate
 
-**Dimension 1 — Données.** L'agent peut-il accéder aux données dont il a besoin, avec la qualité, la fraîcheur et la traçabilité requises pour la tâche ? Évaluer : existence de pipelines de données automatisés et toujours actifs (signal de maturité Fivetran : les organisations « fully prepared » s'appuient sur des pipelines always-on), lignage et gouvernance end-to-end (42 % des organisations citent la qualité et le lignage des données comme principale barrière), conformité souveraineté (39 % citent la conformité réglementaire comme barrière). Seuil minimal : les données sources doivent avoir un lignage traçable et un SLA de fraîcheur défini avant déploiement. Gartner calibre le risque : 63 % des organisations n'ont pas les pratiques de gestion des données requises pour l'IA.
+Taux de complétion correcte des objectifs de l'agent sur la distribution réelle des inputs. La distinction critique : succès *nominal* (la tâche est déclarée terminée par l'agent) vs succès *qualitatif* (la tâche est terminée avec un résultat conforme au critère de *successful outcome* défini en [Ch. 2 §2.5](ch02-business-case.md)). Un agent qui produit une réponse plausible mais incorrecte contribue au succès nominal mais pas au succès qualitatif. Cette distinction détermine le dénominateur réel du CPST et est la source la plus fréquente de désaccord entre les équipes techniques (qui mesurent le succès nominal) et les directions métier (qui évaluent le succès qualitatif).
 
-**Dimension 2 — Processus.** Le processus que l'agent automatise est-il suffisamment bien compris et documenté pour que ses exceptions soient prévisibles ? Évaluer : existence d'une documentation des cas de bord (les agents héritent de la complexité accidentelle du processus humain — anti-patron documenté dans [Ch. 3](ch03-mapping-high-impact.md) §3.6), définition opérationnelle du *successful outcome* (artefact de gouvernance §2.5), cartographie des outils requis vs. disponibles. Un processus non documenté avant déploiement *agentic* génère invariablement des surprises en production, parce que les cas de bord non documentés sont précisément ceux qui déclenchent les comportements non bornés.
+Seuil minimal acceptable pour déploiement en production *zone verte* : success rate qualitatif ≥ 85 % sur la distribution réelle des inputs (*hypothèse de seuil maison — pas de standard publié à mai 2026*). En dessous, le CPST dépasse généralement le coût d'un opérateur humain pour les tâches comparables.
 
-**Dimension 3 — Talents.** L'organisation a-t-elle les compétences pour développer, évaluer, déployer et opérer un agent *agentic* en production ? Évaluer : existence d'ingénieurs capables d'écrire des *eval suites* (compétence rare, distincte du prompt engineering), capacité interne à instrumenter l'observabilité OTel GenAI, compétence *on-call* pour diagnostiquer les modes de défaillance *stateful* (stale state, context drift — décrits en [Ch. 1](ch01-from-automation-to-agents.md) §1.4). MIT CISR : la progression stade 2→3 (pilotes → façons de travailler à l'échelle) corrèle avec la présence de compétences spécialisées en IA dans l'organisation.
+### Tool correctness
 
-**Dimension 4 — Gouvernance.** L'organisation a-t-elle les artefacts de gouvernance minimaux pour contrôler l'agent en production ? Évaluer : présence des trois artefacts Databricks (définition *successful outcome*, *eval suite* automatisée, *escalation policy* documentée — cf. [Ch. 2](ch02-business-case.md) §2.5), existence d'une politique de *retry budget* et de *kill switch* financier (§2.3), structure RACI pour les décisions humaines de supervision. Gartner avertit : seulement 21 % des entreprises ont une infrastructure de gouvernance mature pour gérer l'*agentic AI* à l'échelle en toute sécurité en 2026 (*probable* — issu d'une synthèse d'analystes, pas d'une publication primaire Gartner directement citée).
+Deux composantes à mesurer séparément : (1) *tool selection accuracy* — l'agent invoque le bon outil pour la situation donnée ; (2) *tool parameter accuracy* — l'agent remplit les paramètres correctement selon le contexte de la tâche. La combinaison produit un score composite, mais les composantes diagnostiquent des défauts différents : une sélection incorrecte révèle un problème de compréhension de la tâche ou de description de l'outil ; des paramètres incorrects révèlent un problème de résolution du contexte ou de précision du schéma.
 
-Tableau de scoring : quatre dimensions × cinq critères, chacun noté 1-5. Score global ≥ 15/20 → décision de déploiement envisageable. Score 10-14 → plan de remédiation ciblé avant déploiement. Score < 10 → décision « wait » avec feuille de route de développement des capacités.
+Les graders code-based recommandés par Anthropic sont la solution à privilégier pour instrumenter cette métrique en production : ils testent le résultat produit (l'appel d'outil a-t-il abouti au résultat attendu ?) plutôt que la séquence exacte d'appels (l'agent a-t-il invoqué précisément ce chemin ?). Cette distinction évite de pénaliser les chemins d'exécution valides mais non anticipés lors de l'écriture des evals.
+
+### Retry budget
+
+Mesure de la consommation du budget de retry par tâche. En production, les métriques opérationnelles à instrumenter sont : le ratio (retries consommés / budget alloué par tâche), le taux de tâches qui épuisent le budget complet sans atteindre le succès (indicateur de sous-dimensionnement du modèle ou de mauvaise qualité des outils), et le coût moyen par retry (enrichit le calcul du CPST réel vs projeté).
+
+**Seuil d'alerte** : si plus de 20 % des tâches consomment plus de 50 % du retry budget alloué, le cas d'usage est probablement mal dimensionné — réévaluer le Pilier 1 (LLM) ou le Pilier 3 (Tools) avant toute initiative d'optimisation de coût. Ce seuil est un cadre maison de cette monographie, non une norme publiée. La définition du retry budget en [Ch. 2 §2.3](ch02-business-case.md) fournit le cadre financier ; cette métrique en est la mesure opérationnelle en production.
+
+### Escalation quality
+
+Quatre sous-dimensions, chacune mesurable indépendamment : (1) *trigger accuracy* — l'escalade est déclenchée aux bonnes conditions (ni trop tôt, ni trop tard) ; (2) *escalation type* — l'escalade est correctement routée (humain généraliste, humain expert, agent spécialisé) ; (3) *timing* — à quel point du cycle de vie de la tâche l'escalade survient (une escalade précoce coûte moins en contexte accumulé ; une escalade tardive signifie que l'agent a consommé des ressources sans succès) ; (4) *context quality* — complétude et clarté du contexte transmis à l'opérateur humain ou à l'agent cible.
+
+Cette dernière sous-dimension est la plus négligée dans les implémentations initiales et la plus coûteuse en production : une escalade avec contexte incomplet allonge le temps de traitement humain, augmente le taux de re-escalade, et dégrade la satisfaction de l'opérateur. Le [Ch. 7](ch07-agentops.md) traite l'observabilité des escalades comme dimension distincte de l'AgentOps.
+
+### Policy compliance
+
+Mesure l'adhérence de l'agent aux politiques définies : périmètre topical (refus des requêtes hors domaine), contraintes de données (ne pas exposer de données à caractère personnel non autorisées), exigences réglementaires sectorielles. Cette métrique est le lien direct entre l'évaluation technique de l'agent et les exigences de conformité de l'environnement (Pilier 4).
+
+Le standard OTel GenAI Agent Spans (*experimental* à mars 2026 — *probable* que le statut sera stabilisé d'ici fin 2027, 12-18 mois de piste, mais pas garanti) permet d'instrumenter la policy compliance comme attribut de span : traçable par tâche, par tenant, par run. L'adoption précoce par Datadog (support natif OTel v1.37), Grafana et Elastic (*confirmé* — documentation OpenTelemetry, 2026) rend cette instrumentation opérationnelle aujourd'hui, même si l'API n'est pas encore stabilisée.
 
 ---
 
-### 4.6 — Du *readiness assessment* au dossier d'investissement actionnable
+## 4.3 — Plateformes d'évaluation : tableau comparatif
 
-**Phrase-clé de section.** Le dossier d'investissement *agentic* qui résiste à la première revue budgétaire répond à trois questions en une page : quel est le CPST projeté à quel taux de succès, quel est le score de *readiness* et quel est le plan de remédiation des lacunes, et quelle est la décision build/buy/wait motivée.
+Le marché des plateformes d'évaluation agentique a convergé en 2025-2026 autour de quatre acteurs principaux et d'un standard d'instrumentation émergent (OTel GenAI). Le tableau suivant est un positionnement neutre sur des critères objectifs — aucune recommandation fournisseur n'est formulée, parce que le choix dépend du profil organisationnel et des contraintes de conformité propres à chaque déploiement.
 
-Cette section ferme la boucle du chapitre en traduisant les évaluations précédentes en artefacts décisionnels concrets. Elle décrit le format minimal d'un dossier d'investissement *agentic* : (1) fiche cas d'usage (classification Ch. 3, CPST cible, *successful outcome* défini) ; (2) évaluation quatre piliers (LLM, Memory, Tools, Environment) avec scores et lacunes identifiées ; (3) évaluation *readiness* (quatre dimensions, score total, plan de remédiation) ; (4) décision build/buy/wait motivée avec critères et condition de bascule explicite.
+| Plateforme | Modèle de déploiement | OTel-native | Conformité | Forces différenciantes | Limite principale |
+|---|---|---|---|---|---|
+| **LangSmith** (LangChain) | SaaS + self-hosted | Partielle (via LangChain callbacks) | SOC 2 | Intégration native LangChain/LangGraph, debugging de traces multi-étapes | Friction hors écosystème LangChain |
+| **Arize Phoenix** | Open-source + SaaS | Oui (OTel natif, priorité design) | SOC 2 — autohébergeable pour conformité renforcée | Six modalités d'éval (LLM, code, humain, embedding, règles, retrieval) ; autohébergeable | Maturité UI inférieure aux solutions propriétaires |
+| **Galileo** | SaaS | Partielle | SOC 2, GDPR | ChainPoll (détection hallucination), Luna (auto-évaluation), détection *groundedness* | Pricing opaque, modèle propriétaire non auditable |
+| **Braintrust** | SaaS | Partielle (architecture span imbriquée) | SOC 2, GDPR, HIPAA | Architecture de scoring imbriquée, adapté aux contextes santé/réglementé | Coût élevé à l'échelle, dépendance vendor |
+| **OTel GenAI Agent Spans** | Standard ouvert | Oui (c'est le standard) | N/A (standard, pas outil) | Interopérabilité, portabilité, base pour tous les outils ci-dessus | Statut *experimental* à mai 2026 ; API non stabilisée |
 
-Elle ancre les renvois vers [Ch. 5](ch05-protocols-interoperability.md) (choix de protocoles selon décision build/buy) et [Ch. 7](ch07-agentops.md) (les métriques définies ici deviennent les métriques instrumentées en production par AgentOps). Elle pointe vers [Annexe B](annexe-B-use-case-canvas.md) (canvas instanciant ce cadre) et [Annexe C](annexe-C-agentops-maturity.md) (jauge de maturité opérationnelle).
+**Critères de choix** — trois questions pour trancher sans fabrication de scoring :
+
+1. *Êtes-vous dans l'écosystème LangChain/LangGraph ?* Si oui, LangSmith offre l'intégration la plus directe avec le moins de friction. Si non, Arize Phoenix est la seule option open-source avec un OTel natif prioritaire, ce qui garantit la portabilité.
+
+2. *Avez-vous des exigences HIPAA ou de conformité financière stricte ?* Braintrust est la seule plateforme SaaS avec une certification HIPAA confirmée à mai 2026. Pour les institutions financières canadiennes, l'autohébergement d'Arize Phoenix permet de maintenir la souveraineté des données sans les limites de la customisation SaaS.
+
+3. *Visez-vous la durabilité sur 3-5 ans ?* Instrumenter l'OTel GenAI Agent Spans dès maintenant — même en statut *experimental* — garantit la portabilité vers n'importe quelle plateforme future. C'est la seule décision d'infrastructure d'évaluation qui n'implique pas de lock-in fournisseur.
+
+**Recommandation avec compromis et alternative** : instrumenter OTel GenAI Agent Spans comme couche de base universelle, puis brancher la plateforme d'évaluation choisie par-dessus. Compromis : l'API OTel en statut *experimental* peut changer avant stabilisation (probable d'ici Q4 2027 — *à vérifier*), ce qui impose une migration légère de l'instrumentation. Alternative : ne pas utiliser OTel et s'appuyer exclusivement sur le SDK natif de la plateforme choisie — plus simple à court terme, mais crée une dépendance vendor sur la visibilité de production. Condition de bascule : si la plateforme choisie est acquise ou abandonne sa feuille de route, l'absence d'OTel impose une migration complète de l'instrumentation, pas seulement un changement de plateforme.
 
 ---
 
-## Sources clés
+## 4.4 — Décision Build / Buy / Borrow / Wait : critères et seuils
 
-| # | Source | Justification de rétention |
+La décision Build/Buy/Wait formalisée dans le TOC.md est enrichie ici d'une quatrième voie — *Borrow* — introduite par KPMG (2026) comme variante hybride entre *Wait* et *Buy* : accéder aux capacités *agentic* d'un partenaire ou d'un fournisseur sans en prendre la possession ni la responsabilité de maintenance, pendant la période de transition organisationnelle. Selon KPMG, 57 % des organisations optent pour une approche hybride mêlant ces voies (*confirmé* — KPMG, *Agentic AI Untangled*, 2026), en hausse par rapport à 51 % le trimestre précédent.
+
+```mermaid
+flowchart TD
+    A[Cas d'usage qualifié\nmatrice Ch. 3] --> B{Différenciation\nconcurrentielle\ncritique ?}
+    B -- Oui --> C{Maturité piliers\n≥ 3/5 sur 3 piliers ?}
+    C -- Oui --> BUILD([BUILD\nDifférenciation + maturité])
+    C -- Non --> BORROW([BORROW\nPartenaire pendant\nmontée en maturité])
+    B -- Non --> D{Cas d'usage couvert\npar plateforme mature ?}
+    D -- Oui --> E{Time-to-value\n< 6 mois critique ?}
+    E -- Oui --> BUY([BUY\nVitesse + capacité éprouvée])
+    E -- Non --> F{Score readiness\n≥ 15/20 ?}
+    F -- Oui --> BUY
+    F -- Non --> WAIT([WAIT\nRemédiation readiness\navant déploiement])
+    D -- Non --> WAIT
+
+    style BUILD fill:#d4edda,stroke:#27ae60
+    style BUY fill:#cce5ff,stroke:#0056b3
+    style BORROW fill:#fff3cd,stroke:#e67e22
+    style WAIT fill:#fdecea,stroke:#c0392b
+```
+
+Le tableau suivant détaille les critères et seuils pour chaque voie :
+
+| Critère | BUILD | BUY | BORROW | WAIT |
+|---|---|---|---|---|
+| **Différenciation concurrentielle** | Élevée : l'avantage réside dans la logique métier, pas dans les capacités LLM génériques | Faible à modérée : patron supporté par plateformes matures | Modérée : capacité souhaitée mais pas encore maîtrisable en interne | Non requise |
+| **Maturité piliers (LLM, Memory, Tools)** | ≥ 3/5 sur au moins 3 piliers | ≥ 2/5 suffisant — la plateforme comble les lacunes | 1-2/5 admissible — le partenaire apporte les capacités | < 2/5 sur deux piliers ou plus → rembourser d'abord la dette |
+| **Score readiness 4D** | ≥ 15/20 | ≥ 12/20 (avec plan de remédiation parallèle) | 8-14/20 — readiness partielle acceptable si partenaire compense | < 8/20 → remédiation requise avant tout engagement |
+| **Time-to-value** | > 6 mois acceptable si différenciation justifie | < 6 mois critique | 3-9 mois : accès rapide aux capacités pendant que la maturité interne se construit | Indéfini → doit avoir une date d'expiration explicite avec critères de réévaluation |
+| **Souveraineté des données / conformité** | Requise si traitement tiers interdit (Loi 25, OSFI E-23) | Acceptable si SaaS conforme disponible | Vérifier contrats de partage de données avec le partenaire | N/A |
+| **Latence stratégique** | Tolérable — la différenciation justifie le délai | Risque si fenêtre compétitive < 6 mois | Faible — accès immédiat aux capacités | Risque si le marché consolide rapidement |
+
+**La voie *Borrow* opérationnellement.** KPMG la décrit comme co-création, partage du risque, et flexibilité (*confirmé* — KPMG, 2026). En pratique : accéder à un modèle *agentic* déployé par un intégrateur ou un éditeur, l'utiliser en production pour le cas d'usage cible, et simultanément construire la maturité interne pour internaliser ou remplacer la capacité dans 12-24 mois. Le risque principal est la dépendance commerciale pendant la période de *borrow* : si le partenaire modifie ses conditions, l'organisation n'a ni la capacité interne de substituer ni le temps de trouver une alternative. La condition de cette voie est donc un contrat avec des clauses de portabilité des données et des agents, et un plan de sortie documenté dès l'entrée.
+
+**Recommandation principale : ROI agentique strict vs optionalité de capacité.**
+
+Compromis : évaluer un cas d'usage *agentic* sur le seul ROI direct (CPST vs coût humain) est une exigence valide mais insuffisante — elle ignore la valeur de l'*optionalité de capacité* que le déploiement crée : données de production réelles sur le comportement de l'agent, apprentissage opérationnel de l'équipe, infrastructure d'évaluation construite, et capital politique interne pour les déploiements suivants. Un cas d'usage avec ROI direct modeste mais très instructif peut valoir l'investissement si l'organisation est en début de courbe d'apprentissage *agentic*. La condition de bascule : si le ROI direct est négatif et l'apprentissage organisationnel n'est pas un objectif explicitement budgété, la décision est *Wait*.
+
+Alternative : formaliser l'optionalité de capacité comme ligne du business case, avec un horizon de valeur de 24-36 mois (délai pour que les agents zone orange deviennent rentables grâce aux capacités construites par les pilotes zone verte). Cette formalisation résiste mieux aux revues budgétaires trimestrielles que l'argument qualitatif de l'apprentissage.
+
+---
+
+## 4.5 — Readiness assessment 4D : données, processus, talents, gouvernance
+
+Le *readiness assessment* agentique présenté ici est un cadre maison de cette monographie — les quatre dimensions et le système de scoring proposé ne sont pas attribués à une source externe unique. La structure s'appuie sur le modèle MIT CISR à quatre stades (*confirmé* — MIT CISR, 2025, N=152), sur le Fivetran 2026 Agentic AI Readiness Index (*confirmé* — N=400), et sur les critères de gouvernance Databricks (*confirmé* — *State of AI Agents 2026*, 20 000+ organisations), mais leur combinaison en un scoring intégré est une synthèse de cette monographie. Les seuils numériques proposés sont des *hypothèses de travail*, pas des normes validées empiriquement.
+
+### Dimension 1 — Données (D1)
+
+L'agent peut-il accéder aux données dont il a besoin, avec la qualité, la fraîcheur et la traçabilité requises pour la tâche ? Les barrières documentées par Fivetran (2026) sont : qualité et lignage des données (42 % des organisations les citent comme première barrière), conformité réglementaire et souveraineté (39 %), risque sécurité et vie privée (39 %). Ces chiffres définissent le profil de risque type de cette dimension.
+
+Critères de scoring D1 (1-5) :
+
+| Score | Critère |
+|---|---|
+| 1 | Données sources sans lignage documenté, sans SLA de fraîcheur défini |
+| 2 | Lignage partiel, fraîcheur non contractualisée, pas de pipeline toujours actif |
+| 3 | Lignage documenté sur les sources primaires, fraîcheur contractualisée mais non monitorée |
+| 4 | Pipelines toujours actifs, lignage end-to-end, conformité Loi 25 / OSFI E-23 vérifiée |
+| 5 | Pipelines toujours actifs, lignage certifié, portabilité et interopérabilité confirmées (*probable* que ce niveau exige une architecture Data Mesh ou équivalente) |
+
+### Dimension 2 — Processus (D2)
+
+Le processus que l'agent automatise est-il suffisamment bien compris et documenté pour que ses exceptions soient prévisibles ? La règle d'or : un processus non documenté avant déploiement *agentic* génère invariablement des surprises en production, parce que les cas de bord non documentés sont précisément ceux qui déclenchent les comportements non bornés. ThoughtWorks formule le principe avec précision (*confirmé* — ThoughtWorks Technology Radar 2025) : un agent qui reproduit les 14 étapes d'un processus humain non optimisé n'est pas un agent *agentic* — c'est une RPA plus coûteuse.
+
+La documentation du processus cible (pas du processus actuel) est le prérequis minimal de cette dimension. Si le processus cible n'est pas connu, le cas d'usage n'est pas évaluable — la décision est *Wait*.
+
+### Dimension 3 — Talents (D3)
+
+L'organisation a-t-elle les compétences pour développer, évaluer, déployer et opérer un agent *agentic* en production ? La compétence la plus rare et la plus déterminante n'est pas le prompt engineering — c'est la capacité à écrire des *eval suites* qui couvrent la distribution réelle des inputs, y compris les cas de bord. MIT CISR identifie la présence de compétences spécialisées en IA comme le facteur différenciateur de la progression stade 2→3 (pilotes → façons de travailler à l'échelle), qui est le seuil de performance financière au-dessus de la moyenne du secteur (*confirmé* — MIT CISR, 2025).
+
+Les compétences à évaluer : ingénieurs capables d'écrire des eval suites sur corpus de production, capacité à instrumenter l'observabilité OTel GenAI, compétence *on-call* pour diagnostiquer les modes de défaillance *stateful* (*stale state*, *context drift* — [Ch. 1 §1.4](ch01-from-automation-to-agents.md)), et au moins un responsable AgentOps capable de piloter le cycle de vie *promote / deprecate / rollback* d'un agent ([Ch. 7](ch07-agentops.md)).
+
+### Dimension 4 — Gouvernance (D4)
+
+L'organisation a-t-elle les artefacts de gouvernance minimaux pour contrôler l'agent en production ? Les trois artefacts Databricks (*confirmé* — *State of AI Agents 2026*) : définition opérationnelle du *successful outcome*, *eval suite* automatisée, et *escalation policy* documentée. À ces trois artefacts s'ajoutent : une politique de *retry budget* avec *kill switch* financier ([Ch. 2 §2.3](ch02-business-case.md)), et une structure RACI pour les décisions humaines de supervision. L'[Annexe D](annexe-D-governance-raci.md) propose une matrice RACI agentique standard.
+
+La donnée de référence sur cette dimension : selon Gartner, seulement 21 % des entreprises ont une infrastructure de gouvernance mature pour gérer l'*agentic AI* à l'échelle en toute sécurité en 2026 (*probable* — issu d'une synthèse d'analystes, citation indirecte ; la publication primaire Gartner n'a pas été tracée en source directe à mai 2026 — *à vérifier*).
+
+### Scoring intégré et seuils décisionnels
+
+Chaque dimension est notée de 1 à 5 sur les cinq critères ci-dessus. Le score global est la somme des quatre scores dimensionnels (maximum 20).
+
+| Score global | Interprétation | Décision recommandée |
 |---|---|---|
-| 1 | Akshathala et al. — « Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems » — arXiv:2512.12791 — déc. 2025 — https://arxiv.org/abs/2512.12791 | Cadre à quatre piliers LLM/Memory/Tools/Environment ; seule source académique validant empiriquement ce cadre sur un cas *agentic* CloudOps ; paternité SERC IIIT-Hyderabad / MontyCloud Inc. confirmée |
-| 2 | Anthropic Engineering — « Demystifying Evals for AI Agents » — 2026 — https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents | Source primaire sur les evals agentiques : pass@k vs pass^k, graders code-based, grade par dimension (outcome, transcript, tool call, cost, latency) |
-| 3 | iMerit — « Agent Evaluation in Production: Behavior Metrics » — 2026 — https://imerit.net/resources/blog/agent-evaluation-in-production-metrics-for-task-success-tool-use-correctness-and-escalation-quality/ | Définitions opérationnelles précises des cinq métriques canoniques ; structuration 8-12 métriques pour production |
-| 4 | KPMG — « Agentic AI Untangled: Navigating the Build, Buy, or Borrow Decision » — 2026 — https://kpmg.com/us/en/articles/2026/agentic-ai-untangled.html | Cadre décisionnel build/buy/borrow le plus actionnable disponible ; données de marché 57 % blended approach |
-| 5 | MIT CISR — « Update on the Enterprise AI Maturity Model » — 2025 — https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer | Modèle de maturité à quatre stades avec corrélation performance financière ; source académique primaire pour la dimension talents/processus du *readiness assessment* |
-| 6 | Fivetran — « 2026 Agentic AI Readiness Index » — 5 mai 2026 — https://www.fivetran.com/blog/85-of-enterprises-are-running-agentic-ai-on-a-data-foundation-that-isnt-ready | Quantification du gap données/préparation : 85 % déploient sur fondations non prêtes ; barrières données confirmées (N=400) |
-| 7 | Gartner — « Lack of AI-Ready Data Puts AI Projects at Risk » — 26 fév. 2025 — https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk | Calibration du risque données : 63 % sans bonnes pratiques ; 60 % projets abandonnés faute de données IA-prêtes |
-| 8 | OpenTelemetry — « Semantic Conventions for GenAI Agent Spans » — 2025-2026 — https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/ | Standard d'instrumentation de référence pour métriques de production ; statut experimental mars 2026, adoption par Datadog/Grafana/Elastic |
-| 9 | Galileo — « Agent Evaluation Framework 2026 » — 2026 — https://galileo.ai/blog/agent-evaluation-framework-metrics-rubrics-benchmarks | Panorama des six plateformes d'évaluation agentique 2026 avec positionnement comparatif |
-| 10 | Salesforce Customer Stories — « Wiley sees 213% ROI with Salesforce » — 2024-2025 — https://www.salesforce.com/customer-stories/wiley/ | Cas ROI *front-office* avec métriques primaires confirmées ($230K économies, +40 % efficacité) |
-| 11 | Bank of America Newsroom — « BofA AI and Digital Innovations Fuel 30 Billion Client Interactions » — mars 2026 — https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/03/bofa-ai-and-digital-innovations-fuel-30-billion-client-interacti.html | ROI multi-dimension à grande échelle (21,3M utilisateurs, +19 % revenus proactifs) — source primaire confirmée |
-| 12 | Akshathala et al. (arXiv:2604.19818) — « Beyond Task Success: An Evidence-Synthesis Framework » — arXiv — avril 2026 — https://arxiv.org/abs/2604.19818 | Extension du cadre 2512.12791 vers la gouvernance et l'orchestration ; source complémentaire pour §4.6 |
+| ≥ 15/20 | Maturité suffisante pour déploiement | Engager le déploiement avec les garde-fous standard |
+| 10-14/20 | Lacunes ciblées identifiables | Plan de remédiation sur les dimensions < 3/5 avant déploiement |
+| < 10/20 | Lacunes structurelles multiples | *Wait* avec feuille de route de développement des capacités (horizon 6-18 mois) |
+
+Ces seuils sont des *hypothèses de travail* de cette monographie. L'[Annexe C](annexe-C-agentops-maturity.md) propose le modèle de maturité AgentOps à cinq niveaux, qui complète ce scoring par une évaluation de la maturité opérationnelle post-déploiement.
+
+---
+
+## 4.6 — Cas Klarna : la dimension gouvernance absente
+
+Klarna est le cas de référence le plus documenté d'un déploiement *agentic* front-office à grande échelle qui a produit un ROI initial apparent avant de générer des coûts d'incident supérieurs à la valeur capturée. Le [Ch. 2 §2.4](ch02-business-case.md) l'a analysé sous l'angle économique (CPST initialement favorable en coût d'inférence pur, sans intégrer la dégradation de la satisfaction client). Le [Ch. 3 §3.4](ch03-mapping-high-impact.md) l'a analysé sous l'angle de la réversibilité organisationnelle (irréversibilité non modélisée de la suppression de 700 postes). L'angle de ce chapitre est différent et complémentaire : la dimension gouvernance du *readiness assessment*.
+
+Appliqué rétrospectivement au déploiement Klarna (2024), le scoring de la Dimension 4 révèle l'absence des artefacts minimaux. La définition opérationnelle du *successful outcome* n'intégrait pas la satisfaction client comme critère de succès — la métrique retenue était la résolution du ticket, pas la qualité perçue de la résolution. L'*eval suite* n'était pas calibrée sur la distribution réelle des cas complexes — ceux qui avaient précédemment nécessité une intervention humaine experte. La politique d'escalade n'avait pas de critères de déclenchement basés sur la satisfaction client, seulement sur l'échec de résolution technique. Ces trois lacunes sont précisément les trois artefacts Databricks.
+
+La conséquence : l'agent résolvait les tickets (succès nominal) sans résoudre correctement les cas complexes (échec qualitatif). La dégradation s'est accumulée silencieusement pendant plusieurs mois avant que les métriques de satisfaction client ne déclenchent l'alarme — exactement le scénario que la métrique *task success rate* qualitatif aurait détecté en temps réel si elle avait été instrumentée. Le CEO de Klarna a reconnu publiquement : « We went too far » (*confirmé* — Fortune, 9 mai 2025). La réembauche d'agents humains en modèle hybride est la compensation d'une lacune de gouvernance, pas d'une limite technologique.
+
+Score D4 retrospectif estimé : 1-2/5. Score global estimé pour l'ensemble du *readiness assessment* Klarna au moment du déploiement de 2024 : *hypothèse* 10-12/20 — une organisation technologiquement avancée (D1 élevé, D3 élevé) mais avec des processus non documentés pour les cas complexes (D2 faible) et une gouvernance inexistante pour la qualité de la résolution (D4 très faible). La décision correcte selon le cadre de ce chapitre aurait été : déployer avec un plan de remédiation ciblé sur D4, en maintenant les opérateurs humains comme capacité de repli jusqu'à validation du taux de succès qualitatif sur les cas complexes.
+
+La leçon n'est pas que l'IA conversationnelle ne peut pas remplacer des agents humains dans le service client — Bank of America a démontré le contraire à 21,3 millions d'utilisateurs (*confirmé* — BofA Newsroom, mars 2026). La leçon est que la gouvernance (D4) n'est pas une formalité qui peut être résolue en post-déploiement : elle doit être instrumentée avant la première journée de production, parce que les données nécessaires pour la calibrer — la distribution réelle des cas, les seuils de satisfaction, les critères de qualité — n'existent pas avant que l'agent n'opère en production avec une gouvernance suffisante pour les capturer.
+
+---
+
+## 4.7 — Du *readiness assessment* au dossier d'investissement actionnable
+
+Le dossier d'investissement *agentic* qui résiste à la première revue budgétaire répond à trois questions en une page : quel est le CPST projeté à quel taux de succès qualitatif, quel est le score de *readiness* et quel est le plan de remédiation des lacunes, et quelle est la décision Build/Buy/Borrow/Wait motivée avec ses conditions de bascule explicites.
+
+Le format minimal d'un dossier d'investissement *agentic* :
+
+1. **Fiche cas d'usage** : classification selon la matrice de [Ch. 3](ch03-mapping-high-impact.md) (zone, scores des trois dimensions), définition opérationnelle du *successful outcome*, CPST cible et CPST humain de référence.
+
+2. **Évaluation quatre piliers** : scores 1-5 par pilier (LLM, Memory, Tools, Environment), lacunes identifiées, contre-mesures planifiées avec dates.
+
+3. **Score readiness 4D** : scores par dimension (D1-D4), score total, plan de remédiation des dimensions < 3/5, délai de remédiation estimé.
+
+4. **Décision Build/Buy/Borrow/Wait** : voie retenue, critères qui la justifient, condition de bascule explicite (quel événement ou résultat ferait choisir une autre voie).
+
+5. **Métriques de production** : définition des cinq métriques canoniques calibrées pour ce cas d'usage (seuils acceptables, fréquence de mesure, responsable de l'instrumentation).
+
+Ce format est délibérément minimal. Un dossier plus long ne sera pas plus décidable — il sera plus difficile à réviser trimestriellement. La revue trimestrielle est l'engagement de gouvernance requis : les seuils de métriques doivent être revisités à chaque changement de volume, de distribution des inputs, ou de version du modèle.
+
+Les chapitres suivants complètent le cadre : [Ch. 5](ch05-protocols-interoperability.md) détaille le choix de protocoles selon la décision Build/Buy (MCP pour les outils, A2A pour l'orchestration multi-agents) ; [Ch. 7](ch07-agentops.md) opérationnalise les métriques définies ici en discipline AgentOps ; [Ch. 8](ch08-trustworthy-systems.md) aligne les seuils de readiness avec la hiérarchie d'autonomie et les exigences de l'EU AI Act et d'ISO 42001. L'[Annexe B](annexe-B-use-case-canvas.md) propose le canvas opérationnel qui instancie ce cadre pour chaque cas d'usage ; l'[Annexe C](annexe-C-agentops-maturity.md) offre la jauge de maturité AgentOps à cinq niveaux qui prolonge le score readiness 4D après le déploiement.
+
+---
+
+## Pour aller plus loin
+
+**Akshathala et al. — « Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems » (arXiv:2512.12791, décembre 2025).** La source académique la plus rigoureuse disponible pour l'évaluation structurée des systèmes *agentic*. Le cadre à quatre piliers y est validé empiriquement sur un cas CloudOps autonome ; les modes d'évaluation statique, dynamique et par juge (LLM-as-judge) y sont comparés avec des résultats quantitatifs. Lecture indispensable avant de concevoir une *eval suite* pour un déploiement en zone orange ou rouge. <https://arxiv.org/abs/2512.12791>
+
+**Anthropic Engineering — « Demystifying Evals for AI Agents » (2025-2026).** La référence pratique la plus dense sur la conception d'evals pour agents en production. La distinction *pass@k* vs *pass^k*, la recommandation des graders code-based, et la décomposition en dimensions (outcome, transcript, tool call, cost, latency) sont directement applicables à la construction des métriques canoniques décrites dans ce chapitre. <https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents>
+
+**KPMG — « Agentic AI Untangled: Navigating the Build, Buy, or Borrow Decision » (2026).** Le cadre décisionnel Build/Buy/Borrow le plus actionnable disponible à mai 2026, avec des données de marché sur l'adoption de chaque voie. Utile pour calibrer le dialogue avec une direction financière qui attend une comparaison de marché, pas seulement une analyse interne. <https://kpmg.com/us/en/articles/2026/agentic-ai-untangled.html>
+
+**Fivetran — « 2026 Agentic AI Readiness Index » (5 mai 2026).** L'enquête la plus récente et la plus précise sur l'état réel de la maturité des données dans les programmes *agentic* d'entreprise (N=400, Redpoint Ventures). Les chiffres sur les barrières données sont une ressource directe pour justifier l'investissement dans la Dimension 1 du *readiness assessment* devant un comité de gouvernance. <https://www.fivetran.com/blog/85-of-enterprises-are-running-agentic-ai-on-a-data-foundation-that-isnt-ready>
+
+**MIT CISR — « Update on the Enterprise AI Maturity Model » (2025).** Le modèle académique de maturité IA d'entreprise le plus robuste disponible (N=152, MIT CISR Real-Time Business Survey). La corrélation documentée entre la progression stade 2→3 et la performance financière sectorielle est le seul point de données académique confirmé disponible à mai 2026 pour justifier l'investissement dans la maturité organisationnelle plutôt que dans la technologie seule. <https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer>
+
+---
+
+## Références
+
+Akshathala, S., Adnan, B., Ramesh, M., Vaidhyanathan, K., Muhammed, B., Parthasarathy, K. — « Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems » — SERC IIIT-Hyderabad / MontyCloud Inc. — arXiv:2512.12791 — décembre 2025 — <https://arxiv.org/abs/2512.12791> — accédée le 2026-05-05
+
+Akshathala, S. et al. — « Beyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI » — arXiv:2604.19818 — avril 2026 — <https://arxiv.org/abs/2604.19818> — accédée le 2026-05-05
+
+Anthropic Engineering — « Demystifying Evals for AI Agents » — Anthropic — 2025-2026 — <https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents> — accédée le 2026-05-05
+
+Bank of America — « BofA AI and Digital Innovations Fuel 30 Billion Client Interactions » — Bank of America Newsroom — mars 2026 — <https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/03/bofa-ai-and-digital-innovations-fuel-30-billion-client-interacti.html> — accédée le 2026-05-05
+
+Fivetran / Redpoint Ventures — « 2026 Agentic AI Readiness Index: 85% of Enterprises Are Running Agentic AI on a Data Foundation That Isn't Ready » — Fivetran Blog — 5 mai 2026 — <https://www.fivetran.com/blog/85-of-enterprises-are-running-agentic-ai-on-a-data-foundation-that-isnt-ready> — accédée le 2026-05-05
+
+Fortune — « Klarna Reverses AI Customer Service Replacement » — Fortune — 9 mai 2025 — <https://fortune.com/2025/05/09/klarna-ai-humans-return-on-investment/> — accédée le 2026-05-05
+
+Galileo AI — « Agent Evaluation Framework 2026: Metrics, Rubrics & Benchmarks » — Galileo AI Blog — 2026 — <https://galileo.ai/blog/agent-evaluation-framework-metrics-rubrics-benchmarks> — accédée le 2026-05-05
+
+Gartner — « Lack of AI-Ready Data Puts AI Projects at Risk » — Gartner Newsroom — 26 février 2025 — <https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk> — accédée le 2026-05-05
+
+iMerit — « Agent Evaluation in Production: Behavior Metrics — Task Success, Tool Use Correctness, and Escalation Quality » — iMerit Blog — 2026 — <https://imerit.net/resources/blog/agent-evaluation-in-production-metrics-for-task-success-tool-use-correctness-and-escalation-quality/> — accédée le 2026-05-05
+
+KPMG — « Agentic AI Untangled: Navigating the Build, Buy, or Borrow Decision » — KPMG US — 2026 — <https://kpmg.com/us/en/articles/2026/agentic-ai-untangled.html> — accédée le 2026-05-05
+
+MIT CISR — « Update on the Enterprise AI Maturity Model » — MIT Sloan Center for Information Systems Research — 2025 — <https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer> — accédée le 2026-05-05
+
+OpenTelemetry — « Semantic Conventions for Generative AI Agent Spans » — OpenTelemetry — 2025-2026 — <https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/> — accédée le 2026-05-05
+
+Salesforce — « Wiley sees 213% return on investment with Salesforce » — Salesforce Customer Stories — 2024-2025 — <https://www.salesforce.com/customer-stories/wiley/> — accédée le 2026-05-05
+
+ThoughtWorks — « The dangers of AI agentwashing » — ThoughtWorks Insights — 2025 — <https://www.thoughtworks.com/en-us/insights/blog/generative-ai/Agentwashing-and-how-AI-agents-fail-us> — accédée le 2026-05-05
