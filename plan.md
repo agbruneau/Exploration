@@ -103,7 +103,7 @@ Couvrir au minimum, calibré au sujet du chapitre :
 - Versions courantes (Kafka, MCP SDK, A2A spec, frameworks agents : LangChain/LangGraph, AutoGen, CrewAI, OpenAI Agents SDK, Anthropic SDK, Google ADK)
 - Papiers et keynotes 2025-2026 (KubeCon, NeurIPS, ICML, AAAI, AgentOps Day, Ray Summit, Anthropic/OpenAI DevDay)
 - Incidents publics 2025-2026 (jailbreaks, exfiltrations cross-tool, échecs documentés)
-- Évolutions réglementaires (EU AI Act, ISO/IEC 42001, NIST AI RMF, OSFI E-21, Loi 25 Québec)
+- Évolutions réglementaires (EU AI Act, ISO/IEC 42001, NIST AI RMF, OSFI E-23, Loi 25 Québec)
 - Position Gartner Hype Cycle 2026 + Deloitte Tech Trends 2026 si pertinent
 
 [Rapport de retour]
