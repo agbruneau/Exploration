@@ -34,7 +34,7 @@ auteur — titre — éditeur — date — URL — accédée le YYYY-MM-DD
 
 ## Sécurité agentique — primaires
 
-- Aim Security / arXiv:2509.10540 — « EchoLeak (CVE-2025-32711) » — sept. 2025 — <https://arxiv.org/abs/2509.10540> — accédée le 2026-05-05 — *cité dans Intro, Ch. 9*
+- Aim Security / arXiv:2509.10540 — « EchoLeak (CVE-2025-32711) » — sept. 2025 — <https://arxiv.org/abs/2509.10540> — accédée le 2026-05-05 — *cité dans Ch. 9*
 - NVD — CVE-2025-32711 (EchoLeak Microsoft 365 Copilot) — patché juin 2025 — <https://nvd.nist.gov/vuln/detail/cve-2025-32711> — accédée le 2026-05-05 — *cité dans Ch. 9*
 - Palo Alto Networks Unit 42 — « Fooling AI Agents: Web-Based Indirect Prompt Injection Observed in the Wild » — 3 mars 2026 — <https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/> — accédée le 2026-05-05 — *cité dans Intro, Ch. 5, Ch. 9*
 - Palo Alto Networks Unit 42 — « New Prompt Injection Attack Vectors Through MCP Sampling » — 2025-2026 — <https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/> — accédée le 2026-05-05 — *cité dans Ch. 5, Ch. 9*

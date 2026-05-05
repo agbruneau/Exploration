@@ -106,7 +106,7 @@ La politique de cycle de vie des projets AAIF définit trois stades : **Growth**
 
 A2A (*Agent-to-Agent Protocol*) a été lancé par Google Cloud en avril 2025 avec 50+ partenaires fondateurs (Salesforce, Accenture, SAP, Deloitte). La donation à la Linux Foundation est intervenue en juin 2025. La version v0.3 a été publiée le 31 juillet 2025 avec trois ajouts majeurs : support *gRPC* (*Google Remote Procedure Call*), signature cryptographique des Agent Cards, et SDK Python étendu (*confirmé* — Google Cloud Blog, 31 juillet 2025). La spec affiche v1.0.0 comme version courante à mai 2026 sur a2a-protocol.org — la date de release officielle de cette version n'est pas explicitement indiquée dans les documents primaires consultés, *à vérifier*.
 
-En un an, A2A a été adopté par 150+ organisations et intégré nativement dans Azure AI Foundry et Copilot Studio (Microsoft), Amazon Bedrock AgentCore Runtime (AWS), Salesforce, SAP, ServiceNow (*confirmé* — PRNewswire/A2A Project, 2026). Le cas production inter-entreprises Tyson Foods + Gordon Food Service (synchronisation d'agents de vente et d'approvisionnement entre deux organisations distinctes) est le premier cas publiquement documenté de délégation A2A franchissant les frontières organisationnelles (*confirmé* — Google Cloud Blog, juillet 2025).
+En un an, A2A a été adopté par 150+ organisations et intégré nativement dans Azure AI Foundry et Copilot Studio (Microsoft), Amazon Bedrock AgentCore Runtime (AWS), Salesforce, SAP, ServiceNow (*confirmé* — PRNewswire/A2A Project, 2026). Le cas production inter-entreprises Tyson Foods + Gordon Food Service (synchronisation d'agents de vente et d'approvisionnement entre deux organisations distinctes) est l'un des premiers cas publiquement documentés de délégation A2A franchissant les frontières organisationnelles (*confirmé* — Google Cloud Blog, juillet 2025).
 
 ### Les quatre primitives A2A
 
@@ -150,7 +150,7 @@ Sur la sécurité, la spec définit plusieurs mécanismes : OAuth 2.0, OpenID Co
 
 WebMCP n'est pas un protocole indépendant de MCP. C'est une couche d'exposition des primitives MCP (tools uniquement, dans la version actuelle) via l'API navigateur `navigator.modelContext`, développée conjointement par Microsoft Edge (Patrick Brosset, auteur principal) et Google Chrome, au sein du Web Machine Learning Working Group du W3C. La distinction est architecturalement critique : un serveur MCP existant ne devient pas automatiquement accessible via WebMCP — il faut une implémentation explicite de `navigator.modelContext` côté page web.
 
-L'API côté développeur web comprend quatre méthodes : `navigator.modelContext.provideContext()` pour enregistrer un ensemble de contextes en masse, `registerTool()` / `unregisterTool()` pour la gestion individuelle des outils exposés, et `agent.requestUserInteraction()` pour déclencher une confirmation humaine avant qu'un agent exécute une action sur la page. Ce dernier appel est le mécanisme principal de maintien du contrôle humain dans la boucle pour les interactions web — il traduit architecturalement la principes de [Ch. 8](ch08-trustworthy-systems.md) dans la couche navigateur.
+L'API côté développeur web comprend quatre méthodes : `navigator.modelContext.provideContext()` pour enregistrer un ensemble de contextes en masse, `registerTool()` / `unregisterTool()` pour la gestion individuelle des outils exposés, et `agent.requestUserInteraction()` pour déclencher une confirmation humaine avant qu'un agent exécute une action sur la page. Ce dernier appel est le mécanisme principal de maintien du contrôle humain dans la boucle pour les interactions web — il traduit architecturalement les principes du [Ch. 8](ch08-trustworthy-systems.md) dans la couche navigateur.
 
 Le statut de support par navigateur à mai 2026 :
 
@@ -285,7 +285,7 @@ En avril 2026, OX Security a publié la documentation d'une vulnérabilité *RCE
 
 ### Supply chain des registres MCP
 
-Le modèle de distribution des serveurs MCP via des registres tiers (Smithery, mcp.so, et neuf autres) introduit un vecteur de supply chain documenté. Deux incidents confirmés : Postmark (septembre 2025, injection dans le serveur MCP Postmark permettant de mettre en copie tous les e-mails envoyés via l'agent) et Smithery supply chain attack (octobre 2025, 3 000+ applications et tokens API exposés via un serveur MCP compromis dans le registre Smithery).
+Le modèle de distribution des serveurs MCP via des registres tiers (Smithery, mcp.so, et neuf autres) introduit un vecteur de supply chain documenté. Deux incidents publics rapportés (*à vérifier* — sources primaires non tracées dans le bloc Notes de recherche du chapitre) : Postmark (septembre 2025, injection dans le serveur MCP Postmark permettant de mettre en copie les e-mails envoyés via l'agent) et Smithery (octobre 2025, registre compromis avec exposition d'applications et de tokens API). La modélisation générale de cette classe d'attaque (ASI04 — *supply chain* agentique) est traitée au [Ch. 9](ch09-agentic-security.md).
 
 ### Surface d'attaque A2A
 

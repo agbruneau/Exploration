@@ -144,7 +144,7 @@ Cette dernière sous-dimension est la plus négligée dans les implémentations 
 
 Mesure l'adhérence de l'agent aux politiques définies : périmètre topical (refus des requêtes hors domaine), contraintes de données (ne pas exposer de données à caractère personnel non autorisées), exigences réglementaires sectorielles. Cette métrique est le lien direct entre l'évaluation technique de l'agent et les exigences de conformité de l'environnement (Pilier 4).
 
-Le standard OTel GenAI Agent Spans (*experimental* à mars 2026 — *probable* que le statut sera stabilisé d'ici fin 2027, 12-18 mois de piste, mais pas garanti) permet d'instrumenter la policy compliance comme attribut de span : traçable par tâche, par tenant, par run. L'adoption précoce par Datadog (support natif OTel v1.37), Grafana et Elastic (*confirmé* — documentation OpenTelemetry, 2026) rend cette instrumentation opérationnelle aujourd'hui, même si l'API n'est pas encore stabilisée.
+Le standard OTel GenAI Agent Spans (statut *Development*, SemConv 1.40.0 du 17 avril 2026 — *probable* que le statut soit promu *Stable* d'ici fin 2027, 12-18 mois de piste, mais non garanti) permet d'instrumenter la *policy compliance* comme attribut de span : traçable par tâche, par tenant, par run. L'adoption précoce par Datadog (support natif OTel v1.37), Grafana et Elastic (*confirmé* — documentation OpenTelemetry, 2026) rend cette instrumentation opérationnelle aujourd'hui, même si l'API n'est pas encore stabilisée.
 
 ---
 
@@ -158,7 +158,7 @@ Le marché des plateformes d'évaluation agentique a convergé en 2025-2026 auto
 | **Arize Phoenix** | Open-source + SaaS | Oui (OTel natif, priorité design) | SOC 2 — autohébergeable pour conformité renforcée | Six modalités d'éval (LLM, code, humain, embedding, règles, retrieval) ; autohébergeable | Maturité UI inférieure aux solutions propriétaires |
 | **Galileo** | SaaS | Partielle | SOC 2, GDPR | ChainPoll (détection hallucination), Luna (auto-évaluation), détection *groundedness* | Pricing opaque, modèle propriétaire non auditable |
 | **Braintrust** | SaaS | Partielle (architecture span imbriquée) | SOC 2, GDPR, HIPAA | Architecture de scoring imbriquée, adapté aux contextes santé/réglementé | Coût élevé à l'échelle, dépendance vendor |
-| **OTel GenAI Agent Spans** | Standard ouvert | Oui (c'est le standard) | N/A (standard, pas outil) | Interopérabilité, portabilité, base pour tous les outils ci-dessus | Statut *experimental* à mai 2026 ; API non stabilisée |
+| **OTel GenAI Agent Spans** | Standard ouvert | Oui (c'est le standard) | N/A (standard, pas outil) | Interopérabilité, portabilité, base pour tous les outils ci-dessus | Statut *Development* (SemConv 1.40.0, avril 2026) ; API non stabilisée |
 
 **Critères de choix** — trois questions pour trancher sans fabrication de scoring :
 
@@ -166,9 +166,9 @@ Le marché des plateformes d'évaluation agentique a convergé en 2025-2026 auto
 
 2. *Avez-vous des exigences HIPAA ou de conformité financière stricte ?* Braintrust est la seule plateforme SaaS avec une certification HIPAA confirmée à mai 2026. Pour les institutions financières canadiennes, l'autohébergement d'Arize Phoenix permet de maintenir la souveraineté des données sans les limites de la customisation SaaS.
 
-3. *Visez-vous la durabilité sur 3-5 ans ?* Instrumenter l'OTel GenAI Agent Spans dès maintenant — même en statut *experimental* — garantit la portabilité vers n'importe quelle plateforme future. C'est la seule décision d'infrastructure d'évaluation qui n'implique pas de lock-in fournisseur.
+3. *Visez-vous la durabilité sur 3-5 ans ?* Instrumenter l'OTel GenAI Agent Spans dès maintenant — même en statut *Development* — garantit la portabilité vers n'importe quelle plateforme future. C'est la seule décision d'infrastructure d'évaluation qui n'implique pas de lock-in fournisseur.
 
-**Recommandation avec compromis et alternative** : instrumenter OTel GenAI Agent Spans comme couche de base universelle, puis brancher la plateforme d'évaluation choisie par-dessus. Compromis : l'API OTel en statut *experimental* peut changer avant stabilisation (probable d'ici Q4 2027 — *à vérifier*), ce qui impose une migration légère de l'instrumentation. Alternative : ne pas utiliser OTel et s'appuyer exclusivement sur le SDK natif de la plateforme choisie — plus simple à court terme, mais crée une dépendance vendor sur la visibilité de production. Condition de bascule : si la plateforme choisie est acquise ou abandonne sa feuille de route, l'absence d'OTel impose une migration complète de l'instrumentation, pas seulement un changement de plateforme.
+**Recommandation avec compromis et alternative** : instrumenter OTel GenAI Agent Spans comme couche de base universelle, puis brancher la plateforme d'évaluation choisie par-dessus. Compromis : l'API OTel en statut *Development* peut changer avant la promotion *Stable* (probable d'ici Q4 2027 — *à vérifier*), ce qui impose une migration légère de l'instrumentation. Alternative : ne pas utiliser OTel et s'appuyer exclusivement sur le SDK natif de la plateforme choisie — plus simple à court terme, mais crée une dépendance vendor sur la visibilité de production. Condition de bascule : si la plateforme choisie est acquise ou abandonne sa feuille de route, l'absence d'OTel impose une migration complète de l'instrumentation, pas seulement un changement de plateforme.
 
 ---
 
@@ -251,7 +251,7 @@ Les compétences à évaluer : ingénieurs capables d'écrire des eval suites su
 
 L'organisation a-t-elle les artefacts de gouvernance minimaux pour contrôler l'agent en production ? Les trois artefacts Databricks (*confirmé* — *State of AI Agents 2026*) : définition opérationnelle du *successful outcome*, *eval suite* automatisée, et *escalation policy* documentée. À ces trois artefacts s'ajoutent : une politique de *retry budget* avec *kill switch* financier ([Ch. 2 §2.3](ch02-business-case.md)), et une structure RACI pour les décisions humaines de supervision. L'[Annexe D](annexe-D-governance-raci.md) propose une matrice RACI agentique standard.
 
-La donnée de référence sur cette dimension : selon Gartner, seulement 21 % des entreprises ont une infrastructure de gouvernance mature pour gérer l'*agentic AI* à l'échelle en toute sécurité en 2026 (*probable* — issu d'une synthèse d'analystes, citation indirecte ; la publication primaire Gartner n'a pas été tracée en source directe à mai 2026 — *à vérifier*).
+La donnée de référence sur cette dimension converge vers une minorité d'organisations disposant d'une infrastructure de gouvernance mature pour gérer l'*agentic AI* à l'échelle en toute sécurité en 2026 (*probable* — synthèse d'analystes ; aucun chiffre primaire unique n'est tracé à mai 2026 dans les sources Phase 2 du chapitre, l'ordre de grandeur est cohérent avec Deloitte, *Tech Trends 2026* qui chiffre à 11 % la part de systèmes *agentic* en production).
 
 ### Scoring intégré et seuils décisionnels
 

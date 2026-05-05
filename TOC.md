@@ -1,146 +1,147 @@
-# The Agentic Enterprise — Table of Contents
+# L'Entreprise Agentique — Table des matières
 
-*Révision : mai 2026*
-*Principe de design : structure en 5 parties, 13 chapitres, ancrée sur les trois pivots 2026 — stack ouvert (MCP/A2A), AgentOps comme discipline distincte, redesign organisationnel.*
-
----
-
-## Introduction — Why this book, why now
-
-- Du copilot au système agentique : la rupture de 2026
-- Lexique opérationnel : *AI agent*, *agentic AI*, *multi-agent system* (les trois ne sont pas synonymes)
-- Comment lire ce livre selon le rôle (CIO, architecte, PO, risk officer)
+*Sous-titre : Architecture, gouvernance et opérations des systèmes d'IA agentique en entreprise.*
+*Révision : mai 2026.*
+*Principe de design : structure en 5 parties, 14 chapitres, ancrée sur les trois pivots 2026 — pile ouverte (MCP/A2A), AgentOps comme discipline distincte, redesign organisationnel.*
 
 ---
 
-## Part 1 — Why the Agentic Enterprise Matters
+## Introduction — Pourquoi ce livre, pourquoi maintenant
 
-### Chapter 1 — From Automation to Agents
+- Du *copilot* au système agentique : la rupture de 2026
+- Lexique opérationnel : *AI agent*, *agentic*, *agentic AI* (les trois ne sont pas synonymes)
+- Comment lire ce livre selon le rôle (CIO, architecte, PO, *risk officer*)
+
+---
+
+## Partie 1 — Pourquoi l'entreprise agentique est urgente
+
+### Chapitre 1 — De l'automatisation aux agents
 
 - La boucle *decide–act–observe* avec mémoire persistante
-- Stateless RPA → stateful agent : ce qui change vraiment
+- *RPA stateless* → agent *stateful* : ce qui change vraiment
 - Pourquoi les architectures EDA et orientées événements deviennent le terrain naturel des agents
 
-### Chapter 2 — The Business Case for Agentic AI
+### Chapitre 2 — Le cas d'affaires de l'IA agentique
 
-- *Unit economics* : du coût par token au coût par *successful outcome*
-- FinOps agentique : budgets de retry, *escalation cost*, latence-coût
+- *Unit economics* : du coût par token au coût par tâche réussie (*successful outcome*)
+- FinOps agentique : budgets de *retry*, *escalation cost*, latence-coût
 - Pourquoi 40 % des projets seront abandonnés d'ici 2027 (Gartner) — et comment éviter cette cohorte
 - Les 12× : pourquoi les organisations *governance-first* livrent 12 fois plus en production
 
 ---
 
-## Part 2 — Finding the Right Use Cases
+## Partie 2 — Trouver les bons cas d'usage
 
-### Chapter 3 — Mapping High-Impact Applications
+### Chapitre 3 — Cartographie des cas à fort impact
 
-- Matrice de cadrage : autonomie × réversibilité de l'action × tolérance à l'erreur
-- Patrons par fonction : *back-office* (close, P2P, support tier-1) vs. *front-office* (sales agent, SDR, support contextuel) vs. *engineering* (code, ops, SRE)
+- Matrice de cadrage : autonomie × réversibilité × tolérance à l'erreur
+- Patrons par fonction : *back-office* (clôture, P2P, support tier-1) vs *front-office* (agent commercial, SDR, support contextuel) vs *engineering* (code, ops, SRE)
 - Anti-patrons : où les agents échouent prévisiblement
 
-### Chapter 4 — Evaluating ROI, Risk, and Readiness
+### Chapitre 4 — Évaluer ROI, risque et maturité (*readiness*)
 
-- Le cadre d'évaluation à quatre piliers : LLM, Memory, Tools, Environment
+- Le cadre d'évaluation à quatre piliers : LLM, *Memory*, *Tools*, *Environment*
 - Métriques opérationnelles : *task success*, *tool correctness*, *retry budget*, *escalation quality*, *policy compliance*
-- Décision *build / buy / wait* : critères et seuils
+- Décision *build / buy / borrow / wait* : critères et seuils
 - *Readiness assessment* : données, processus, talents, gouvernance
 
 ---
 
-## Part 3 — The Agentic Stack
+## Partie 3 — La pile agentique
 
-### Chapter 5 — Protocols and Interoperability
+### Chapitre 5 — Protocoles et interopérabilité
 
-- Le stack à trois couches : **MCP** (tools), **A2A** (agent-to-agent), **WebMCP** (web)
-- Ce que MCP a changé depuis sa donation à la Linux Foundation (décembre 2025)
-- A2A en production : capability discovery, task delegation, *peer-to-peer orchestration*
+- La pile à trois couches : **MCP** (outils), **A2A** (*agent-to-agent*), **WebMCP** (navigateur)
+- Ce que MCP a changé depuis sa contribution à l'AAIF (décembre 2025)
+- A2A en production : *capability discovery*, *task delegation*, orchestration pair-à-pair
 - L'AAIF et la consolidation des standards ouverts
 
-### Chapter 6 — Orchestration, Memory, and Tools
+### Chapitre 6 — Orchestration, mémoire, outils
 
-- Patrons d'orchestration : *supervisor*, *swarm*, *hierarchical*, *graph-based*
-- Memory engineering : *episodic*, *semantic*, *procedural* — et la dette de mémoire
-- Tool design : idempotence, *side-effect contracts*, schémas robustes
+- Patrons d'orchestration : *supervisor*, *swarm*, *hierarchical*, *graph-based*, *mesh*
+- *Memory engineering* : mémoire épisodique, sémantique, procédurale — et la dette de mémoire
+- *Tool design* : idempotence, contrats d'effets de bord, schémas robustes
 
-### Chapter 7 — AgentOps: Operating Long-Running Agents
+### Chapitre 7 — AgentOps : opérer des agents à longue durée d'exécution
 
-- AgentOps vs. MLOps : ce qui s'ajoute, ce qui se transforme
+- AgentOps vs MLOps : ce qui s'ajoute, ce qui se transforme
 - Observabilité agentique : traces multi-étapes, *tool spans*, *memory diffs*
-- *Evaluation in production* : régression continue, *replay*, *shadow runs*
+- Évaluation en production : régression continue, *replay*, *shadow runs*
 - Cycle de vie : *promote*, *deprecate*, *roll back* d'un agent
 
 ---
 
-## Part 4 — Trust, Security, and Sustainability
+## Partie 4 — Confiance, sécurité et durabilité
 
-### Chapter 8 — Building Trustworthy Systems
+### Chapitre 8 — Construire des systèmes dignes de confiance
 
-- *Hierarchical autonomy* : assistance → supervisé → autonome borné → autonome
-- Human-in-the-loop opérationnel : *humans set rules, agents execute, exceptions escalate*
-- Auditabilité : *decision logs*, *justifiable actions*, conformité (UE AI Act, ISO 42001)
+- Autonomie hiérarchique : assistance → supervisé → autonome borné → autonome
+- *Human-in-the-loop* opérationnel : *humans set rules, agents execute, exceptions escalate*
+- Auditabilité : *decision logs*, *justifiable actions*, conformité (EU AI Act, ISO 42001, OSFI E-23)
 
-### Chapter 9 — Agentic Security
+### Chapitre 9 — Sécurité agentique
 
 - Modèle de menace propre aux agents : *prompt injection via tools*, *cross-tool exfiltration*, *jailbreak by delegation*
-- Identity and access pour agents : tokens *per-task*, *least-privilege* dynamique
+- Identité et accès pour agents : tokens *per-task*, *least-privilege* dynamique
 - Défense en profondeur : *guardrails*, *sandboxing*, *kill switches*
 
-### Chapter 10 — Scaling Without Lock-In
+### Chapitre 10 — Croître sans verrouillage
 
-- *Open agentic stack* vs. plateformes propriétaires
+- Pile agentique ouverte vs plateformes propriétaires
 - Portabilité par MCP/A2A : changer de fournisseur de modèle sans réécrire les agents
 - Stratégie *multi-vendor* : routage par capacité, coût, latence, conformité
 
 ---
 
-## Part 5 — Leading the Transition
+## Partie 5 — Piloter la transition
 
-### Chapter 11 — Redesigning Work, Not Augmenting It
+### Chapitre 11 — Redessiner le travail, pas l'augmenter
 
-- Pourquoi 54 % des C-suite disent que l'IA « déchire » l'entreprise (Deloitte 2026)
-- Nouveaux rôles : *AI ops manager*, *human–AI interaction designer*, *quality steward*
+- Pourquoi le redesign bat l'augmentation : la ligne de partage BCG/MIT SMR (n=2 102, novembre 2025)
+- Nouveaux rôles : *AI ops manager*, *human-AI interaction designer*, *quality steward*
 - *Hybrid workflows* : combiner forces humaines et capacités agentiques sans calque
-- *Change management* : 87 % des organisations priorisent upskilling — comment le faire vraiment
+- *Change management* : 53 % des organisations forment leur population, 48 % conçoivent un *upskilling* formel (Deloitte 2026) — comment le faire vraiment
 
-### Chapter 12 — Lessons from the 60 % That Failed
+### Chapitre 12 — Leçons des 60 % qui ont échoué
 
 - Anatomie des échecs 2025-2026 : techniques, organisationnels, économiques
 - Signaux faibles à surveiller dans son propre programme
-- Critères de *kill / pivot / scale*
+- Critères *kill / pivot / scale*
 
-### Chapter 13 — The Road Ahead
+### Chapitre 13 — La route devant
 
-- Hype Cycle Gartner 2026 : *agentic governance*, *agentic security*, FinOps agentique
-- Horizons 2027–2030 : *autonomous teams*, *multi-org agentic supply chains*, intersection avec l'edge et le mainframe modernisé
+- *Hype Cycle* Gartner 2026 : gouvernance agentique, sécurité agentique, FinOps agentique
+- Horizons 2027–2030 : *autonomous teams*, chaînes d'approvisionnement agentiques inter-organisations, intersection avec l'edge et le mainframe modernisé
 - Position de l'architecte d'entreprise dans cinq ans
 
-### Chapter 14 — Build Your Custom Agentic OS (Claude Code en pratique)
+### Chapitre 14 — Construisez votre OS agentique sur mesure (Claude Code en pratique)
 
-- Coda tactique : pourquoi assembler son OS agentique plutôt qu'adopter une plateforme clé-en-main (renvoi Ch. 8, Ch. 10)
-- **Trois étapes d'assemblage avec Claude Code** : (1) composer skills + sub-agents — la spécialisation par domaine ; (2) intégrer MCP servers + hooks — l'extension contrôlée des outils ; (3) déployer + observer — l'AgentOps minimaliste viable
+- Coda tactique : pourquoi assembler son OS agentique plutôt qu'adopter une plateforme clé en main (renvois Ch. 8, Ch. 10)
+- **Trois étapes d'assemblage avec Claude Code** : (1) composer *skills* + sous-agents — la spécialisation par domaine ; (2) intégrer serveurs MCP + *hooks* — l'extension contrôlée des outils ; (3) déployer + observer — l'AgentOps minimaliste viable
 - Cas concret méta : la monographie elle-même comme OS agentique de bout en bout
-- Limites, compromis, et conditions de bascule vers une plateforme propriétaire (renvois Ch. 7, Ch. 9, Ch. 10)
+- Limites, compromis et conditions de bascule vers une plateforme propriétaire (renvois Ch. 7, Ch. 9, Ch. 10)
 - Tableau comparatif Claude Code / Codex Agent / Cursor / Cline / harnais propriétaires
 - Source d'inspiration : YouTube « Build Your CUSTOM Claude Code Agentic OS (3 Steps) » (chaîne Chase AI). Transcript non récupérable — les trois étapes sont une **reconstruction depuis la documentation officielle Claude Code** (mai 2026), explicitement signalée dans le chapitre.
 
 ---
 
-## Annexes — Checklists, Templates, and Further Resources
+## Annexes — Listes de contrôle, gabarits et ressources
 
-- **A.** Architecture review checklist (sécurité, observabilité, FinOps)
+- **A.** Liste de contrôle de revue d'architecture (sécurité, observabilité, FinOps)
 - **B.** *Use case canvas* (autonomie × réversibilité × ROI)
-- **C.** AgentOps maturity model (5 niveaux)
-- **D.** Governance RACI agentique
+- **C.** Modèle de maturité AgentOps (5 niveaux N1–N5)
+- **D.** Gouvernance RACI agentique
 - **E.** Glossaire et lectures recommandées
 
 ---
 
 ## Notes de design
 
-**Compromis assumé** : 13 chapitres + annexes plutôt que 10. Si la cible est de rester à ~10 chapitres (livre court, ~250 pages), fusionner :
+**Compromis assumé** : 14 chapitres + annexes plutôt que 10. Si la cible est de rester à ~10 chapitres (livre court, ~250 pages), fusionner :
 
-- Ch. 5 + Ch. 6 → un seul *« The Agentic Stack »*
-- Ch. 9 absorbé dans Ch. 8 sous *« Trust & Security »*
+- Ch. 5 + Ch. 6 → un seul *« La pile agentique »*
+- Ch. 9 absorbé dans Ch. 8 sous *« Confiance et sécurité »*
 - Ch. 12 devient un encadré récurrent dans chaque chapitre plutôt qu'un chapitre
 
 **Conditions qui renversent cette structure** : si l'essai vise un public exécutif (C-level) plutôt qu'architecte, supprimer le Ch. 5 (protocoles) et le Ch. 7 (AgentOps) — trop techniques — et renforcer Ch. 11 et Ch. 12 (organisationnel).

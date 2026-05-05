@@ -79,7 +79,7 @@ Trois rôles structurants émergent de la confluence des sources disponibles (HB
 
 ### *AI ops manager* (contrôle et fiabilité à l'échelle)
 
-L'*AI ops manager* assure que les agents fonctionnent de façon fiable à l'échelle — infrastructure, pipelines d'automatisation, gouvernance des périmètres de permission, budgets de *retry*, *kill switches*, mise à jour des règles métier encodées dans les agents. Ce rôle est la matérialisation humaine du plan de contrôle AgentOps documenté au [Ch. 7 §7.5](ch07-agentops.md) : quelqu'un doit piloter les *dashboards* de dérive, décider des promotions et des rollbacks, et escalader les incidents qui dépassent les seuils automatiques.
+L'*AI ops manager* assure que les agents fonctionnent de façon fiable à l'échelle — infrastructure, pipelines d'automatisation, gouvernance des périmètres de permission, budgets de *retry*, *kill switches*, mise à jour des règles métier encodées dans les agents. Ce rôle est la matérialisation humaine du plan de contrôle AgentOps documenté au [Ch. 7 §7.6](ch07-agentops.md) : quelqu'un doit piloter les *dashboards* de dérive, décider des promotions et des rollbacks, et escalader les incidents qui dépassent les seuils automatiques.
 
 La compétence primaire n'est pas l'ingénierie LLM — c'est la connaissance du processus métier que les agents opèrent, couplée à la capacité de lire une trace d'observabilité et d'en tirer une décision opérationnelle. L'*AI ops manager* est à l'AgentOps ce que le SRE (*Site Reliability Engineer*) est aux systèmes distribués : le profil qui transforme l'instrumentation technique en fiabilité opérationnelle.
 

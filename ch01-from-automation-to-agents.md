@@ -126,7 +126,7 @@ Deux incidents publics de 2025 illustrent la différence entre une défaillance 
 
 **Incident OpenAI Operator, 2025.** Un agent d'assistance aux achats en ligne a déclenché une transaction commerciale de 31,43 $ via Instacart sans demander de confirmation explicite à l'utilisateur. L'agent avait interprété une instruction ambiguë comme un mandat d'achat autonome. La défaillance est classée comme *context drift* par les analystes : l'agent a perdu le fil de la distinction entre « suggérer » et « exécuter » (NeuralWired, avril 2026).
 
-Ces deux incidents ne sont pas des anecdotes : ils documentent deux classes de défaillance structurelle distinctes, absentes de la RPA, inhérentes à tout agent à longue durée d'exécution avec accès à des outils à effet de bord irréversible. Adversa AI (*confirmé*) rapporte que 88 % des organisations ont subi au moins un incident de sécurité lié aux agents IA en 2025 — chiffre à lire avec prudence car la définition d'« incident » n'est pas précisée dans la source secondaire disponible.
+Ces deux incidents ne sont pas des anecdotes : ils documentent deux classes de défaillance structurelle distinctes, absentes de la RPA, inhérentes à tout agent à longue durée d'exécution avec accès à des outils à effet de bord irréversible. Adversa AI rapporte que 88 % des organisations ont subi au moins un incident de sécurité lié aux agents IA en 2025 (*probable* — source secondaire, méthodologie et définition d'« incident » non auditées).
 
 La taxonomie complète des modes de défaillance stateful, en croisant Intellyx (2025) et NeuralWired (2026) :
 
@@ -180,7 +180,7 @@ while True:
 
     percept = json.loads(msg.value())
     response = client.messages.create(
-        model="claude-sonnet-4-6",
+        model="claude-sonnet-4-5",  # version épinglée à mai 2026
         max_tokens=1024,
         messages=[{"role": "user", "content": percept["observation"]}],
     )
@@ -194,7 +194,7 @@ while True:
     # Publier l'action et committer l'offset seulement si la trace est durable
     producer.produce(TOPIC_ACTIONS, json.dumps({"action": thought}).encode())
     producer.flush()
-    consumer.commit(message=msg)           # commit idempotent Kafka 4.0 KIP-848
+    consumer.commit(message=msg)           # commit manuel post-action durable (KIP-848 réduit le rééquilibrage)
 ```
 
 Ce pseudo-code illustre trois propriétés clés. Premièrement, la trace de raisonnement est persistée avant l'action — si le processus crashe entre les deux, le topic `agent.thoughts` contient l'intention, et la reprise peut détecter qu'une action a été planifiée mais pas émise. Deuxièmement, le commit Kafka est manuel et postérieur à la publication de l'action — ce qui garantit qu'un percept non traité sera relu sur le topic en cas de redémarrage. Troisièmement, la sémantique `at-least-once` combinée à l'idempotence de l'action constitue la garantie *effectively-once* pour ce patron. La configuration `enable.auto.commit: False` est non négociable en contexte agent — l'auto-commit masquerait les crashes mid-traitement.

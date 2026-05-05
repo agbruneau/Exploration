@@ -51,7 +51,7 @@ La boucle *decide–act–observe* décrite au [Ch. 1 §1.1](ch01-from-automatio
 
 Cette lacune n'est pas un défaut protocolaire : c'est un choix de séparation des préoccupations. MCP et A2A sont des standards d'interface, pas des *frameworks* d'orchestration. Le bon niveau pour décider de la topologie reste l'architecte, qui doit choisir parmi une taxonomie de patrons selon les contraintes de son système — contraintes de latence, de criticité des effets de bord, de nombre d'agents, de dynamicité de la tâche. Cette décision précède et contraint le choix du *framework* d'implémentation.
 
-Une précision terminologique s'impose. Les éditeurs de *frameworks* et la littérature académique utilisent des taxonomies différentes pour les mêmes patrons : ce que LangGraph appelle *supervisor* correspond au *Magentic Pattern* de MAF (*Microsoft Agent Framework*) avec une gestion de *task ledger* en plus ; ce qu'OpenAI Swarm appelait *handoff* est identique au mécanisme de transfert de contrôle d'un *swarm* LangGraph. Ce chapitre adopte une taxonomie composite à cinq patrons qui transcende ces dénominations de *frameworks* et permet de choisir un patron avant de choisir un *framework*.
+Une précision terminologique s'impose. Les éditeurs de *frameworks* et la littérature académique utilisent des taxonomies différentes pour les mêmes patrons : MAF 1.0 (*Microsoft Agent Framework*) distingue cinq patrons natifs (*Sequential*, *Concurrent*, *Group Chat*, *Handoff*, *Magentic*), où *Magentic* étend le supervisor classique d'un *task ledger* dynamique ; ce qu'OpenAI Swarm appelait *handoff* est identique au mécanisme de transfert de contrôle d'un *swarm* LangGraph. Ce chapitre adopte une taxonomie composite à cinq patrons qui transcende ces dénominations de *frameworks* et permet de choisir un patron avant de choisir un *framework*.
 
 ---
 
@@ -59,7 +59,7 @@ Une précision terminologique s'impose. Les éditeurs de *frameworks* et la litt
 
 ### Les cinq patrons
 
-**Supervisor** : un agent orchestrateur central reçoit la tâche et délègue à des agents *workers* spécialisés via des appels explicites. L'orchestrateur décide à chaque étape quel *worker* invoquer, avec quel sous-objectif, et intègre les résultats. Le routage est entièrement centralisé dans le LLM de supervision. Les avantages sont la lisibilité du flux de décision et la simplicité du débogage — toute décision de délégation passe par un point unique d'observation. Le goulot d'étranglement est symétrique à cet avantage : sur des tâches longues à haute fréquence, l'orchestrateur devient le facteur limitant de la latence. LangGraph expose ce patron via la bibliothèque `langgraph-supervisor-py` ; MAF 1.0 le documente sous le nom *Orchestrator-Worker* (*confirmé* — Microsoft Foundry Blog, avril 2026).
+**Supervisor** : un agent orchestrateur central reçoit la tâche et délègue à des agents *workers* spécialisés via des appels explicites. L'orchestrateur décide à chaque étape quel *worker* invoquer, avec quel sous-objectif, et intègre les résultats. Le routage est entièrement centralisé dans le LLM de supervision. Les avantages sont la lisibilité du flux de décision et la simplicité du débogage — toute décision de délégation passe par un point unique d'observation. Le goulot d'étranglement est symétrique à cet avantage : sur des tâches longues à haute fréquence, l'orchestrateur devient le facteur limitant de la latence. LangGraph expose ce patron via la bibliothèque `langgraph-supervisor-py` ; MAF 1.0 fournit une variante enrichie sous le nom *Magentic Pattern*, qui ajoute un *task ledger* dynamique au supervisor classique (*confirmé* — Microsoft Foundry Blog, avril 2026).
 
 **Swarm** : chaque agent décide lui-même de passer le contrôle à un autre agent (*handoff*) en fonction de son propre état d'exécution — l'observation d'une condition, la détection d'une capacité manquante, l'atteinte d'un résultat partiel. Il n'y a pas d'orchestrateur permanent : le contrôle circule entre agents selon les transferts. Ce patron est adapté aux tâches exploratoires dont la prochaine étape ne peut pas être connue avant que l'étape courante ait produit un résultat. Son risque principal est la formation de cycles si les conditions de transfert ne sont pas bornées. OpenAI Swarm (octobre 2024, éducatif) puis Agents SDK (mars 2025, production) ont popularisé ce patron avec les primitives *Handoffs* ; LangGraph 0.3.x le propose nativement (*à vérifier* — version exacte sur PyPI langgraph-checkpoint à mai 2026).
 
@@ -73,7 +73,7 @@ Une précision terminologique s'impose. Les éditeurs de *frameworks* et la litt
 
 | Patron | Latence de routage | Précision du routage | Débogage | Tolérance aux pannes | Cas d'usage enterprise typique | Framework représentatif |
 |---|---|---|---|---|---|---|
-| **Supervisor** | Haute (chaque délégation = appel LLM) | Élevée (LLM décide) | Excellent | Moyen (SPOF orchestrateur) | Workflows définis, < 10 agents | LangGraph supervisor, MAF Orchestrator-Worker |
+| **Supervisor** | Haute (chaque délégation = appel LLM) | Élevée (LLM décide) | Excellent | Moyen (SPOF orchestrateur) | Workflows définis, < 10 agents | LangGraph supervisor, MAF *Magentic Pattern* |
 | **Swarm** | Faible (transfert direct) | Variable (selon agent source) | Difficile (flux non déterministe) | Bon (pas de SPOF central) | Tâches exploratoires, agents homogènes | OpenAI Agents SDK, LangGraph swarm |
 | **Hierarchical** | Modérée | Élevée | Bon (par niveau) | Bon (isolation par équipe) | Systèmes > 20 agents, multi-domaines | Google ADK, CrewAI v1.12, MAF |
 | **Graph-based** | Faible (parallélisme natif) | Élevée (arêtes typées) | Très bon (graphe visible) | Excellent (isolation de branche) | ETL agentique, pipelines de traitement | LangGraph StateGraph, MAF Workflow |
@@ -100,7 +100,7 @@ Les cinq *frameworks* d'orchestration enterprise et la bibliothèque de validati
 | **Patron primaire** | Graph-based, supervisor, swarm | Graph-based, supervisor, swarm, hierarchical | Séquentiel, hierarchical, Flows | Swarm (Handoffs) | Hierarchical | Validation (pas orchestration) |
 | **Verrouillage fournisseur** | Faible (multi-LLM) | Faible (multi-provider) | Faible (OpenAI-compatible) | Fort (OpenAI) | Modéré (Gemini/GCP préféré) | Nul |
 | **Interopérabilité MCP/A2A** | MCP via LangChain tools | Native MCP + A2A (*confirmé*) | MCP partiel | MCP via SDK | A2A natif | N/A |
-| **Mémoire intégrée** | LangMem, checkpointing PostgreSQL/Redis | Intégration Semantic Kernel Memory | Qdrant Edge natif | Threads API (sunset août 2026) | Via Vertex AI | N/A |
+| **Mémoire intégrée** | LangMem, checkpointing PostgreSQL/Redis | Intégration Semantic Kernel Memory | Qdrant Edge natif | Assistants API (sunset 26 août 2026) | Via Vertex AI | N/A |
 | **Observabilité** | LangSmith | Azure Monitor, logs MAF | Dashboards CrewAI | Tracing OpenAI | Cloud Trace GCP | N/A |
 | **Statut mai 2026** | Actif, LangGraph 0.3.x (*à vérifier — PyPI*) | GA avril 2026, LTS confirmé | Actif, v1.12 | Actif, production | Actif (depuis avril 2025) | Actif, usage validation uniquement |
 
@@ -187,7 +187,7 @@ Cinq modes de défaillance couvrent la majorité des incidents de mémoire docum
 
 ### Quantification de l'ampleur
 
-IBM Research (2025) a quantifié le risque de débordement de fenêtre de contexte dans un flux de production en Materials Science : les sorties d'outils atteignent 2 millions d'éléments cumulés au fil de l'exécution. L'approche directe — passer l'ensemble des sorties en contexte — requiert 20 822 181 tokens et échoue (dépassement de fenêtre). Le *Memory Pointer Pattern* — stocker les sorties en mémoire externe et ne passer que des pointeurs en contexte — réduit la consommation à 1 234 tokens, soit une réduction de 16 800× (*confirmé* — IBM Research, 2025, référencé via mem0.ai). Ce chiffre est spécifique au domaine Materials Science et ne se généralise pas directement à d'autres flux — il vaut comme ordre de grandeur sur l'ampleur possible du problème, pas comme valeur de référence universelle.
+IBM Research (2025) a quantifié le risque de débordement de fenêtre de contexte dans un flux de production en Materials Science : les sorties d'outils atteignent 2 millions d'éléments cumulés au fil de l'exécution. L'approche directe — passer l'ensemble des sorties en contexte — requiert 20 822 181 tokens et échoue (dépassement de fenêtre). Le *Memory Pointer Pattern* — stocker les sorties en mémoire externe et ne passer que des pointeurs en contexte — réduit la consommation à 1 234 tokens, soit une réduction de 16 800× (*probable* — IBM Research, 2025, accédé via mem0.ai et sparkco.ai ; texte primaire IBM non vérifié directement). Ce chiffre est spécifique au domaine Materials Science et ne se généralise pas directement à d'autres flux — il vaut comme ordre de grandeur sur l'ampleur possible du problème, pas comme valeur de référence universelle.
 
 ### Contre-mesures
 

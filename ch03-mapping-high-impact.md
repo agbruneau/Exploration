@@ -65,9 +65,9 @@ La position sur cet axe détermine directement le *retry budget* maximum accepta
 
 ### Dimension 2 — Réversibilité de l'action
 
-La réversibilité mesure si les effets de bord des actions de l'agent peuvent être annulés sans perte de valeur métier nette. L'axe s'étend de 1 (totalement réversible : lecture seule, classification, génération de brouillon interne non envoyé) à 5 (totalement irréversible : transfert financier exécuté, courriel externe envoyé, suppression de données de production, licenciement de personnel). Une action irréversible ne peut pas être défaite après l'fait ; elle peut seulement être *compensée* — avec un coût de compensation qui doit être intégré dans le CPST.
+La réversibilité mesure si les effets de bord des actions de l'agent peuvent être annulés sans perte de valeur métier nette. L'axe s'étend de 1 (totalement réversible : lecture seule, classification, génération de brouillon interne non envoyé) à 5 (totalement irréversible : transfert financier exécuté, courriel externe envoyé, suppression de données de production, licenciement de personnel). Une action irréversible ne peut pas être défaite après coup ; elle peut seulement être *compensée* — avec un coût de compensation qui doit être intégré dans le CPST.
 
-La relation avec le CPST est directe et quantifiable : une action irréversible à erreur détectée après exécution impose soit un coût d'escalade humaine élevé (annulation manuelle, contact client, procédure de réclamation), soit un coût de correction partial (rollback approximatif, communication de crise). Ce coût est systématiquement absent des dossiers d'investissement initiaux et constitue la principale source de dépassement de CPST en production.
+La relation avec le CPST est directe et quantifiable : une action irréversible à erreur détectée après exécution impose soit un coût d'escalade humaine élevé (annulation manuelle, contact client, procédure de réclamation), soit un coût de correction partiel (rollback approximatif, communication de crise). Ce coût est systématiquement absent des dossiers d'investissement initiaux et constitue la principale source de dépassement de CPST en production.
 
 Il existe également une réversibilité *organisationnelle* — distincte de la réversibilité des actions techniques — qui sera développée dans les anti-patrons (§3.5). Supprimer des postes humains pour déployer des agents crée une irréversibilité que la matrice signale si elle est appliquée au niveau de la décision de déploiement, pas seulement au niveau de chaque action de l'agent.
 
@@ -155,7 +155,7 @@ Le front-office amplifie les métriques d'impact mais déplace la matrice vers d
 
 ### SDR (*Sales Development Representative*) *agentic* — le cas Salesforce Agentforce
 
-Salesforce Agentforce est entré en disponibilité générale en octobre 2024 avec trois clients de référence publics : Wiley, Saks, et Wyndham (*confirmé* — TechInformed, octobre 2024). Le cas Wiley est le mieux documenté : le publisher académique a déployé Agentforce sur son portail de support client, obtenant +40 % de résolution autonome des cas et un ROI de 213 % sur Service Cloud par rapport au bot de service client précédent (*à vérifier en source primaire Salesforce/Wiley* — chiffres issus de la couverture TechInformed du lancement, non d'un rapport Wiley indépendant).
+Salesforce Agentforce est entré en disponibilité générale en octobre 2024 avec trois clients de référence publics : Wiley, Saks, et Wyndham (*confirmé* — TechInformed, octobre 2024). Le cas Wiley est le mieux documenté : le publisher académique a déployé Agentforce sur son portail de support client, obtenant +40 % de résolution autonome des cas et un ROI de 213 % sur Service Cloud par rapport au bot de service client précédent (*confirmé* — Salesforce Customer Stories, page Wiley, 2024-2025).
 
 L'intérêt du cas Wiley pour la matrice est son positionnement : environnement académique, tolérance à l'erreur modérée (une réponse erronée à une question d'abonnement est corrigible), réversibilité partielle (la réponse est envoyée mais l'escalade vers un humain reste possible avant résolution finale) — zone orange acceptable avec des garde-fous de révision des cas complexes.
 
@@ -246,7 +246,7 @@ L'incident Replit de juillet 2025 est le cas documenté le plus cité de déploi
 
 Application rétrospective de la matrice : autonomie = 5 (accès et exécution sans supervision), réversibilité = 1 (suppression de base de données de production irréversible), tolérance à l'erreur = 1 (perte de données de production, impact business direct) — zone rouge maximale. Si la matrice avait été appliquée avant le déploiement, la décision aurait été : réduire l'autonomie à 3 maximum (approbation humaine obligatoire pour toute action de modification de schéma ou de suppression de données) et établir une liste noire des actions interdites (DROP TABLE, DELETE sans clause WHERE bornée, modification des journaux d'audit).
 
-Ce cas est documenté au [Ch. 1](ch01-from-automation-to-agents.md) sous l'angle des modes de défaillance *stateful* (*tool drift*, *context drift*). L'angle de ce chapitre est différent et antérieur : l'erreur de qualification préalable qui a rendu l'incident prévisible.
+Ce cas est documenté au [Ch. 1 §1.4](ch01-from-automation-to-agents.md) sous l'angle des modes de défaillance *stateful* (*stale state*, *context drift*). L'angle de ce chapitre est différent et antérieur : l'erreur de qualification préalable qui a rendu l'incident prévisible.
 
 ### Anti-patron 3 — Automatisation du mauvais processus
 

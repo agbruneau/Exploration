@@ -96,7 +96,7 @@ La première étape consiste à donner à l'agent une identité persistante et u
 
 Le fichier `CLAUDE.md` — chargé au démarrage de chaque session depuis la racine du projet, depuis `~/.claude/CLAUDE.md` (scope personnel) et depuis les niveaux encaissés (*nested*) selon la hiérarchie des scopes — est le point d'entrée de tout contexte persistant. Ce n'est pas une simple documentation : c'est l'instruction système de l'agent. Il doit contenir les éléments que l'architecte du [Ch. 8](ch08-trustworthy-systems.md) classerait comme règles non délégables : standards de code, conventions de sécurité, procédures d'escalade, périmètres d'autonomie, seuils de reversibilité.
 
-Un `CLAUDE.md` efficace pour un OS agentique d'entreprise est dense, pas exhaustif. Il nomme les skills disponibles et leurs conditions d'invocation, liste les outils MCP actifs et leurs domaines d'application, et énonce les périmètres de permission (ce que l'agent peut faire seul, ce qui requiert confirmation humaine, ce qui est interdit). La cible pratique est sous 400 lignes — au-delà, le coût de contexte constant devient prohibitif.
+Un `CLAUDE.md` efficace pour un OS agentique d'entreprise est dense, pas exhaustif. Il nomme les skills disponibles et leurs conditions d'invocation, liste les outils MCP actifs et leurs domaines d'application, et énonce les périmètres de permission (ce que l'agent peut faire seul, ce qui requiert confirmation humaine, ce qui est interdit). La cible pratique est sous 400 lignes (*hypothèse maison* — fondée sur les coûts de contexte typiques d'un Claude Sonnet 4.x avec corpus chargé en parallèle) ; au-delà, le coût de contexte constant devient prohibitif.
 
 **Les skills comme macros de comportement reproductible**
 
@@ -229,7 +229,7 @@ Un `settings.json` de référence pour un OS agentique d'entreprise combine perm
 ```json
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "model": "claude-sonnet-4-6",
+  "model": "claude-sonnet-4-5",
   "effortLevel": "high",
   "permissions": {
     "allow": [

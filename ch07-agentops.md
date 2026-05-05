@@ -332,7 +332,7 @@ La maturité AgentOps d'une organisation se mesure à sa capacité à répondre 
 
 **Condition qui renverse la recommandation :** si le modèle de données de l'organisation ne peut pas absorber les traces d'exécution des agents (données métier sensibles dans les paramètres d'outils, contraintes réglementaires sur la rétention des logs), l'instrumentation complète requiert une architecture de traces masquées ou chiffrées — complexité supplémentaire significative. Dans ce cas, l'instrumentation d'agrégats (compteurs, latences, statuts) sans conservation des payloads bruts peut être le point d'équilibre. Cette contrainte est courante dans les secteurs financier et de santé ; la Loi 25 (Québec) et l'EU AI Act imposent des obligations complémentaires sur les données enregistrées dans les systèmes de décision automatisée (*à confirmer* avec le juriste de l'organisation — les textes réglementaires n'abordent pas explicitement les traces OTel).
 
-Le modèle de maturité AgentOps à cinq niveaux — du niveau 0 (aucune observabilité) au niveau 4 (évaluation continue + cycle de vie automatisé + gouvernance formalisée) — est détaillé à l'[Annexe C](annexe-C-agentops-maturity.md). La checklist d'architecture AgentOps couvrant les dimensions sécurité, observabilité et FinOps est à l'[Annexe A](annexe-A-architecture-review.md).
+Le modèle de maturité AgentOps à cinq niveaux — du **N1** (Ad hoc, aucune observabilité) au **N5** (Optimisé : évaluation continue, cycle de vie automatisé et gouvernance de portefeuille) — est détaillé à l'[Annexe C](annexe-C-agentops-maturity.md). La checklist d'architecture AgentOps couvrant les dimensions sécurité, observabilité et FinOps est à l'[Annexe A](annexe-A-architecture-review.md).
 
 ### Transition vers Ch. 8
 
