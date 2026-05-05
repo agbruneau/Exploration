@@ -59,15 +59,15 @@ $titles = @{
 
 function Strip-Frontmatter {
     param([string]$content)
-    # Remove leading YAML frontmatter (---\n ... \n---\n)
-    $pattern = '^---\r?\n(?:.*\r?\n)*?---\r?\n'
-    return [regex]::Replace($content, $pattern, '', 'Singleline')
+    # Remove leading YAML frontmatter (---\n ... \n---\n) — use [\s\S] to avoid catastrophic backtracking
+    $pattern = '^---\r?\n[\s\S]*?\r?\n---\r?\n'
+    return [regex]::Replace($content, $pattern, '')
 }
 
 function Strip-HtmlComments {
     param([string]$content)
     # Remove HTML comments (notes de recherche)
-    return [regex]::Replace($content, '<!--[\s\S]*?-->', '', 'Singleline')
+    return [regex]::Replace($content, '<!--[\s\S]*?-->', '')
 }
 
 function Demote-Headers {
@@ -117,6 +117,15 @@ Write-Host "Consolidated markdown : $consolidated ($((Get-Item $consolidated).Le
 $body = Join-Path $build 'body.typ'
 & pandoc $consolidated -o $body --from=gfm --to=typst --wrap=preserve
 if ($LASTEXITCODE -ne 0) { throw "pandoc failed" }
+
+# Prepend helpers required by pandoc's typst writer (horizontalrule etc.)
+$bodyContent = Get-Content -Raw -Path $body -Encoding UTF8
+$helpers = @"
+// Helpers required by pandoc's Typst writer
+#let horizontalrule = [#v(0.4em) #line(length: 100%, stroke: 0.4pt + rgb("#999999")) #v(0.4em)]
+
+"@
+Set-Content -Path $body -Value ($helpers + $bodyContent) -Encoding UTF8
 Write-Host "Body Typst : $body ($((Get-Item $body).Length) bytes)"
 
 # Compile final monograph
