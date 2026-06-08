@@ -22,3 +22,8 @@
 #include "parties/p5-gouvernance.typ"
 #include "parties/p6-validation.typ"
 #include "parties/p7-perspectives.typ"
+
+// Bibliographie consolidée (305 sources du dossier vérifié). Les chapitres citent encore
+// en notes de bas de page ; le passage aux clés #cite reste un travail ultérieur (cf. §7).
+#pagebreak()
+#bibliography("../references.bib", full: true, title: [Bibliographie])
