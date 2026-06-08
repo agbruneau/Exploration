@@ -35,3 +35,10 @@
 
 // — Trois ruptures conceptuelles couplées (la thèse est leur COUPLAGE, §2) —
 #let ruptures = [déterministe→probabiliste, syntaxique→sémantique, composition→délégation]
+
+// — Renvoi explicite au corpus mère : tout contenu formel à NE PAS fabriquer (§10).
+//   Rend un encadré visible plutôt que d'inventer une construction du canon.
+#let corpusTODO(body) = block(
+  fill: rgb("#fff4e5"), stroke: (left: 3pt + rgb("#b8860b")), inset: 8pt, radius: 2pt, width: 100%,
+  [#text(weight: "bold", fill: rgb("#8a6500"))[À reprendre du corpus mère] — #body],
+)
