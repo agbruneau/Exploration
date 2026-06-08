@@ -4,6 +4,8 @@ Sources Typst d'une **monographie scientifique** sur l'interopérabilité dans l
 Auteur : **André-Guy Bruneau, M.Sc.** — co-auteur : **Claude (Anthropic)**, divulgation transparente (cf. `CLAUDE.md` §9).
 Langue : **fr-CA**. Statut : **en rédaction** (ébauche des 7 parties / 20 chapitres).
 
+📄 **Consulter la monographie (PDF, 159 p.)** : [`docs/monographie.pdf`](docs/monographie.pdf) — rendu en ligne par GitHub.
+
 ## État (8 juin 2026)
 
 | Élément | État |

@@ -1,5 +1,7 @@
 build/
 *.pdf
+# PDF publié pour consultation (exception à la règle *.pdf) :
+!docs/monographie.pdf
 # Fichiers de travail/harnais temporaires (scripts d'extraction, tests de compilation)
 _*.mjs
 _*.typ
