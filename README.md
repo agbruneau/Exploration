@@ -5,6 +5,7 @@ Auteur : **André-Guy Bruneau, M.Sc.** — co-auteur : **Claude (Anthropic)**, d
 Langue : **fr-CA**. Statut : **en rédaction** (ébauche des 7 parties / 20 chapitres).
 
 📄 **Consulter la monographie (PDF, 159 p.)** : [`docs/monographie.pdf`](docs/monographie.pdf) — rendu en ligne par GitHub.
+📝 **Version Markdown** : [`docs/monographie.md`](docs/monographie.md) — lisible et navigable directement sur GitHub (sommaire, tableaux, notes de bas de page).
 📊 **Tableau de bord de synthèse** : [`dashboard/index.html`](dashboard/index.html) — un fichier HTML autonome (ouvrir localement, ou via GitHub Pages / htmlpreview).
 🌐 **Page de présentation** : [`landing/index.html`](landing/index.html) — landing éditoriale (ouvrir localement, ou via GitHub Pages / htmlpreview).
 
