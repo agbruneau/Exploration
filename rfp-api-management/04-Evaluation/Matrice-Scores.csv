@@ -1,0 +1,13 @@
+Critere,Libelle,Ponderation,Google Apigee,Salesforce MuleSoft,Kong Konnect,IBM API Connect,Microsoft Azure APIM
+C1,Fonctionnel cœur,15,5,5,4,5,4
+C2,Archi & hybride,15,4.5,4.5,5,5,3.5
+C3,Sécurité,15,4.5,4,4.5,5,4.5
+C4,Conformité & souveraineté,12,4,4.5,3.5,5,4.5
+C5,Performance,8,4.5,4,5,4.5,4
+C6,Observabilité,6,4.5,4,4.5,4,4.5
+C7,Événementiel & GraphQL,6,3,4.5,4.5,4.5,4
+C8,IA/LLM & agentique,7,5,4,5,4.5,4.5
+C9,Exp. dév & gouvernance,6,4,4.5,4.5,4,4
+C10,TCO & commercial,6,3.5,3,4,3.5,4
+C11,Écosystème & pérennité,4,4.5,4.5,4.5,5,4.5
+TOTAL,Note finale /100,100,87.4,86.1,88.5,93.7,82.9
