@@ -1,3 +1,5 @@
 build/
 *.pdf
-_extract.mjs
+# Fichiers de travail/harnais temporaires (scripts d'extraction, tests de compilation)
+_*.mjs
+_*.typ

@@ -2,16 +2,16 @@
 
 Sources Typst d'une **monographie scientifique** sur l'interopérabilité dans l'entreprise agentique.
 Auteur : **André-Guy Bruneau, M.Sc.** — co-auteur : **Claude (Anthropic)**, divulgation transparente (cf. `CLAUDE.md` §9).
-Langue : **fr-CA**. Statut : **en rédaction** (ébauche des parties empiriques).
+Langue : **fr-CA**. Statut : **en rédaction** (ébauche des 7 parties / 20 chapitres).
 
 ## État (8 juin 2026)
 
 | Élément | État |
 |---|---|
 | `docs/recherche/etat-de-lart-2026-06.md` | **Dossier d'état de l'art vérifié** — 6 parties, 339 faits datés, 305 sources, vérification adversariale à 3 voix |
-| `src/parties/p3–p5.typ` | **Ébauche** des Parties III–V (Ch. 8–16), ancrée sur le dossier |
-| `lib/canon.typ`, `lib/template.typ` | *Scaffolding* — canon encodé fidèlement à `CLAUDE.md` §2 |
-| Parties I, II, VI, VII ; noyau τ/CIA/I1–I5 | **Hors portée de cette passe** — proviennent du corpus mère (§2, §11) |
+| `src/parties/p1–p7.typ` | **Ébauche des 7 parties / 20 chapitres** (~138 p.), ancrée sur le dossier ; compile en `build/monographie.pdf` |
+| `lib/canon.typ`, `lib/template.typ` | *Scaffolding* — canon encodé fidèlement à `CLAUDE.md` §2 (macros τ, CIA, I1–I5, `#corpusTODO`) |
+| Noyau formel du canon (sémantique opératoire de τ, énoncés précis de I1–I5, algèbre CIA, Lean 4) | **Déféré au corpus mère** via les encadrés `#corpusTODO` — **non fabriqué** (§2, §10, §11) |
 
 ## Compilation
 
@@ -24,7 +24,7 @@ typst compile --root . src/main.typ build/monographie.pdf
 typst watch  --root . src/main.typ build/monographie.pdf
 ```
 
-Sortie courante : ~122 pages.
+Sortie courante : **~138 pages** (0 erreur, 0 avertissement ; Typst 0.14.2).
 
 ## Structure
 
