@@ -1,0 +1,14 @@
+Code,Critère,Thème,Poids,Kong,IBM,Google Cloud Apigee,Gravitee,WSO2
+C1,"Sécurité des API et protection contre les menaces",Sécurité,12,4,4,4,4,3
+C2,"Conformité réglementaire et souveraineté des données",Conformité,13,3,4,2,3,4
+C3,"Architecture hybride, portabilité et résilience",Architecture,12,4,4,2,4,4
+C4,"Capacités fonctionnelles cœur de gestion des API",Fonctionnel,11,4,4,4,4,4
+C5,"Gouvernance du cycle de vie et catalogue d'entreprise",Fonctionnel,9,4,4,4,3,4
+C6,"Performance, scalabilité et faible latence",Performance,7,4,3,3,3,3
+C7,"Observabilité, monitoring et auditabilité opérationnelle",Observabilité,7,4,3,3,4,3
+C8,"Support de l'API événementielle et du streaming",Événementiel,6,3,4,2,5,3
+C9,"Capacités IA, agentique et passerelle LLM",IA,7,4,3,4,4,3
+C10,"Expérience développeur et portail self-service",Expérience dév.,8,3,3,4,4,4
+C11,"Coût total de possession, modèle de licence et écosystème",Coût,8,3,2,2,4,4
+Total,"Note pondérée /100 = Σ(note/5 × poids)",,100,73.0,71.0,61.6,75.4,72.2
+Rang,"Classement final (pondération de base)",,,2,4,5,1,3
