@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sélection d'une plateforme d'API Management — méta-analyse</title>
+  <meta name="description" content="Méta-analyse de trois évaluations indépendantes de plateformes d'API Management (juin 2026). Trois cadrages, trois verdicts. Organisation fictive, réponses simulées.">
+  <link rel="stylesheet" href="assets/theme.css">
+  <style>
+    /* ---- Mise en page propre à la landing ---- */
+    nav.top{ position:sticky; top:0; z-index:20; backdrop-filter:saturate(140%) blur(10px);
+      background:color-mix(in srgb,var(--bg) 84%, transparent); border-bottom:1px solid var(--border); }
+    nav.top .wrap{ display:flex; align-items:center; gap:16px; padding:13px 0; }
+    nav.top .brand{ font-weight:700; color:var(--orange-bright); margin-right:auto; letter-spacing:-.01em; }
+    nav.top .seg{ display:inline-flex; gap:8px; align-items:center; }
+
+    section.block{ padding:clamp(40px,7vw,84px) 0; border-bottom:1px solid var(--border); position:relative; }
+    .eyebrow{ text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; color:var(--orange-bright); font-weight:600; margin-bottom:14px; }
+    .lede{ font-size:clamp(1.05rem,1rem+.5vw,1.3rem); color:var(--text); max-width:64ch; }
+    .muted-lede{ color:var(--text-muted); }
+
+    /* Hero */
+    .hero{ padding:clamp(56px,10vw,128px) 0 clamp(40px,6vw,72px); }
+    .hero h1{ max-width:18ch; }
+    .hero .constat{ display:inline-block; margin:22px 0 28px; font-size:clamp(1.2rem,1rem+1vw,1.7rem);
+      font-weight:600; color:var(--text); border-left:4px solid var(--orange); padding:6px 0 6px 18px; }
+    .hero .cta-row{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:8px; }
+
+    .kpis{ margin-top:8px; }
+    .grid3{ display:grid; gap:20px; grid-template-columns:1fr; }
+    @media (min-width:860px){ .grid3{ grid-template-columns:repeat(3,1fr); } }
+
+    /* Cartes simulation */
+    .simcard{ padding:22px; display:flex; flex-direction:column; gap:14px; }
+    .simcard .tool{ font-size:.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }
+    .simcard h3{ margin:0; color:var(--text); }
+    .simcard .winline{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+    .simcard .score{ font-size:1.7rem; font-weight:700; color:var(--orange-bright); }
+    .simcard .reason{ font-size:.9rem; color:var(--text-muted); margin:0; }
+    /* mini-podium */
+    .podium{ display:flex; align-items:flex-end; gap:10px; margin-top:22px; }
+    .podium .col{ flex:1; display:flex; flex-direction:column; align-items:center; }
+    .podium .bar{ width:100%; border-radius:7px 7px 0 0; min-height:14px; }
+    .podium .pname{ font-size:.74rem; color:var(--text); text-align:center; line-height:1.15; margin-top:7px; }
+    .podium .pscore{ font-size:.74rem; font-weight:600; color:var(--text-muted); margin-bottom:5px; }
+    .podium .rk{ font-size:.68rem; color:var(--text-muted); margin-top:2px; }
+
+    /* Prétendants */
+    .contenders{ display:grid; gap:18px; grid-template-columns:1fr; }
+    @media (min-width:860px){ .contenders{ grid-template-columns:repeat(3,1fr); } }
+    .cont{ padding:20px 22px; border-top:3px solid; }
+    .cont h3{ margin:0 0 4px; color:var(--text); }
+    .cont .role{ font-size:.86rem; color:var(--orange-bright); margin-bottom:12px; font-weight:600; }
+    .cont .lab{ font-size:.74rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); margin:10px 0 4px; }
+    .cont p{ margin:0; font-size:.9rem; }
+    .cont .res{ color:var(--text); }
+
+    .levers{ display:grid; gap:18px; grid-template-columns:1fr; counter-reset:lev; }
+    @media (min-width:860px){ .levers{ grid-template-columns:repeat(3,1fr); } }
+    .lev{ padding:20px 22px; position:relative; }
+    .lev::before{ counter-increment:lev; content:counter(lev); position:absolute; top:16px; right:18px;
+      font-size:2.4rem; font-weight:800; color:color-mix(in srgb,var(--orange) 26%, transparent); line-height:1; }
+    .lev h3{ margin:0 0 8px; color:var(--orange-bright); font-size:1.1rem; }
+    .lev p{ margin:0; font-size:.92rem; color:var(--text); }
+
+    .reco{ display:grid; gap:22px; grid-template-columns:1fr; }
+    @media (min-width:880px){ .reco{ grid-template-columns:1.1fr 1fr; } }
+    .reco ul{ margin:8px 0 0; padding-left:0; list-style:none; }
+    .reco li{ position:relative; padding:9px 0 9px 26px; border-bottom:1px solid var(--border); font-size:.94rem; }
+    .reco li::before{ content:"→"; position:absolute; left:0; color:var(--orange-bright); font-weight:700; }
+    .shortlist{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .pill{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); border-radius:999px; padding:8px 15px; font-weight:600; }
+    .pill .dot{ width:10px; height:10px; border-radius:50%; }
+
+    .integrity{ background:var(--surface); }
+    .integrity .box{ border:1px solid color-mix(in srgb,var(--warning) 35%,transparent);
+      background:color-mix(in srgb,var(--warning) 7%,transparent); border-radius:var(--radius); padding:18px 22px;
+      color:var(--text); font-size:.92rem; }
+    footer.foot{ padding:30px 0 60px; color:var(--text-muted); font-size:.86rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    footer.foot a{ color:var(--orange-bright); }
+    @media print{ section.block{ border-bottom:1px solid #cfd4dc; padding:18px 0; } .hero{ padding:10px 0; } }
+  </style>
+</head>
+<body>
+  <a href="#constat" class="skip-link" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
+  <div class="atmos" aria-hidden="true"></div>
+
+  <nav class="top no-print">
+    <div class="wrap">
+      <span class="brand">API Management · méta-analyse</span>
+      <div class="seg" id="langToggle" role="group" aria-label="Langue / Language"></div>
+      <a class="btn" href="dashboard.html" data-fr="Tableau de bord" data-en="Dashboard">Tableau de bord</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <header class="hero wrap">
+    <div class="eyebrow reveal" data-fr="Comité exécutif · juin 2026" data-en="Executive committee · June 2026">Comité exécutif · juin 2026</div>
+    <h1 class="reveal" style="animation-delay:60ms" data-fr="Sélection d'une plateforme d'API Management"
+        data-en="Selecting an enterprise API Management platform">Sélection d'une plateforme d'API Management</h1>
+    <p class="lede reveal" style="animation-delay:120ms" data-fr="Méta-analyse de trois évaluations indépendantes — juin 2026."
+       data-en="A meta-analysis of three independent evaluations — June 2026.">Méta-analyse de trois évaluations indépendantes — juin 2026.</p>
+    <div class="constat reveal" style="animation-delay:180ms" data-fr="Trois cadrages, trois verdicts."
+         data-en="Three framings, three verdicts.">Trois cadrages, trois verdicts.</div>
+    <div class="cta-row reveal" style="animation-delay:240ms">
+      <a class="btn btn-cta" href="dashboard.html" data-fr="Ouvrir le tableau de bord" data-en="Open the dashboard">Ouvrir le tableau de bord</a>
+      <span class="muted" data-fr="Comparaison interactive des 11 critères, 3 simulations." data-en="Interactive comparison across 11 criteria, 3 simulations.">Comparaison interactive des 11 critères, 3 simulations.</span>
+    </div>
+  </header>
+
+  <!-- 2. KPI -->
+  <section class="block" style="padding-top:0; border-top:1px solid var(--border)">
+    <div class="wrap"><div class="kpis" id="kpiBand" aria-label="Indicateurs clés"></div></div>
+  </section>
+
+  <!-- 3. LE CONSTAT DIRECTEUR -->
+  <section class="block" id="constat">
+    <div class="wrap">
+      <div class="eyebrow" data-fr="Le constat directeur" data-en="The headline finding">Le constat directeur</div>
+      <h2 data-fr="Le verdict est une fonction du cadrage, pas une vérité absolue." data-en="The verdict is a function of framing, not an absolute truth.">Le verdict est une fonction du cadrage, pas une vérité absolue.</h2>
+      <p class="lede" data-fr="Trois appels d'offres simulés pour une même plateforme d'API Management en déploiement hybride/souverain, conduits avec trois outils différents, désignent trois gagnants différents : IBM API Connect, Gravitee et Kong Enterprise. Ce n'est pas une contradiction — c'est le signal."
+         data-en="Three simulated RFPs for the same hybrid/sovereign API Management platform, run with three different tools, name three different winners: IBM API Connect, Gravitee and Kong Enterprise. This is not a contradiction — it is the signal.">Trois appels d'offres simulés pour une même plateforme d'API Management en déploiement hybride/souverain, conduits avec trois outils différents, désignent trois gagnants différents : IBM API Connect, Gravitee et Kong Enterprise. Ce n'est pas une contradiction — c'est le signal.</p>
+      <p class="lede muted-lede" data-fr="La pondération des critères, la composition de la shortlist et la rigueur méthodologique déplacent le podium. Une constante résiste pourtant à tous les cadrages : Kong n'est jamais sous la 2ᵉ place — 2ᵉ chez GFB, 2ᵉ chez BBQ, 1ᵉʳ chez Gemini."
+         data-en="Criteria weighting, shortlist composition and methodological rigour move the podium. Yet one constant survives every framing: Kong is never below 2nd place — 2nd at GFB, 2nd at BBQ, 1st at Gemini.">La pondération des critères, la composition de la shortlist et la rigueur méthodologique déplacent le podium. Une constante résiste pourtant à tous les cadrages : Kong n'est jamais sous la 2ᵉ place — 2ᵉ chez GFB, 2ᵉ chez BBQ, 1ᵉʳ chez Gemini.</p>
+    </div>
+  </section>
+
+  <!-- 4. TROIS CADRAGES, TROIS VERDICTS -->
+  <section class="block">
+    <div class="wrap">
+      <div class="eyebrow" data-fr="Trois cadrages, trois verdicts" data-en="Three framings, three verdicts">Trois cadrages, trois verdicts</div>
+      <h2 data-fr="Un gagnant par exercice — et la raison de chacun." data-en="One winner per exercise — and the reason for each.">Un gagnant par exercice — et la raison de chacun.</h2>
+      <div class="grid3" id="simCards" style="margin-top:24px"></div>
+      <p class="muted" style="margin-top:16px;font-size:.84rem" data-fr="Sim 3 (Gemini) est un exercice plus léger : 3 candidats, 5 critères, scores en points absolus. À ne jamais fusionner avec les notes /5 des Sim 1 et 2."
+         data-en="Sim 3 (Gemini) is a lighter exercise: 3 candidates, 5 criteria, absolute-point scores. Never merge it with the /5 scores of Sim 1 and 2.">Sim 3 (Gemini) est un exercice plus léger : 3 candidats, 5 critères, scores en points absolus. À ne jamais fusionner avec les notes /5 des Sim 1 et 2.</p>
+    </div>
+  </section>
+
+  <!-- 5. LES PRÉTENDANTS CONSTANTS -->
+  <section class="block">
+    <div class="wrap">
+      <div class="eyebrow" data-fr="Les prétendants constants" data-en="The consistent contenders">Les prétendants constants</div>
+      <h2 data-fr="Trois noms crédibles, trois terrains de prédilection." data-en="Three credible names, three home grounds.">Trois noms crédibles, trois terrains de prédilection.</h2>
+      <div class="contenders" style="margin-top:24px">
+        <article class="cont" style="border-color:var(--c-ibm)">
+          <h3>IBM API Connect</h3>
+          <div class="role" data-fr="Gagne la souveraineté / FSI lourde" data-en="Wins sovereignty / heavy FSI">Gagne la souveraineté / FSI lourde</div>
+          <div class="lab" data-fr="Forces" data-en="Strengths">Forces</div>
+          <p data-fr="Fonctionnel cœur, sécurité et conformité au plus haut (5/5/5/5 en Sim 1) ; maturité FSI et DataPower ; classement de tête robuste à l'analyse de sensibilité."
+             data-en="Top core functionality, security and compliance (5/5/5/5 in Sim 1); FSI and DataPower maturity; robust top ranking under sensitivity analysis.">Fonctionnel cœur, sécurité et conformité au plus haut (5/5/5/5 en Sim 1) ; maturité FSI et DataPower ; classement de tête robuste à l'analyse de sensibilité.</p>
+          <div class="lab" data-fr="Réserve principale" data-en="Main reservation">Réserve principale</div>
+          <p class="res" data-fr="TCO et sur-licenciement CP4I (> 50 % observé), complexité d'exploitation OpenShift, maturité IA/MCP en production à prouver."
+             data-en="CP4I TCO and over-licensing (>50% observed), OpenShift operational complexity, AI/MCP production maturity to be proven.">TCO et sur-licenciement CP4I (> 50 % observé), complexité d'exploitation OpenShift, maturité IA/MCP en production à prouver.</p>
+        </article>
+        <article class="cont" style="border-color:var(--c-gravitee)">
+          <h3>Gravitee</h3>
+          <div class="role" data-fr="Gagne l'open source / événementiel / TCO" data-en="Wins open source / event-driven / TCO">Gagne l'open source / événementiel / TCO</div>
+          <div class="lab" data-fr="Forces" data-en="Strengths">Forces</div>
+          <p data-fr="Événementiel natif au sommet (5/5 en Sim 2), TCO et écosystème, expérience développeur ; 1ᵉʳ dans tous les scénarios de sensibilité de Sim 2."
+             data-en="Best-in-class native event support (5/5 in Sim 2), TCO and ecosystem, developer experience; 1st across every Sim 2 sensitivity scenario.">Événementiel natif au sommet (5/5 en Sim 2), TCO et écosystème, expérience développeur ; 1ᵉʳ dans tous les scénarios de sensibilité de Sim 2.</p>
+          <div class="lab" data-fr="Réserve principale" data-en="Main reservation">Réserve principale</div>
+          <p class="res" data-fr="Certifications (SOC 2 Type II, PCI-DSS, Protected B) et région cloud souveraine canadienne non confirmées ; éditeur de taille intermédiaire (diligence B-10)."
+             data-en="Certifications (SOC 2 Type II, PCI-DSS, Protected B) and a Canadian sovereign cloud region unconfirmed; mid-sized vendor (B-10 diligence).">Certifications (SOC 2 Type II, PCI-DSS, Protected B) et région cloud souveraine canadienne non confirmées ; éditeur de taille intermédiaire (diligence B-10).</p>
+        </article>
+        <article class="cont" style="border-color:var(--c-kong)">
+          <h3>Kong</h3>
+          <div class="role" data-fr="Jamais sous la 2ᵉ place — le fil conducteur" data-en="Never below 2nd — the through-line">Jamais sous la 2ᵉ place — le fil conducteur</div>
+          <div class="lab" data-fr="Forces" data-en="Strengths">Forces</div>
+          <p data-fr="Architecture hybride et multi-cloud, performance, IA / AI Gateway ; 2ᵉ en Sim 1, 2ᵉ en Sim 2, 1ᵉʳ en Sim 3 — le candidat le plus stable d'un cadrage à l'autre."
+             data-en="Hybrid and multi-cloud architecture, performance, AI / AI Gateway; 2nd in Sim 1, 2nd in Sim 2, 1st in Sim 3 — the most stable candidate across framings.">Architecture hybride et multi-cloud, performance, IA / AI Gateway ; 2ᵉ en Sim 1, 2ᵉ en Sim 2, 1ᵉʳ en Sim 3 — le candidat le plus stable d'un cadrage à l'autre.</p>
+          <div class="lab" data-fr="Réserve principale" data-en="Main reservation">Réserve principale</div>
+          <p class="res" data-fr="Région du plan de contrôle Konnect au Canada non confirmée (self-managed recommandé) ; FIPS 140-2 / SOC 2 / ISO 27001 à confirmer ; pas de WAF natif."
+             data-en="Konnect control-plane region in Canada unconfirmed (self-managed recommended); FIPS 140-2 / SOC 2 / ISO 27001 to confirm; no native WAF.">Région du plan de contrôle Konnect au Canada non confirmée (self-managed recommandé) ; FIPS 140-2 / SOC 2 / ISO 27001 à confirmer ; pas de WAF natif.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CE QUI FAIT BASCULER LE VERDICT -->
+  <section class="block">
+    <div class="wrap">
+      <div class="eyebrow" data-fr="Ce qui fait basculer le verdict" data-en="What tips the verdict">Ce qui fait basculer le verdict</div>
+      <h2 data-fr="Trois leviers expliquent la divergence." data-en="Three levers explain the divergence.">Trois leviers expliquent la divergence.</h2>
+      <div class="levers" id="levers" style="margin-top:24px"></div>
+    </div>
+  </section>
+
+  <!-- 7. RECOMMANDATION -->
+  <section class="block">
+    <div class="wrap">
+      <div class="eyebrow" data-fr="Recommandation" data-en="Recommendation">Recommandation</div>
+      <h2 data-fr="Pour un profil FSI « souveraineté d'abord »." data-en="For a sovereignty-first FSI profile.">Pour un profil FSI « souveraineté d'abord ».</h2>
+      <div class="reco" style="margin-top:18px">
+        <div>
+          <p class="lede" data-fr="Aucun score sur dossier ne tranche seul. Retenir une shortlist crédible, puis départager par une preuve de concept (PoC) sur les cas réellement critiques."
+             data-en="No paper score decides on its own. Keep a credible shortlist, then settle it with a proof of concept (PoC) on the genuinely critical cases.">Aucun score sur dossier ne tranche seul. Retenir une shortlist crédible, puis départager par une preuve de concept (PoC) sur les cas réellement critiques.</p>
+          <div class="lab eyebrow" style="margin-top:14px" data-fr="Shortlist crédible" data-en="Credible shortlist">Shortlist crédible</div>
+          <div class="shortlist">
+            <span class="pill"><span class="dot" style="background:var(--c-ibm)"></span>IBM</span>
+            <span class="pill"><span class="dot" style="background:var(--c-gravitee)"></span>Gravitee</span>
+            <span class="pill"><span class="dot" style="background:var(--c-kong)"></span>Kong</span>
+          </div>
+        </div>
+        <div>
+          <div class="lab eyebrow" data-fr="Départage par PoC sur les cas critiques" data-en="Settle via PoC on critical cases">Départage par PoC sur les cas critiques</div>
+          <ul>
+            <li data-fr="Souveraineté et survivabilité hors-ligne (air-gap, plan de contrôle résident au Canada)." data-en="Sovereignty and offline survivability (air-gap, Canada-resident control plane).">Souveraineté et survivabilité hors-ligne (air-gap, plan de contrôle résident au Canada).</li>
+            <li data-fr="Paiements en temps réel et événementiel à l'échelle." data-en="Real-time payments and event-driven workloads at scale.">Paiements en temps réel et événementiel à l'échelle.</li>
+            <li data-fr="Sécurité OWASP et audit immuable." data-en="OWASP security and immutable audit.">Sécurité OWASP et audit immuable.</li>
+            <li data-fr="IA / MCP avec masquage PII résident au Canada." data-en="AI / MCP with PII masking resident in Canada.">IA / MCP avec masquage PII résident au Canada.</li>
+            <li data-fr="Lever les « à vérifier » en source primaire et négocier des devis fermes." data-en="Clear the “to verify” items from primary sources and negotiate firm quotes.">Lever les « à vérifier » en source primaire et négocier des devis fermes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. AVERTISSEMENT D'INTÉGRITÉ -->
+  <section class="block integrity">
+    <div class="wrap">
+      <div class="eyebrow" data-fr="Avertissement d'intégrité" data-en="Integrity notice">Avertissement d'intégrité</div>
+      <div class="box" id="integrityBox"></div>
+    </div>
+  </section>
+
+  <!-- 9. PIED DE PAGE -->
+  <footer class="foot wrap">
+    <span data-fr="Méta-analyse API Management — juin 2026." data-en="API Management meta-analysis — June 2026.">Méta-analyse API Management — juin 2026.</span>
+    <a href="dashboard.html" data-fr="Ouvrir le tableau de bord →" data-en="Open the dashboard →">Ouvrir le tableau de bord →</a>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/charts.js"></script>
+  <script src="assets/landing.js"></script>
+</body>
+</html>
