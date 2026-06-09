@@ -63,14 +63,6 @@
     .lev h3{ margin:0 0 8px; color:var(--orange-bright); font-size:1.1rem; }
     .lev p{ margin:0; font-size:.92rem; color:var(--text); }
 
-    .reco{ display:grid; gap:22px; grid-template-columns:1fr; }
-    @media (min-width:880px){ .reco{ grid-template-columns:1.1fr 1fr; } }
-    .reco ul{ margin:8px 0 0; padding-left:0; list-style:none; }
-    .reco li{ position:relative; padding:9px 0 9px 26px; border-bottom:1px solid var(--border); font-size:.94rem; }
-    .reco li::before{ content:"→"; position:absolute; left:0; color:var(--orange-bright); font-weight:700; }
-    .shortlist{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
-    .pill{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); border-radius:999px; padding:8px 15px; font-weight:600; }
-    .pill .dot{ width:10px; height:10px; border-radius:50%; }
 
     .integrity{ background:var(--surface); }
     .integrity .box{ border:1px solid color-mix(in srgb,var(--warning) 35%,transparent);
@@ -188,28 +180,30 @@
   <!-- 7. RECOMMANDATION -->
   <section class="block">
     <div class="wrap">
-      <div class="eyebrow" data-fr="Recommandation" data-en="Recommendation">Recommandation</div>
-      <h2 data-fr="Pour un profil FSI « souveraineté d'abord »." data-en="For a sovereignty-first FSI profile.">Pour un profil FSI « souveraineté d'abord ».</h2>
-      <div class="reco" style="margin-top:18px">
+      <div class="eyebrow" data-fr="Recommandation du comité" data-en="Committee recommendation">Recommandation du comité</div>
+      <h2 data-fr="Le meilleur candidat pour ce profil — sous condition de PoC." data-en="The best candidate for this profile — pending a PoC.">Le meilleur candidat pour ce profil — sous condition de PoC.</h2>
+      <p class="muted" id="recoNoAbsolu" style="max-width:70ch;margin:0 0 16px"></p>
+      <div id="recoVerdict"></div>
+      <div class="reco-cols">
         <div>
-          <p class="lede" data-fr="Aucun score sur dossier ne tranche seul. Retenir une shortlist crédible, puis départager par une preuve de concept (PoC) sur les cas réellement critiques."
-             data-en="No paper score decides on its own. Keep a credible shortlist, then settle it with a proof of concept (PoC) on the genuinely critical cases.">Aucun score sur dossier ne tranche seul. Retenir une shortlist crédible, puis départager par une preuve de concept (PoC) sur les cas réellement critiques.</p>
-          <div class="lab eyebrow" style="margin-top:14px" data-fr="Shortlist crédible" data-en="Credible shortlist">Shortlist crédible</div>
-          <div class="shortlist">
-            <span class="pill"><span class="dot" style="background:var(--c-ibm)"></span>IBM</span>
-            <span class="pill"><span class="dot" style="background:var(--c-gravitee)"></span>Gravitee</span>
-            <span class="pill"><span class="dot" style="background:var(--c-kong)"></span>Kong</span>
-          </div>
+          <div class="reco-h" data-fr="Pourquoi Kong" data-en="Why Kong">Pourquoi Kong</div>
+          <ul class="reco-why" id="recoWhy"></ul>
+          <div class="tension" id="recoTension"></div>
         </div>
         <div>
-          <div class="lab eyebrow" data-fr="Départage par PoC sur les cas critiques" data-en="Settle via PoC on critical cases">Départage par PoC sur les cas critiques</div>
-          <ul>
-            <li data-fr="Souveraineté et survivabilité hors-ligne (air-gap, plan de contrôle résident au Canada)." data-en="Sovereignty and offline survivability (air-gap, Canada-resident control plane).">Souveraineté et survivabilité hors-ligne (air-gap, plan de contrôle résident au Canada).</li>
-            <li data-fr="Paiements en temps réel et événementiel à l'échelle." data-en="Real-time payments and event-driven workloads at scale.">Paiements en temps réel et événementiel à l'échelle.</li>
-            <li data-fr="Sécurité OWASP et audit immuable." data-en="OWASP security and immutable audit.">Sécurité OWASP et audit immuable.</li>
-            <li data-fr="IA / MCP avec masquage PII résident au Canada." data-en="AI / MCP with PII masking resident in Canada.">IA / MCP avec masquage PII résident au Canada.</li>
-            <li data-fr="Lever les « à vérifier » en source primaire et négocier des devis fermes." data-en="Clear the “to verify” items from primary sources and negotiate firm quotes.">Lever les « à vérifier » en source primaire et négocier des devis fermes.</li>
-          </ul>
+          <div class="reco-h" data-fr="Départage par PoC — go / no-go" data-en="PoC decision gates — go / no-go">Départage par PoC — go / no-go</div>
+          <table class="gate"><tbody id="recoGates"></tbody></table>
+        </div>
+      </div>
+      <div class="reco-cols" style="margin-top:8px">
+        <div>
+          <div class="reco-h" data-fr="Conditions qui renversent le verdict" data-en="Conditions that flip the verdict">Conditions qui renversent le verdict</div>
+          <ul class="flip" id="recoFlip"></ul>
+          <p class="reco-ecartes" id="recoEcartes"></p>
+        </div>
+        <div>
+          <div class="reco-h" data-fr="Shortlist" data-en="Shortlist">Shortlist</div>
+          <div class="reco-pills" id="recoShortlist"></div>
         </div>
       </div>
     </div>

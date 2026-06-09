@@ -132,6 +132,43 @@ table.data th{ color:var(--text-muted); font-weight:600; }
 table.data td:first-child, table.data th:first-child{ text-align:left; }
 table.data tbody tr:hover{ background: rgba(255,255,255,.025); }
 
+/* ---- Bloc « Recommandation » (partagé landing + tableau de bord) ---------- */
+.verdict{ display:flex; flex-wrap:wrap; gap:8px 22px; align-items:center;
+  border:1px solid color-mix(in srgb,var(--orange) 42%, transparent);
+  background:color-mix(in srgb,var(--orange) 8%, transparent);
+  border-radius:var(--radius); padding:18px 22px; }
+.verdict .pick{ font-size:clamp(2rem,1.5rem+1.4vw,2.7rem); font-weight:800; color:var(--orange-bright); line-height:1; }
+.verdict .pick small{ display:block; font-size:.42em; font-weight:600; color:var(--text-muted); letter-spacing:.02em; margin-top:4px; }
+.verdict .vbody{ flex:1; min-width:260px; }
+.verdict .vbody .cond{ color:var(--text); font-size:.94rem; margin:0 0 6px; }
+.verdict .vbody .chal{ color:var(--text-muted); font-size:.88rem; margin:0; }
+.verdict .basis{ display:inline-block; margin-top:8px; font-size:.82rem; color:var(--orange-bright); font-weight:600; }
+
+.reco-cols{ display:grid; gap:20px 28px; grid-template-columns:1fr; margin-top:20px; }
+@media (min-width:820px){ .reco-cols{ grid-template-columns:1.05fr 1fr; } }
+.reco-h{ font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; color:var(--orange-bright); font-weight:700; margin:0 0 10px; }
+.reco-why{ margin:0; padding:0; list-style:none; }
+.reco-why li{ position:relative; padding:7px 0 7px 22px; font-size:.92rem; border-bottom:1px solid var(--border); }
+.reco-why li::before{ content:"▸"; position:absolute; left:0; color:var(--orange-bright); }
+.tension{ border-left:3px solid var(--warning); background:color-mix(in srgb,var(--warning) 7%, transparent);
+  padding:12px 16px; border-radius:0 8px 8px 0; font-size:.9rem; color:var(--text); margin-top:16px; }
+.tension b{ color:var(--warning); display:block; margin-bottom:4px; font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; }
+
+.gate{ width:100%; border-collapse:collapse; font-size:.88rem; }
+.gate td{ padding:9px 8px; border-bottom:1px solid var(--border); vertical-align:top; }
+.gate td.cas{ color:var(--text); font-weight:600; width:42%; }
+.gate td.nogo{ color:var(--text-muted); }
+.gate td.nogo b{ color:var(--warning); font-weight:600; }
+
+.flip{ margin:6px 0 0; padding:0; list-style:none; }
+.flip li{ padding:8px 0; border-bottom:1px solid var(--border); font-size:.9rem; color:var(--text); }
+.reco-ecartes{ margin-top:14px; font-size:.86rem; color:var(--text-muted); }
+.reco-pills{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+.reco-pills .pill{ display:inline-flex; flex-direction:column; gap:2px; border:1px solid var(--border); border-radius:12px; padding:8px 14px; }
+.reco-pills .pill .nm{ display:flex; align-items:center; gap:8px; font-weight:700; }
+.reco-pills .pill .nm .dot{ width:10px; height:10px; border-radius:50%; }
+.reco-pills .pill .rl{ font-size:.74rem; color:var(--text-muted); }
+
 /* ---- Survol-info (tooltip) ----------------------------------------------- */
 .tip{
   position:fixed; z-index:60; pointer-events:none; max-width:280px;

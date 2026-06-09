@@ -100,6 +100,46 @@ function renderLevers(){
   ])));
 }
 
+/* ---- Recommandation consolidée (§7) --------------------------------------*/
+function renderReco(){
+  const L = (o) => o[lang];
+  document.getElementById("recoNoAbsolu").textContent = L(RECO.noAbsolu);
+
+  const v = RECO.verdict;
+  const verdict = document.getElementById("recoVerdict"); clear(verdict);
+  verdict.appendChild(el("div",{class:"verdict"},[
+    el("div",{class:"pick"},[ document.createTextNode(v.pick), el("small",{text:L(v.tagline)}) ]),
+    el("div",{class:"vbody"},[
+      el("p",{class:"cond",text:L(v.condition)}),
+      el("p",{class:"chal",text:L(v.challenger)}),
+      el("span",{class:"basis",text:L(v.basis)})
+    ])
+  ]));
+
+  const why = document.getElementById("recoWhy"); clear(why);
+  RECO.preuves.forEach(p => why.appendChild(el("li",{text:L(p)})));
+
+  const tension = document.getElementById("recoTension"); clear(tension);
+  tension.appendChild(el("b",{text:L(RECO.tension.titre)}));
+  tension.appendChild(document.createTextNode(L(RECO.tension.texte)));
+
+  const gates = document.getElementById("recoGates"); clear(gates);
+  RECO.gates.forEach(g => gates.appendChild(el("tr",{},[
+    el("td",{class:"cas",text:L(g.cas)}),
+    el("td",{class:"nogo"},[ el("b",{text:"No-go — "}), document.createTextNode(L(g.nogo)) ])
+  ])));
+
+  const flip = document.getElementById("recoFlip"); clear(flip);
+  RECO.bascules.forEach(b => flip.appendChild(el("li",{text:L(b)})));
+  document.getElementById("recoEcartes").textContent = L(RECO.ecartes);
+
+  const sl = document.getElementById("recoShortlist"); clear(sl);
+  RECO.shortlist.forEach(s => sl.appendChild(el("div",{class:"pill"},[
+    el("div",{class:"nm"},[ el("span",{class:"dot",style:`background:${colorFor(s.nom)}`}), s.nom ]),
+    el("div",{class:"rl",text:L(s.role)})
+  ])));
+}
+
 /* ---- Avertissement d'intégrité -------------------------------------------*/
 function renderIntegrity(){
   document.getElementById("integrityBox").textContent = DATA.meta.avertissement;
@@ -120,6 +160,7 @@ function renderAll(){
   renderKpis();
   renderSimCards();
   renderLevers();
+  renderReco();
   renderIntegrity();
 }
 renderAll();

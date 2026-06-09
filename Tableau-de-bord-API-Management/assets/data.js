@@ -207,6 +207,62 @@ const RESERVES = [
   ]}
 ];
 
+/* ---- Recommandation exécutive consolidée (issue de la méta-analyse) -------
+   Verdict décisif pour le profil cible « FSI canadienne, souveraineté d'abord ».
+   Bilingue (fr/en). Rendu à l'identique dans la landing (§7) et la vue méta. */
+const RECO = {
+  verdict: {
+    pick: "Kong",
+    tagline:   { fr:"Tête de file d'un PoC à deux finalistes", en:"Lead of a two-finalist PoC" },
+    condition: { fr:"Recommandation conditionnelle — ne tient que si le PoC valide la résidence canadienne du plan de contrôle (option self-managed), la conformité (FIPS 140-2/CMVP, SOC 2/ISO 27001) et la couverture WAF.",
+                 en:"Conditional recommendation — holds only if the PoC validates a Canada-resident control plane (self-managed option), compliance (FIPS 140-2/CMVP, SOC 2/ISO 27001) and WAF coverage." },
+    basis:     { fr:"Seul candidat jamais sous la 2ᵉ place (2ᵉ · 2ᵉ · 1ᵉʳ) : choix de moindre regret.",
+                 en:"The only candidate never below 2nd place (2nd · 2nd · 1st): the lowest-regret choice." },
+    challenger:{ fr:"IBM API Connect — challenger « souveraineté prouvée ».",
+                 en:"IBM API Connect — designated “proven-sovereignty” challenger." }
+  },
+  noAbsolu: { fr:"Il n'existe pas de « meilleur » absolu : trois cadrages désignent trois gagnants. Ce verdict vaut pour le profil cible et un budget de PoC donnés.",
+              en:"There is no absolute “best”: three framings name three winners. This verdict holds for the target profile and a given PoC budget." },
+  preuves: [
+    { fr:"Meilleur plancher de rang : 2ᵉ (88,5) · 2ᵉ (73,0) · 1ᵉʳ (94). IBM et Gravitee ne gagnent que sous leur propre cadrage.",
+      en:"Best rank floor: 2nd (88.5) · 2nd (73.0) · 1st (94). IBM and Gravitee win only under their own framing." },
+    { fr:"Axes modernes en tête : architecture & hybride 5/5 (à égalité IBM), IA 5/5 (à égalité Apigee), Sim 3 = 94.",
+      en:"Leads the modern axes: hybrid architecture 5/5 (tied with IBM), AI 5/5 (tied with Apigee), Sim 3 = 94." },
+    { fr:"Risque résiduel vérifiable, non structurel : région Konnect, FIPS, SOC 2, WAF — adressables en PoC (mitigation self-managed nommée).",
+      en:"Residual risk is verifiable, not structural: Konnect region, FIPS, SOC 2, WAF — addressable in a PoC (named self-managed mitigation)." }
+  ],
+  tension: { titre:{ fr:"Tension à arbitrer", en:"Tension to arbitrate" },
+    texte:{ fr:"Sur le critère « souveraineté » lui-même, c'est IBM qui mène (Sim 1 C4 : IBM 5 vs Kong 3,5, le plus bas ; sous le scénario « Souveraineté max », IBM repasse 1ᵉʳ à 94,6 et Kong tombe à 88,0). Recommander Kong, c'est parier que son déficit souverain se comble en self-managed — un pari qui se tranche en PoC, pas sur dossier.",
+            en:"On the “sovereignty” criterion itself, IBM leads (Sim 1 C4: IBM 5 vs Kong 3.5, the lowest; under the “Sovereignty max” scenario IBM returns to 1st at 94.6 while Kong drops to 88.0). Recommending Kong means betting its sovereignty gap is closed self-managed — a bet settled in a PoC, not on paper." } },
+  gates: [
+    { cas:{ fr:"Souveraineté & survivabilité hors-ligne", en:"Sovereignty & offline survivability" },
+      nogo:{ fr:"le plan de contrôle ne peut résider/survivre au Canada hors-ligne (air-gap)", en:"the control plane cannot reside/survive in Canada offline (air-gap)" } },
+    { cas:{ fr:"Conformité certifiée", en:"Certified compliance" },
+      nogo:{ fr:"FIPS 140-2/CMVP, SOC 2 Type II / ISO 27001 non démontrables en source primaire", en:"FIPS 140-2/CMVP, SOC 2 Type II / ISO 27001 not demonstrable from primary sources" } },
+    { cas:{ fr:"Sécurité OWASP", en:"OWASP security" },
+      nogo:{ fr:"pas de couverture WAF démontrable", en:"no demonstrable WAF coverage" } },
+    { cas:{ fr:"Paiements temps réel & événementiel", en:"Real-time payments & eventing" },
+      nogo:{ fr:"SLA temps réel non tenu", en:"real-time SLA not met" } },
+    { cas:{ fr:"Audit immuable & IA/MCP", en:"Immutable audit & AI/MCP" },
+      nogo:{ fr:"la PII sort du Canada", en:"PII leaves Canada" } }
+  ],
+  bascules: [
+    { fr:"→ IBM si la souveraineté résidente Canada devient une contrainte dure non négociable, ou si Kong échoue au no-go souveraineté/sécurité. Sous « Souveraineté max », IBM est déjà 1ᵉʳ (94,6).",
+      en:"→ IBM if Canada-resident sovereignty becomes a hard, non-negotiable constraint, or if Kong fails the sovereignty/security no-go. Under “Sovereignty max”, IBM is already 1st (94.6)." },
+    { fr:"→ Gravitee si le cadrage souveraineté-d'abord prime ET la diligence lève SOC 2 Type II / PCI-DSS / Protected B + région cloud souveraine.",
+      en:"→ Gravitee if the sovereignty-first framing prevails AND diligence clears SOC 2 Type II / PCI-DSS / Protected B + a sovereign cloud region." },
+    { fr:"→ WSO2 (défensif) si le cadrage Coût & DX prime ET la maturité d'ingénierie interne est avérée (WSO2 72,8 > Kong 72,0 sous Coût & DX+).",
+      en:"→ WSO2 (defensive) if the Cost & DX framing prevails AND internal engineering maturity is proven (WSO2 72.8 > Kong 72.0 under Cost & DX+)." }
+  ],
+  ecartes: { fr:"Écartés : Apigee et Azure (plan de contrôle non souverain — structurel), MuleSoft (TCO), WSO2 (PII possiblement hors Canada).",
+             en:"Ruled out: Apigee and Azure (non-sovereign control plane — structural), MuleSoft (TCO), WSO2 (PII possibly outside Canada)." },
+  shortlist: [
+    { nom:"Kong",     role:{ fr:"recommandé · tête de file PoC", en:"recommended · PoC lead" } },
+    { nom:"IBM",      role:{ fr:"challenger · souveraineté prouvée", en:"challenger · proven sovereignty" } },
+    { nom:"Gravitee", role:{ fr:"outsider · sous diligence B-10", en:"outsider · pending B-10 diligence" } }
+  ]
+};
+
 /* ---- Helpers de calcul (vérification interne, §9) ------------------------ */
 /* Sim 1/2 : total attendu = Σ (note/5 × poids). Sim 3 : somme des points.    */
 function weightedTotal(sim, cand){

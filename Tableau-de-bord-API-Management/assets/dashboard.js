@@ -11,6 +11,9 @@ const I18N = {
     metaTab:"Vue méta", scenario:"Pondération", focus:"Focus (max 3)", landing:"Présentation",
     pRank:"Classement", pRadar:"Radar des critères", pHeat:"Carte de chaleur",
     pSens:"Analyse de sensibilité", pRes:"Réserves & PoC — à vérifier",
+    recoTitle:"Recommandation du comité", recoHint:"Verdict décisif — profil souveraineté d'abord",
+    recoWhy:"Pourquoi Kong", recoGates:"Départage par PoC — go / no-go",
+    recoFlip:"Conditions qui renversent", recoShortlist:"Shortlist",
     seeCrit:"Voir les critères", hideCrit:"Masquer les critères", all:"Tous",
     tool:"Outil", client:"Client", winnerLbl:"Gagnant", scaleLbl:"Échelle",
     metaLead:"Le gagnant dépend du cadrage", why:"Pourquoi les verdicts diffèrent",
@@ -30,6 +33,9 @@ const I18N = {
     metaTab:"Meta view", scenario:"Weighting", focus:"Focus (max 3)", landing:"Overview",
     pRank:"Ranking", pRadar:"Criteria radar", pHeat:"Heatmap",
     pSens:"Sensitivity analysis", pRes:"Reservations & PoC — to verify",
+    recoTitle:"Committee recommendation", recoHint:"Decisive verdict — sovereignty-first profile",
+    recoWhy:"Why Kong", recoGates:"PoC decision gates — go / no-go",
+    recoFlip:"Conditions that flip the verdict", recoShortlist:"Shortlist",
     seeCrit:"Show criteria", hideCrit:"Hide criteria", all:"All",
     tool:"Tool", client:"Client", winnerLbl:"Winner", scaleLbl:"Scale",
     metaLead:"The winner depends on the framing", why:"Why the verdicts differ",
@@ -303,6 +309,50 @@ function panelMeta(){
 }
 
 /* =============================================================================
+   Panneau Recommandation (consolidé dans la vue méta — écran exécutif)
+============================================================================= */
+function panelReco(){
+  const t=T(), L=(o)=>o[state.lang], v=RECO.verdict;
+
+  const verdict = el("div",{class:"verdict"},[
+    el("div",{class:"pick"},[ document.createTextNode(v.pick), el("small",{text:L(v.tagline)}) ]),
+    el("div",{class:"vbody"},[
+      el("p",{class:"cond",text:L(v.condition)}),
+      el("p",{class:"chal",text:L(v.challenger)}),
+      el("span",{class:"basis",text:L(v.basis)})
+    ])
+  ]);
+
+  const why = el("ul",{class:"reco-why"}, RECO.preuves.map(p=>el("li",{text:L(p)})));
+  const tension = el("div",{class:"tension"},[ el("b",{text:L(RECO.tension.titre)}), L(RECO.tension.texte) ]);
+  const gates = el("table",{class:"gate"},[ el("tbody",{}, RECO.gates.map(g=>el("tr",{},[
+    el("td",{class:"cas",text:L(g.cas)}),
+    el("td",{class:"nogo"},[ el("b",{text:"No-go — "}), L(g.nogo) ])
+  ]))) ]);
+  const flip = el("ul",{class:"flip"}, RECO.bascules.map(b=>el("li",{text:L(b)})));
+  const shortlist = el("div",{class:"reco-pills"}, RECO.shortlist.map(s=>el("div",{class:"pill"},[
+    el("div",{class:"nm"},[ el("span",{class:"dot",style:`background:${colorFor(s.nom)}`}), s.nom ]),
+    el("div",{class:"rl",text:L(s.role)})
+  ])));
+
+  const cols1 = el("div",{class:"reco-cols"},[
+    el("div",{},[ el("div",{class:"reco-h",text:t.recoWhy}), why, tension ]),
+    el("div",{},[ el("div",{class:"reco-h",text:t.recoGates}), gates ])
+  ]);
+  const cols2 = el("div",{class:"reco-cols",style:"margin-top:8px"},[
+    el("div",{},[ el("div",{class:"reco-h",text:t.recoFlip}), flip, el("p",{class:"reco-ecartes",text:L(RECO.ecartes)}) ]),
+    el("div",{},[ el("div",{class:"reco-h",text:t.recoShortlist}), shortlist ])
+  ]);
+
+  const p = panelShell(t.recoTitle, t.recoHint, [
+    el("p",{class:"muted",style:"max-width:74ch;margin:0 0 14px",text:L(RECO.noAbsolu)}),
+    verdict, cols1, cols2
+  ]);
+  p.classList.add("span2");
+  return p;
+}
+
+/* =============================================================================
    Panneau transversal — Réserves & PoC (§2.5)
 ============================================================================= */
 function panelReserves(){
@@ -333,6 +383,7 @@ function render(){
   const grid = el("div",{class:"grid"});
 
   if (state.sim === "meta"){
+    grid.appendChild(panelReco());
     panelMeta().forEach(p=>grid.appendChild(p));
     grid.appendChild(panelReserves());
   } else {
