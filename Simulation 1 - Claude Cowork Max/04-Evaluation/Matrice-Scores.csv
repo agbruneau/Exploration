@@ -1,4 +1,4 @@
-Critere,Libelle,Ponderation,Google Apigee,Salesforce MuleSoft,Kong Konnect,IBM API Connect,Microsoft Azure APIM
+Critere,Libellé,Ponderation,Google Apigee,Salesforce MuleSoft,Kong Konnect,IBM API Connect,Microsoft Azure APIM
 C1,Fonctionnel cœur,15,5,5,4,5,4
 C2,Archi & hybride,15,4.5,4.5,5,5,3.5
 C3,Sécurité,15,4.5,4,4.5,5,4.5

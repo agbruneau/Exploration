@@ -1,7 +1,7 @@
 # Tableau de bord exécutif + Landing page — Méta-analyse RFP « API Management »
 
-Deux livrables Web pour comité exécutif, issus du prompt
-[`PROMPT-Tableau-de-bord-et-Landing-API-Management.md`](../PROMPT-Tableau-de-bord-et-Landing-API-Management.md).
+Deux livrables Web pour comité exécutif, produits à partir d'un prompt de génération dédié
+(« Tableau de bord exécutif + Landing — API Management » ; les sections §x citées plus bas y renvoient).
 Ils comparent des plateformes d'*API Management* à travers **trois simulations d'appel d'offres** (juin 2026)
 qui désignent **trois gagnants différents** — IBM API Connect, Gravitee, Kong Enterprise — selon le cadrage.
 

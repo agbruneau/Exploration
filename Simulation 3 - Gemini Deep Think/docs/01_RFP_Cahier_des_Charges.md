@@ -28,6 +28,6 @@ Le score final sera calculé sur **100 % (100 points)** :
 | :--- | :---: |
 | **1. Architecture, Légèreté et Multi-Cloud (CU-3)** | **25 %** |
 | **2. AI Gateway & Sécurité / Conformité (CU-1, CU-2)** | **25 %** |
-| **3. Monétisation & Expérience Développeur (CU-4)** | **20 %** |
+| **3. Monétisation & Portail Développeur (CU-4)** | **20 %** |
 | **4. APIOps & Observabilité (CU-5)** | **15 %** |
 | **5. Coût Total de Possession (TCO) et Modèle Économique** | **15 %** |

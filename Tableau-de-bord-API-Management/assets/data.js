@@ -2,7 +2,8 @@
    data.js — SOURCE UNIQUE DE VÉRITÉ (prompt §2.6, reproduite verbatim)
    -----------------------------------------------------------------------------
    Règle absolue : n'utiliser QUE ces chiffres. Aucune extrapolation, aucune
-   moyenne inter-simulations (échelles incomparables). Libellés tels quels.
+   moyenne inter-simulations (échelles incomparables). Libellés condensés pour
+   l'affichage data-viz (forme longue dans le RFP de chaque simulation).
    Chargé en <script> classique (pas de module ES) → fonctionne en file://.
 ============================================================================= */
 
@@ -90,7 +91,7 @@ const DATA = {
       "criteres": [
         {"code":"G1","libelle":"Architecture & multi-cloud","poids":25},
         {"code":"G2","libelle":"Sécurité, conformité & AI Gateway","poids":25},
-        {"code":"G3","libelle":"Monétisation & portail","poids":20},
+        {"code":"G3","libelle":"Monétisation & portail dév.","poids":20},
         {"code":"G4","libelle":"APIOps & observabilité","poids":15},
         {"code":"G5","libelle":"TCO & modèle économique","poids":15}
       ],
@@ -226,6 +227,8 @@ const RECO = {
   preuves: [
     { fr:"Meilleur plancher de rang : 2ᵉ (88,5) · 2ᵉ (73,0) · 1ᵉʳ (94). IBM et Gravitee ne gagnent que sous leur propre cadrage.",
       en:"Best rank floor: 2nd (88.5) · 2nd (73.0) · 1st (94). IBM and Gravitee win only under their own framing." },
+    { fr:"Stable sous toutes les pondérations testées : Sim 1 88,5 / 88,4 / 88,0 ; Sim 2 73,0 / 72,7 / 72,0. Seule fragilité : la 2ᵉ place Sim 2 cède à WSO2 sous « Coût & DX+ » (WSO2 72,8 > Kong 72,0).",
+      en:"Stable under every weighting tested: Sim 1 88.5 / 88.4 / 88.0; Sim 2 73.0 / 72.7 / 72.0. Only fragility: its Sim 2 2nd place yields to WSO2 under “Cost & DX+” (WSO2 72.8 > Kong 72.0)." },
     { fr:"Axes modernes en tête : architecture & hybride 5/5 (à égalité IBM), IA 5/5 (à égalité Apigee), Sim 3 = 94.",
       en:"Leads the modern axes: hybrid architecture 5/5 (tied with IBM), AI 5/5 (tied with Apigee), Sim 3 = 94." },
     { fr:"Risque résiduel vérifiable, non structurel : région Konnect, FIPS, SOC 2, WAF — adressables en PoC (mitigation self-managed nommée).",

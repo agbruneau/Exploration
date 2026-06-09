@@ -238,12 +238,12 @@ La colonne **UC** relie chaque exigence aux cas d'usage du corps du RFP : UC1 Op
 
 | Famille | Obligatoire | Importante | Souhaitée | Total |
 |---|---|---|---|---|
-| **EF** — Fonctionnelles | 18 | 9 | 3 | 30 |
-| **EA** — Architecture / hybride | 9 | 5 | 0 | 14 |
-| **ES** — Sécurité | 12 | 4 | 3 | 19 |
+| **EF** — Fonctionnelles | 19 | 9 | 2 | 30 |
+| **EA** — Architecture / hybride | 8 | 6 | 0 | 14 |
+| **ES** — Sécurité | 14 | 2 | 3 | 19 |
 | **EC** — Conformité / souveraineté | 11 | 3 | 0 | 14 |
 | **EN** — Non fonctionnelles | 13 | 7 | 0 | 20 |
-| **Total** | **63** | **28** | **6** | **97** |
+| **Total** | **65** | **27** | **5** | **97** |
 
 ### 7.2 Couverture des cas d'usage
 

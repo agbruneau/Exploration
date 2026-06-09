@@ -70,7 +70,7 @@ Le vérificateur de cohérence a relevé une **incohérence d'état** dans le RE
 
 Les réponses candidates **ne sont pas modifiées** au cas par cas : leurs notes sont verrouillées et la cohérence chiffrée docs ↔ notes est vérifiée parfaite (§4) ; éditer les réponses après notation la romprait. Les constats ci-dessus sont donc traités comme des **points de diligence à lever en preuve de concept (PoC)** — ce que les réponses elles-mêmes prévoient déjà via leurs mentions « à vérifier » et leurs registres de risques.
 
-**Conclusion :** dossier **fiable**, classement **inchangé** et **robuste** à l'analyse de sensibilité ; aucune correction bloquante.
+**Conclusion :** dossier **fiable — réserves levables en PoC** (les constats de sévérité « Moyenne » consignés au §3, notamment la résidence Canada non confirmée d'Apigee, restent à confirmer en PoC / diligence mais ne remettent pas en cause le sens du classement) ; classement **inchangé** et **robuste** à l'analyse de sensibilité ; aucune correction bloquante.
 
 ---
 

@@ -8,7 +8,7 @@ Le comité d'évaluation (Architecture, Cybersécurité et Achats) a compilé le
 | :--- | :---: | :---: | :---: |
 | **1. Architecture & Multi-Cloud (25%)** | 18 | **25** | 16 |
 | **2. Sécurité, Conformité & AI Gateway (25%)** | 23 | **25** | 19 |
-| **3. Monétisation & Portail (20%)** | **20** | 16 | 15 |
+| **3. Monétisation & Portail Développeur (20%)** | **20** | 16 | 15 |
 | **4. APIOps & Observabilité (15%)** | **14** | **14** | 13 |
 | **5. TCO et Modèle Économique (15%)** | 10 | **14** | 9 |
 | **SCORE GLOBAL (/ 100%)** | **85 %** | **94 %** | **72 %** |

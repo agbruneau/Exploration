@@ -176,6 +176,8 @@ Le détail figure dans `02-Analyse-Marche/Analyse-Marche-API-Management-2026.md`
 | 4 | Gravitee | `03-Reponses-Candidats/04-Gravitee.md` |
 | 5 | WSO2 | `03-Reponses-Candidats/05-WSO2.md` |
 
+> **Numérotation des fichiers.** La numérotation 01–05 des fichiers de réponses reflète l'ordre de présélection (issu du *Magic Quadrant* Gartner), et **non** le rang final d'évaluation : pour le classement, voir la [synthèse de classement (section 2)](#2-synthèse-exécutive).
+
 > **Présélection.** Shortlist établie à partir des Leaders du *Magic Quadrant* Gartner for API Management 2025 (oct. 2025), filtrés par adéquation au profil FSI hybride/souverain. Solutions écartées avec justification (MuleSoft, Boomi, Azure APIM, AWS, Postman, etc.) : voir l'analyse de marché.
 
 ---

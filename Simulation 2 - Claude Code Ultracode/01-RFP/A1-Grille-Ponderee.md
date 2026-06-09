@@ -39,7 +39,7 @@ avec Σ poids = 100. La contribution maximale d'un critère (note = 5) est donc 
 
 ## 3. Grille pondérée — synthèse
 
-| Code | Critère | Thème | Poids = points max |
+| Code | Critère | Thème | Poids (points max si note = 5/5) |
 |---|---|---|---:|
 | **C1** | Sécurité des API et protection contre les menaces | Sécurité | **12** |
 | **C2** | Conformité réglementaire et souveraineté des données | Conformité | **13** |

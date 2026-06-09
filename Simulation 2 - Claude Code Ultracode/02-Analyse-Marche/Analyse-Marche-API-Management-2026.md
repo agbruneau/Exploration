@@ -103,7 +103,7 @@ Amazon Web Services, Axway, Boomi, Google, Gravitee, IBM, Kong, Microsoft, Postm
 
 ### 3.3 Autres acteurs notables hors quadrant ou adjacents
 
-- **WSO2** : plateforme open source unifiée API/IA/événementiel, déployable SaaS, auto-hébergée ou hybride avec souveraineté native ; MCP Gateway et gouvernance du trafic LLM sortant. Très pertinent pour le profil régulé malgré un positionnement Gartner moins central que les Leaders.
+- **WSO2** : plateforme open source unifiée API/IA/événementiel, déployable SaaS, auto-hébergée ou hybride avec souveraineté native ; MCP Gateway et gouvernance du trafic LLM sortant. Très pertinent pour le profil régulé bien que positionné **Visionnaire** (et non Leader) au MQ 2025 — un positionnement moins central que les Leaders, sans incidence sur son adéquation FSI hybride.
 - **Tyk**, **Solo.io** (Gloo) : spécialistes cloud-native/Kubernetes et MCP gateway.
 - **Axway** : forte gouvernance par politiques, hybride/multicloud, unification *legacy*/moderne.
 - **Apache APISIX** (open source, hors MQ Gartner) : AI/MCP gateway, pertinent en architecture cloud-native souveraine. **(à vérifier — non évalué dans le MQ)**
