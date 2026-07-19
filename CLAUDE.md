@@ -87,18 +87,18 @@ d'un `.template` du dépôt. **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, 
   ⚠ **le corps cite ses sections en clair** (« section 4.11.5 », « section 9.6 ») : insérer une
   section de tête au milieu décale toute la numérotation aval et casse ces renvois. Ajouter en
   **sous-section** (l'ajout en queue ne décale rien) ou, si une section de tête est nécessaire,
-  l'insérer juste avant la Conclusion et corriger les renvois — le contrôle est
-  `grep -o "section [0-9]*"`. Même piège pour les **tableaux**, numérotés automatiquement : une
-  table insérée en amont décale les « tableau N » cités en aval (contrôle : comparer
-  `grep -c "^: "` aux légendes rendues dans le PDF). Les sous-sections `##` deviennent `N.1` ; les
+  l'insérer juste avant la Conclusion et corriger les renvois. Même piège pour les **tableaux**,
+  numérotés automatiquement : une table insérée en amont décale les « tableau N » cités en aval.
+  Ces deux pièges sont couverts par `check-veille.py` (voir plus bas). Les sous-sections `##` deviennent `N.1` ; les
   sections liminaires ou finales sans numéro portent `{-}` (`# Sommaire exécutif {-}`,
   `# Divulgation {-}`, `# Références {-}`). **Toute table porte une légende** (ligne `: …`) : une
   table sans légende consomme quand même un numéro et creuse un trou dans la série.
 - **Décomptes annoncés en toutes lettres.** Le corps annonce ses propres cardinaux — « dix
   constats », « quatorze contributions », « vingt questions ouvertes ». ⚠ **Ils ne se mettent pas à
   jour tout seuls** : ajouter un item sans re-mesurer produit une contradiction interne que la
-  relecture attrape mais que le rendu ne signale pas. Contrôle avant publication : compter les
-  items effectifs de chaque liste et les confronter au mot-nombre qui les annonce.
+  relecture attrape mais que le rendu ne signale pas. Le piège n'est pas le nombre posé au titre de
+  la liste — c'est celui qui la **cite à distance** (sommaire exécutif, conclusion, divulgation).
+  Couvert par `check-veille.py`.
 - **Tri épistémique** : la section 12 (*Horizon prospectif 2027-2030*) trie ses sous-sections en
   **PROGRAMMÉ / PROJETÉ / SPÉCULATIF** — même logique que le ch. 7 du Vol. I. Ne jamais présenter
   du spéculatif comme acquis.
@@ -112,8 +112,30 @@ d'un `.template` du dépôt. **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, 
   « aucun chapitre rédigé ») s'écrit **`**Réserve —**`**, jamais avec ⚠ : surcharger le marqueur
   rend indistinguables une page qui bouge et un fait qu'il faut nuancer.
 - **Pas deux entrées pour un même document.** Avant d'ajouter une référence, vérifier qu'aucune
-  entrée ne porte déjà la même URL — l'édition intégrale a dû en fusionner deux paires. Contrôle :
-  extraire les URL de la liste et compter les doublons.
+  entrée ne porte déjà la même URL, le même DOI ou le même identifiant arXiv — l'édition intégrale
+  a dû en fusionner deux paires. Couvert par `check-veille.py`, qui normalise les URL (`http`/`https`,
+  `www`, barre finale, `/abs/` vs `/pdf/`, suffixe de version) : deux formes différentes du même
+  document ne se voient pas à l'œil.
+
+### Contrôles de publication — `check-veille.py`
+
+```bash
+python check-veille.py    # sortie 0 si tout passe, 1 sinon
+```
+
+**À exécuter avant chaque `pandoc`.** Couvre les quatre défauts que le rendu ne signale jamais :
+renvois de section et de tableau non résolus (y compris `§N.M` et `QO n`), tables sans légende,
+cardinaux en toutes lettres périmés, doublons bibliographiques, références pendantes ou orphelines.
+
+⚠ **Ce script est du contenu : il se vérifie comme le reste.** Trois faux positifs y sont déjà
+neutralisés, et les réintroduire en « simplifiant » un motif rendrait le contrôle bruyant donc
+ignoré : `(8.9)` et `(2.0)` sont des **numéros de version**, pas des renvois ; « quatre-vingt-dix »
+contient « vingt-dix », qui n'est pas un nombre ; « constats » et « questions » servent aussi à des
+énumérations **locales** légitimes (« Trois constats se dégagent », la grille des « cinq questions »
+de la §7.6) — d'où l'ancrage des cardinaux sur la tournure d'annonce et non sur le nom nu. Avant de
+publier une modification du script, la valider par mutation : introduire chacune des fautes dans une
+copie et vérifier que le script **échoue**, après avoir constaté qu'il **passe** sur le document
+intact — sans cette seconde vérification, un script cassé « détecte » tout.
 - **Sauts de page** via blocs Typst bruts ` ```{=typst} #pagebreak(weak: true) ``` ` ; le saut avant
   la table des matières passe par `header-includes`
   (`#show outline: it => [#pagebreak(weak: true) #it]`).
