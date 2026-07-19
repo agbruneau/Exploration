@@ -49,8 +49,8 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**135 p.**, 14 sections numérotées,
-**246 références**, 14 tableaux — **édition intégrale du 18 juillet 2026**). Document **autonome** :
+`Veille Technologique.md` → `Veille Technologique.pdf` (**136 p.**, 14 sections numérotées,
+**244 références**, 14 tableaux — **édition intégrale du 18 juillet 2026**). Document **autonome** :
 il n'est repris dans aucune monographie, et il est le seul à citer les volumes du dépôt.
 
 ⚠ **Depuis l'édition intégrale, la veille cite les quatre volumes — mais à deux régimes distincts,
@@ -90,9 +90,15 @@ d'un `.template` du dépôt. **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, 
   l'insérer juste avant la Conclusion et corriger les renvois — le contrôle est
   `grep -o "section [0-9]*"`. Même piège pour les **tableaux**, numérotés automatiquement : une
   table insérée en amont décale les « tableau N » cités en aval (contrôle : comparer
-  `grep -c "^: "` aux légendes rendues dans le PDF) ;
-  sous-sections `##` → `N.1`. Les sections liminaires ou finales sans numéro portent `{-}`
-  (`# Sommaire exécutif {-}`, `# Divulgation {-}`, `# Références {-}`).
+  `grep -c "^: "` aux légendes rendues dans le PDF). Les sous-sections `##` deviennent `N.1` ; les
+  sections liminaires ou finales sans numéro portent `{-}` (`# Sommaire exécutif {-}`,
+  `# Divulgation {-}`, `# Références {-}`). **Toute table porte une légende** (ligne `: …`) : une
+  table sans légende consomme quand même un numéro et creuse un trou dans la série.
+- **Décomptes annoncés en toutes lettres.** Le corps annonce ses propres cardinaux — « dix
+  constats », « quatorze contributions », « vingt questions ouvertes ». ⚠ **Ils ne se mettent pas à
+  jour tout seuls** : ajouter un item sans re-mesurer produit une contradiction interne que la
+  relecture attrape mais que le rendu ne signale pas. Contrôle avant publication : compter les
+  items effectifs de chaque liste et les confronter au mot-nombre qui les annonce.
 - **Tri épistémique** : la section 12 (*Horizon prospectif 2027-2030*) trie ses sous-sections en
   **PROGRAMMÉ / PROJETÉ / SPÉCULATIF** — même logique que le ch. 7 du Vol. I. Ne jamais présenter
   du spéculatif comme acquis.
@@ -101,7 +107,13 @@ d'un `.template` du dépôt. **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, 
   `bibliography` Pandoc, **pas** de clés `@…`. Toucher au compte oblige à reporter le nouveau total
   ici, dans le [`README.md`](README.md) et dans le bilan de vérification de la veille.
 - **Ressources vivantes** : les références précédées de ⚠ sont des pages sans version datée stable ;
-  ne pas retirer le marqueur sans avoir figé une version.
+  ne pas retirer le marqueur sans avoir figé une version. ⚠ **Le marqueur ne sert qu'à cela.** Une
+  réserve portant sur le *contenu* d'une source (« non adopté », « errata publiés après parution »,
+  « aucun chapitre rédigé ») s'écrit **`**Réserve —**`**, jamais avec ⚠ : surcharger le marqueur
+  rend indistinguables une page qui bouge et un fait qu'il faut nuancer.
+- **Pas deux entrées pour un même document.** Avant d'ajouter une référence, vérifier qu'aucune
+  entrée ne porte déjà la même URL — l'édition intégrale a dû en fusionner deux paires. Contrôle :
+  extraire les URL de la liste et compter les doublons.
 - **Sauts de page** via blocs Typst bruts ` ```{=typst} #pagebreak(weak: true) ``` ` ; le saut avant
   la table des matières passe par `header-includes`
   (`#show outline: it => [#pagebreak(weak: true) #it]`).
