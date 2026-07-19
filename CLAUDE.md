@@ -49,7 +49,7 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**136 p.**, 14 sections numérotées,
+`Veille Technologique.md` → `Veille Technologique.pdf` (**139 p.**, 14 sections numérotées,
 **244 références**, 14 tableaux — **édition intégrale du 18 juillet 2026**). Document **autonome** :
 il n'est repris dans aucune monographie, et il est le seul à citer les volumes du dépôt.
 
@@ -62,6 +62,12 @@ questions, les décisions de fusion), marqués comme constructions d'auteur, et 
 bibliographiques [219] et [220] portent cette réserve en toutes lettres. **Ne jamais élever un
 cadrage au rang de source de fait** en le citant à l'appui d'un énoncé : c'est la faute que ces deux
 cadrages prennent eux-mêmes pour objet. Le régime est posé en §13.1 et tenu à chaque occurrence.
+
+⚠ **La section 13 porte une date propre.** Elle est passée sur la **v0.3 du `TOC.md` du Vol. IV,
+datée du 19 juillet 2026** — soit le lendemain de la date d'édition de la veille. L'écart est
+assumé et déclaré dans le texte (§13.5 et §2.2) ; les sections 1 à 12 restent à leur date d'état.
+Ne pas « harmoniser » cette date : un cadrage qui se révise plus vite que la revue ne se gèle est
+un constat de la §10, pas une incohérence à lisser.
 
 La section 13 (« Le corpus compagnon : quatre volumes, un même objet ») est le siège de ce rendu
 de compte ; la Conclusion est devenue la section **14**. L'auto-citation est assumée et divulguée ;

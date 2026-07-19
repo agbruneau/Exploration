@@ -42,7 +42,7 @@ Une **revue de synthèse** autonome (69 p.) condense la monographie au format ac
 
 La veille n'est **plus un livrable de ce dossier**. Elle vit désormais à la racine du dépôt
 ([`Veille Technologique.md`](../../Veille%20Technologique.md)), recoupe les trois volumes et porte sa
-propre édition — **édition intégrale du 18 juillet 2026, 136 p., 244 références**, dont deux (§4.12 et §8.4)
+propre édition — **édition intégrale du 18 juillet 2026, 139 p., 244 références**, dont deux (§4.12 et §8.4)
 citent explicitement ce volume et le volume II, et dont la section 13 rend compte des quatre volumes. Les mentions « 7 juillet 2026, 48 p., 116 références »
 qui figuraient ici décrivaient une édition antérieure.
 
