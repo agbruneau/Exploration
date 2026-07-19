@@ -2,7 +2,7 @@
 """Contrôles de publication du TOC du compendium (Vol. IV).
 
 Couvre les défauts qu'une relecture à l'œil ne rattrape pas sur un plan à
-57 chapitres : renumérotation incomplète, renvoi interne pendant, décompte
+54 chapitres : renumérotation incomplète, renvoi interne pendant, décompte
 annoncé périmé, budget qui ne tombe pas dans sa propre fourchette.
 
     python check-toc.py     # sortie 0 si tout passe, 1 sinon
@@ -169,6 +169,128 @@ def erreurs(txt):
             if not re.search(r"Vol\.\s*II(?!I)", c[mm.start():mm.start() + 100]):
                 err.append(f"chapitre {num} : garde-fou « {mm.group()} » sans volume "
                            "nommé dans un chapitre consommant le Vol. III (décision 7)")
+
+    # 12. Renvois de section au Vol. III (décision 7, volet ajouté en v0.5) :
+    #     ce volume vit en numérotation multiple — son TOC.md, son PRD et son
+    #     PRDPlan portent tous des §N.x, et ce fichier cite les trois. Un
+    #     « Vol. III §7.4 » nu est donc indécidable exactement comme l'était un
+    #     « R-7 » nu. Les formes licites nomment leur document et ne sont pas
+    #     capturées par le motif : « Vol. III *TOC* § » interpose « *TOC* ».
+    #     Faux positif neutralisé : les occurrences entre guillemets « … » sont
+    #     des citations du défaut (en-tête, décision 7, journal), pas des
+    #     renvois — les compter rendrait le contrôle ininstallable sur le
+    #     fichier même qui le documente.
+    for mm in re.finditer(r"Vol\.\s*III\s*§", txt):
+        amont = txt[max(0, mm.start() - 60):mm.start()]
+        if "PRD du " in amont[-15:] or "PRDPlan" in amont[-15:]:
+            continue
+        if "«" in amont and amont.rfind("«") > amont.rfind("»"):
+            continue
+        err.append("renvoi « Vol. III §… » sans document nommé (décision 7) — "
+                   "écrire « Vol. III *TOC* §N.x » ou « PRD du Vol. III §N »")
+
+    # 13. Registre des dix lacunes héritées du PRD Vol. II (Annexe C) : la table
+    #     doit porter les dix identifiants §10.1 à §10.10, un par ligne. Les
+    #     v0.1-v0.4 en perdaient deux entièrement (§10.7, §10.10) et en gardaient
+    #     trois sans identifiant — or une lacune qui perd son identifiant en
+    #     changeant d'ouvrage est une lacune qui se referme sans preuve.
+    #     ⚠ Le contrôle porte sur les LIGNES DE LA TABLE, non sur la présence des
+    #     identifiants dans le document : la plupart sont aussi cités au ch. 53 et
+    #     au journal, si bien qu'une ligne retirée du registre resterait invisible
+    #     à un contrôle global — c'est exactement le défaut à attraper, et la
+    #     première rédaction de ce contrôle y échouait (constaté par mutation).
+    #     ⚠ « §10.1 » est le PRÉFIXE de « §10.10 » : capturer le numéro entier
+    #     (\d+) est obligatoire. Un motif « §10\.1 » suivi de \b matcherait à
+    #     l'intérieur de « §10.10 » — le point qui suit est un non-mot et
+    #     validerait la frontière à tort.
+    lignes = {int(x) for x in re.findall(r"^\s*\|\s*§10\.(\d+)\s*\|", txt, re.M)}
+    if not lignes:
+        err.append("registre des lacunes héritées du PRD Vol. II introuvable "
+                   "(Annexe C)")
+    for i in sorted(set(range(1, 11)) - lignes):
+        err.append(f"lacune héritée du PRD Vol. II §10.{i} absente du registre "
+                   "(Annexe C) — une lacune sans identifiant se referme sans preuve")
+
+    # 14. Cardinal annoncé des renvois nommés au Vol. III : le fichier déclare en
+    #     toutes lettres combien il en porte (décision 7 et journal). Un cardinal
+    #     en toutes lettres ne se met pas à jour tout seul — ajouter ou retirer un
+    #     renvoi le périme en silence. Défaut commis à la rédaction même de la
+    #     v0.5, d'où ce contrôle.
+    #     ⚠ Le motif exige un CHIFFRE après « § » : le fichier énonce aussi la
+    #     convention elle-même (« `Vol. III *TOC* §N.x` pour le plan »), qui n'est
+    #     pas un renvoi. Sans cette frontière, le contrôle compte deux énoncés de
+    #     convention comme deux renvois et déclare faux un cardinal juste
+    #     (constaté à la rédaction : 13 comptés pour 11 réels).
+    CARDINAUX = {"onze": 11, "douze": 12, "treize": 13, "quatorze": 14,
+                 "quinze": 15, "seize": 16}
+    reels = len(re.findall(r"Vol\. III \*TOC\* §\d", txt))
+    for mm in re.finditer(r"[Ll]es \*{0,2}(\w+)\*{0,2} renvois de section au Vol\. III",
+                          txt):
+        mot = mm.group(1).lower()
+        if mot not in CARDINAUX:
+            err.append(f"cardinal des renvois au Vol. III illisible : « {mot} »")
+        elif CARDINAUX[mot] != reels:
+            err.append(f"cardinal annoncé des renvois nommés au Vol. III "
+                       f"« {mot} » ({CARDINAUX[mot]}) != {reels} réels")
+
+    # 15. Portage effectif des lacunes héritées : le chapitre porteur principal
+    #     désigné par le registre (Annexe C) doit nommer l'identifiant dans son
+    #     corps. Un registre qui pointe vers un chapitre muet est un registre
+    #     CREUX — il déclare une couverture qu'aucun chapitre n'assure. Défaut
+    #     commis à la rédaction de la v0.5 : huit lignes sur dix pointaient à
+    #     vide, et le contrôle 13 (complétude de la table) ne pouvait pas le voir.
+    #     Même piège de préfixe qu'au contrôle 13 : « §10.1 » ⊂ « §10.10 ».
+    #     Zone bornée aux chapitres, sinon le registre et le journal — qui citent
+    #     légitimement tous les identifiants — entreraient dans le corps du
+    #     dernier chapitre et valideraient tout à tort.
+    ch_bornes = {int(re.match(r"(\d+)", c).group(1)): c
+                 for c in re.split(r"^### Chapitre ", zone_ch, flags=re.M)[1:]}
+    for mm in re.finditer(r"^\s*\|\s*§10\.(\d+)\s*\|[^|]*\|\s*([^|]+)\|", txt, re.M):
+        lac, dest = mm.group(1), mm.group(2)
+        prem = re.search(r"ch\.\s*(\d+)", dest)
+        if not prem:
+            err.append(f"registre (Annexe C) : lacune §10.{lac} sans chapitre porteur")
+            continue
+        n = int(prem.group(1))
+        if not re.search(rf"§10\.{lac}(?!\d)", ch_bornes.get(n, "")):
+            err.append(f"lacune héritée §10.{lac} : le ch. {n} est désigné porteur "
+                       "au registre (Annexe C) mais ne la nomme pas — registre creux")
+
+    # 16. Double revendication d'une Partie d'un volume source entre deux livres
+    #     (décision 6 : couverture totale tracée, sans double affectation
+    #     silencieuse). Trois cas trouvés à la relecture de la v0.5 : le Livre III
+    #     revendiquait « Vol. III Parties I-IV » alors que le Livre IV prend la
+    #     Partie IV ; le Livre VI « Vol. II Partie II » alors que le ch. 8 part au
+    #     Livre III ; le Livre XI « Partie VI + ch. 21-22 » alors que le ch. 21 va
+    #     au Livre XII. Une Partie légitimement partagée porte « hors … » : c'est
+    #     la déclaration de scission qui rend le partage vérifiable.
+    #     ⚠ Seul l'en-tête de chaque livre est lu — les lignes « Fusion » des
+    #     chapitres citent aussi des Parties, à bon droit.
+    #     ⚠ PORTÉE LIMITÉE, ET IL FAUT LE DIRE : ce contrôle n'attrape que le
+    #     recouvrement Partie contre Partie (Livre III contre Livre IV). Les deux
+    #     autres cas trouvés en v0.5 — une Partie entière revendiquée alors qu'un
+    #     AUTRE livre en prend un chapitre nommé (Livre VI et le ch. 8 du Vol. II ;
+    #     Livre XI et le ch. 21 du Vol. II) — supposeraient d'encoder ici la carte
+    #     Partie -> chapitres des volumes sources. Elle n'est délibérément PAS
+    #     encodée : le Vol. III est une proposition explicitement volatile, et une
+    #     carte périmée ferait « détecter » des fautes inexistantes ou tairait les
+    #     vraies — un script cassé « détecte » tout. Ce recouvrement-là reste une
+    #     collation manuelle, à refaire à chaque révision d'un en-tête de livre.
+    claims = {}
+    for m_liv in re.finditer(r"^# LIVRE ([IVX]+) — .*\n+(\*\(.+?\)\*)", txt, re.M):
+        rom, entete = m_liv.group(1), m_liv.group(2)
+        for mc in re.finditer(
+                r"Vol\.\s*(I{1,3})\s+Parties?\s+([IVX]+)(?:\s*[-–]\s*([IVX]+))?", entete):
+            vol, deb, fin = mc.group(1), mc.group(2), mc.group(3)
+            i, j = ROMAINS.index(deb), ROMAINS.index(fin or deb)
+            scinde = "hors" in entete[mc.end():mc.end() + 40]
+            for k in range(i, j + 1):
+                claims.setdefault((vol, ROMAINS[k]), []).append((rom, scinde))
+    for (vol, part), porteurs in sorted(claims.items()):
+        if len(porteurs) > 1 and not any(s for _, s in porteurs):
+            livres_ = ", ".join(r for r, _ in porteurs)
+            err.append(f"Vol. {vol} Partie {part} revendiquée par les Livres "
+                       f"{livres_} sans mention « hors … » (décision 6)")
 
     return err
 
