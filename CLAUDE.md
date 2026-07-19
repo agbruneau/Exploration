@@ -49,13 +49,24 @@ consignés et motivés dans [son propre `CLAUDE.md`](1%20-%20Corpus%20Agentique/
 
 ## Veille technologique — le livrable de la racine
 
-`Veille Technologique.md` → `Veille Technologique.pdf` (**107 p.**, 13 sections numérotées,
-**218 références**, édition du 18 juillet 2026). Document **autonome** : il n'est repris dans aucune
-monographie, et il est le seul à citer les volumes du dépôt — §4.12 pour le démonstrateur
-`Borealis-Go` du Vol. I (réf. [217]), §8.4 pour le croisement canadien du Vol. II (réf. [218]).
-Il en cite **deux, pas trois** : le Vol. III n'y apparaît sous aucune forme, et la veille parle
-elle-même de « deux corpus compagnons ». L'auto-citation est assumée et divulguée ; ses limites
-sont exposées en section 10.
+`Veille Technologique.md` → `Veille Technologique.pdf` (**135 p.**, 14 sections numérotées,
+**246 références**, 14 tableaux — **édition intégrale du 18 juillet 2026**). Document **autonome** :
+il n'est repris dans aucune monographie, et il est le seul à citer les volumes du dépôt.
+
+⚠ **Depuis l'édition intégrale, la veille cite les quatre volumes — mais à deux régimes distincts,
+et l'écart est la règle qui compte.** Les Vol. I et II sont **rédigés** et fournissent des faits :
+§4.12 pour le démonstrateur `Borealis-Go` (réf. [217]), §8.4 pour le croisement canadien
+(réf. [218]). Les Vol. III et IV sont des **cadrages** — zéro chapitre, zéro entrée de socle propre
+— et ne fournissent **aucun fait** : ils prêtent des instruments d'analyse (la grille des cinq
+questions, les décisions de fusion), marqués comme constructions d'auteur, et leurs entrées
+bibliographiques [219] et [220] portent cette réserve en toutes lettres. **Ne jamais élever un
+cadrage au rang de source de fait** en le citant à l'appui d'un énoncé : c'est la faute que ces deux
+cadrages prennent eux-mêmes pour objet. Le régime est posé en §13.1 et tenu à chaque occurrence.
+
+La section 13 (« Le corpus compagnon : quatre volumes, un même objet ») est le siège de ce rendu
+de compte ; la Conclusion est devenue la section **14**. L'auto-citation est assumée et divulguée ;
+ses limites — dont le risque de circularité, quatre volumes partageant un auteur — sont exposées
+en section 10.
 
 ### Rendu
 
@@ -72,7 +83,14 @@ d'un `.template` du dépôt. **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, 
 
 - **En-tête YAML complet** : titre, auteur (avec la date d'édition), résumé,
   `mainfont: "New Computer Modern"`, `section-numbering: "1.1.1"`.
-- **Sections `#` numérotées automatiquement** par Pandoc (Introduction = 1 … Conclusion = 13) ;
+- **Sections `#` numérotées automatiquement** par Pandoc (Introduction = 1 … Conclusion = **14**) ;
+  ⚠ **le corps cite ses sections en clair** (« section 4.11.5 », « section 9.6 ») : insérer une
+  section de tête au milieu décale toute la numérotation aval et casse ces renvois. Ajouter en
+  **sous-section** (l'ajout en queue ne décale rien) ou, si une section de tête est nécessaire,
+  l'insérer juste avant la Conclusion et corriger les renvois — le contrôle est
+  `grep -o "section [0-9]*"`. Même piège pour les **tableaux**, numérotés automatiquement : une
+  table insérée en amont décale les « tableau N » cités en aval (contrôle : comparer
+  `grep -c "^: "` aux légendes rendues dans le PDF) ;
   sous-sections `##` → `N.1`. Les sections liminaires ou finales sans numéro portent `{-}`
   (`# Sommaire exécutif {-}`, `# Divulgation {-}`, `# Références {-}`).
 - **Tri épistémique** : la section 12 (*Horizon prospectif 2027-2030*) trie ses sous-sections en

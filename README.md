@@ -25,32 +25,43 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (107 p., 218 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — gouvernance complète (PRD v0.1, TOC v0.4, PRDPlan v0.1), 0 chapitre | **Cadrage seul** — table des matières v0.2 |
+| **État** | Publiée (135 p., 246 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Cadrage seul** — gouvernance complète (PRD v0.1, TOC v0.4, PRDPlan v0.1), 0 chapitre | **Cadrage seul** — table des matières v0.2 |
 
 ## Veille technologique — le document transversal
 
-[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**107 p.**,
-13 sections numérotées, **218 références**). Revue vérifiée où chaque énoncé factuel est adossé à
-une source primaire consultée et soumis à contradiction — vérificateurs indépendants chargés de
-*réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles structurants (MCP,
-A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **six couches** que la pile
-protocolaire laisse implicites : événementielle, de contrôle, transactionnelle, sémantique, de
-confiance et d'orchestration des processus d'affaires.
+[`Veille Technologique.md`](Veille%20Technologique.md) → `Veille Technologique.pdf` (**135 p.**,
+14 sections numérotées, **246 références**, 14 tableaux). Revue vérifiée où chaque énoncé factuel
+est adossé à une source primaire consultée et soumis à contradiction — vérificateurs indépendants
+chargés de *réfuter*, contre-vérification directe sinon. Elle couvre les trois protocoles
+structurants (MCP, A2A, ANP), leur gouvernance, l'adoption documentée, la sécurité, et **sept
+couches** que la pile protocolaire laisse implicites : événementielle, de contrôle,
+transactionnelle, sémantique, de confiance, d'orchestration des processus d'affaires et —
+depuis l'édition intégrale — d'**exploitation** (observabilité agentique, évaluation continue,
+révocation).
 
-**Elle est aussi le point d'articulation du corpus.** L'édition du 18 juillet 2026 intègre les
-**deux** corpus compagnons rédigés du dépôt — le Vol. III, non écrit, n'y figure pas — et en fait
-des sections à part entière :
+**Elle est aussi le point d'articulation du corpus.** L'**édition intégrale du 18 juillet 2026**
+rend compte des **quatre** volumes, dans une section 13 qui leur est consacrée — mais à deux
+régimes strictement distincts, et c'est l'écart qui compte :
 
-- **§4.12 — « De la spécification au code »** confronte le corpus documentaire à l'épreuve d'une
-  implémentation de référence : le démonstrateur `Borealis-Go` du Vol. I (référence [217]) ;
-- **§8.4 — « L'instruction sectorielle canadienne »** reprend le croisement systématique entre
-  trajectoire protocolaire et textes canadiens établi par le Vol. II (référence [218]).
+- les **Vol. I et II sont rédigés** et fournissent des faits — **§4.12 — « De la spécification au
+  code »** confronte le corpus documentaire à l'épreuve du démonstrateur `Borealis-Go`
+  (référence [217]) ; **§8.4 — « L'instruction sectorielle canadienne »** reprend le croisement
+  systématique entre trajectoire protocolaire et textes canadiens (référence [218]) ;
+- les **Vol. III et IV sont des cadrages** — zéro chapitre, zéro entrée de socle propre — et ne
+  fournissent **aucun fait** (références [219] et [220], qui portent la réserve en toutes lettres).
+  Ils prêtent des *instruments* : la grille des cinq questions du Vol. III organise les §7.6 à 7.10,
+  les décisions de fusion du Vol. IV servent de contrôle de couverture. Traiter un plan comme un
+  corpus serait la faute que ces deux cadrages prennent eux-mêmes pour objet.
 
+L'échange est bidirectionnel : la veille rend au corpus deux corrections de datation, referme une
+lacune que le Vol. II déclarait ouverte (les dépôts ACP d'AGNTCY, archivés le 11 avril 2026) — et
+**rétracte la certitude d'une de ses propres datations** (voir « Divergences factuelles » plus bas).
 L'auto-citation est assumée et divulguée ; ses limites (circularité possible, implémentation
-unique, chiffres institutionnels auto-déclarés) sont exposées en section 10 de la veille.
+unique, chiffres institutionnels auto-déclarés, deux volumes non rédigés) sont exposées en
+section 10 de la veille.
 
-*Historique des éditions : 2, 4, 7, 12, 13, 15 puis 18 juillet 2026. Chaque édition ajoute une
-couche ou un corpus et revérifie les faits périssables.*
+*Historique des éditions : 2, 4, 7, 12, 13, 15, 18 juillet 2026, puis l'édition intégrale du
+18 juillet 2026. Chaque édition ajoute une couche ou un corpus et revérifie les faits périssables.*
 
 ## Vol. I — Interopérabilité agentique
 
@@ -150,9 +161,12 @@ les remplacera tous les trois une fois écrit.
   l'anatomie des protocoles, la sécurité de la couche agentique et la cryptographie post-quantique.
 - **Vol. I illustre mondialement** ce que **Vol. II instruit au grain du droit canadien**.
 - **Vol. III prolonge les deux** sur leur verrou commun, l'identité et son exploitation.
-- **La veille recoupe les trois**, mais n'en cite que **deux** : §4.12 pour le Vol. I (réf. [217])
-  et §8.4 pour le Vol. II (réf. [218]). Le Vol. III n'y figure sous aucune forme — la veille parle
-  d'ailleurs de « deux corpus compagnons », pas de trois.
+- **La veille les cite tous les quatre, à deux régimes distincts.** Les volumes *rédigés*
+  fournissent des faits : §4.12 pour le Vol. I (réf. [217]), §8.4 pour le Vol. II (réf. [218]).
+  Les volumes de *cadrage* ne fournissent aucun fait et ne prêtent que des instruments d'analyse :
+  Vol. III (réf. [219], grille des cinq questions, §7.6 à 7.10), Vol. IV (réf. [220], décisions de
+  fusion). Sa section 13 est le siège de ce rendu de compte, et son §13.1 pose la règle : un volume
+  sans chapitre rédigé ni socle propre ne porte aucun fait.
 - **Vol. IV les absorbe** : ses renvois inter-volumes deviennent des renvois internes.
 - Un lecteur pressé côté canadien peut entrer directement par le **chapitre 13** du Vol. II
   (« le pont : des contraintes réglementaires aux frames déterministes »), son pivot.
@@ -162,20 +176,27 @@ les remplacera tous les trois une fois écrit.
 Deux faits datés divergent d'un corpus à l'autre. Ils sont **signalés, non arbitrés** — la veille
 les expose en §8.4, et le lecteur doit les trancher à sa date de citation :
 
-| Objet | Vol. II (gel 16-17 juill.) | Veille (18 juill.) |
-|---|---|---|
-| Ligne directrice IA de l'AMF — version finale | 30 mars 2026, avec dette de vérification déclarée (`lautorite.qc.ca` renvoie 403 aux outils) | 7 avril 2026 |
-| Gouvernance d'AP2 | aucun transfert documenté au socle | don à la FIDO Alliance, 28 avril 2026 |
+| Objet | Vol. II (gel 16-17 juill.) | Veille (édition intégrale, 18 juill.) | État après revalidation |
+|---|---|---|---|
+| Ligne directrice IA de l'AMF — version finale | 30 mars 2026, avec **dette de vérification déclarée** (`lautorite.qc.ca` renvoie 403 aux outils) | 7 avril 2026 | **divergence ouverte** — la revalidation du 18 juillet a buté sur le **même 403** (sept tentatives, cinq adresses) ; aucune des deux dates n'est établie sur une source primaire directement consultée |
+| Gouvernance d'AP2 | aucun transfert documenté au socle | don à la FIDO Alliance, **28 avril 2026** | **résolue** — source primaire datée, accessible et antérieure au gel du Vol. II ; frontière de socle, non désaccord |
 
-L'entrée en vigueur du 1er mai 2027 est, elle, concordante entre les corpus. La divergence tient à
-une frontière de socle plus qu'à un désaccord : deux corpus vérifiés de bonne foi peuvent diverger
-sur un fait daté selon leurs périmètres de sources — argument pour le millésimage systématique.
+L'entrée en vigueur du 1er mai 2027 est, elle, concordante entre les corpus, et ne l'a jamais cessé.
+
+Les deux cas portent la même leçon sous deux formes. Sur AP2, deux corpus vérifiés de bonne foi
+divergent parce que **leurs périmètres de sources diffèrent** — argument pour le millésimage
+systématique. Sur l'AMF, ils divergent parce que **la source elle-même est inaccessible aux
+outils** : c'est l'accessibilité de la source qui est mesurée, non la rigueur inégale des corpus,
+et aucune discipline de veille ne corrige cela. ⚠ **L'édition intégrale de la veille rétracte en
+conséquence la certitude de sa propre datation** (§13.6) : sa date du 7 avril repose sur des
+sources secondaires, et n'est donc pas mieux étayée que celle du Vol. II.
 
 ⚠ **Le cadrage du Vol. IV tranche ces deux divergences en faveur du Vol. II** — ligne directrice
 AMF finale au 30 mars 2026 (ch. 31), aucun transfert de gouvernance d'AP2 documenté (ch. 10) —
-donc *contre* les lectures de la veille, pourtant postérieures de deux jours. L'arbitrage est
-consigné à son Annexe C. Tant que le compendium n'est pas rédigé, **cet arbitrage n'a pas
-d'autorité** : les volumes sources font foi et la divergence reste ouverte.
+donc *contre* les lectures de la veille. L'arbitrage est consigné à son Annexe C. Sur AP2 il est
+**périmé par une source primaire datée** ; sur l'AMF il n'est **ni confirmé ni infirmé**. Et de
+toute manière, tant que le compendium n'est pas rédigé, **cet arbitrage n'a aucune autorité** : les
+volumes sources font foi et la divergence reste ouverte — le cadrage le dit lui-même.
 
 > ⚠ Le fichier `commun/faits-partages.md`, évoqué par le cadrage du Vol. III comme source unique
 > de vérité pour les faits partagés, **n'existe pas et ne sera pas créé** : son PRD §7.5 a tranché
@@ -187,7 +208,7 @@ d'autorité** : les volumes sources font foi et la divergence reste ouverte.
 .
 ├── README.md                              ← ce fichier (avant-propos croisé)
 ├── CLAUDE.md                              ← conventions du dépôt + conventions de la veille
-├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026 (107 p., 218 réf.)
+├── Veille Technologique.md / .pdf         ← veille autonome, 18 juillet 2026 (135 p., 246 réf.)
 ├── 1 - Corpus Agentique/                  ← le triptyque
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
@@ -285,7 +306,7 @@ avant toute réutilisation ou publication :
 
 Les `README.md` et `CLAUDE.md` de la racine ont été resynchronisés le 18 juillet 2026 sur
 l'arborescence réelle, sur l'accession du Vol. III à une gouvernance complète (`CLAUDE.md` +
-`doc/`) et sur les décomptes **re-mesurés** — veille 107 p. / 218 réf. / 13 sections, Vol. I
+`doc/`) et sur les décomptes **re-mesurés** — veille 135 p. / 246 réf. / 14 sections, Vol. I
 569 p. / 69 p. / 28 diagrammes / 12 ADR, Vol. II 387 p. / 66 p. / 29 pièces / 46 entrées de socle,
 tous inchangés.
 
