@@ -21,7 +21,7 @@ divergent volontairement. Ce fichier régit deux choses seulement — la **racin
 | Démonstrateur Go du Vol. I (code) | [`…/1 - InteroperabiliteAgentique/Borealis-Go/CLAUDE.md`](1%20-%20Corpus%20Agentique/1%20-%20InteroperabiliteAgentique/Borealis-Go/CLAUDE.md) — **prime dans son répertoire** |
 | Vol. II — *L'autonomie encadrée* (rédaction, gouvernance PRD) | [`1 - Corpus Agentique/2 - OrchestrationAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/CLAUDE.md) |
 | Vol. III — *L'entreprise agentique* (cadrage, gouvernance PRD) | [`1 - Corpus Agentique/3 - EntrepriseAgentique/CLAUDE.md`](1%20-%20Corpus%20Agentique/3%20-%20EntrepriseAgentique/CLAUDE.md) |
-| Vol. IV — *La somme agentique* | pas de `CLAUDE.md` — son `TOC.md` tient lieu de spécification |
+| Vol. IV — *La somme agentique* (compendium, cadrage) | [`2 - Compendium Agentique/CLAUDE.md`](2%20-%20Compendium%20Agentique/CLAUDE.md) — le `TOC.md` du dossier reste la spécification de contenu |
 
 **Le fichier le plus spécifique gagne.** En travaillant dans un dossier de volume, appliquer son
 `CLAUDE.md`, pas celui-ci.
