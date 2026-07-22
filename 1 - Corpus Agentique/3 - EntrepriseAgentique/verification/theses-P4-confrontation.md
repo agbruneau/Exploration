@@ -6,7 +6,7 @@
 | Phase | **P4.0** — passe préalable à toute rédaction des Parties VII à IX et de l'appareil |
 | Objet | Les **treize pièces** restées au gabarit : avant-propos, ch. 22 à 28, annexes A à E |
 | Fondement | **PRDPlan §6**, parade héritée de la remontée **R-G-37** : *toute thèse écrite au TOC pour une pièce de P4 est confrontée au socle avant d'être inscrite* |
-| Sources confrontées | [`doc/TOC.md`](../doc/TOC.md) v0.6 ; [`doc/PRD.md`](../doc/PRD.md) v1.1 §5.1, §6.2, §7.0 à §7.10, §8.1 à §8.6, §10, §11, annexes A, B, C ; les **quatorze rapports de lot** de `verification/` ; les **vingt et une pièces rédigées** des Parties I à VI |
+| Sources confrontées | [`prd/TOC.md`](../prd/TOC.md) v0.6 ; [`prd/PRD.md`](../prd/PRD.md) v1.1 §5.1, §6.2, §7.0 à §7.10, §8.1 à §8.6, §10, §11, annexes A, B, C ; les **quatorze rapports de lot** de `verification/` ; les **vingt et une pièces rédigées** des Parties I à VI |
 | Nature de ce document | **Rapport.** Il n'édite ni le TOC, ni le PRD, ni le PRDPlan, ni aucune pièce. Les reformulations proposées sont **prêtes à insérer** ; leur inscription relève d'un acte distinct, sous la règle d'escalade du PRDPlan §5.3 |
 | Décomptes | **13 pièces confrontées sur 13** ; **37 écarts relevés** ; **0 pièce sans écart**. Les deux cardinaux sont mesurés sur le présent fichier, écart par écart, et non estimés |
 

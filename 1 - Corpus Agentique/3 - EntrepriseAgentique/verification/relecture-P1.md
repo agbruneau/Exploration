@@ -2,7 +2,7 @@
 
 | Champ | Valeur |
 |---|---|
-| Activité | **P1.4** du [PRDPlan](../doc/PRDPlan.md) — relecture adversariale de la clôture de phase |
+| Activité | **P1.4** du [PRDPlan](../prd/PRDPlan.md) — relecture adversariale de la clôture de phase |
 | Objet relu | Les deux rapports de lot ([L-03](lot-L-03-agent-card.md), [L-08](lot-L-08-attaques.md)), le [registre des remontées](remontees-gouvernance.md), et les sections du PRD qui en dérivent (§3 O6, §7.8, §8.1, §8.5, §10, §11) |
 | Relecteurs | **Trois, indépendants et distincts du rédacteur** (CA-14), à lentilles disjointes : **(1) socle** — une entrée dit-elle plus que le rapport n'établit ? ; **(2) gouvernance** — les arbitrages sont-ils justifiés et complets ? ; **(3) dualité d'usage** — relecture dédiée au titre de **CA-12**, distincte de la relecture de conformité |
 | Consigne | **Réfuter, non valider.** Une relecture qui ne trouve rien n'a probablement pas été faite ; une réfutation inventée est pire que rien. Chaque constat cite le passage fautif verbatim et se classe BLOQUANT / MAJEUR / MINEUR |

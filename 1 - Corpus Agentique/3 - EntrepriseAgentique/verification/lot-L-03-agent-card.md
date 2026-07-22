@@ -2,7 +2,7 @@
 
 | Champ | Valeur |
 |---|---|
-| Lot | **L-03**, déclaré **bloquant au sens fort** ([PRD](../doc/PRD.md) §7.6) — sans lui, le ch. 5 n'a pas d'objet |
+| Lot | **L-03**, déclaré **bloquant au sens fort** ([PRD](../prd/PRD.md) §7.6) — sans lui, le ch. 5 n'a pas d'objet |
 | Question instruite | **Q3 du Vol. II, ch. 21 §21.2** — « Que vaut cryptographiquement une carte d'agent signée ? » |
 | Ce qu'il devait établir | L'ancrage de confiance, le régime de révocation et la gouvernance des clés — **ou l'établissement que la spécification ne les documente pas** |
 | Date d'instruction | **21 juillet 2026** — quatre axes menés en parallèle (format et chaîne de signature ; ancrage ; révocation et durée de vie ; gouvernance des clés hors spécification) |

@@ -2,12 +2,12 @@
 
 | Champ | Valeur |
 |---|---|
-| Objet | **CA-09** (PRD §8, critères d'acceptation) — vérification du **test d'appartenance** du PRD §5.1, **section par section**, sur les Parties VII et VIII |
+| Objet | **CA-09 Périmètre** (PRD **§11**, exigences de qualité et critères d'acceptation) — vérification du **test d'appartenance** du PRD §5.1, **section par section**, sur les Parties VII et VIII |
 | Périmètre | **Cinq pièces, vingt sections de niveau 2** : `monographie/07-partie-VII/` — ch. 22 (4 sections), ch. 23 (4) — et `monographie/08-partie-VIII/` — ch. 24 (4), ch. 25 (5), ch. 26 (3). Les cinq pièces ont été **ouvertes intégralement**, corps et Notes |
 | Date d'exécution | **22 juillet 2026** |
 | Relecteur | Distinct du rédacteur des cinq pièces (CA-14) |
 | Résultat | **20 sections examinées, 20 passent** au grain de la section. **Deux développements coupés** au grain du *développement*, mot que le PRD §5.1 emploie : **499 mots retirés**, remplacés par **271 mots** de déclaration de coupe |
-| Documents d'autorité consultés | PRD §5.1 (test), §8 (CA-09), §8.6 (degrés d'absence), Annexe A §A.6 (motifs), Annexe C §C.1 et §C.2 (grille) ; PRDPlan §1.5 (commande de décompte), §5.1, §5.3, §5.5, §6 |
+| Documents d'autorité consultés | PRD §5.1 (test), §11 (CA-09), §8.6 (degrés d'absence), Annexe A §A.6 (motifs), Annexe C §C.1 et §C.2 (grille) ; PRDPlan §1.5 (commande de décompte), §5.1, §5.3, §5.5, §6 |
 | ⚠ Ce que ce rapport n'est pas | **Il ne vaut pas attestation de conformité des pièces.** Il rend compte d'un contrôle de **périmètre**, et d'aucun autre. **CA-12 (R-12, dualité d'usage) demeure due sur les cinq pièces** : un contrôle qui lit ce qu'une section prétend établir ne lit pas ce qu'un passage rendrait exécutable. Aucun décompte de ce rapport ne tient lieu du rejeu §A.6 ordonnancé en P5.2 |
 
 ---

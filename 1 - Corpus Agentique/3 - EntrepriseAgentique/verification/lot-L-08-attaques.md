@@ -2,7 +2,7 @@
 
 | Champ | Valeur |
 |---|---|
-| Lot | **L-08**, déclaré **bloquant au sens fort** ([PRD](../doc/PRD.md) §7.6) — sans lui, la Partie IV n'est qu'une reprise du Vol. I |
+| Lot | **L-08**, déclaré **bloquant au sens fort** ([PRD](../prd/PRD.md) §7.6) — sans lui, la Partie IV n'est qu'une reprise du Vol. I |
 | Question instruite | **Q2 du Vol. II, ch. 21 §21.2** — « Quelle est la mécanique des risques protocolaires nommés ; existe-t-il des attaques propres à A2A ? » |
 | Date d'instruction | **21 juillet 2026** — cinq axes en parallèle : MITRE ATLAS ; OWASP ; CVE/NVD et incidents datés ; littérature académique ; sections sécurité des spécifications |
 | Vérification | **Vote adversarial à trois juges** par affirmation centrale, lentilles *fidélité à la source*, *statut et datation*, *qualification logique* |

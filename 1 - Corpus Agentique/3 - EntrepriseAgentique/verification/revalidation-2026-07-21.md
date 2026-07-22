@@ -2,8 +2,8 @@
 
 | Champ | Valeur |
 |---|---|
-| Activité | **P0.6** du [PRDPlan](../doc/PRDPlan.md) — revalidation d'ouverture, phase P0, jalon J-1 |
-| Périmètre | **Les sept lignes de [PRD.md](../doc/PRD.md) §8.3, sans exception.** Rien d'autre. |
+| Activité | **P0.6** du [PRDPlan](../prd/PRDPlan.md) — revalidation d'ouverture, phase P0, jalon J-1 |
+| Périmètre | **Les sept lignes de [PRD.md](../prd/PRD.md) §8.3, sans exception.** Rien d'autre. |
 | Date de consultation des sources | **21 juillet 2026** — c'est cette date qui fait foi, et non celle du PRD |
 | Motif | ⚠ La révision majeure de la spécification MCP était attendue le **28 juillet 2026**, soit sept jours après cette passe. Un fait chaud revalidé à l'ouverture coûte une lecture ; revalidé à la publication, il coûte une réécriture. |
 | Statut épistémique de ce rapport | **Aucune entrée F-xx n'est créée ici.** Une revalidation constate l'état d'une source à une date ; elle **n'est pas une passe d'instruction** et ne vaut ni extraction citée ni vote adversarial. Le socle propre reste à **0 entrée**. |

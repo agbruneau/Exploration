@@ -6,9 +6,9 @@
 | Date de gel de l'information | **21 juillet 2026** (à reporter au registre `99-registre-gel.md` au **même commit**) |
 | Socle mobilisé (PRD §7) | Propre : F-01 à F-12 ; F-43, F-53 en corroboration. Hérité : H-01, H-33 [C] |
 | Garde-fous à surveiller (PRD §8) | **R-02 — porteuse critique** (un mécanisme cryptographique est qualifié par ce que sa spécification **démontre**) ; R-01 ; R-09 (statut pré-normatif) ; R-14 (trois degrés d'absence) ; §8.2.6 ; §8.4 (neutralité fournisseur) ; CA-01, CA-05, CA-07, CA-10, CA-11 |
-| Volumétrie cible | ~3000 mots — **réel : 4312** (+44 %), mesuré par la commande de référence (PRDPlan §1.5) après application des correctifs de relecture. *L'écart se documente, il ne se corrige pas par amputation des bornes.* |
+| Volumétrie cible | ~3000 mots — **réel : 4312** (**+43,7 %**), mesuré par la commande de référence (PRDPlan §1.5) après application des correctifs de relecture. *L'écart se documente, il ne se corrige pas par amputation des bornes.* |
 
-> **Thèse ([TOC.md](../../doc/TOC.md))** *(instruit Q3 du Vol. II, ch. 21 §21.2)* : la signature d'une Agent Card vaut exactement ce que valent son ancrage de confiance, son régime de révocation et sa gouvernance des clés — trois éléments que la spécification A2A v1.x documente inégalement.
+> **Thèse ([TOC.md](../../prd/TOC.md))** *(instruit Q3 du Vol. II, ch. 21 §21.2)* : la signature d'une Agent Card vaut exactement ce que valent son ancrage de confiance, son régime de révocation et sa gouvernance des clés — trois éléments que la spécification A2A v1.x documente inégalement.
 
 ---
 
