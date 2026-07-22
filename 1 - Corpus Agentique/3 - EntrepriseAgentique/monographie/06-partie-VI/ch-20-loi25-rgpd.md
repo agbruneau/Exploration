@@ -161,7 +161,7 @@ Le chapitre s'achève sur la distinction que le volume impose partout, appliqué
 | **CA-11** | **17 occurrences sur 14 lignes** — PROGRAMMÉ ×1, [A] ×3, [B] ×10, [C] ×3 | Un seul énoncé prospectif dans le corps — l'effet de la ligne directrice de l'AMF au 1er mai 2027, trié **PROGRAMMÉ** (F-68, H-33). Les autres occurrences sont des niveaux de preuve [A]/[B]/[C], portés à la première mobilisation de chaque entrée |
 | **R-01, R-02, R-03, R-05, R-07, R-08, R-09, R-10, R-11, R-13** | **0** | Aucune occurrence ; les objets correspondants ne sont pas mobilisés par ce chapitre |
 
-⚠ **R-12 n'a pas de motif de balayage, par construction** (PRD §A.6) : il se contrôle par CA-12 seul, en relecture dédiée par un relecteur distinct du rédacteur. **Aucun compte rendu de ce type n'est déposé à ce jour pour la présente pièce**, et un balayage §A.6 « vert » ne dit rien de R-12.
+⚠ **R-12 n'a pas de motif de balayage, par construction** (PRD §A.6) : il se contrôle par CA-12 seul, en relecture dédiée par un relecteur distinct du rédacteur. Un compte rendu de ce type est déposé depuis le 21 juillet 2026 — [`verification/relecture-CA-12-P3.md`](../../verification/relecture-CA-12-P3.md) —, **borné au §20.2**, où AML.T0053 est repris pour nommer un maillon : passage examiné, **conservé sans retrait**. Le reste de la pièce n'a pas été relu à ce titre, et un balayage §A.6 « vert » ne dit rien de R-12.
 
 **Journal des correctifs — relecture adversariale du 21 juillet 2026** (point 5 de la boucle qualité, PRDPlan §5.2). Dix réfutations reçues, **dix vérifiées sur pièce avant application** — aucune n'a été jugée infondée. Ce qui a été fait, dans l'ordre de gravité :
 
@@ -180,7 +180,7 @@ Le chapitre s'achève sur la distinction que le volume impose partout, appliqué
 
 **Ce qui n'a pas été corrigé, et pourquoi.** Les deux fautes qui siègent au socle — les guillemets de verbatim de H-07 et la perte de la borne « valeurs mobilières » dans le même énoncé — ne sont **pas** amendées au PRD : un rédacteur ne corrige pas le cadrage (PRDPlan §5.3). L'option retenue est la plus réversible : l'énoncé est **dégradé dans la pièce** jusqu'à ce que le socle porte réellement, et la demande d'amendement est remontée (n° 7 et 8 ci-dessous). ⚠ **Tant que H-07 n'est pas amendée, toute autre pièce qui la mobilise reproduira la faute** — le ch. 21 la mobilise.
 
-**Contrôles non exécutés.** Aucun compte rendu **CA-12** n'est déposé pour cette pièce : R-12 n'a pas de motif de balayage et ne se contrôle pas par la présente relecture, qui portait sur la conformité au socle. Le registre de gel `99-registre-gel.md` n'est pas renseigné par la présente passe — la ligne du ch. 20 est à porter au même commit que la pièce (CA-04).
+**Contrôles.** Le compte rendu **CA-12** déposé le 21 juillet 2026 ([`verification/relecture-CA-12-P3.md`](../../verification/relecture-CA-12-P3.md)) couvre cette pièce **au seul §20.2** : R-12 n'a pas de motif de balayage et ne se contrôlait pas par la relecture de conformité au socle. ⚠ **Le reste de la pièce demeure non relu à ce titre.** Le registre de gel `99-registre-gel.md` n'est pas renseigné par la présente passe — la ligne du ch. 20 est à porter au même commit que la pièce (CA-04).
 
 **Remontées ouvertes** (PRDPlan §5.3 — relevées, non opérées).
 

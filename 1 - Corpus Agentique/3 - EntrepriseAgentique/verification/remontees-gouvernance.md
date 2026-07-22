@@ -4,8 +4,9 @@
 |---|---|
 | Objet | **Instrument de la règle d'escalade** ([PRDPlan](../doc/PRDPlan.md) §5.3). Un rédacteur ne corrige jamais le PRD, le TOC ni le plan : il **remonte ici**. Une remontée marquée bloquante **interdit de lancer la pièce qu'elle bloque** tant qu'elle n'est pas tranchée. |
 | Ouvert | 21 juillet 2026 — phase **P1** |
-| Décompte au 21 juillet 2026 | **22 remontées**, R-G-01 à R-G-22 — **14 tranchées** (R-G-01 à R-G-07, R-G-10 à R-G-12, R-G-16, R-G-20 à R-G-22), **6 en attente d'arbitrage auteur** (R-G-08, R-G-09, R-G-13, R-G-14, R-G-15, R-G-17), **2 sans objet** (R-G-18, R-G-19). ⚠ **Les six en attente bloquent le critère de sortie J-4**, qui exige que les remontées de gouvernance soient **toutes tranchées** ([PRDPlan](../doc/PRDPlan.md) §5.5). |
+| Décompte au 21 juillet 2026 | **42 remontées**, R-G-01 à R-G-42 — **27 tranchées** (R-G-01 à R-G-07, R-G-10 à R-G-12, R-G-16, R-G-20 à R-G-35), **12 en attente d'arbitrage auteur** (R-G-08, R-G-09, R-G-13 à R-G-15, R-G-17, R-G-37 à R-G-42), **3 sans objet** (R-G-18, R-G-19, R-G-36). ⚠ **Les douze en attente bloquent le critère de sortie J-4**, qui exige que les remontées de gouvernance soient **toutes tranchées** ([PRDPlan](../doc/PRDPlan.md) §5.5). |
 | Provenance de R-G-05 à R-G-22 | Phase **P3** — dépouillement des vingt-trois puces de « Remontées de gouvernance ouvertes par la rédaction » ([`relecture-P3-partie-I.md`](relecture-P3-partie-I.md)), regroupées par question et non par mention, **plus deux remontées relevées au corps du même rapport** (R-G-21, R-G-22) que sa liste finale ne portait pas. |
+| Provenance de R-G-23 à R-G-42 | Phase **P3**, clôture — dépouillement des blocs « Remontées ouvertes » des **vingt et une pièces rédigées** (Parties I à VI, `monographie/`) et du compte rendu [`relecture-CA-12-P3.md`](relecture-CA-12-P3.md), **regroupés par question et non par mention**. ⚠ **Les vingt-deux premières ont été ouvertes avant la rédaction des ch. 5 à 21 ; celles-ci le sont par elle.** Une même question remontée par six pièces ne compte qu'une fois — le regroupement est le travail, pas la transcription. |
 | Règle cardinale du registre | ⚠ **Les remontées sont arbitrées ENTRE les lots, jamais seulement en fin de phase.** *Motif, et il est chèrement acquis : au Vol. II, le ch. 5 a signalé qu'un adjectif du socle était réfuté par le socle lui-même et a demandé l'arbitrage avant le ch. 13, chapitre pivot qui reposait dessus. La gouvernance n'étant collectée qu'en fin de passe, l'arbitrage n'a pas eu lieu et le ch. 13 a dû trancher seul. Il l'a bien fait — par chance, pas par conception.* |
 | Statuts | ☐ ouverte · ◐ en arbitrage · ☑ tranchée · ⊘ sans objet |
 
@@ -730,6 +731,8 @@ Le ch. 4 l'a employée **en corroboration explicite** et a écrit que son verdic
 
 ⚠ **Non fait à la date de la présente consignation.**
 
+⚠ **Le point 2 ci-dessus désigne le mauvais document, et trois pièces l'ont constaté indépendamment.** La rectification est portée par **R-G-26**, tranchée le 21 juillet 2026. Le présent relevé **n'est pas réécrit** — c'est une trace datée, et la doctrine du registre est celle de R-G-07 : on ne corrige pas une trace, on lui oppose un arbitrage. **C'est R-G-26 qui est opposable pour la condition d'élévation de F-55.**
+
 ---
 
 ## R-G-21 — Aucune pièce ne porte le niveau de ses entrées, que CA-11 exige ☑
@@ -798,14 +801,834 @@ Le ch. 2 a **forgé l'encadré** pour la lacune 14 sans le verser, alors que §5
 
 ---
 
+## R-G-23 — Trente-six versements demandés au socle, trente-cinq retenus : le régime d'exception de §7.9 est devenu la règle ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3**, à la clôture de la passe de rédaction |
+| Ouverte par | Les rédacteurs des ch. 5 à 20, **seize pièces, indépendamment les unes des autres** |
+| Bloque | Aucune pièce rédigée — toutes ont cité hors socle en le déclarant. **Bloque les pièces aval** : ch. 22 à 28 et les annexes, qui reprendront les mêmes matières sans le savoir |
+| Siège de la faute | **Le socle** — PRD §7.9 et §7.10 : les affirmations sont retenues par des lots clos, jamais versées |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **versement d'affirmations déjà instruites et qualification de leur niveau** ; compétence explicite, précédent **R-G-05** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — dépouillement des vingt et une pièces
+
+**R-G-05 avait traité douze demandes et posé le régime ; la rédaction des ch. 5 à 21 en a produit trente-six de plus.** Elles se répartissent sur **onze lots**, tous clos :
+
+| Lot | Objets dont le versement est demandé | Nb |
+|---|---|---|
+| **L-03** | `L03-A2-8`, `L03-A3-08`, `L03-A4-05`, `L03-A4-08` ; la réserve portant sur la §8.6 « Caching » de la spécification A2A, non ouverte par troncature ; la note de non-couverture de l'axe « format-signature » | **6** |
+| **L-04** | `L04-A3` (régimes de licence), `L04-A4` (application non encore effective, PROJETÉ), `L04-A5` (détail du schéma du type de ressource d'annuaire) | **3** |
+| **L-05** | Les deux règles de la réserve de `L05-A3` ; le champ facultatif `externalCertifications` ; le détail de mécanisme du brouillon AGNTCY relevé au balayage de `L05-A9` | **3** |
+| **L-06** | L'abrégé de `draft-ietf-oauth-transaction-tokens-09` ; la phrase de chaîne d'`agent_authorization.md` et son balayage ; la note de publication v0.2.0 d'AP2 ; une entrée pour `draft-ietf-oauth-identity-chaining` -17 | **4** |
+| **L-07** | `L07-A3` ; les deux constats du §E mobilisés au §11.1 | **3** |
+| **L-08** | `L08-A5-3`, `L08-A5-6`, `L08-A3-05`, `L08-A4-08` | **4** |
+| **L-09** | `L09-A7` (notice du préprint ETDI et son statut de publication) | **1** |
+| **L-10** | `L10-A2` (gel du fichier de distribution historique d'ATLAS), `L10-A5` (appel à information du CAISI) | **2** |
+| **L-11** | `L11-A7`, `L11-A9`, la réserve de `L11-A1` (statut de SP 800-131A Rev. 3), la réserve de `L11-A3` (hybrides temporaires), la mention de NSM-10 | **5** |
+| **L-12** | `L12-A3` (intitulés des cinq composantes du cycle de vie d'E-23) ; la réserve de `L12-A1` (nuance du radical « requir ») ; le constat élargi de la note de couverture, point 4 | **3** |
+| **L-14** | Le document de jonction du dépôt de conventions sémantiques, que le lot déclare n'avoir pas ouvert | **1** |
+| | **Total retenu** | **35** |
+
+**Cinq pièces réitèrent une demande déjà déposée par une autre** — `externalCertifications` (ch. 7 puis ch. 8), `draft-ietf-oauth-identity-chaining` -17 (ch. 9 puis ch. 10), `L09-A7` (ch. 13 puis ch. 14), `L11-A7` (ch. 16 puis ch. 18), la réserve de `L11-A1` (ch. 16 puis ch. 17). La réitération n'est pas du bruit : elle mesure le coût réel du manque, qui se paie une fois par chapitre.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Les trente-cinq sont retenues ; une trente-sixième est écartée.** Le régime posé par R-G-05 s'applique sans amendement : une affirmation retenue par un lot clos et requise par une pièce **se verse au socle par amendement**, à son niveau d'instruction et dans la forme corrigée par le contrôle de bornage, **jamais dans la pièce seule**. Trois précisions que le volume des demandes rend nécessaires :
+
+1. **Les objets relevés au §E d'un rapport entrent avec leur borne en toutes lettres.** Plusieurs — la réserve §8.6 de L-03, la note de non-couverture format-signature, les deux constats du §E de L-07, le constat élargi de L-12 — ont été relevés **hors du plafond d'affirmations, donc ni votés ni bornés**. Ils se versent ainsi, sur le précédent de **F-84**, qui porte déjà ses trois bornes propres pour ce motif. *Une borne restrictive se verse comme un fait : elle est ce qui empêche de sur-affirmer.*
+2. **Une réserve se verse avec l'entrée qu'elle restreint, non à côté d'elle.** La réserve de `L11-A1` porte sur le statut de projet de SP 800-131A Rev. 3 — le véhicule normatif des échéances — et elle borne le **siège même de R-11**. Versée en entrée séparée, elle sera citée par les pièces qui y pensent et ignorée par les autres ; rattachée à l'entrée qu'elle restreint, elle est lue par quiconque cite celle-ci.
+3. **La demande écartée.** Le ch. 13 demandait, au premier jet, le versement de la composante architecturale de `L09-A9` — *un enregistrement immuable ne se révoque pas, il ne peut qu'être supplanté*. **Elle n'est adossée à aucune des deux citations primaires de l'affirmation : c'est une lecture d'architecture de l'instructeur, et le socle porte des faits, non des lectures.** Elle se reprend en **construction d'auteur marquée CA-07**, ou attribuée au rapport de lot comme le ch. 13 le fait ; elle ne se verse pas. *Le ch. 13 avait lui-même amendé sa demande en ce sens — la présente ligne l'entérine.*
+
+### Report — à opérer au PRD §7.10
+
+- **PRD §7.10** : trente-cinq versements, avec les niveaux et les formes bornées de leurs rapports. ⚠ **Le cardinal du socle propre se re-mesure à l'acte d'amendement** ; il ne s'additionne pas depuis le présent registre.
+- **Pièces ch. 5 à 20** : retracement des citations hors socle vers les identifiants obtenus, à la passe qui appliquera l'amendement.
+
+⚠ **Non fait à la date de la présente consignation** : le registre consigne, il ne verse pas — le PRD n'est pas au périmètre d'édition du présent fichier.
+
+⚠ **Ce que ce volume de demandes dit du dispositif, et il faut l'écrire.** R-G-05 traitait douze demandes en présentant le manque comme un effet d'ordre — « le socle a été constitué avant que la rédaction ne dise ce dont elle avait besoin ». Trente-six de plus sur dix-sept pièces ne sont plus un effet d'ordre : **le périmètre versé d'un lot est systématiquement plus étroit que ce que ses propres travaux ont retenu**, et l'écart se découvre pièce par pièce, au prix d'une citation hors socle à chaque fois. *Le plafond d'affirmations par lot est un instrument de discipline ; il est aussi, mécaniquement, un producteur de matière orpheline.*
+
+---
+
+## R-G-24 — Vingt-quatre entrées du socle condensent leur source et en perdent la borne ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs et les relecteurs adversariaux des ch. 5, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20 et 21 |
+| Bloque | Aucune pièce rédigée — **toutes ont dégradé leur énoncé à ce que l'entrée porte** et déclaré la dette. Bloque le ch. 21 selon la remontée du ch. 20 (voir la réserve ci-dessous) |
+| Siège de la faute | **Le socle** — PRD §7.9 (entrées propres) et §7.2 (entrées héritées) |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **qualification de niveau et de borne, et siège** ; l'arbitrage ne crée aucun fait, précédent **R-G-12** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constats sur pièce, rapport de lot contre texte d'entrée
+
+**Vingt-quatre entrées — vingt-deux propres, deux héritées — énoncent moins que leur source.** Le défaut est toujours le même : le libellé de l'entrée **résume** une affirmation dont la source portait une restriction, et la restriction disparaît au résumé.
+
+| Entrée | Ce que la source porte et que l'entrée ne porte pas |
+|---|---|
+| **F-02**, **F-07**, **F-10** | La réserve de re-vérification par balayage local que le rapport L-03 attache à `L03-A6` et à `L03-A8` |
+| **F-08** | Le dépôt nommé — `a2aproject/A2A` — sur lequel le balayage a porté |
+| **F-10** | L'unicité qu'établit `L03-A3-06` : « le seul dispositif de rotation de clé prévu par la §8.4 » |
+| **F-20** | L'éditeur du rapport mobilisé, nommé par `L08-A2-06` |
+| **F-43** | La clause d'expiration de `draft-mp-agntcy-ads-01` — sans elle, **R-09 n'est pas rendable depuis le socle seul** |
+| **F-46** | `cnf` et champs de portée ; l'ancrage renvoyé au déploiement ; les deux modèles de confiance ; l'appariement exact du `vct` ; **la version v0.2.0 et sa date du 28 avril 2026** |
+| **F-47** | La clause « n'impose aucune exigence sur le modèle de confiance du déploiement », votée 3-0, non reprise |
+| **F-52** | Les composantes de balayage de `L09-A2` — sans elles, le degré 1 que l'entrée revendique **n'est pas revérifiable sur la seule entrée** |
+| **F-54** | Les deux motifs déclarés du retrait d'OCSP ; et la **forme attributive** que le contrôle de bornage avait imposée |
+| **F-56**, **F-73** | Le titre du document du NCCoE, que les deux rapports portent et qui établit qu'il s'agit du **même document** |
+| **F-57**, **F-58** | Les noms d'éditeur et de produit, que PRD §8.4 impose d'attribuer nominativement |
+| **F-58** | La borne du §E de L-10, qui interdit la forme « le marché du SOC agentique » ; et un **cardinal à réarbitrer** |
+| **F-60** | Le niveau de sécurité (dépréciation au **112 bits**, interdiction tous niveaux confondus), les sections d'application, la définition de « deprecated » ; et la forme « plafond, non plancher », antérieure au bornage |
+| **F-61** | Les deux échéances, le périmètre HVA, la publication au *Federal Register* du 25 juin 2026 ; et une **traduction entre guillemets de verbatim** (CA-08) |
+| **F-62** | La borne du négatif de corpus à FIPS 203, FIPS 204 et NIST IR 8547 |
+| **F-63** | La disjonction des deux documents d'Europol — le rattachement au même forum n'est constaté dans **aucune source primaire ouverte** |
+| **F-65** | Une note dont la rédaction induit la **surcorrection symétrique** de celle que R-06 prévient |
+| **F-68** | La réserve : la définition reprise par l'AMF n'emploie ni « agent » ni « agentique » |
+| **F-69** | La borne du contrôle de bornage de L-12 : « texte à l'état de projet, non pris » |
+| **F-78** | Le nom de l'éditeur, que `L14-A8` porte |
+| **H-07** | La borne « **valeurs mobilières** » de sa provenance ; et des **guillemets de verbatim** sur une formule que le Vol. II a lui-même dégarnie le 17 juillet 2026 |
+| **H-17** | Sa **péremption** sur les cibles prêtées au Quantum Safe Financial Forum, que F-63 porte déjà en réserve |
+
+**La conséquence est uniforme et elle est coûteuse.** Chaque pièce concernée a **dégradé** son énoncé à ce que l'entrée porte, puis rétabli la borne depuis le rapport de lot en nommant sa provenance. Cela coûte des mots — la relecture du ch. 10 mesure **six correctifs sur neuf** qui sont des restitutions de borne — et cela déplace la charge de preuve du socle vers la pièce, qui n'a pas à la porter.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Les vingt-quatre s'amendent, et une règle générale est posée.**
+
+1. **Le texte d'une entrée ne condense jamais une borne restrictive.** Un libellé peut résumer un contenu ; il ne peut pas résumer ce qui en limite la portée — périmètre balayé, version, dépôt, niveau de sécurité, éditeur, forme attributive. *Ce qui empêche de sur-affirmer n'est pas de la longueur : c'est l'entrée.*
+2. **L'amendement ne crée aucun fait.** Il rend à l'entrée ce que son rapport porte déjà, dans la forme corrigée par le contrôle de bornage. Aucun niveau n'est relevé à ce titre ; **F-56 change de niveau pour un autre motif** (R-G-25).
+3. **Les deux entrées héritées se traitent différemment l'une de l'autre.** **H-07 s'amende** — la borne « valeurs mobilières » et le retrait des guillemets de verbatim rendent à l'entrée ce que sa provenance porte, et le Vol. II a opéré le second correctif chez lui. **H-17 ne s'amende pas** : elle est **déclarée périmée sur un point**, F-63 portant le fait qui la périme. *Un volume aval ne réécrit pas un volume amont ; il déclare ce qu'il en fait* (R-G-01).
+
+### Report — à opérer au PRD
+
+- **PRD §7.9** : vingt-deux entrées propres, borne par borne.
+- **PRD §7.2** : H-07 amendée ; H-17 assortie de sa mention de péremption, sans modification de son énoncé hérité.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+⚠ **Une remontée déclarée bloquante n'a bloqué personne, et le registre le dit plutôt que de le taire.** Le ch. 20 qualifie l'amendement de H-07 de « **bloquant pour le ch. 21**, qui mobilise la même entrée ». **Le ch. 21 est rédigé et relu** (constat sur pièce, `monographie/99-registre-gel.md`, ligne 22). L'ordre réel des deux rédactions n'est pas constatable sur disque, et le présent registre ne l'infère pas ; ce qui est constatable, c'est que **la règle cardinale du registre — arbitrer entre les lots, jamais seulement en fin de phase — n'a pas été tenue sur cette ligne**. C'est exactement le scénario du Vol. II que l'en-tête de ce fichier consigne en avertissement.
+
+---
+
+## R-G-25 — F-56 porte le défaut de composition corrigé sur F-36 ; la scission de F-36 est refusée ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le rédacteur du ch. 15 (niveau de F-56) et celui du ch. 6 (scission de F-36) |
+| Bloque | **ch. 15** — F-56 y est mobilisée ; **ch. 6 §6.2** et toute pièce aval s'appuyant sur le volet Google Cloud de F-36 |
+| Siège de la faute | **Le socle** — PRD §7.9, règle de composition |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **qualification de niveau** : compétence explicite, précédent **R-G-12** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constats sur pièce, rapports de lot contre PRD §7.9
+
+1. **F-56 est publiée [B] alors qu'elle agrège une composante [C].** L'entrée agrège `L10-A1` [B], `L10-A3` [B] et **`L10-A4` [C]**. PRD §7.9 : « Une entrée qui agrège plusieurs affirmations porte **le niveau le plus faible de ses composantes** ». **C'est le défaut exact corrigé sur F-36 le 21 juillet 2026** (R-G-12), sur une entrée que le même contrôle n'a pas balayée.
+2. **Le ch. 6 demande la scission de F-36 en deux entrées**, pour rendre au volet Google Cloud (`L04-A7`, `L04-A8`, en [B]) le niveau que son instruction lui a valu, la rétrogradation en [C] tenant au seul volet AWS (`L04-A9`).
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**F-56 est ramenée à [C]. La scission de F-36 est refusée, et le besoin qu'elle exprimait est traité autrement.**
+
+1. **F-56 en [C]**, par application de sa propre règle de composition. **Conséquence opposable : elle ne porte plus aucun fait central** (CA-01). Le ch. 15 a, par précaution, tracé chacun de ses emplois vers la composante d'où il provient et n'appuie aucun énoncé central sur `L10-A4` — la rectification ne l'oblige donc à rien, **et c'est le seul cas où elle n'oblige à rien**.
+2. **La scission de F-36 est refusée.** Une scission mute ce qu'un identifiant désigne, et F-36 est cité par les ch. 1, 4, 6 et 14 : le prix est une cascade de renvois pour un gain que le versement obtient sans elle. **L'issue retenue est le versement d'une entrée nouvelle** portant le volet Google Cloud depuis `L04-A7` et `L04-A8`, à son niveau [B] — c'est-à-dire la voie de R-G-23, sans renumérotation ni mutation d'un identifiant cité. F-36 demeure [C] et demeure ce qu'elle est.
+
+⚠ **Ce que cet arbitrage n'établit pas** : que les autres entrées agrégées du socle soient conformes à la règle de composition. **Deux entrées sur deux examinées portaient le défaut** — F-36 par la relecture du ch. 1, F-56 par celle du ch. 15 —, et aucune passe n'a balayé les autres. *Un défaut trouvé deux fois sur deux échantillons n'est pas un incident ; c'est un motif de balayage qui manque.*
+
+### Report — à opérer au PRD §7.9
+
+- **F-56** : niveau corrigé ; l'entrée rejoint la liste des rétrogradations par composition.
+- **Entrée nouvelle** (volet Google Cloud de `L04-A7` et `L04-A8`) : versée par R-G-23, **sans toucher à F-36**.
+- **Contrôle à conduire** : vérification de la règle de composition sur **toutes** les entrées agrégées du socle, à porter à la boucle de P5.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-26 — La condition d'élévation de F-55 posée par R-G-20 désigne le mauvais document ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 4, 7 et 8 — **trois constats convergents et indépendants**, tous sur pièce |
+| Bloque | **ch. 7** — l'élévation de F-55 y est prérequise au régime d'états ; et toute reprise de R-G-20 |
+| Siège de la faute | **Le présent registre** — R-G-20, arbitrage du 21 juillet 2026, point 2 |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **renvoi** : compétence explicite |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce, PRD §7.9
+
+R-G-20, point 2, désigne « le rebalayage de la **révision -02 du brouillon CSA** » comme la lecture qui élèverait F-55. **La désignation est fausse sur ses deux membres :**
+
+- Les révisions **-01 et -02** sont celles de **`draft-mp-agntcy-ads`**, l'*Internet-Draft* de l'annuaire AGNTCY (F-43, `L05-A9`) ; la -02 est datée du **6 juillet 2026**.
+- La **spécification CSA** porte un **en-tête daté sans numérotation de révision** (F-38 : « White Paper | 2026-03-27 | Status: draft »).
+
+La réserve que F-55 porte elle-même vise bien le brouillon AGNTCY. Les trois pièces ont appliqué l'arbitrage au sens de F-55 — c'est-à-dire au bon document — **sans reprendre le renvoi**, et l'ont dit.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Le dispositif de R-G-20 est maintenu, son renvoi est rectifié.** F-55 demeure en [C] et ne porte aucun fait central, y compris dans un libellé de tableau ; **la lecture qui l'élève est le rebalayage de la révision -02 de `draft-mp-agntcy-ads`, du 6 juillet 2026**, et elle lève au même geste la réserve de non-rebalayage. Toute mention de la condition d'élévation nomme désormais ce document.
+
+⚠ **R-G-20 n'est pas réécrite.** Une remontée est une trace datée, et la doctrine du registre est celle de **R-G-07** : on ne corrige pas une trace, on lui oppose un arbitrage. Un renvoi a été ajouté au pied de R-G-20 pour qu'aucun lecteur ne reparte du libellé fautif.
+
+⚠ **Ce que trois constats convergents disent du dispositif.** Le défaut siégeait dans un arbitrage rendu le matin même et a été relevé le jour même par trois pièces différentes. *Un registre de gouvernance n'est pas moins exposé qu'un chapitre : il se relit contre ses sources comme le reste* (CA-14).
+
+### Report
+
+- **Consigne de rédaction du ch. 7** : le rebalayage vise `draft-mp-agntcy-ads` -02, non la spécification CSA.
+- **PRD §7.9, F-55** : la condition d'élévation à consigner à l'entrée nomme le bon document.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-27 — Le §E des rapports de lot : des consignes opposables que personne ne relit, des matières signalées sans destinataire ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 6, 11, 12, 13, 16, 17 et 19 — **sept pièces, une seule question** |
+| Bloque | Aucune pièce rédigée. **Bloque l'instruction résiduelle** : sept matières repérées et non instruites n'ont, à ce jour, aucun porteur |
+| Siège de la faute | **Le dispositif de lots** — PRD §7.6 (programme) et §10 (lacunes), qui ne prévoient rien pour ce que le §E d'un rapport signale sans l'instruire |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **qualification et siège** : portée d'un artefact d'instruction, non modification d'un garde-fou ; précédents **R-G-04** et **R-G-07** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — deux défauts d'une même cause
+
+**Premier défaut — le §E prescrit, et ses prescriptions sont fausses ou sans effet.**
+
+- Le rapport **L-09** §E, point 6, prescrit d'écrire que l'adressage par contenu d'AGNTCY « **DÉMONTRE** la non-modification d'un enregistrement ». **F-55 porte l'inverse** — le document « présente l'adressage par contenu comme fondant l'intégrité […] sans en fournir de démonstration » —, et le contrôle de bornage **du même rapport** a corrigé `L09-A9` au motif de « promesse non démontrée ». *Le rapport est en écart avec sa propre correction de bornage, et sur R-02.*
+- Le même §E, point 6, rattache à **R-03** une consigne qui relève de **R-09** et de **R-02**.
+- Le rapport **L-03** §8 adresse au ch. 17 une « conséquence opposable » — « la crypto-agilité de la carte est structurellement présente » — qui **excède ce que le lot a balayé**, sa propre note de non-couverture déclarant qu'aucun profil obligatoire n'a été recherché.
+- Le rapport **L-11** §E prescrit qu'une passe canadienne « devrait faire l'objet d'une passe dédiée **avant la rédaction du ch. 16** ». **La passe n'a pas eu lieu et le ch. 16 est rédigé.** La prescription n'a rien bloqué.
+
+**Second défaut — le §E signale, et le signalement n'a aucun destinataire.** Sept matières repérées par un lot, déclarées non instruites, ne sont portées ni par un lot, ni par une lacune de PRD §10, ni par les faits chauds de §8.3 : un mouvement annoncé aux notes de version d'Entra et quatre constats sur l'accès conditionnel (L-04) ; le volet NIST ouvert et non retenu (L-07) ; le statut du rapport de juin 2026 mobilisé par F-20, sur lequel le balayage de marqueurs n'a pas été mené (L-08) ; la reprise de F-52 sur la révision publiée du protocole (L-09) ; l'**Appendice 1 d'E-23**, dont le lot L-12 conditionnait l'instruction à ce que le §19.2 en dépende — **il en dépend, et la section est amputée de sa comparaison décisive**.
+
+⚠ **Le ch. 17 en donne la forme générale, et elle est plus grave que ses cas.** Un objet inscrit au programme d'instruction d'un lot — les recommandations publiques de crypto-agilité, PRD §7.6, lot L-11 — n'a produit **ni entrée, ni échec de source, ni déclaration de non-couverture**. *C'est le seul des trois cas que le dispositif de lots ne rend pas visible : un objet programmé qui disparaît sans trace ne se distingue pas d'un objet jamais programmé.*
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Quatre règles, opposables à toute pièce et à toute passe d'instruction ultérieure.**
+
+1. **Le §E d'un rapport de lot n'est pas un document de gouvernance, et ses consignes ne sont pas opposables.** Le PRD prime, puis le socle, puis le rapport. Une consigne de §E en écart avec une entrée ou un garde-fou **se signale ; la pièce suit le socle ; le rapport n'est pas réécrit** — c'est le régime exact posé par R-G-07 pour le verbe « atteste » de L-01, et il s'étend ici à tout le §E.
+2. **Une prescription de clôture de lot ne bloque rien tant qu'elle n'est pas portée à un document de gouvernance.** Elle se porte à PRD §8.3, à PRD §10 ou à une consigne de rédaction — sinon elle est un vœu. **Constat : celle de L-11 n'a bloqué personne.**
+3. **Une matière repérée au §E et non instruite se porte à PRD §10 comme lacune non instruite, ou à PRD §8.3 comme reprise due.** Les sept ci-dessus sont réparties à ce titre ; celles qui sont des lacunes rejoignent **R-G-28**.
+4. **Un objet inscrit au programme d'un lot produit obligatoirement l'un des trois : une entrée, un échec de source, ou une déclaration de non-couverture.** Le silence n'est pas un quatrième cas. À porter à la consigne de clôture des lots.
+
+### Report
+
+- **PRD §7.6** : la règle 4 à porter à la clôture de lot.
+- **PRD §8.3** et **PRD §10** : les sept matières, réparties selon leur nature.
+- **Rapports L-03, L-09, L-11** : renvoi à la présente remontée en tête, **sans toucher aux relevés** (R-G-07).
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-28 — Neuf lacunes déclarées dans les pièces ne figurent pas au PRD §10 ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 6, 8, 9, 16, 17, 18, 19 et 20 |
+| Bloque | Aucune pièce rédigée ; **bloque CA-06**, qui impose que toute lacune déclarée figure au PRD §10 |
+| Siège de la faute | **Le socle** — PRD §10 |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **siège et cardinal** : compétence explicite |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — dépouillement des encadrés de lacune des vingt et une pièces
+
+**Neuf lacunes sont déclarées dans une pièce, au gabarit imposé, et n'ont aucune entrée au PRD §10 :**
+
+| # | Lacune | Déclarée par |
+|---|---|---|
+| 1 | Statut d'AgentCore Identity — passe conduite, infructueuse | ch. 6 |
+| 2 | Autorité d'émission d'un passeport d'agent — aucune passe conduite | ch. 8 |
+| 3 | Le mandat en droit civil (québécois) — aucune passe conduite | ch. 9, ch. 20 |
+| 4 | Jalons post-quantiques canadiens — aucune passe conduite, hors périmètre déclaré de L-11 | ch. 16, ch. 18 |
+| 5 | Recommandations publiques de crypto-agilité — objet programmé, sans trace | ch. 17 |
+| 6 | Coût de migration de la couche identitaire agentique — passe conduite, non close | ch. 18 |
+| 7 | Ligne directrice de l'AMF sur la gestion du risque de modèle — **le pendant québécois d'E-23, absent des deux socles** | ch. 19 |
+| 8 | Position de la CAI sur l'article 12.1 | ch. 20 |
+| 9 | Régime européen des décisions automatisées | ch. 20 |
+
+⚠ **La septième est la plus coûteuse.** La thèse du ch. 19 porte sur « les cadres en vigueur au 1ᵉʳ mai 2027 », et **l'un d'eux n'est instruit par aucun lot**. Ce n'est pas une lacune d'appoint : c'est une lacune qui touche la portée déclarée d'un chapitre.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Les neuf sont portées au PRD §10.** CA-06 ne souffre pas d'exception : une lacune déclarée dans une pièce et absente du registre des lacunes est invisible pour la revalidation finale, pour la table d'assignation du TOC et pour le compendium du Vol. IV. Deux conséquences :
+
+1. **Chacune reçoit son gabarit d'encadré** selon l'état réel de son instruction (PRDPlan §5.5, plus le cas nouveau de **R-G-29**) : la 1 en cas 1, les 2, 3, 4, 8 et 9 en cas 2, la 6 en cas 4, la 5 selon la règle 4 de **R-G-27**, la 7 en cas 2 assortie de la demande d'ouverture d'instruction déposée par le ch. 19.
+2. ⚠ **Le cardinal de PRD §10 se re-mesure à l'acte d'amendement.** Il ne s'additionne pas depuis le présent registre, et il vit à plusieurs endroits — PRD §10, table d'assignation du TOC, README du volume : ils se mettent à jour ensemble.
+
+**L'ouverture d'un lot complémentaire sur l'une ou l'autre n'est pas tranchée ici** : elle relève du programme d'instruction et, pour la 7, de la portée d'un chapitre. Le présent arbitrage porte sur le **siège** de la déclaration, non sur la décision d'instruire.
+
+### Report
+
+- **PRD §10** : neuf entrées, avec leur état d'instruction et leur pièce porteuse.
+- **TOC, table d'assignation des lacunes** : neuf lignes, au même mouvement.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-29 — Deux gabarits d'encadré manquent encore à la table des formulations, et une ligne d'assignation prescrit le mauvais ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 5, 12, 18 et 21 |
+| Bloque | Toute pièce déclarant une lacune **close par instruction fructueuse** ou traçant une affirmation **hors socle** dans un encadré ; **ch. 21** pour la ligne 3 de la table d'assignation |
+| Siège de la faute | **Le plan** — PRDPlan §5.5 ; et **le TOC**, table d'assignation des lacunes, ligne 3 |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **formulation imposée**, ni thèse, ni objectif, ni garde-fou, ni découpage ; précédent **R-G-22** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce, PRDPlan §5.5
+
+**R-G-22 a versé le cas 4** — passe conduite et fructueuse, lacune non close. **Deux états restent sans gabarit**, et quatre pièces les ont rencontrés :
+
+1. **Lacune close par une passe fructueuse.** Le cas 1 (infructueuse) et le cas 4 (fructueuse, non close) l'encadrent sans la couvrir. Le ch. 5 signale en outre que **PRD §10 rattache cet état au cas 1**, ce qui est faux : une passe fructueuse qui clôt n'a pas la même trace qu'une passe infructueuse qui clôt.
+2. **Trace d'une affirmation hors socle à l'intérieur d'un encadré de cas 4.** Le gabarit ne prévoit pas de citer une matière que le socle ne porte pas ; le ch. 18 a dû forger, comme le ch. 2 l'avait fait avant R-G-22.
+
+**S'y ajoute une erreur d'assignation** : la table du TOC prescrit, pour la lacune 3, « cas 1 ou 3 selon l'état de l'arrêté au gel » ; l'état constaté par le ch. 21 commande le **cas 4**.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Le cas 5 est versé, une variante de trace est ajoutée au cas 4, et la ligne 3 de la table est corrigée.**
+
+> **Encadré de lacune — cas 5 : passe conduite et fructueuse, lacune close.** « **État de la connaissance vérifiable** — [question]. Recherche menée le [date] sur les sources primaires : elle établit [ce que la passe a établi] ([entrée de socle]). **La lacune est close par ce résultat** : [ce qui était cherché, et qui est trouvé]. Aucune inférence n'est proposée ici. »
+
+**Variante de trace, applicable au cas 4 et au cas 5** : lorsque la matière établie n'est pas versée au socle, l'encadré la cite dans la forme de la règle 2 de **R-G-06** — source primaire, date de consultation, mention « source primaire ouverte hors socle ; l'affirmation correspondante du lot n'est pas versée » — **et jamais sous la forme d'un renvoi d'entrée**.
+
+⚠ **Ce que le cas 5 n'autorise pas** : présenter comme close une lacune dont la passe a établi autre chose que ce qui était cherché. C'est le pendant du cas 4 — *le mauvais gabarit induit une conclusion que l'instruction n'a pas atteinte*.
+
+### Report
+
+- **PRDPlan §5.5** : cas 5 et variante de trace, à ajouter à la table.
+- **PRD §10** : le rattachement de cet état au cas 1 à corriger.
+- **TOC, table d'assignation des lacunes, ligne 3** : gabarit attendu porté au **cas 4**.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-30 — R-08 : le plan prescrit la phrase que le PRD proscrit, et le PRD borne mal l'objet du vote ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** ; second volet ouvert à la relecture adversariale du ch. 12 |
+| Ouverte par | Le rédacteur du ch. 12, puis son relecteur |
+| Bloque | **ch. 12**, siège de R-08 ; et toute pièce écrivant une absence d'incident |
+| Siège de la faute | **Le plan** — PRDPlan §5.5, table des formulations imposées ; et **le PRD §8.1**, note de R-08 |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **conflit entre deux documents de gouvernance, résolu par la primauté déclarée du PRD**, et bornage d'un résumé sur le rapport qui le porte ; précédents **R-G-04** et **R-G-24** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constats sur pièce, aux trois sièges
+
+1. **Le PRD a restreint R-08 le 21 juillet 2026** (R-G-03) et proscrit désormais la phrase « aucun incident public majeur n'est documenté » **tout court**. **La ligne « Absence d'incident (R-08) » de la table du PRDPlan §5.5 porte encore cette phrase exacte comme forme à écrire.** Deux documents de gouvernance, le même jour, l'un prescrivant ce que l'autre proscrit — **configuration déjà rencontrée par R-G-02 et par R-G-15**.
+2. **Le PRD §8.1 résume l'objet du vote plus largement que le rapport.** Il écrit « L'affirmation d'absence générale a été écartée 3-0 au vote de L-08 », alors que `L08-A3-08` porte, mot pour mot, l'objet **étroit** que R-08 conserve ensuite comme siège de l'absence — « aucun incident public majeur d'usurpation de l'identité propre d'un agent en production ». Le résumé rend le garde-fou plus large que ce que son propre vote a tranché.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Le PRD prime, et le résumé se borne sur le rapport.**
+
+1. **La ligne R-08 de PRDPlan §5.5 est réalignée sur la forme restreinte du PRD.** Ce n'est pas une modification du garde-fou : c'est la **propagation d'un arbitrage déjà rendu** (R-G-03), que le plan n'a pas reçue.
+2. **La note de PRD §8.1 est ramenée à l'objet que `L08-A3-08` porte**, verbatim du rapport à l'appui.
+
+⚠ **Ce que le présent arbitrage ne fait pas, et il faut le lire littéralement.** Il **ne touche ni au texte de R-08, ni à sa prescription, ni à son périmètre d'application**. Toute modification de la prescription relèverait de l'auteur (PRDPlan §5.3) et n'est pas faite ici. Ce qui est corrigé, ce sont un report manquant et un résumé plus large que sa source.
+
+### Report
+
+- **PRDPlan §5.5, ligne R-08** : forme réalignée sur PRD §8.1.
+- **PRD §8.1, note de R-08** : objet du vote borné sur `L08-A3-08`.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-31 — La grille : le TOC porte un verdict, et la partition de Q-A contredit l'annexe C ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le rédacteur du ch. 5 |
+| Bloque | **ch. 5 §5.4**, **ch. 4 §4.2** et toute pièce appliquant la grille — ch. 6, 8, 12, 19 |
+| Siège de la faute | **Le TOC v0.6** — journal de version et note du bloc du ch. 5, en contradiction avec **PRD Annexe C §C.1** |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **siège et qualification** ; le PRD prime sur le TOC par déclaration expresse, précédent **R-G-04** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce, TOC v0.6 contre PRD Annexe C
+
+- **Le TOC v0.6 porte un verdict de grille sur Q-C**, à son journal de version *et* à la note du bloc du ch. 5, en écart avec celui du ch. 4 §4.2. Le ch. 5 a suivi le ch. 4.
+- **Le TOC v0.6 et le ch. 4 §4.2 partitionnent Q-A en deux volets** — « vérifiable oui, révocable non » —, alors que **PRD Annexe C §C.1 définit Q-A par quatre attributs** : un identifiant **stable, vérifiable, résistant à l'usurpation, et révocable**.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Deux règles, applicables à toute application de la grille.**
+
+1. **Le TOC n'est pas siège de verdict.** Son autorité porte sur le découpage ; **PRD Annexe C §C.2 assigne les sièges d'application**, et un verdict vit dans la pièce qui applique la grille, avec sa trace et son niveau. Le verdict Q-C porté par le TOC v0.6 **n'est pas opposable** et se retire au prochain version++.
+2. **Q-A garde ses quatre attributs.** Le libellé à deux volets **n'est pas une redéfinition de la question : c'est le rendu d'un verdict partiel**, et il s'écrit comme tel — la question énumère quatre attributs, le verdict dit lesquels sont satisfaits et lesquels ne le sont pas. Toute écriture présentant Q-A comme *portant* deux volets est fautive, y compris au TOC.
+
+⚠ **Pourquoi cet arbitrage relève de l'instance d'exécution et non de l'auteur** : il ne crée aucune lecture. Il applique la primauté que le PRD déclare et que le PRDPlan reprend en tête. **La question de savoir à quoi la grille s'applique, elle, est une lecture — et elle est remontée à l'auteur** (R-G-42).
+
+### Report
+
+- **TOC** (version++) : retrait du verdict Q-C ; libellé de Q-A rendu à ses quatre attributs.
+- **ch. 4 §4.2 et ch. 5 §5.4** : rendu du verdict partiel dans la forme ci-dessus.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-32 — H-01 et F-12 qualifient différemment la v1.0.1 de la spécification A2A ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le rédacteur du ch. 5 |
+| Bloque | **ch. 5**, et toute pièce citant une version de la spécification A2A — ch. 7, ch. 14 |
+| Siège de la faute | **Aucune faute** : deux entrées portant deux constats distincts sur un même objet, sans renvoi croisé — **même forme que R-G-10** |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **qualification et siège** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce, PRD §7.2 et §7.9
+
+**H-01** qualifie la v1.0.1 de « dernier correctif ». **F-12** consigne un **écart entre l'étiquette du registre et l'en-tête du document**, l'étiquette n'ayant pas été ouverte. Le ch. 5 déclare que **les énoncés du chapitre ne sont pas revalidés sur cette version**.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**La divergence est déclarée non arbitrable en l'état, et les deux entrées se citent ensemble.**
+
+1. **Aucun arbitrage n'est possible sans ouvrir la version.** Trancher entre « dernier correctif » et « écart d'étiquette » exigerait de constater l'en-tête du document v1.0.1 ; **il n'a pas été ouvert**, et un arbitrage rendu sans lui serait exactement ce que la revalidation d'ouverture de P0.6 a appris à ne plus faire — *une revalidation qui constate sur du secondaire se trompe comme du secondaire*.
+2. **Régime d'emploi, opposable aux trois pièces** : **H-01 est la source de la qualification de version**, **F-12 celle de l'écart d'étiquette**, et toute mention porte les deux. Une pièce qui écrit « v1.0.1, dernier correctif » sans l'écart de F-12 affirme une chose que le socle ne soutient qu'à moitié.
+3. **La reprise est due à la revalidation finale P5.1**, avec ouverture de la version.
+
+### Report
+
+- **PRD §7.2, H-01** et **§7.9, F-12** : renvois croisés, sur le modèle de R-G-10.
+- **PRD §8.3** : la version v1.0.1 à porter aux reprises dues, si elle n'y figure pas.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-33 — Le contrôle CA-12 laisse trois trous, et aucun ne se comble par une relecture de conformité ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le **relecteur CA-12** lui-même — [`relecture-CA-12-P3.md`](relecture-CA-12-P3.md) §7, points 1 à 3 |
+| Bloque | Le **prononcé de CA-12** sur le volume : la passe déposée ne couvre ni les vingt-six pièces balayées, ni douze rapports de lot sur quatorze |
+| Siège de la faute | **Le cadrage** — PRD §11 (CA-12) et §A.6 ; et le **TOC**, table d'assignation, où **R-12 n'a aucune entrée nommant ses pièces de surveillance** |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **périmètre d'une tâche de contrôle, siège d'une assignation, formulation** ; l'arbitrage **ne modifie pas R-12**, précédents **R-G-04** et **R-G-07** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce, compte rendu du 21 juillet 2026
+
+Le compte rendu se borne lui-même et nomme ses trois trous. **Il se présente comme une trace, non comme un certificat**, et il faut le lire ainsi : il a fait retirer **une attestation auto-délivrée** (ch. 15 §15.3) et n'a trouvé aucun élément opératoire dans les quatre pièces intégrales ni dans les quatre sections examinées.
+
+1. **Douze rapports de lot sur quatorze n'ont jamais reçu de relecture de dualité d'usage** — seuls L-03 et L-08 l'ont été, par la relecture P1.4. Y figurent **L-09 et L-10**, qui portent la matière des ch. 13 et 15. ⚠ **C'est le fichier où la faute s'est produite la première fois** : le rapport L-08 livrait produit, versions, chemin d'entrée et opération à effectuer.
+2. **La désignation des pièces porteuses d'un vecteur d'attaque n'est portée par aucun document de gouvernance**, et elle a été **inexacte dans les deux sens** : la consigne nommait les ch. 1, 5, 9 et 10 ; le balayage infirme les ch. 5 et 9 et fait apparaître le ch. 4 §4.3 et le ch. 20 §20.2. Une table d'assignation existe pour les garde-fous et les lacunes ; **R-12 n'y a pas d'entrée nommant ses pièces de surveillance réelles**.
+3. **La forme d'annonce du ch. 12** — « […] cite l'identifiant de vulnérabilité ou l'incident, **et s'arrête là** » — a été retenue pour retrait puis conservée, avec un motif écrit et la mention qu'elle **reste discutable**. Les ch. 13 et 15 portent l'annonce équivalente sans ce membre final.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Trois décisions, dont la première conditionne toute attestation ultérieure.**
+
+1. **La passe CA-12 est étendue aux douze rapports de lot non relus, et l'extension est due avant J-4.** Tant qu'elle n'est pas conduite, **aucune attestation de conformité à R-12 ne peut être écrite pour le volume** : le contrôle ne couvre pas le type de fichier où la faute s'est produite. *Un périmètre de contrôle qui exclut le lieu de la faute connue n'est pas un périmètre étroit, c'est un contrôle absent.*
+2. **R-12 reçoit une entrée à la table d'assignation du TOC**, nommant ses pièces de surveillance **constatées** au 21 juillet 2026 : les ch. 12, 13, 14 et 15 en entier, et les sections ch. 1 §1.2, ch. 4 §4.3, ch. 10 §10.1, ch. 20 §20.2. ⚠ **La liste n'est pas close et ne peut pas l'être** : toute section nouvelle décrivant un vecteur s'y ajoute, et la désignation se réétablit à chaque passe de rédaction, jamais par recopie.
+3. **La forme d'annonce du ch. 12 est harmonisée** sur celle des ch. 13 et 15 : le membre « et s'arrête là » est retiré. **Motif** : la frontière entre l'annonce d'une règle et l'attestation de son observance est étroite, et c'est du côté étroit que la faute du 21 juillet 2026 est passée. La forme la plus sûre est celle qui ne dit rien de ce que la pièce a été vérifiée ne pas contenir.
+
+### Report
+
+- **TOC, table d'assignation** : entrée R-12, avec ses pièces de surveillance.
+- **PRD §11 (CA-12)** : le périmètre du contrôle couvre `verification/` autant que `monographie/`, et l'extension aux douze rapports est due avant J-4.
+- **ch. 12, ouverture du chapitre** : retrait du membre final.
+- **ch. 2, Notes** : la mention « aucun compte rendu n'est déposé sous `verification/` » **est fausse depuis le dépôt du compte rendu** ; sa reformulation appartient au porteur de la pièce.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-34 — PRDPlan §5.5, ligne R-09 : deux clauses concurrentes pour le volet W3C ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le rédacteur du ch. 21, qui a rendu les deux clauses réunies faute de pouvoir amender la table |
+| Bloque | **ch. 21 §21.3**, **ch. 3 §3.3** et toute pièce citant un *Community Group* du W3C |
+| Siège de la faute | **Le plan** — PRDPlan §5.5, ligne R-09, en écart avec le libellé de **F-83** |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **formulation imposée** ; précédent **R-G-22** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce
+
+**PRDPlan §5.5** impose : « il ne produit pas de Recommandation et n'engage aucun calendrier normatif ». **F-83** porte : « ne place ses travaux ni sur la voie des normes ni au rang de norme du W3C ». Le ch. 21 a rendu **les deux réunies**, ne pouvant choisir.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**Les deux clauses ne sont pas concurrentes ; la forme imposée est la forme réunie.** Elles portent sur deux objets distincts — l'une sur ce que l'instance **produit**, l'autre sur le **statut** que ses travaux reçoivent — et retenir l'une seule laisserait écrire l'autre chose sans borne. La forme de référence, à porter à la table :
+
+> « un *Community Group* du W3C, qui **ne produit pas de Recommandation, n'engage aucun calendrier normatif** et **ne place ses travaux ni sur la voie des normes ni au rang de norme du W3C** (F-83) »
+
+⚠ **Le ch. 21 avait raison de réunir plutôt que de choisir, et c'est la bonne réaction par défaut** : devant deux formulations imposées divergentes, la pièce rend la plus restrictive des deux — ou les deux — et remonte. *Choisir en silence entre deux bornes, c'est en supprimer une.*
+
+### Report
+
+- **PRDPlan §5.5, ligne R-09** : forme réunie, portée à la table.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-35 — La dépendance éditoriale du ch. 8 au ch. 19 n'est pas au PRDPlan §5.1 ☑
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le rédacteur du ch. 8 |
+| Bloque | **ch. 8 §8.4** — la quatrième pièce du passeport y est adossée à une case de la grille |
+| Siège de la faute | **Le plan** — PRDPlan §5.1, qui ne nomme que les ch. 5, 7 et 9 parmi les amont du ch. 8 |
+| Tranchée par | L'instance d'exécution de la phase (PRDPlan §5.3) — **ordonnancement et siège d'une dépendance**, ni thèse, ni objectif, ni garde-fou, ni découpage ; précédent **R-G-04** |
+| Statut | ☑ **tranchée le 21 juillet 2026** |
+
+### Ce que l'instruction établit — constat sur pièce
+
+Le **CLAUDE.md du volume** et le **ch. 8 §8.1** posent que la quatrième pièce du passeport — les attestations de conformité — est portée par **deux sections**, **ch. 7 §7.3** et **ch. 19 §19.2**. **PRDPlan §5.1 ne nomme que les ch. 5, 7 et 9** comme amont du ch. 8 : la dépendance au ch. 19 traverse une frontière de partie, comme celle au ch. 9, et n'est inscrite nulle part.
+
+**Constat sur pièce, `monographie/99-registre-gel.md`** : le ch. 19 est **rédigé et relu adversarialement**, ligne 20 du registre. ⚠ **L'ordre réel des deux rédactions n'est pas constatable sur disque**, et le présent registre ne l'infère pas.
+
+### Arbitrage — tranché le 21 juillet 2026
+
+**La dépendance est inscrite, et une reprise est due.**
+
+1. **PRDPlan §5.1 nomme le ch. 19 parmi les amont du ch. 8**, au même titre que le ch. 9. Le ch. 8 est ainsi le seul chapitre à traverser **deux** frontières de partie vers l'aval.
+2. **La revalidation P5.1 reprend le §8.4 contre le ch. 19 §19.2.** Le §8.4 déclare déjà l'asymétrie — la quatrième pièce est la moins documentée des quatre —, mais la déclaration n'est pas une confrontation.
+
+⚠ **Ce que l'arbitrage n'établit pas** : que le ch. 8 ait été relu après la rédaction du ch. 19. Il ne l'établit pas parce qu'il ne le peut pas ; **il prescrit la reprise plutôt que de présumer l'ordre**.
+
+### Report
+
+- **PRDPlan §5.1** : dépendance ch. 8 → ch. 19 inscrite.
+- **PRDPlan §7, P5.1** : reprise du §8.4 contre le ch. 19 §19.2.
+
+⚠ **Non fait à la date de la présente consignation.**
+
+---
+
+## R-G-36 — Le registre de gel des vingt et une pièces rédigées ⊘
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 7, 11, 15 et 19 — **quatre puces convergentes**, plus les Notes des ch. 2, 3 et 4 |
+| Bloque | Rien : **sans objet à la date de la consignation** |
+| Siège de la faute | Aucune — obligation de la boucle qualité (PRDPlan §5.2, point 7 ; CA-04) |
+| Statut | ⊘ **sans objet — levée par constat sur pièce le 21 juillet 2026** |
+
+### Ce que la remontée signalait
+
+Quatre rédacteurs déclarent la ligne de leur pièce non renseignée au commit ; les Notes des ch. 2, 3 et 4 déclarent en outre que **le registre portait encore les décomptes du premier jet**, périmés par les correctifs.
+
+### Ce que le constat établit — relevé sur pièce, [`monographie/99-registre-gel.md`](../monographie/99-registre-gel.md), 21 juillet 2026
+
+**Les vingt et une lignes sont renseignées** : statut « Rédigé et relu adversarialement », date de gel du 21 juillet 2026, cible, réel et écart. **Les volumétries sont celles de la re-mesure**, non celles du premier jet — le ch. 1 y porte **2 956** et non 2 686, le ch. 4 **3 912** et non 3 376. Le registre porte en outre le total du périmètre rédigé — **86 579 mots pour 63 000 de cible cumulée, soit +37,4 %** —, la ventilation par partie, et la somme des trente-quatre cibles, **102 500**, concordante avec le TOC et le PRD §6.1. La remontée est **sans objet**.
+
+⚠ **Deux réserves, et la première est un report dû hors de ce fichier.** (1) **Le registre de gel portait un décompte de remontées devenu faux au présent commit** — « six remontées demeurent en attente d'arbitrage auteur », nommément R-G-08, R-G-09, R-G-13, R-G-14, R-G-15 et R-G-17, alors qu'elles sont **douze**. ☑ **Reporté le 21 juillet 2026**, au même commit, dans les quatre porteurs qui l'annonçaient : registre de gel, `relecture-P3.md`, `CLAUDE.md` du volume et `PRDPlan.md` §1.4, §1.6 et §1.6 règle 3. ⚠ **La divergence a été produite par le travail en parallèle lui-même** : le porteur qui recopiait « six » et celui qui ouvrait R-G-23 à R-G-42 écrivaient au même moment. C'est le risque « décompte désynchronisé entre porteurs » de PRDPlan §8, à ceci près que sa parade le renvoyait à P5.3 — deux phases après la naissance de l'écart. (2) *Une ligne de registre exacte à une date ne le reste pas si la pièce bouge* — les treize gabarits et toute reprise de correctif la rouvrent.
+
+---
+
+## R-G-37 — Six thèses de chapitre excèdent ce que le socle porte, selon quatre formes distinctes ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 7, 8, 9, 10, 12 et 20, **et les relecteurs adversariaux des ch. 10 et 12** |
+| Bloque | **ch. 7, 8, 9, 10, 12, 20** — leur ligne de thèse citée du TOC |
+| Siège de la faute | **Le cadrage** — TOC v0.6, thèses de chapitre ; report au PRD §6.2 |
+| Statut | ☐ **ouverte — en attente d'arbitrage auteur** |
+| Motif de l'escalade | **Thèse de chapitre** : PRDPlan §5.3 la fait remonter à l'auteur **sans exception** |
+
+### Ce que l'instruction établit — constats sur pièce, thèse par thèse
+
+| Ch. | Ce que la thèse du TOC porte | Ce que le socle porte |
+|---|---|---|
+| **7** | « **est en train de devenir** » | Énoncé prospectif **sans tri** (CA-11) ; aucune entrée ne le date. La pièce l'a traité en **SPÉCULATIF** |
+| **8** | Une projection « **2027-2028** » | Adossée à **H-18, entrée [C]** ; le relevé propre du volume ne confirme aucune de ses échéances (F-80, F-82, F-85) |
+| **9** | « **presque aucun ne prouve** » | Un **classement non balayé**, et le verbe **« prouve » est proscrit par R-02** |
+| **10** | « **aucun mécanisme documenté ne maintient** une traçabilité opposable de bout en bout » | **Quantificateur universel négatif sur un corpus non balayé** — forme que R-14 et PRD §8.6 proscrivent. *Faute identique à celle du ch. 4* (R-G-15) |
+| **12** | « les défaillances documentées à l'échelle **sont** des défaillances d'identité non humaine (F-21) » | **F-21 verse un incident**, et sa réserve le donne pour « le plus proche » d'une défaillance à l'échelle. Le pluriel n'est pas soutenu |
+| **20** | « le droit des renseignements personnels raisonne par **responsable et mandataire** » | Aucune entrée ne porte cette dichotomie pour P-39.1, qui désigne « toute personne qui exploite une entreprise » (F-89) |
+
+**Les six pièces ont toutes réagi de la même manière** : borner dans le corps, déclarer l'écart, et ne pas retoucher la thèse citée. C'est la conduite que §5.3 prescrit — *un rédacteur ne corrige pas le document qui fait autorité sur le découpage*.
+
+⚠ **Le décompte qui rend la question systémique.** Avec **R-G-08** (ch. 1) et **R-G-15** (ch. 4), ce sont **huit thèses de chapitre sur les vingt et une pièces rédigées** dont le socle ne soutient pas la forme. *Un écart isolé est une coquille de cadrage ; huit sur vingt et un est une méthode de rédaction des thèses qui n'a pas été confrontée au socle.*
+
+### Question posée à l'auteur
+
+**Borner chaque thèse aux mécanismes et aux faits instruits, ou les maintenir comme hypothèses falsifiables déclarées ?** Les trois options sont celles de R-G-15, et elles se posent ici **six fois, séparément** — une thèse peut se borner là où une autre se maintient.
+
+| Option | Conséquence |
+|---|---|
+| **(a) Borner** au TOC (version++), thèse par thèse | Les six cessent d'annoncer ce que la pièce ne peut pas écrire. ⚠ Chacune **perd sa portée générale** : le chapitre n'affirme plus rien de l'état du domaine, seulement de son propre échantillon |
+| **(b) Maintenir en hypothèses falsifiables**, réserve écrite au TOC | La portée est conservée et la falsifiabilité assumée. ⚠ Coût : **une exception d'autorité à R-02, R-14 et §8.6, à déclarer en toutes lettres**, et six fois — *un ouvrage qui s'accorde six exceptions à ses propres garde-fous ne les a plus* |
+| **(c) Statu quo** — l'écart déclaré dans chaque pièce | État actuel. ⚠ Le TOC porte six lignes que les pièces contredisent, et le PRD §6.2 les reprend |
+
+### Report — conditionnel
+
+Après arbitrage : TOC (version++), PRD §6.2, en-têtes et corps des six pièces, registre de gel (intitulés). **Rien n'est opéré tant que l'arbitrage n'est pas rendu.**
+
+⚠ **Bloque le critère de sortie J-4.**
+
+---
+
+## R-G-38 — Huit intitulés de chapitre ou de section annoncent des objets que le socle ne documente pas ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 6, 8, 10, 11, 14, 17, 20 et 21 |
+| Bloque | Les huit pièces à leur intitulé ; **ch. 14** à son titre |
+| Siège de la faute | **Le cadrage** — TOC v0.6, intitulés ; report au PRD §6.2 et à la table de couverture |
+| Statut | ☐ **ouverte — en attente d'arbitrage auteur** |
+| Motif de l'escalade | **Découpage** — intitulé de chapitre ou de section : PRDPlan §5.3 le fait remonter à l'auteur **sans exception** |
+
+### Ce que l'instruction établit — constats sur pièce
+
+| Siège | Intitulé | Écart constaté |
+|---|---|---|
+| **ch. 6 §6.2** | « Offres **équivalentes** » | Réintroduit la clause d'équivalence fonctionnelle que le contrôle de bornage de L-04 avait retirée |
+| **ch. 8 §8.4** | « **la seule construction** qui répond aux cinq questions » | Clause d'exclusivité sur un corpus non balayé. La pièce écrit « le seul endroit de l'ouvrage », borné et tracé |
+| **ch. 10 §10.2** | « limites **démontrées** » | Le socle porte des statuts et des périmètres ; **R-02 proscrit le verbe** pour les mécanismes, et l'employer pour leurs limites entretient la même confusion |
+| **ch. 11 §11.2** | « le point de contact entre identité et **gouvernance des frontières** » | Le lot L-07 n'a instruit aucune source sur la gouvernance des frontières ; la section est composée depuis L-03, L-05 et L-13, dont les sièges sont ailleurs |
+| **ch. 14** (titre) | Superlatif — « le mécanisme **le moins spécifié** de la pile » | Le socle ne documente **aucun balayage comparatif** des mécanismes de la pile. Repris mot pour mot du TOC v0.6 |
+| **ch. 17 §17.2** | « audit des mécanismes de la **Partie II** » | L'audit exige le mandat AP2, qui est en **Partie III** |
+| **ch. 20** (titre) | Nomme le **RGPD** | Absent du socle **et du programme de constitution** (PRD §7.6, quinze lots) — même forme que R-G-09 pour OIDC |
+| **ch. 21 §21.3** | Nomme **ISO/IEC SC 42** et **CEN-CENELEC** | Le socle ne documente ni l'une ni l'autre instance |
+
+⚠ **Deux d'entre eux ne sont pas de même nature que les six autres.** Le titre du **ch. 20** et l'intitulé du **ch. 21 §21.3** nomment des corpus entiers que l'ouvrage ne lit pas : ce sont des **R-G-09 supplémentaires**, avec le même coût d'instruction. Les six autres sont des surpromesses de formulation, corrigibles au TOC sans passe d'instruction.
+
+### Question posée à l'auteur
+
+**Amender les intitulés au TOC, ou instruire les corpus qu'ils annoncent ?** La question se pose séparément pour chacun, et le coût n'est pas le même.
+
+| Option | Conséquence |
+|---|---|
+| **(a) Amender au TOC** (version++) | Les intitulés décrivent ce que les sections portent. ⚠ Coût de report **non nul et pluriel** : PRD §6.2, table de couverture §6.2 ↔ TOC, registre de gel, en-têtes des pièces — les quatre se corrigent ensemble |
+| **(b) Instruire** — deux lots au moins (RGPD ; ISO/IEC SC 42 et CEN-CENELEC) | Les intitulés tiennent et deux chapitres gagnent leur matière. ⚠ Coût : deux passes sur des corpus normatifs entiers, après la rédaction des pièces qu'elles nourriraient |
+| **(c) Statu quo** — l'écart déclaré dans chaque pièce | État actuel. ⚠ Huit intitulés que le socle contredit, dont un **titre de chapitre** ; *c'est exactement la faute que le volume prend pour objet lorsqu'il la constate chez ses sources* |
+
+### Report — conditionnel
+
+Après arbitrage : TOC (version++), PRD §6.2 et §7.6, table de couverture, registre de gel, en-têtes des huit pièces.
+
+⚠ **Bloque le critère de sortie J-4.**
+
+---
+
+## R-G-39 — L'écart de volumétrie n'est pas propre au ch. 4 : il est de +37,4 % sur les vingt et une pièces ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3**, à la clôture de la passe |
+| Ouverte par | Les rédacteurs des ch. 2, 3, 4, 7, 8, 9, 10, 12 et 14 — **neuf pièces**, chacune remontant son propre écart |
+| Bloque | Les **cibles de volumétrie inscrites au TOC** : par pièce, par partie et pour le volume |
+| Siège de la faute | **Le cadrage** — TOC v0.6 (cibles) et PRD §6.1 |
+| Statut | ☐ **ouverte — en attente d'arbitrage auteur** |
+| Motif de l'escalade | **Cible de volumétrie inscrite au TOC** : PRDPlan §5.3 la fait remonter à l'auteur **sans exception**. **R-G-17 demeure ouverte** sur le ch. 4 ; la présente la généralise sans la clore |
+
+### Ce que l'instruction établit — décomptes re-mesurés le 21 juillet 2026
+
+Commande de référence **PRDPlan §1.5** (`LC_ALL=C.UTF-8`), exécutée sur les **vingt et une pièces**, non sur un échantillon :
+
+| Partie | Cible | Réel | Écart |
+|---|---|---|---|
+| I — ch. 1 à 4 | 11 000 | 13 760 | +25,1 % |
+| II — ch. 5 à 8 | 12 000 | 18 319 | **+52,7 %** |
+| III — ch. 9 à 11 | 9 500 | 12 887 | +35,7 % |
+| IV — ch. 12 à 15 | 12 000 | 16 940 | +41,2 % |
+| V — ch. 16 à 18 | 9 000 | 13 032 | +44,8 % |
+| VI — ch. 19 à 21 | 9 500 | 11 641 | +22,5 % |
+| **Total rédigé** | **63 000** | **86 579** | **+37,4 %** |
+
+**Aucune des vingt et une pièces n'est en deçà de sa cible.** Les extrêmes sont le **ch. 8** (+83,8 %) et le **ch. 1** (+7,5 %) ; **dix-sept pièces sur vingt et une dépassent de plus de 20 %**.
+
+⚠ **Le motif interdit la correction la plus évidente, et c'est là tout l'enjeu.** Le dépassement ne vient pas d'un ajout de matière : il vient des **bornes rétablies** au point 6 de la boucle qualité — nom de produit rendu à son propriétaire, degré d'absence qualifié, statut pré-normatif nommé, niveau [A]/[B]/[C] porté, tri prospectif explicité, attribution nominative de chaque métrique. **Plusieurs pièces ont grossi après leurs correctifs, non avant** : le ch. 4 est passé de 3 376 à 3 912, le ch. 7 de 3 869 à 4 403, le ch. 2 de 2 701 à 3 293. *Couper davantage ne retrancherait pas du remplissage : cela retrancherait des bornes.*
+
+**Projection portée par le registre de gel, reprise ici et non tranchée** : si le même écart se maintient sur les treize pièces restantes (39 500 mots de cible), l'ouvrage approcherait **140 800 mots** pour **102 500** de cible.
+
+### Question posée à l'auteur
+
+**Réviser les cibles, tenir l'écart pour documenté, ou cesser de traiter la cible comme un instrument ?**
+
+| Option | Conséquence |
+|---|---|
+| **(a) Réviser les cibles** au TOC (version++), pièce par pièce et partie par partie | Les cibles décrivent ce que l'ouvrage coûte réellement. ⚠ Report obligatoire et **simultané** : TOC, PRD §6.1, registre de gel, README du volume, README du dépôt — qui porte encore « ≈ 100 000 ». Et la re-sommation des **trente-quatre** cibles, non des vingt et une |
+| **(b) Tenir l'écart pour documenté** | PRDPlan §5.2, point 7, l'admet expressément ; le registre de gel le porte déjà. ⚠ **Une cible jamais tenue sur vingt et une pièces sur vingt et une cesse d'être un instrument** — elle devient un chiffre que chaque pièce déclare dépasser |
+| **(c) Déclarer la cible indicative et retirer l'obligation de la remonter** | Cesse de produire une remontée par pièce pour un écart sans conséquence éditoriale. ⚠ Prive l'ouvrage du seul signal qui a **fait apparaître** que les bornes coûtent des mots — et c'est un constat de méthode, pas un bruit de mesure |
+
+### Report — conditionnel
+
+Après arbitrage : TOC (version++ si option a), PRD §6.1, registre de gel, README du volume et du dépôt, **et re-sommation des trente-quatre cibles**.
+
+⚠ **Bloque le critère de sortie J-4.**
+
+---
+
+## R-G-40 — Les motifs de balayage de l'annexe A §A.6 sont défectueux à quatre titres ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 7, 9, 10, 14, 16, 17 et 20 — **sept pièces**, quatre défauts |
+| Bloque | **CA-02** et tout bilan de balayage §A.6 du volume, y compris ceux déjà publiés dans les vingt et une pièces |
+| Siège de la faute | **Le PRD, Annexe A §A.6** — les motifs, instrument déclaré de CA-02 |
+| Statut | ☐ **ouverte — en attente d'arbitrage auteur** |
+| Motif de l'escalade | **Un motif n'est pas séparable de son garde-fou** (CLAUDE.md du volume : « un critère et son outil de contrôle ne se séparent pas ») ; PRD §A.6 impose en outre une **validation par mutation** avant publication d'une modification. Le ch. 20 classe lui-même la question en auteur. ⚠ **Dans le doute sur la catégorie, la classification en auteur est l'option réversible** |
+
+### Ce que l'instruction établit — constats sur pièce, balayages exécutés
+
+1. **R-13 — les branches `L0` à `L3` ne sont pas ancrées.** Elles captent tout identifiant de lot ou d'affirmation des séries `L01` à `L14` : **six occurrences** au ch. 7 (toutes `L05-Ax`), **neuf** au ch. 16 (toutes `L11-Ax`), **onze** au ch. 17 (trois séries), et le défaut est aussi relevé aux ch. 9, 10 et 14. **Aucune ne vise une échelle d'autonomie.** Correctif suggéré par le ch. 7, à valider : ancrer la branche (`\bL[0-3]\b`).
+2. **R-11 — la branche `IR 8547` ne voit pas la forme verbatim de la source**, « NIST Internal Report (IR) 8547 », que **CA-05 impose pourtant de citer telle quelle**. Deux occurrences légitimes sont sorties du motif au ch. 17. *Un motif qui perd la citation exacte au profit de son abrégé contrôle l'abrégé, non le fait.*
+3. **R-14 — le motif n'est pas insensible à la casse.** Il manque **quatre occurrences sur trente-quatre dans le seul ch. 20**, les formes capitalisées en tête de phrase lui échappant.
+4. **CA-03 — le motif ne relève aucune attribution formulée** avec « précise », « attache » ou « consigne ».
+
+⚠ **Les deux effets se composent, et ils vont en sens contraire.** Les défauts 1 et 2 produisent du **bruit** ou des **angles morts** sur des motifs qui ressortent beaucoup ; les défauts 3 et 4 produisent des **sous-comptes silencieux** sur les deux motifs les plus sollicités du volume. *Un motif qui ne ressort que sur du bruit finit ignoré là où il compte ; un motif qui sous-compte rend un bilan « vert » qui ne l'est pas.*
+
+### Question posée à l'auteur
+
+**Corriger les quatre motifs, ou déclarer les bilans §A.6 bornés à ce que les motifs actuels voient ?**
+
+| Option | Conséquence |
+|---|---|
+| **(a) Corriger les quatre** et **valider par mutation** (PRD §A.6) | Les bilans redeviennent opposables. ⚠ Coût réel : **les bilans déjà publiés dans les vingt et une pièces sont à rejouer** — un motif corrigé invalide les décomptes rendus avec l'ancien |
+| **(b) Corriger et ne pas rejouer** | Coût immédiat nul. ⚠ Vingt et un bilans publiés resteraient mesurés à un instrument que le volume déclare défectueux : *un décompte dont on sait l'instrument faux n'est pas une mesure* |
+| **(c) Statu quo**, avec la borne déclarée à §A.6 | Les motifs restent ce qu'ils sont, et §A.6 dit ce qu'ils ne voient pas. ⚠ **R-14 est le motif le plus sollicité du volume** ; le savoir sous-comptant et ne pas le corriger revient à publier une réserve à la place d'un contrôle |
+
+⚠ **Quelle que soit l'option, la validation par mutation est due avant toute publication d'un motif modifié** : introduire chacune des fautes dans une copie, vérifier que le motif **échoue**, après avoir constaté qu'il **passe** sur le texte intact. *Sans la seconde vérification, un motif cassé « détecte » tout.*
+
+### Report — conditionnel
+
+Après arbitrage : PRD Annexe A §A.6 ; et, en option (a), les bilans de balayage des vingt et une pièces.
+
+⚠ **Bloque le critère de sortie J-4.**
+
+---
+
+## R-G-41 — « Mandat » : deux sections portent le même objet sans socle, et le mot désigne trois choses ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Le rédacteur du ch. 20 — deux remontées, **une seule question posée par le mot** |
+| Bloque | **ch. 9 §9.3** et **ch. 20 §20.2** ; et, pour le second volet, l'ensemble du volume |
+| Siège de la faute | **Le cadrage** — TOC v0.6 (découpage des §9.3 et §20.2) ; et **PRD §8.1**, où aucun garde-fou ne régit l'homonymie de « mandat » |
+| Statut | ☐ **ouverte — en attente d'arbitrage auteur** |
+| Motif de l'escalade | **Découpage** pour le premier volet, **création d'un garde-fou** pour le second : PRDPlan §5.3 fait remonter l'un et l'autre à l'auteur **sans exception** |
+
+### Ce que l'instruction établit — constats sur pièce
+
+1. **Redondance de siège.** Le TOC assigne au **ch. 9 §9.3** « ce que le droit civil du mandat éclaire — et où l'analogie casse », et au **ch. 20 §20.2** « le mandat agentique en droit civil québécois ». **Aucun des deux n'a de socle** : la lacune correspondante n'est instruite par aucun lot (elle rejoint R-G-28). Les deux pièces ont écrit un encadré de lacune et déclaré la redondance.
+2. **Homonymie.** Le mot « mandat » traverse le volume dans **trois registres** — protocolaire (la chaîne de mandat d'AP2 et des jetons de transaction), référentiel d'attaque, et civiliste — **et le socle n'en documente que deux**. C'est la configuration exacte qui a valu à « ACP » le garde-fou **R-04**, et à « copilote » la discipline de **R-13** telle que R-G-01 l'a réécrite.
+
+### Question posée à l'auteur
+
+**Deux décisions, indépendantes l'une de l'autre.**
+
+| Décision | Options et conséquences |
+|---|---|
+| **Siège du mandat civil** | **(a)** Fondre §9.3 dans §20.2, ou l'inverse (version++ du TOC) — un seul siège, ⚠ coût de report : TOC, PRD §6.2, table de couverture, **décompte des sections des deux chapitres**. **(b)** Conserver les deux sièges en les distinguant explicitement — l'analogie au ch. 9, le droit positif au ch. 20 —, ⚠ ce que les deux pièces font déjà sans mandat pour le faire. **(c)** Statu quo : deux sections sans socle sur le même objet |
+| **Garde-fou d'homonymie** | **(a)** Ouvrir un garde-fou sur le modèle de R-04 — ⚠ **R-04 n'est pas étendu ici**, ses six branches étant closes, et l'étendre en silence serait la faute que R-G-30 vient de corriger sur R-08. **(b)** Ne pas en ouvrir, et imposer la discipline au seul PRDPlan §5.5 — ⚠ une formulation imposée ne se balaye pas. **(c)** Statu quo : trois registres, aucun instrument |
+
+⚠ **Le second volet coûte plus qu'il n'en a l'air.** Un garde-fou nouveau porterait le numéro **R-15** et modifierait le cardinal « quatorze garde-fous », qui vit au PRD §8.1, au TOC (table d'assignation), au README du volume et au CLAUDE.md du volume. *Créer un garde-fou n'est jamais une addition locale.*
+
+### Report — conditionnel
+
+Après arbitrage : TOC (version++ si fusion), PRD §6.2, §8.1 et §10, table d'assignation, corps des ch. 9 et 20.
+
+⚠ **Bloque le critère de sortie J-4.**
+
+---
+
+## R-G-42 — Deux règles d'annexe du PRD ont été lues par les pièces dans un sens qu'elles déclarent ☐
+
+| Champ | Valeur |
+|---|---|
+| Ouverte le | 21 juillet 2026, phase **P3** |
+| Ouverte par | Les rédacteurs des ch. 19 et 21 |
+| Bloque | **ch. 19 §19.1** et **ch. 21 §21.2** — les deux sections reposent sur la lecture retenue |
+| Siège de la faute | **Le PRD** — Annexe C §C.2, règle 5 ; et Annexe B.3 |
+| Statut | ☐ **ouverte — en attente d'arbitrage auteur** |
+| Motif de l'escalade | Les deux questions décident de **ce à quoi un instrument du cadrage sert** — ce n'est pas une primauté à appliquer, c'est une lecture à établir. ⚠ **Dans le doute sur la catégorie, la classification en auteur est l'option réversible** |
+
+### Ce que l'instruction établit — constats sur pièce, aux deux sièges
+
+1. **PRD Annexe C §C.2, règle 5, range le §19.1 parmi les sièges d'application de la grille**, alors que la **règle 1 réserve la grille aux mécanismes** et que la **règle 2 n'admet que trois verdicts**. **E-23 et la ligne directrice de l'AMF ne sont pas des mécanismes : ce sont des textes normatifs.** Le ch. 19 a retenu une **lecture inversée sans verdict** — le texte normatif est lu *à travers* la grille plutôt que jugé *par* elle — et l'a déclarée.
+2. **PRD Annexe B.3 pose une attente réglementaire de « ne rien anticiper »**, tandis que le TOC intitule le **§21.2** « Scénarios ». Le ch. 21 a retenu que **les scénarios portent sur les corpus de départ, jamais sur le contenu du texte à venir**, et l'a déclaré.
+
+⚠ **Ce qui distingue ces deux questions de R-G-31, tranchée le même jour.** R-G-31 applique une primauté que le PRD déclare lui-même : elle ne crée aucune lecture. Ici, aucune primauté ne départage — **la règle 5 et la règle 1 sont dans le même document, au même rang**, et l'attente B.3 ne dit rien de ce qu'un scénario peut porter. *Trancher exigerait de décider ce que l'instrument est censé faire, et c'est la définition même de ce que §5.3 réserve.*
+
+### Question posée à l'auteur
+
+| Question | Options |
+|---|---|
+| **La grille s'applique-t-elle à un texte normatif ?** | **(a)** Oui, en lecture inversée sans verdict — la lecture du ch. 19, à porter à l'annexe C. **(b)** Non — la règle 5 est corrigée et le §19.1 cesse d'être un siège d'application. **(c)** Oui avec verdict — ⚠ contredit la règle 1 et exige un quatrième verdict |
+| **Un scénario est-il une anticipation ?** | **(a)** Non lorsqu'il porte sur les corpus de départ — la lecture du ch. 21, à porter à l'annexe B.3. **(b)** Oui — l'intitulé §21.2 est amendé au TOC, et la section change d'objet. **(c)** Statu quo : la lecture vit dans la pièce et nulle part ailleurs |
+
+### Report — conditionnel
+
+Après arbitrage : PRD Annexe C §C.2 et Annexe B.3 ; TOC si l'intitulé du §21.2 est touché ; corps des ch. 19 et 21.
+
+⚠ **Bloque le critère de sortie J-4.**
+
+---
+
 ## Remontées ouvertes
 
-**Six remontées sont ouvertes, toutes en attente d'arbitrage auteur** : **R-G-08** (thèse du ch. 1 et intitulé de son §1.2), **R-G-09** (titre du ch. 2 nommant OIDC), **R-G-13** (titre de §3.1 au TOC), **R-G-14** (§3.2 sans socle et cadre européen non converti), **R-G-15** (thèse du ch. 4 en fait négatif de corpus, aux deux sièges), **R-G-17** (cible de volumétrie du ch. 4).
+**Douze remontées sont ouvertes, toutes en attente d'arbitrage auteur.**
 
-⚠ **Elles bloquent le critère de sortie J-4**, qui exige « **remontées de gouvernance toutes tranchées** » ([PRDPlan](../doc/PRDPlan.md) §5.5). **Aucune ne peut être tranchée par l'instance d'exécution de la phase** : les six portent sur une thèse, un intitulé de chapitre ou de section, ou une cible de volumétrie inscrite au TOC — les trois objets que §5.3 fait remonter à l'auteur **sans exception**.
+| Remontée | Objet | Ouverte en |
+|---|---|---|
+| **R-G-08** | Thèse du ch. 1, intitulé de son §1.2 et titre du chapitre | P3 |
+| **R-G-09** | Titre du ch. 2 nommant OIDC | P3 |
+| **R-G-13** | Titre du §3.1 au TOC | P3 |
+| **R-G-14** | §3.2 sans socle, cadre européen non converti | P3 |
+| **R-G-15** | Thèse du ch. 4 en fait négatif de corpus, aux deux sièges | P3 |
+| **R-G-17** | Cible de volumétrie du ch. 4 | P3 |
+| **R-G-37** | **Six thèses de chapitre** excédant le socle (ch. 7, 8, 9, 10, 12, 20) | P3, clôture |
+| **R-G-38** | **Huit intitulés** annonçant des objets non documentés | P3, clôture |
+| **R-G-39** | **Volumétrie : +37,4 % sur les vingt et une pièces**, aucune en deçà de sa cible | P3, clôture |
+| **R-G-40** | **Quatre défauts des motifs de balayage** de PRD §A.6 | P3, clôture |
+| **R-G-41** | « Mandat » : redondance de siège et homonymie à trois registres | P3, clôture |
+| **R-G-42** | Deux règles d'annexe du PRD lues sans primauté qui départage | P3, clôture |
 
-⚠ **Le précédent qui explique cette prudence est consigné dans ce registre même** : **R-G-03 relevait de la seconde catégorie et a été tranchée sans remontée consignée**. L'arbitrage y était motivé et tracé, mais pris à un niveau qui n'était pas le sien. *Le signaler coûte une phrase ; le taire aurait fait jurisprudence.* **Dans le doute sur la catégorie, la classification en auteur est l'option réversible** — R-G-14 y est classée à ce titre.
+⚠ **Elles bloquent le critère de sortie J-4**, qui exige « **remontées de gouvernance toutes tranchées** » ([PRDPlan](../doc/PRDPlan.md) §5.5). **J-4 n'est donc pas intégralement atteint, et aucune date de gel ne le rend atteint.** **Aucune des douze ne peut être tranchée par l'instance d'exécution de la phase** : elles portent sur une thèse, un intitulé, une cible de volumétrie inscrite au TOC, un garde-fou et son instrument, ou une lecture du cadrage — les objets que §5.3 fait remonter à l'auteur **sans exception**.
 
-**Ce que les quatorze remontées tranchées laissent à faire.** Le registre consigne, il ne corrige pas (PRDPlan §5.3). Deux d'entre elles sont **opérées** au PRD le 21 juillet 2026 — **R-G-05** (versement, §7.10) et **R-G-12** (niveau de F-36, renvoi de F-30, §7.9) —, par un acte parallèle que le présent registre **consigne sans l'attester** (CA-14). Les **dix autres portent un report non opéré**, chacune le déclarant en toutes lettres à sa section « Report » : PRD §7.3, §7.9, §8.1, PRDPlan §5.5 et les consignes de rédaction des ch. 7 et 20.
+⚠ **Trois de ces remontées valent pour vingt-trois mentions**, et le regroupement est délibéré : R-G-37 rassemble six pièces, R-G-38 huit, R-G-39 neuf. *Une question remontée par six chapitres n'est pas six questions ; la compter six fois donnerait un registre plus long et une décision moins claire.*
+
+⚠ **Le précédent qui explique cette prudence est consigné dans ce registre même** : **R-G-03 relevait de la seconde catégorie et a été tranchée sans remontée consignée**. L'arbitrage y était motivé et tracé, mais pris à un niveau qui n'était pas le sien. *Le signaler coûte une phrase ; le taire aurait fait jurisprudence.* **Dans le doute sur la catégorie, la classification en auteur est l'option réversible** — **R-G-14**, **R-G-40** et **R-G-42** y sont classées à ce titre.
+
+### Ce que les vingt-sept remontées tranchées laissent à faire
+
+Le registre consigne, il ne corrige pas (PRDPlan §5.3). **Deux reports seulement sont opérés** au PRD le 21 juillet 2026 — **R-G-05** (versement, §7.10) et **R-G-12** (niveau de F-36, renvoi de F-30, §7.9) —, par un acte parallèle que le présent registre **consigne sans l'attester** (CA-14). **Les vingt-cinq autres portent un report non opéré**, chacune le déclarant en toutes lettres à sa section « Report ». Les destinataires, par ordre de charge :
+
+| Destinataire | Ce qui l'attend |
+|---|---|
+| **PRD §7.9 et §7.10** | **35 versements** (R-G-23), **22 entrées propres à amender** (R-G-24), niveau de **F-56** et entrée nouvelle du volet Google Cloud (R-G-25), condition d'élévation de **F-55** (R-G-26), renvois croisés **H-03 ↔ F-41** (R-G-10) et **H-01 ↔ F-12** (R-G-32) |
+| **PRD §7.2** | **H-07** amendée, **H-17** déclarée périmée sur un point (R-G-24) |
+| **PRD §10** | **9 lacunes** (R-G-28), plus celles de R-G-27 ; correction du rattachement au cas 1 (R-G-29) |
+| **PRD §8.1** | Portée de **R-02** (R-G-07), objet du vote de **R-08** (R-G-30), pièges de renvoi (R-G-11) |
+| **PRD §11 et Annexe A** | Périmètre de **CA-12** et extension aux douze rapports (R-G-33) |
+| **PRDPlan §5.5** | Convention de niveau (R-G-21), **cas 5** et variante de trace (R-G-29), ligne **R-08** (R-G-30), ligne **R-09** volet W3C (R-G-34), citation hors socle (R-G-06) |
+| **PRDPlan §5.1 et §7** | Dépendance **ch. 8 → ch. 19** et reprise en P5.1 (R-G-35) |
+| **TOC** | Table d'assignation : **R-12** (R-G-33), **9 lacunes** (R-G-28), ligne 3 du gabarit (R-G-29) ; retrait du verdict Q-C et libellé de Q-A (R-G-31) |
+| **Pièces** | Retracement des ch. 5 à 20 (R-G-23), forme d'annonce du ch. 12 et Notes du ch. 2 (R-G-33), ch. 4 §4.2 et ch. 5 §5.4 (R-G-31) |
+| **Rapports de lot** | Renvois en tête, **sans toucher aux relevés** : L-01 (R-G-07), L-03, L-09, L-11 (R-G-27) |
+| **`monographie/99-registre-gel.md`** | Décompte de remontées en attente — **six annoncées, douze réelles** (R-G-36). ⚠ **Hors périmètre d'édition du présent fichier ; signalé, non opéré** |
 
 ⚠ **Une remontée tranchée dont le report n'est pas opéré n'est pas close** : elle est arbitrée. *La trace vaut contrôle de l'arbitrage, jamais de son exécution.*
+
+⚠ **Ce que ce registre n'atteste d'aucune manière.** Il ne constate ni le texte versé au PRD, ni les correctifs appliqués aux pièces, ni la conformité d'aucune d'entre elles. Les constats sur pièce qu'il rapporte portent sur ce qu'il a **ouvert** : les blocs « Notes » des vingt et une pièces, le compte rendu CA-12, le registre de gel. **Tout le reste est déclaré par les documents amont et consigné comme tel** (CA-14).
