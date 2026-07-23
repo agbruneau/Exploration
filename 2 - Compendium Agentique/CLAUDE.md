@@ -7,10 +7,10 @@ pas répétées.
 
 ## Les livrables — un plan, sa gouvernance et sa vue synoptique, pas un ouvrage
 
-Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD.md) (**v0.1, 23 juillet 2026**) régit la
+Trois fichiers, par ordre d'autorité. [`PRD.md`](PRD.md) (**v0.2, 23 juillet 2026**) régit la
 **gouvernance de la rédaction** — portes de lancement, ordre, régimes de preuve, seuil de vote,
 critères CA-IV, jalons, décisions d'auteur — et **prime en cas de conflit sur la gouvernance, le
-socle et les lacunes**. [`TOC.md`](TOC.md) (**v0.13, 23 juillet 2026 — 57 chapitres en 10 livres,
+socle et les lacunes**. [`TOC.md`](TOC.md) (**v0.14, 23 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) reste la *spécification de contenu* du compendium — autorité
 sur le découpage et sur chaque chapitre (thèse, sections, ligne Fusion, socle, garde-fous) ;
 **aucun chapitre n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources
@@ -62,7 +62,9 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
 - ⚠ **Le Vol. III est rédigé depuis le 22 juillet 2026** (34 pièces, socle F-01…F-98 + H-01…H-33,
   PRD v1.3 / TOC v0.8), mais « **rédigé ne vaut pas publiable** » : remontées ouvertes, arbitrages
   révocables, dette de vote (F-92, F-96 du Vol. III). La collation de fond contre son texte rédigé
-  (l'homologue de la v0.6) est un **préalable déclaré** aux Livres III et VII ; et un « F-xx » nu
+  (l'homologue de la v0.6) est un **préalable déclaré** aux Livres III et VII, **dont la v0.14 du TOC
+  a levé le volet structurel** (couverture complète et résolution des renvois de section, zéro écart —
+  seul le volet de fond reste dû) ; et un « F-xx » nu
   est désormais **indécidable entre deux socles** — convention transitoire en décision 7 du TOC.
 - ⚠ **Relèves v0.7, v0.10 et v0.11** : marquées « à instruire à la source primaire » — aucune
   n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la
