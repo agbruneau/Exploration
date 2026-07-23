@@ -25,7 +25,7 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (145 p., 256 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — TOC v0.11 (+ conspectus) |
+| **État** | Publiée (145 p., 256 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — TOC v0.14 (+ conspectus) |
 
 ## Veille technologique — le document transversal
 
@@ -141,7 +141,7 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 
 **Au stade du cadrage seul, lui aussi.** Le dossier
 [`2 - Compendium Agentique/`](2%20-%20Compendium%20Agentique/) porte une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), **v0.13 du 23 juillet 2026**), son
+commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), **v0.14 du 23 juillet 2026**), son
 **PRD de gouvernance de la rédaction** ([`PRD.md`](2%20-%20Compendium%20Agentique/PRD.md), v0.1 du
 23 juillet 2026 — portes de lancement, régimes de preuve, critères d'acceptation, jalons), sa vue
 synoptique dérivée ([`Conspectus.md`](2%20-%20Compendium%20Agentique/Conspectus.md)), son exécutable
@@ -241,7 +241,7 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 │       └── Monographie.md / .pdf              assemblage (428 p., gabarit FESP) — non publiable
 └── 2 - Compendium Agentique/              ← Vol. IV
     ├── CLAUDE.md                            conventions du volume
-    ├── TOC.md                               table des matières commentée (v0.11) — spécification
+    ├── TOC.md                               table des matières commentée (v0.14) — spécification
     └── Conspectus.md                        vue synoptique dérivée du TOC
 ```
 
