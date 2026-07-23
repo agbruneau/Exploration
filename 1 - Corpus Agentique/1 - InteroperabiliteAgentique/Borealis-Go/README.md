@@ -4,7 +4,7 @@
 > toutes les données sont **100 % synthétiques**, aucun système réel, **jamais de PII**.
 > Ce répertoire matérialise l'**Annexe B** et le **chapitre 6** de la monographie
 > *Interopérabilité agentique* — le **volume I** du dépôt d'écriture
-> [*Monographies*](../../../README.md), sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`.
+> [*Agentique*](../../../README.md), sous `1 - Corpus Agentique/1 - InteroperabiliteAgentique/`.
 
 Démonstrateur Go : **5 agents A2A** + **4 serveurs MCP** orchestrant une **pré-qualification de crédit**
 (jamais un octroi ferme). Illustre l'invariant transversal de la monographie — *découplage, contrat, évolution* —

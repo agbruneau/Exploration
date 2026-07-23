@@ -25,7 +25,7 @@ Les trois volumes vivent sous [`1 - Corpus Agentique/`](1%20-%20Corpus%20Agentiq
 | **Thèse** | « L'agent d'entreprise fiable de 2026 est un agent *enveloppé* » | « Autonomie graduée sous contrôle de finalité » | « Autonomie encadrée » (*framed autonomy*) | « La confiance ne se décrète pas, elle se fabrique » | Les trois thèses sont trois coupes d'un même objet |
 | **Méthode** | Revue structurée, vérification adverse à trois votants | Formalisme d'ingénierie (ArchiMate 4, ADS « Boréalis ») | Socle factuel F-01…F-48, niveaux de preuve [A]/[B]/[C] | Double héritage codifié : entrées du Vol. II à niveau conservé, du Vol. I en [C] | Méthode unifiée, gel unique (annoncée) |
 | **Gel de l'information** | 18 juillet 2026 | Juin 2026 | 16-17 juillet 2026 | — (hérite de deux gels : juin et 16-17 juillet 2026) | — (à fixer au lancement) |
-| **État** | Publiée (144 p., 256 références) | Rédaction terminée (569 p. + synthèse 69 p.) | Publiée, millésime `mono-v1.0` (387 p. + synthèse 66 p.) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — table des matières v0.2 |
+| **État** | Publiée (144 p., 256 références) | Rédaction terminée (569 p. ; synthèse retirée le 22 juillet 2026) | Publiée, millésime `mono-v1.0` (387 p. ; synthèse retirée le 22 juillet 2026) | **Rédigé, non publié** — 34 pièces rédigées et relues (≈ 160 400 mots), gouvernance PRD v1.3 / TOC v0.8 / PRDPlan v0.5 ; finalisation P5 en cours ; **PDF assemblé le 23 juillet 2026** (428 p., gabarit FESP), non publiable en l'état | **Cadrage seul** — TOC v0.11 (+ conspectus) |
 
 ## Veille technologique — le document transversal
 
@@ -75,8 +75,8 @@ contrat, évolution*.
 - **Architecture détaillée de solution** (Annexe B) — la monographie projetée sur une entreprise
   fictive, la *Coopérative financière Boréalis*, consolidée sur la pile IBM ; 18 sections,
   6 sous-annexes, 28 diagrammes Mermaid, rendus dans le PDF principal.
-- **Article de synthèse** (`Synthese Monographie.pdf`, **69 p.**) — la monographie condensée au
-  format académique, avec bibliographie propre.
+- **Article de synthèse** — *retiré du dossier le 22 juillet 2026* (`Synthese Monographie.md` / `.pdf`,
+  69 p.). La monographie et son Annexe B restent les seuls livrables rédigés du volume.
 - **Démonstrateur `Borealis-Go/`** — code Go exécutable matérialisant l'ADS : **5 agents A2A** et
   **4 serveurs MCP** orchestrant une pré-qualification de crédit (jamais un octroi ferme), sur les
   SDK officiels des deux protocoles. **12 ADR**, journal d'audit à chaîne de hachage, vérification
@@ -87,7 +87,8 @@ contrat, évolution*.
 
 Monographie sur l'interopérabilité et l'orchestration agentique en services financiers canadiens,
 publiée sous le millésime `mono-v1.0`. **92 059 mots** en 29 pièces (24 chapitres, avant-propos,
-annexes A-D) selon son README ; `Monographie.pdf` **387 p.** ; article de synthèse **66 p.**
+annexes A-D) selon son README ; `Monographie.pdf` **387 p.** (article de synthèse, 66 p., retiré du
+dossier le 22 juillet 2026).
 
 ⚠ `mono-v1.0` est un **millésime éditorial, pas une étiquette git** : aucune référence de ce nom
 n'existe dans le dépôt, ni en local ni sur le distant (vérifié le 18 juillet 2026). Plusieurs
@@ -139,13 +140,15 @@ Le volume naît des lacunes des deux précédents : identité non humaine et dé
 ## Vol. IV — La somme agentique (compendium)
 
 **Au stade du cadrage seul, lui aussi.** Le dossier
-[`2 - Compendium Agentique/`](2%20-%20Compendium%20Agentique/) ne contient qu'une table des matières
-commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), v0.2 du 18 juillet 2026) —
-**aucun contenu neuf rédigé : c'est un plan de refonte, pas une nouvelle thèse.**
+[`2 - Compendium Agentique/`](2%20-%20Compendium%20Agentique/) porte une table des matières
+commentée ([`TOC.md`](2%20-%20Compendium%20Agentique/TOC.md), **v0.11 du 23 juillet 2026**), sa vue
+synoptique dérivée ([`Conspectus.md`](2%20-%20Compendium%20Agentique/Conspectus.md)) et un
+[`CLAUDE.md`](2%20-%20Compendium%20Agentique/CLAUDE.md) de conventions —
+**aucun chapitre rédigé : c'est un plan de refonte, pas une nouvelle thèse.**
 
 Sa nature le distingue des trois autres : ce n'est ni un quatrième panneau ni un méta-index, mais
 un **omnibus qui absorbe les Vol. I, II et III** en un seul ouvrage réordonné et dédoublonné, à
-numérotation continue — 54 chapitres en 12 livres, ≈ 260 000 à 320 000 mots projetés. Une fois
+numérotation continue — 57 chapitres en 10 livres, ≈ 369 000 à 394 000 mots projetés. Une fois
 rédigé, il se substitue à la lecture des trois volumes ; **jusque-là, les trois volumes sources
 font foi.** Ses décisions structurantes : numérotation continue, déduplication tracée sous chaque
 entrée, divergences héritées tranchées (et non plus signalées), méthode et gel unifiés, couverture
@@ -217,18 +220,14 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 │   ├── 1 - InteroperabiliteAgentique/       Vol. I
 │   │   ├── Chapitres/                         7 chapitres + 7 bibliographies + Annexe B (ADS)
 │   │   ├── Monographie.md / .pdf              assemblage (569 p.)
-│   │   ├── Synthese Monographie.md / .pdf     article de synthèse (69 p.)
 │   │   ├── Borealis-Go/                       démonstrateur Go (MCP + A2A), 12 ADR
-│   │   ├── build/                             pipeline FESP (Mermaid → Pandoc → Typst)
-│   │   └── index.html                         page de présentation (GitHub Pages)
+│   │   └── build/                             pipeline FESP (Mermaid → Pandoc → Typst)
 │   ├── 2 - OrchestrationAgentique/          Vol. II
 │   │   ├── monographie/                       29 pièces (parties I-VII, annexes, registre des gels)
-│   │   ├── doc/                               PRD, PRDPlan, TOC, audit — gouvernance
+│   │   ├── prd/                               PRD, PRDPlan, TOC, audit + 2 PDF sources — gouvernance
 │   │   ├── verification/                      revalidations et grille de conformité CA-1..CA-8
 │   │   ├── build/                             assemblage + pipeline Pandoc → Typst
-│   │   ├── Monographie.md / .pdf              assemblage (387 p.)
-│   │   ├── Synthese Monographie.md / .pdf     article de synthèse (66 p.)
-│   │   └── index.html                         page de présentation (GitHub Pages)
+│   │   └── Monographie.md / .pdf              assemblage (387 p.)
 │   └── 3 - EntrepriseAgentique/             Vol. III
 │       ├── CLAUDE.md                          conventions du volume
 │       ├── prd/                               PRD v1.3, TOC v0.8, PRDPlan v0.5 — gouvernance
@@ -237,13 +236,15 @@ volumes sources font foi et la divergence reste ouverte — le cadrage le dit lu
 │       ├── build/                             pipeline FESP (copie du Vol. II) + assemble.py
 │       └── Monographie.md / .pdf              assemblage (428 p., gabarit FESP) — non publiable
 └── 2 - Compendium Agentique/              ← Vol. IV
-    └── TOC.md                               table des matières commentée (v0.2) — seul livrable
+    ├── CLAUDE.md                            conventions du volume
+    ├── TOC.md                               table des matières commentée (v0.11) — spécification
+    └── Conspectus.md                        vue synoptique dérivée du TOC
 ```
 
 **Où sont les `CLAUDE.md`.** Un par périmètre, sans recouvrement : la racine porte les conventions
-communes et celles de la veille ; les Vol. I, II et III portent chacun les siennes ; le
-démonstrateur Go a les siennes, qui priment dans son répertoire. Seul le Vol. IV n'en a pas — son
-`TOC.md` tient lieu de spécification.
+communes et celles de la veille ; les Vol. I, II, III et IV portent chacun les siennes ; le
+démonstrateur Go a les siennes, qui priment dans son répertoire. Le `CLAUDE.md` du Vol. IV renvoie à
+son `TOC.md` comme spécification de contenu.
 
 ## Construire les PDF
 
@@ -260,7 +261,6 @@ pandoc "Veille Technologique.md" --pdf-engine=typst --toc -o "Veille Technologiq
 
 ```bash
 bash build/build-pdf.sh                              # Monographie.pdf
-bash build/build-pdf.sh "Synthese Monographie.md"    # Synthese Monographie.pdf
 ```
 
 **Vol. II** — assemblage des 29 pièces, puis une **copie** du même pipeline ; depuis
@@ -271,7 +271,7 @@ python build/assemble.py                    # monographie/ → Monographie.md
 bash   build/build-pdf.sh Monographie.md    # → Monographie.pdf
 ```
 
-⚠ `build/assemble.py` cherche encore `TOC.md` à la racine du volume alors qu'il vit dans `doc/` :
+⚠ `build/assemble.py` cherche encore `TOC.md` à la racine du volume alors qu'il vit dans `prd/` :
 **l'assemblage du Vol. II échoue en l'état.** Les deux copies du pipeline évoluent séparément ;
 un correctif au Vol. I ne se propage pas au Vol. II.
 
@@ -333,6 +333,14 @@ tous inchangés. Le 23 juillet 2026, la passe complémentaire de la veille (sous
 l'après-agentique en préimpression) porte ses décomptes à **144 p. / 256 réf.**, re-mesurés sur le
 PDF régénéré ; les chiffres du 18 juillet ci-dessus décrivent l'état de cette date-là.
 
+Le même 23 juillet 2026, une passe de cohérence a réaligné les `README.md` et `CLAUDE.md` sur l'état
+réel du dépôt : Vol. IV porté à **TOC v0.11** (57 chapitres, 10 livres, ≈ 369 000–394 000 mots
+projetés) avec son `Conspectus.md` et son `CLAUDE.md` ; renommage `doc/` → `prd/` (Vol. II) et
+suppressions des articles de synthèse et des `index.html` (Vol. I et II) constatés **committés**
+(commit `fd8f1be`, arbre de travail propre) ; création du pipeline FESP du Vol. III (troisième copie
+indépendante) enregistrée ; nom du dépôt corrigé de « Monographies » en `Agentique` dans les
+fichiers du démonstrateur `Borealis-Go`.
+
 ⚠ Le décompte des diagrammes du Vol. I se mesure avec un motif **ancré** :
 `grep -c '^```mermaid'` donne 28. Le motif non ancré en retourne 29 — il attrape une ligne de prose
 de la note de production qui cite la balise.
@@ -342,28 +350,23 @@ périmètre de cette passe documentaire :
 
 | Fichier | Reliquat |
 |---|---|
-| `1 - Corpus Agentique/2 - OrchestrationAgentique/build/assemble.py` | lit `TOC.md` à la racine du volume ; il vit dans `doc/` — **assemblage hors service** |
-| `…/2 - OrchestrationAgentique/doc/PRDPlan.md` | renvoi `](CLAUDE.md)` → `../CLAUDE.md` |
-| `…/2 - OrchestrationAgentique/doc/audit.md` | renvois `](monographie/…)` → `../monographie/…` |
-| `…/2 - OrchestrationAgentique/verification/relecture-CA.md` | renvois `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` → `../doc/…` |
+| `1 - Corpus Agentique/2 - OrchestrationAgentique/build/assemble.py` | lit `TOC.md` à la racine du volume ; il vit dans `prd/` — **assemblage hors service** |
+| `…/2 - OrchestrationAgentique/prd/PRDPlan.md` | renvoi `](CLAUDE.md)` → `../CLAUDE.md` |
+| `…/2 - OrchestrationAgentique/prd/audit.md` | renvois `](monographie/…)` → `../monographie/…` |
+| `…/2 - OrchestrationAgentique/verification/relecture-CA.md` | renvois `](../PRD.md)`, `](../PRDPlan.md)`, `](../audit.md)` → `../prd/…` |
 | `…/1 - InteroperabiliteAgentique/Borealis-Go/docs/ARCHITECTURE.md` | ligne 906 : annonce « les 11 ADR » ; le dossier `docs/adr/` en compte 12 (0001-0012, hors gabarit) |
-| `…/3 - EntrepriseAgentique/doc/PRDPlan.md` | deux renvois cassés par le déplacement vers `doc/` : `](../../CLAUDE.md)` → `../../../CLAUDE.md`, et `](../../TOC.md)` → `../../doc/TOC.md` |
 | `…/2 - OrchestrationAgentique/build/__pycache__/` | bytecode Python (`.pyc`) versionné par mégarde — à retirer du suivi et à ignorer |
 
 Le `monographie/` du Vol. II concentre à lui seul **48 de ces renvois cassés**, sur 28 de ses
 29 pièces : voir le tableau et la commande de contrôle du [`CLAUDE.md`](1%20-%20Corpus%20Agentique/2%20-%20OrchestrationAgentique/CLAUDE.md) du volume.
 
-⚠ **Le second renvoi du Vol. III est le plus coûteux du dépôt, et il ne coûte encore rien.** Il vit
-dans le *gabarit de pièce* que les 34 pièces à venir recopieront : non corrigé, il reproduit
-mécaniquement le gisement du Vol. II. Le corriger aujourd'hui coûte un caractère ; après rédaction,
-34 éditions.
-
-⚠ **Publication GitHub Pages : les adresses annoncées sont fausses.** Les deux volumes annoncent
-« Lire en ligne » sous `https://agbruneau.github.io/Monographies/…`, et leurs balises `canonical`,
-`og:url` et liens « Dépôt GitHub » nomment tous `Monographies`. **Le dépôt s'appelle `Agentique`**
-(`github.com/agbruneau/Agentique`) : la base correcte est `https://agbruneau.github.io/Agentique/`.
-C'est la cause des 404 relevés, et non un simple défaut d'activation — reste à vérifier, une fois
-les URL rectifiées, que Pages est bien activé pour ce dépôt.
+⚠ **Plus de pages de présentation ni de publication GitHub Pages pour les volumes.** Les deux
+`index.html` (Vol. I et Vol. II) ont été supprimés le 22 juillet 2026 (commit `fd8f1be`). Ils
+annonçaient « Lire en ligne » sous `https://agbruneau.github.io/Monographies/…`, et leurs balises
+`canonical`, `og:url` et liens « Dépôt GitHub » nommaient tous `Monographies` — adresses fausses de
+toute façon, le dépôt s'appelant `Agentique` (`github.com/agbruneau/Agentique`), et cause des 404
+relevés. Rétablir une publication en ligne supposerait de repartir de la bonne base
+(`https://agbruneau.github.io/Agentique/`) et de vérifier que Pages est bien activé pour ce dépôt.
 
 Conventions de rédaction et règles de travail : voir le [`CLAUDE.md`](CLAUDE.md) du dépôt, puis
 celui de chaque volume.

@@ -3,9 +3,10 @@
 Guide pour Claude Code (claude.ai/code) à la **racine** du dépôt.
 
 ⚠ **Le dépôt s'appelle `Agentique`** (`github.com/agbruneau/Agentique`), pas « Monographies ». Ce
-nom-là survit dans du contenu gelé — les références [217] et [218] de la veille, les URL des deux
-`index.html` — et **il n'est pas corrigé en silence** : la veille est publiée, les `index.html` sont
-un reliquat consigné au [`README.md`](README.md).
+nom-là ne survit plus que dans le contenu gelé de la veille — les références [217] et [218] — et
+**il n'y est pas corrigé en silence** : la veille est publiée. Les deux `index.html` qui portaient
+d'anciennes URL `…/Monographies/…` ont été supprimés du dépôt le 22 juillet 2026 (commit `fd8f1be`) ;
+ce reliquat est clos.
 
 ## Ce que ce fichier régit — et ce qu'il ne régit pas
 
@@ -34,13 +35,14 @@ croisées ou l'historique d'un volume.
 | | Vol. I | Vol. II |
 |---|---|---|
 | Messages de commit | courts, **en français**, par livrable (`Chapitre 5`, `Annexe B`) | **Conventional Commits en anglais** (`docs(mono): …`) |
-| Autorité de contenu | les conventions de chapitres du `CLAUDE.md` | le **PRD** (`doc/PRD.md`), qui prime sur tout |
+| Autorité de contenu | les conventions de chapitres du `CLAUDE.md` | le **PRD** (`prd/PRD.md`), qui prime sur tout |
 | Traçabilité des faits | vérification adverse des citations, bilan par bibliographie | socle factuel **F-xx** avec niveaux **[A]/[B]/[C]** |
 | Pipeline PDF | FESP (Mermaid → Pandoc → Typst) | **copie** du FESP + `assemble.py` en amont |
 
-Les deux pipelines PDF sont des copies indépendantes : **un correctif à l'un ne se propage pas à
-l'autre.** La veille, elle, n'utilise ni l'un ni l'autre (voir plus bas). Le Vol. III n'a **aucun
-pipeline** : en créer un serait une troisième copie — le savoir avant de le faire.
+Les trois pipelines PDF (Vol. I, Vol. II et — depuis le 23 juillet 2026 — Vol. III) sont des copies
+indépendantes : **un correctif à l'un ne se propage pas aux autres.** La veille, elle, n'utilise
+aucun des trois (voir plus bas). Le Vol. III a reçu sa copie en P5.4, sur demande de l'auteur, au
+gabarit FESP des monographies : c'était bien une troisième copie, décidée et datée.
 
 Le Vol. III prolonge l'appareil du Vol. II mais s'en écarte sur quatre points (motifs de balayage,
 commande de décompte, escalade de gouvernance, numérotation des garde-fous). Ces écarts sont
