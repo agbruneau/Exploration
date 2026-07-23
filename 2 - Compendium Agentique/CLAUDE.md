@@ -7,7 +7,7 @@ pas répétées.
 
 ## Les livrables — un plan et sa vue synoptique, pas un ouvrage
 
-Deux fichiers. [`TOC.md`](TOC.md) (**v0.10, 21 juillet 2026 — 57 chapitres en 10 livres,
+Deux fichiers. [`TOC.md`](TOC.md) (**v0.11, 23 juillet 2026 — 57 chapitres en 10 livres,
 projection ≈ 369 000–394 000 mots**) est la *spécification* du compendium ; **aucun chapitre
 n'est rédigé**. Tant que la somme n'est pas écrite, les trois volumes sources font foi (champ
 Statut du TOC), et une thèse de ce plan n'est pas une source (sa propre décision 8).
@@ -53,8 +53,10 @@ Le TOC porte ses propres règles de gouvernance ; les lire avant d'éditer, ne p
   réintroduirait l'erreur en croyant la corriger (décision 7 et risque 10 du TOC).
 - ⚠ **Corpus d'appui du Vol. III introuvable au dépôt** (lacune L-15, décision P0.2 non tranchée) :
   aucun chapitre consommateur ne se rédige en s'appuyant sur ces trois ouvrages.
-- ⚠ **Relèves v0.7 et v0.10** : marquées « à instruire à la source primaire » — aucune n'entre au
-  socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la source primaire.
+- ⚠ **Relèves v0.7, v0.10 et v0.11** : marquées « à instruire à la source primaire » — aucune
+  n'entre au socle, ne re-tranche une divergence ni ne clôt une lacune sans extraction de la
+  source primaire. Les relèves v0.11 (l'après-agentique) citent des préimpressions arXiv dont
+  seuls les résumés ont été consultés : repérages [C], jamais des faits.
 - ⚠ **L'angle mort du harnais est déclaré, non comblé** (risque 14, v0.10) : la couche d'exécution
   n'a de chapitre nulle part, et trois des huit relèves v0.10 atterrissent dans le Livre IX. **Ne
   pas en tirer un chapitre ni un livre** — la somme porte déjà un livre sans socle (risque 13), et
